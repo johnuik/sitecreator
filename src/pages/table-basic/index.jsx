@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const BasicTable = () => {
     return (
@@ -8,10 +9,10 @@ const BasicTable = () => {
                     <h6 className="font-semibold mb-0 dark:text-white">Basic Table</h6>
                     <ul className="flex items-center gap-[6px]">
                         <li className="font-medium">
-                            <a href="index.html" className="flex items-center gap-2 hover:text-primary-600 dark:text-white">
+                            <Link to="/" className="flex items-center gap-2 hover:text-primary-600 dark:text-white">
                                 <iconify-icon icon="solar:home-smile-angle-outline" className="icon text-lg" />
                                 Dashboard
-                            </a>
+                            </Link>
                         </li>
                         <li className="dark:text-white">-</li>
                         <li className="font-medium dark:text-white">Basic Table</li>
@@ -39,7 +40,7 @@ const BasicTable = () => {
                                             <tr>
                                                 <td className="!border-b-0">01</td>
                                                 <td className="!border-b-0">
-                                                    <a href="javascript:void(0)" className="text-primary-600">#526534</a>
+                                                    <a className="text-primary-600">#526534</a>
                                                 </td>
                                                 <td className="!border-b-0">Kathryn Murphy</td>
                                                 <td className="!border-b-0">25 Jan 2024</td>
@@ -48,7 +49,7 @@ const BasicTable = () => {
                                             <tr>
                                                 <td className="!border-b-0">02</td>
                                                 <td className="!border-b-0">
-                                                    <a href="javascript:void(0)" className="text-primary-600">#696589</a>
+                                                    <a className="text-primary-600">#696589</a>
                                                 </td>
                                                 <td className="!border-b-0">Annette Black</td>
                                                 <td className="!border-b-0">25 Jan 2024</td>
@@ -57,7 +58,7 @@ const BasicTable = () => {
                                             <tr>
                                                 <td className="!border-b-0">03</td>
                                                 <td className="!border-b-0">
-                                                    <a href="javascript:void(0)" className="text-primary-600">#256584</a>
+                                                    <a className="text-primary-600">#256584</a>
                                                 </td>
                                                 <td className="!border-b-0">Ronald Richards</td>
                                                 <td className="!border-b-0">10 Feb 2024</td>
@@ -66,7 +67,7 @@ const BasicTable = () => {
                                             <tr>
                                                 <td className="!border-b-0">04</td>
                                                 <td className="!border-b-0">
-                                                    <a href="javascript:void(0)" className="text-primary-600">#526587</a>
+                                                    <a className="text-primary-600">#526587</a>
                                                 </td>
                                                 <td className="!border-b-0">Eleanor Pena</td>
                                                 <td className="!border-b-0">10 Feb 2024</td>
@@ -75,7 +76,7 @@ const BasicTable = () => {
                                             <tr>
                                                 <td className="!border-b-0">05</td>
                                                 <td className="!border-b-0">
-                                                    <a href="javascript:void(0)" className="text-primary-600">#105986</a>
+                                                    <a className="text-primary-600">#105986</a>
                                                 </td>
                                                 <td className="!border-b-0">Leslie Alexander</td>
                                                 <td className="!border-b-0">15 Mar 2024</td>
@@ -107,57 +108,57 @@ const BasicTable = () => {
                                         <tbody>
                                             <tr>
                                                 <td className="border-r border-neutral-200 dark:border-neutral-600 last:border-r-0">
-                                                    <a href="javascript:void(0)" className="text-primary-600">#526534</a>
+                                                    <a className="text-primary-600">#526534</a>
                                                 </td>
                                                 <td className="border-r border-neutral-200 dark:border-neutral-600 last:border-r-0">Kathryn Murphy</td>
                                                 <td className="border-r border-neutral-200 dark:border-neutral-600 last:border-r-0">25 Jan 2024</td>
                                                 <td className="border-r border-neutral-200 dark:border-neutral-600 last:border-r-0">$200.00</td>
                                                 <td className="border-r border-neutral-200 dark:border-neutral-600 last:border-r-0">
-                                                    <a href="javascript:void(0)" className="text-primary-600">View More &gt;</a>
+                                                    <a className="text-primary-600">View More &gt;</a>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td className="border-r border-neutral-200 dark:border-neutral-600 last:border-r-0">
-                                                    <a href="javascript:void(0)" className="text-primary-600">#696589</a>
+                                                    <a className="text-primary-600">#696589</a>
                                                 </td>
                                                 <td className="border-r border-neutral-200 dark:border-neutral-600 last:border-r-0">Annette Black</td>
                                                 <td className="border-r border-neutral-200 dark:border-neutral-600 last:border-r-0">25 Jan 2024</td>
                                                 <td className="border-r border-neutral-200 dark:border-neutral-600 last:border-r-0">$200.00</td>
                                                 <td className="border-r border-neutral-200 dark:border-neutral-600 last:border-r-0">
-                                                    <a href="javascript:void(0)" className="text-primary-600">View More &gt;</a>
+                                                    <a className="text-primary-600">View More &gt;</a>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td className="border-r border-neutral-200 dark:border-neutral-600 last:border-r-0">
-                                                    <a href="javascript:void(0)" className="text-primary-600">#256584</a>
+                                                    <a className="text-primary-600">#256584</a>
                                                 </td>
                                                 <td className="border-r border-neutral-200 dark:border-neutral-600 last:border-r-0">256584</td>
                                                 <td className="border-r border-neutral-200 dark:border-neutral-600 last:border-r-0">10 Feb 2024</td>
                                                 <td className="border-r border-neutral-200 dark:border-neutral-600 last:border-r-0">$200.00</td>
                                                 <td className="border-r border-neutral-200 dark:border-neutral-600 last:border-r-0">
-                                                    <a href="javascript:void(0)" className="text-primary-600">View More &gt;</a>
+                                                    <a className="text-primary-600">View More &gt;</a>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td className="border-r border-neutral-200 dark:border-neutral-600 last:border-r-0">
-                                                    <a href="javascript:void(0)" className="text-primary-600">#526587</a>
+                                                    <a className="text-primary-600">#526587</a>
                                                 </td>
                                                 <td className="border-r border-neutral-200 dark:border-neutral-600 last:border-r-0">Eleanor Pena</td>
                                                 <td className="border-r border-neutral-200 dark:border-neutral-600 last:border-r-0">10 Feb 2024</td>
                                                 <td className="border-r border-neutral-200 dark:border-neutral-600 last:border-r-0">$150.00</td>
                                                 <td className="border-r border-neutral-200 dark:border-neutral-600 last:border-r-0">
-                                                    <a href="javascript:void(0)" className="text-primary-600">View More &gt;</a>
+                                                    <a className="text-primary-600">View More &gt;</a>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td className="border-r border-neutral-200 dark:border-neutral-600 last:border-r-0">
-                                                    <a href="javascript:void(0)" className="text-primary-600">#105986</a>
+                                                    <a className="text-primary-600">#105986</a>
                                                 </td>
                                                 <td className="border-r border-neutral-200 dark:border-neutral-600 last:border-r-0">Leslie Alexander</td>
                                                 <td className="border-r border-neutral-200 dark:border-neutral-600 last:border-r-0">15 Mar 2024</td>
                                                 <td className="border-r border-neutral-200 dark:border-neutral-600 last:border-r-0">$150.00</td>
                                                 <td className="border-r border-neutral-200 dark:border-neutral-600 last:border-r-0">
-                                                    <a href="javascript:void(0)" className="text-primary-600">View More &gt;</a>
+                                                    <a className="text-primary-600">View More &gt;</a>
                                                 </td>
                                             </tr>
                                         </tbody>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Dropdown = () => {
     return (
@@ -8,10 +9,10 @@ const Dropdown = () => {
                     <h6 className="font-semibold mb-0 dark:text-white">Dropdown</h6>
                     <ul className="flex items-center gap-[6px]">
                         <li className="font-medium">
-                            <a href="index.html" className="flex items-center gap-2 hover:text-primary-600 dark:text-white">
+                            <Link to="/" className="flex items-center gap-2 hover:text-primary-600 dark:text-white">
                                 <iconify-icon icon="solar:home-smile-angle-outline" className="icon text-lg" />
                                 Dashboard
-                            </a>
+                            </Link>
                         </li>
                         <li className="dark:text-white">-</li>
                         <li className="font-medium dark:text-white">Components / Dropdown</li>
@@ -36,13 +37,13 @@ const Dropdown = () => {
                                     <div id="defaultActionPill" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-2xl w-44 dark:bg-gray-700">
                                         <ul className="py-2 text-base text-gray-700 dark:text-gray-200">
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Primary Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Primary Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -60,13 +61,13 @@ const Dropdown = () => {
                                     <div id="outlineActionPill" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-2xl w-44 dark:bg-gray-700">
                                         <ul className="py-2 text-base text-gray-700 dark:text-gray-200">
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Primary Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Primary Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -84,13 +85,13 @@ const Dropdown = () => {
                                     <div id="focusActionPill" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-2xl w-44 dark:bg-gray-700">
                                         <ul className="py-2 text-base text-gray-700 dark:text-gray-200">
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Primary Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Primary Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -108,13 +109,13 @@ const Dropdown = () => {
                                     <div id="focusActionPillTwo" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-2xl w-44 dark:bg-gray-700">
                                         <ul className="py-2 text-base text-gray-700 dark:text-gray-200">
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Primary Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Primary Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -141,13 +142,13 @@ const Dropdown = () => {
                                     <div id="defaultActionPillDroppop" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-2xl w-44 dark:bg-gray-700">
                                         <ul className="py-2 text-base text-gray-700 dark:text-gray-200">
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Primary Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Primary Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -165,13 +166,13 @@ const Dropdown = () => {
                                     <div id="outlineActionPillDroppop" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-2xl w-44 dark:bg-gray-700">
                                         <ul className="py-2 text-base text-gray-700 dark:text-gray-200">
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Primary Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Primary Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -189,13 +190,13 @@ const Dropdown = () => {
                                     <div id="focusActionPillDroppop" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-2xl w-44 dark:bg-gray-700">
                                         <ul className="py-2 text-base text-gray-700 dark:text-gray-200">
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Primary Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Primary Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -213,13 +214,13 @@ const Dropdown = () => {
                                     <div id="focusActionPillTwoDroppop" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-2xl w-44 dark:bg-gray-700">
                                         <ul className="py-2 text-base text-gray-700 dark:text-gray-200">
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Primary Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Primary Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -246,13 +247,13 @@ const Dropdown = () => {
                                     <div id="defaultActionPillDropRight" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-2xl w-44 dark:bg-gray-700">
                                         <ul className="py-2 text-base text-gray-700 dark:text-gray-200">
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">warning Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">warning Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -270,13 +271,13 @@ const Dropdown = () => {
                                     <div id="outlineActionPillDropRight" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-2xl w-44 dark:bg-gray-700">
                                         <ul className="py-2 text-base text-gray-700 dark:text-gray-200">
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">warning Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">warning Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -294,13 +295,13 @@ const Dropdown = () => {
                                     <div id="focusActionPillDropRight" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-2xl w-44 dark:bg-gray-700">
                                         <ul className="py-2 text-base text-gray-700 dark:text-gray-200">
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">warning Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">warning Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -318,13 +319,13 @@ const Dropdown = () => {
                                     <div id="focusActionPillTwoDropRight" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-2xl w-44 dark:bg-gray-700">
                                         <ul className="py-2 text-base text-gray-700 dark:text-gray-200">
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">warning Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">warning Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -351,13 +352,13 @@ const Dropdown = () => {
                                     <div id="defaultActionPillDropLeft" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-2xl w-44 dark:bg-gray-700">
                                         <ul className="py-2 text-base text-gray-700 dark:text-gray-200">
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">warning Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">warning Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -375,13 +376,13 @@ const Dropdown = () => {
                                     <div id="outlineActionPillDropLeft" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-2xl w-44 dark:bg-gray-700">
                                         <ul className="py-2 text-base text-gray-700 dark:text-gray-200">
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">warning Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">warning Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -399,13 +400,13 @@ const Dropdown = () => {
                                     <div id="focusActionPillDropLeft" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-2xl w-44 dark:bg-gray-700">
                                         <ul className="py-2 text-base text-gray-700 dark:text-gray-200">
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">warning Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">warning Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -423,13 +424,13 @@ const Dropdown = () => {
                                     <div id="focusActionPillTwoDropLeft" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-2xl w-44 dark:bg-gray-700">
                                         <ul className="py-2 text-base text-gray-700 dark:text-gray-200">
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">warning Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">warning Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -453,13 +454,13 @@ const Dropdown = () => {
                                     <div id="defaultActionPillDropPlacement" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-2xl w-44 dark:bg-gray-700">
                                         <ul className="py-2 text-base text-gray-700 dark:text-gray-200">
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">success Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">success Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -474,13 +475,13 @@ const Dropdown = () => {
                                     <div id="outlineActionPillDropPlacement" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-2xl w-44 dark:bg-gray-700">
                                         <ul className="py-2 text-base text-gray-700 dark:text-gray-200">
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">success Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">success Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -495,13 +496,13 @@ const Dropdown = () => {
                                     <div id="focusActionPillDropPlacement" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-2xl w-44 dark:bg-gray-700">
                                         <ul className="py-2 text-base text-gray-700 dark:text-gray-200">
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">success Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">success Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -536,13 +537,13 @@ const Dropdown = () => {
                                     <div id="defaultActionPillDropGroup" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-2xl w-44 dark:bg-gray-700">
                                         <ul className="py-2 text-base text-gray-700 dark:text-gray-200">
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">primary Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">primary Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -568,13 +569,13 @@ const Dropdown = () => {
                                     <div id="outlineActionPillDropGroup" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-2xl w-44 dark:bg-gray-700">
                                         <ul className="py-2 text-base text-gray-700 dark:text-gray-200">
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">success Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">success Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -598,13 +599,13 @@ const Dropdown = () => {
                                     <div id="defaultActionPillDropCustom" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-2xl w-44 dark:bg-gray-700">
                                         <ul className="py-2 text-base text-gray-700 dark:text-gray-200">
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">success Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">success Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -619,13 +620,13 @@ const Dropdown = () => {
                                     <div id="outlineActionPillDropCustom" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-2xl w-44 dark:bg-gray-700">
                                         <ul className="py-2 text-base text-gray-700 dark:text-gray-200">
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">success Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">success Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -640,13 +641,13 @@ const Dropdown = () => {
                                     <div id="focusActionPillDropCustom" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-2xl w-44 dark:bg-gray-700">
                                         <ul className="py-2 text-base text-gray-700 dark:text-gray-200">
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">success Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">success Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -661,13 +662,13 @@ const Dropdown = () => {
                                     <div id="lastActionPillDropCustom" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-2xl w-44 dark:bg-gray-700">
                                         <ul className="py-2 text-base text-gray-700 dark:text-gray-200">
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">success Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">success Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -694,13 +695,13 @@ const Dropdown = () => {
                                     <div id="defaultActionPillOneee" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-2xl w-44 dark:bg-gray-700">
                                         <ul className="py-2 text-base text-gray-700 dark:text-gray-200">
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Primary Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Primary Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -718,13 +719,13 @@ const Dropdown = () => {
                                     <div id="defaultActionPilltwoo" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-2xl w-44 dark:bg-gray-700">
                                         <ul className="py-2 text-base text-gray-700 dark:text-gray-200">
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Primary Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Primary Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -742,13 +743,13 @@ const Dropdown = () => {
                                     <div id="defaultActionPillThreee" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-2xl w-44 dark:bg-gray-700">
                                         <ul className="py-2 text-base text-gray-700 dark:text-gray-200">
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Primary Action</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Primary Action</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
+                                                <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something Else</a>
                                             </li>
                                         </ul>
                                     </div>

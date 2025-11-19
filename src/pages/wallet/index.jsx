@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Wallet = () => {
     return (
@@ -8,10 +9,10 @@ const Wallet = () => {
                     <h6 className="font-semibold mb-0 dark:text-white">Wallet</h6>
                     <ul className="flex items-center gap-[6px]">
                         <li className="font-medium">
-                            <a href="index.html" className="flex items-center gap-2 hover:text-primary-600 dark:text-white">
+                            <Link to="/" className="flex items-center gap-2 hover:text-primary-600 dark:text-white">
                                 <iconify-icon icon="solar:home-smile-angle-outline" className="icon text-lg" />
                                 Dashboard
-                            </a>
+                            </Link>
                         </li>
                         <li className="dark:text-white">-</li>
                         <li className="font-medium dark:text-white">Wallet</li>
@@ -459,7 +460,7 @@ const Wallet = () => {
                                     </div>
                                     <div className="flex items-center justify-between gap-2 pb-6 border-b border-neutral-200 dark:border-neutral-600">
                                         <h6 className="text-lg mb-0">Watchlist</h6>
-                                        <a href="javascript:void(0)" className="text-primary-600 font-medium text-base">Sell all</a>
+                                        <a className="text-primary-600 font-medium text-base">Sell all</a>
                                     </div>
                                     <div className="flex items-center justify-between flex-wrap gap-2 py-4 border-b border-neutral-200 dark:border-neutral-600">
                                         <div className="flex items-center">

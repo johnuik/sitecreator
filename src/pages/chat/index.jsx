@@ -59,7 +59,7 @@ const Chat = () => {
                             <input type="text" className="border-0 border-t border-b border-neutral-200 dark:border-neutral-600 bg-white dark:bg-neutral-700 w-full focus:outline-none focus:ring-0 ps-12 pe-6" autoComplete="off" placeholder="Search..." />
                         </div>
                         <div className="chat-all-list flex flex-col gap-1.5 mt-3 max-h-[580px] overflow-y-auto">
-                            <a href="javascript:void(0)" className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5 active">
+                            <a className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5 active">
                                 <div className="flex items-center gap-2">
                                     <div className="img">
                                         <img src="../assets/images/chat/2.png" alt="image" />
@@ -74,7 +74,7 @@ const Chat = () => {
                                     <span className="w-4 h-4 text-xs rounded-full bg-warning-600 text-white inline-flex items-center justify-center">8</span>
                                 </div>
                             </a>{/* chat-sidebar-single end */}
-                            <a href="javascript:void(0)" className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5 active">
+                            <a className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5 active">
                                 <div className="flex items-center gap-2">
                                     <div className="img">
                                         <img src="../assets/images/chat/3.png" alt="image" />
@@ -89,7 +89,7 @@ const Chat = () => {
                                     <span className="w-4 h-4 text-xs rounded-full bg-warning-600 text-white inline-flex items-center justify-center">8</span>
                                 </div>
                             </a>{/* chat-sidebar-single end */}
-                            <a href="javascript:void(0)" className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5">
+                            <a className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5">
                                 <div className="flex items-center gap-2">
                                     <div className="img">
                                         <img src="../assets/images/chat/4.png" alt="image" />
@@ -104,7 +104,7 @@ const Chat = () => {
                                     <span className="w-4 h-4 text-xs rounded-full bg-warning-600 text-white inline-flex items-center justify-center">8</span>
                                 </div>
                             </a>{/* chat-sidebar-single end */}
-                            <a href="javascript:void(0)" className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5">
+                            <a className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5">
                                 <div className="flex items-center gap-2">
                                     <div className="img">
                                         <img src="../assets/images/chat/5.png" alt="image" />
@@ -119,7 +119,7 @@ const Chat = () => {
                                     <span className="w-4 h-4 text-xs rounded-full bg-warning-600 text-white inline-flex items-center justify-center">8</span>
                                 </div>
                             </a>{/* chat-sidebar-single end */}
-                            <a href="javascript:void(0)" className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5 active">
+                            <a className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5 active">
                                 <div className="flex items-center gap-2">
                                     <div className="img">
                                         <img src="../assets/images/chat/6.png" alt="image" />
@@ -134,7 +134,7 @@ const Chat = () => {
                                     <span className="w-4 h-4 text-xs rounded-full bg-warning-600 text-white inline-flex items-center justify-center">8</span>
                                 </div>
                             </a>{/* chat-sidebar-single end */}
-                            <a href="javascript:void(0)" className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5 active">
+                            <a className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5 active">
                                 <div className="flex items-center gap-2">
                                     <div className="img">
                                         <img src="../assets/images/chat/7.png" alt="image" />
@@ -149,7 +149,7 @@ const Chat = () => {
                                     <span className="w-4 h-4 text-xs rounded-full bg-warning-600 text-white inline-flex items-center justify-center">8</span>
                                 </div>
                             </a>{/* chat-sidebar-single end */}
-                            <a href="javascript:void(0)" className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5 active">
+                            <a className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5 active">
                                 <div className="flex items-center gap-2">
                                     <div className="img">
                                         <img src="../assets/images/chat/8.png" alt="image" />
@@ -164,7 +164,7 @@ const Chat = () => {
                                     <span className="w-4 h-4 text-xs rounded-full bg-warning-600 text-white inline-flex items-center justify-center">8</span>
                                 </div>
                             </a>{/* chat-sidebar-single end */}
-                            <a href="javascript:void(0)" className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5 active">
+                            <a className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5 active">
                                 <div className="flex items-center gap-2">
                                     <div className="img">
                                         <img src="../assets/images/chat/9.png" alt="image" />
@@ -179,7 +179,7 @@ const Chat = () => {
                                     <span className="w-4 h-4 text-xs rounded-full bg-warning-600 text-white inline-flex items-center justify-center">8</span>
                                 </div>
                             </a>{/* chat-sidebar-single end */}
-                            <a href="javascript:void(0)" className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5 active">
+                            <a className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5 active">
                                 <div className="flex items-center gap-2">
                                     <div className="img">
                                         <img src="../assets/images/chat/10.png" alt="image" />
@@ -194,7 +194,7 @@ const Chat = () => {
                                     <span className="w-4 h-4 text-xs rounded-full bg-warning-600 text-white inline-flex items-center justify-center">8</span>
                                 </div>
                             </a>{/* chat-sidebar-single end */}
-                            <a href="javascript:void(0)" className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5 active">
+                            <a className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5 active">
                                 <div className="flex items-center gap-2">
                                     <div className="img">
                                         <img src="../assets/images/chat/2.png" alt="image" />
@@ -209,7 +209,7 @@ const Chat = () => {
                                     <span className="w-4 h-4 text-xs rounded-full bg-warning-600 text-white inline-flex items-center justify-center">8</span>
                                 </div>
                             </a>{/* chat-sidebar-single end */}
-                            <a href="javascript:void(0)" className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5 active">
+                            <a className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5 active">
                                 <div className="flex items-center gap-2">
                                     <div className="img">
                                         <img src="../assets/images/chat/3.png" alt="image" />
@@ -224,7 +224,7 @@ const Chat = () => {
                                     <span className="w-4 h-4 text-xs rounded-full bg-warning-600 text-white inline-flex items-center justify-center">8</span>
                                 </div>
                             </a>{/* chat-sidebar-single end */}
-                            <a href="javascript:void(0)" className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5">
+                            <a className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5">
                                 <div className="flex items-center gap-2">
                                     <div className="img">
                                         <img src="../assets/images/chat/4.png" alt="image" />
@@ -239,7 +239,7 @@ const Chat = () => {
                                     <span className="w-4 h-4 text-xs rounded-full bg-warning-600 text-white inline-flex items-center justify-center">8</span>
                                 </div>
                             </a>{/* chat-sidebar-single end */}
-                            <a href="javascript:void(0)" className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5">
+                            <a className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5">
                                 <div className="flex items-center gap-2">
                                     <div className="img">
                                         <img src="../assets/images/chat/5.png" alt="image" />
@@ -254,7 +254,7 @@ const Chat = () => {
                                     <span className="w-4 h-4 text-xs rounded-full bg-warning-600 text-white inline-flex items-center justify-center">8</span>
                                 </div>
                             </a>{/* chat-sidebar-single end */}
-                            <a href="javascript:void(0)" className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5 active">
+                            <a className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5 active">
                                 <div className="flex items-center gap-2">
                                     <div className="img">
                                         <img src="../assets/images/chat/6.png" alt="image" />
@@ -269,7 +269,7 @@ const Chat = () => {
                                     <span className="w-4 h-4 text-xs rounded-full bg-warning-600 text-white inline-flex items-center justify-center">8</span>
                                 </div>
                             </a>{/* chat-sidebar-single end */}
-                            <a href="javascript:void(0)" className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5 active">
+                            <a className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5 active">
                                 <div className="flex items-center gap-2">
                                     <div className="img">
                                         <img src="../assets/images/chat/7.png" alt="image" />
@@ -284,7 +284,7 @@ const Chat = () => {
                                     <span className="w-4 h-4 text-xs rounded-full bg-warning-600 text-white inline-flex items-center justify-center">8</span>
                                 </div>
                             </a>{/* chat-sidebar-single end */}
-                            <a href="javascript:void(0)" className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5 active">
+                            <a className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5 active">
                                 <div className="flex items-center gap-2">
                                     <div className="img">
                                         <img src="../assets/images/chat/8.png" alt="image" />
@@ -299,7 +299,7 @@ const Chat = () => {
                                     <span className="w-4 h-4 text-xs rounded-full bg-warning-600 text-white inline-flex items-center justify-center">8</span>
                                 </div>
                             </a>{/* chat-sidebar-single end */}
-                            <a href="javascript:void(0)" className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5 active">
+                            <a className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5 active">
                                 <div className="flex items-center gap-2">
                                     <div className="img">
                                         <img src="../assets/images/chat/9.png" alt="image" />
@@ -314,7 +314,7 @@ const Chat = () => {
                                     <span className="w-4 h-4 text-xs rounded-full bg-warning-600 text-white inline-flex items-center justify-center">8</span>
                                 </div>
                             </a>{/* chat-sidebar-single end */}
-                            <a href="javascript:void(0)" className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5 active">
+                            <a className="flex items-center justify-between gap-2 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-600 px-6 py-2.5 active">
                                 <div className="flex items-center gap-2">
                                     <div className="img">
                                         <img src="../assets/images/chat/10.png" alt="image" />

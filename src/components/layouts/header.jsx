@@ -1,7 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const Header = () => {
+      const location = useLocation();
+
+
   return (
     <div className="navbar-header border-b border-neutral-200 dark:border-neutral-600">
       <div className="flex items-center justify-between">
@@ -22,6 +25,14 @@ const Header = () => {
         </div>
         <div className="col-auto">
           <div className="flex flex-wrap items-center gap-3">
+            {
+              location.pathname !== '/create' ? ( 
+                 <Link to="/create" type="button" className="btn bg-success-600 hover:bg-success-700 text-white rounded-lg px-5 py-2">Create New</Link>
+              ) : (
+                 <button  type="button" className="btn bg-info-600 hover:bg-info-700 text-white rounded-lg px-5 py-2">Publish</button>
+              )
+            }
+           
             <button type="button" id="theme-toggle" className="w-10 h-10 bg-neutral-200 dark:bg-neutral-700 dark:text-white rounded-full flex justify-center items-center">
               <span id="theme-toggle-dark-icon" className="hidden">
                 <i className="ri-sun-line" />
@@ -131,7 +142,7 @@ const Header = () => {
               </div>
               <div className="scroll-sm !border-t-0">
                 <div className="max-h-[400px] overflow-y-auto">
-                  <a href="javascript:void(0)" className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600 justify-between gap-1">
+                  <a className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600 justify-between gap-1">
                     <div className="flex items-center gap-3">
                       <div className="flex-shrink-0 relative">
                         <img className="rounded-full w-11 h-11" src="../assets/images/notification/profile-3.png" alt="Joseph image" />
@@ -147,7 +158,7 @@ const Header = () => {
                       <span className="w-4 h-4 text-xs bg-warning-600 text-white rounded-full flex justify-center items-center">8</span>
                     </div>
                   </a>
-                  <a href="javascript:void(0)" className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600 justify-between gap-1">
+                  <a className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600 justify-between gap-1">
                     <div className="flex items-center gap-3">
                       <div className="flex-shrink-0 relative">
                         <img className="rounded-full w-11 h-11" src="../assets/images/notification/profile-4.png" alt="Joseph image" />
@@ -163,7 +174,7 @@ const Header = () => {
                       <span className="w-4 h-4 text-xs bg-warning-600 text-white rounded-full flex justify-center items-center">8</span>
                     </div>
                   </a>
-                  <a href="javascript:void(0)" className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600 justify-between gap-1">
+                  <a className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600 justify-between gap-1">
                     <div className="flex items-center gap-3">
                       <div className="flex-shrink-0 relative">
                         <img className="rounded-full w-11 h-11" src="../assets/images/notification/profile-5.png" alt="Joseph image" />
@@ -179,7 +190,7 @@ const Header = () => {
                       <span className="w-4 h-4 text-xs bg-warning-600 text-white rounded-full flex justify-center items-center">8</span>
                     </div>
                   </a>
-                  <a href="javascript:void(0)" className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600 justify-between gap-1">
+                  <a className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600 justify-between gap-1">
                     <div className="flex items-center gap-3">
                       <div className="flex-shrink-0 relative">
                         <img className="rounded-full w-11 h-11" src="../assets/images/notification/profile-6.png" alt="Joseph image" />
@@ -195,7 +206,7 @@ const Header = () => {
                       <span className="w-4 h-4 text-xs bg-warning-600 text-white rounded-full flex justify-center items-center">8</span>
                     </div>
                   </a>
-                  <a href="javascript:void(0)" className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600 justify-between gap-1">
+                  <a className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600 justify-between gap-1">
                     <div className="flex items-center gap-3">
                       <div className="flex-shrink-0 relative">
                         <img className="rounded-full w-11 h-11" src="../assets/images/notification/profile-7.png" alt="Joseph image" />
@@ -213,7 +224,7 @@ const Header = () => {
                   </a>
                 </div>
                 <div className="text-center py-3 px-4">
-                  <a href="javascript:void(0)" className="text-primary-600 dark:text-primary-600 font-semibold hover:underline text-center">See All Message </a>
+                  <a className="text-primary-600 dark:text-primary-600 font-semibold hover:underline text-center">See All Message </a>
                 </div>
               </div>
             </div>
@@ -229,7 +240,7 @@ const Header = () => {
               </div>
               <div className="scroll-sm !border-t-0">
                 <div className="max-h-[400px] overflow-y-auto">
-                  <a href="javascript:void(0)" className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600 justify-between gap-1">
+                  <a className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600 justify-between gap-1">
                     <div className="flex items-center gap-3">
                       <div className="flex-shrink-0 relative w-11 h-11 bg-success-200 dark:bg-success-600/25 text-success-600 flex justify-center items-center rounded-full">
                         <iconify-icon icon="bitcoin-icons:verify-outline" className="text-2xl" />
@@ -243,7 +254,7 @@ const Header = () => {
                       <span className="text-sm text-neutral-500">23 Mins ago</span>
                     </div>
                   </a>
-                  <a href="javascript:void(0)" className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600 justify-between gap-1">
+                  <a className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600 justify-between gap-1">
                     <div className="flex items-center gap-3">
                       <div className="flex-shrink-0 relative">
                         <img className="rounded-full w-11 h-11" src="../assets/images/notification/profile-4.png" alt="Joseph image" />
@@ -257,7 +268,7 @@ const Header = () => {
                       <span className="text-sm text-neutral-500">23 Mins ago</span>
                     </div>
                   </a>
-                  <a href="javascript:void(0)" className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600 justify-between gap-1">
+                  <a className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600 justify-between gap-1">
                     <div className="flex items-center gap-3">
                       <div className="flex-shrink-0 relative w-11 h-11 bg-primary-100 dark:bg-primary-600/25 text-primary-600 flex justify-center items-center rounded-full">
                         AM
@@ -271,7 +282,7 @@ const Header = () => {
                       <span className="text-sm text-neutral-500">23 Mins ago</span>
                     </div>
                   </a>
-                  <a href="javascript:void(0)" className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600 justify-between gap-1">
+                  <a className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600 justify-between gap-1">
                     <div className="flex items-center gap-3">
                       <div className="flex-shrink-0 relative">
                         <img className="rounded-full w-11 h-11" src="../assets/images/notification/profile-6.png" alt="Joseph image" />
@@ -285,7 +296,7 @@ const Header = () => {
                       <span className="text-sm text-neutral-500">23 Mins ago</span>
                     </div>
                   </a>
-                  <a href="javascript:void(0)" className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600 justify-between gap-1">
+                  <a className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600 justify-between gap-1">
                     <div className="flex items-center gap-3">
                       <div className="flex-shrink-0 relative w-11 h-11 bg-primary-100 dark:bg-primary-600/25 text-primary-600 flex justify-center items-center rounded-full">
                         DR
@@ -301,7 +312,7 @@ const Header = () => {
                   </a>
                 </div>
                 <div className="text-center py-3 px-4">
-                  <a href="javascript:void(0)" className="text-primary-600 dark:text-primary-600 font-semibold hover:underline text-center">See All Notification </a>
+                  <a className="text-primary-600 dark:text-primary-600 font-semibold hover:underline text-center">See All Notification </a>
                 </div>
               </div>
             </div>

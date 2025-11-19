@@ -70,7 +70,8 @@ import {
   Theme,
   Currencies,
   Language,
-  PaymentGateway
+  PaymentGateway,
+  New
 } from "../pages"
 
 
@@ -151,6 +152,7 @@ const AppRouter = () => {
           <Route path="/currencies" element={<Currencies/>} />
           <Route path="/language" element={<Language/>} />
           <Route path="/payment-gateway" element={<PaymentGateway/>} />
+          <Route path="/create" element={<New/>} />
         </Route>
       </Routes>
     </Router>

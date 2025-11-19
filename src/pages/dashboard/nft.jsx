@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Nft = () => {
     return (
@@ -8,10 +9,10 @@ const Nft = () => {
                     <h6 className="font-semibold mb-0 dark:text-white">Dashboard</h6>
                     <ul className="flex items-center gap-[6px]">
                         <li className="font-medium">
-                            <a href="index.html" className="flex items-center gap-2 hover:text-primary-600 dark:text-white">
+                            <Link to="/" className="flex items-center gap-2 hover:text-primary-600 dark:text-white">
                                 <iconify-icon icon="solar:home-smile-angle-outline" className="icon text-lg" />
                                 Dashboard
-                            </a>
+                            </Link>
                         </li>
                         <li className="dark:text-white">-</li>
                         <li className="font-medium dark:text-white">NFT &amp; Gaming</li>
@@ -31,8 +32,8 @@ const Nft = () => {
                                             <h4 className="mb-4 text-white">Discover The Largest  NFTs Marketplace</h4>
                                             <p className="text-white text-base">The largest NFT (Non-Fungible Token) marketplace is OpenSea. Established in 2017, OpenSea has grown to become the leading platform for buying, selling, and trading digital assets,</p>
                                             <div className="flex items-center flex-wrap mt-6 gap-4">
-                                                <a href="javascript:void(0)" className="btn rounded-full border br-white text-white px-[32px] py-[11px] hover:bg-white hover:text-neutral-900">Explore</a>
-                                                <a href="javascript:void(0)" className="btn rounded-full btn-primary-600 px-[28px] py-[11px]">Create Now</a>
+                                                <a className="btn rounded-full border br-white text-white px-[32px] py-[11px] hover:bg-white hover:text-neutral-900">Explore</a>
+                                                <a className="btn rounded-full btn-primary-600 px-[28px] py-[11px]">Create Now</a>
                                             </div>
                                         </div>
                                     </div>
@@ -160,8 +161,8 @@ const Nft = () => {
                                                         <span className="text-sm font-semibold text-primary-600">$4,224.96</span>
                                                     </div>
                                                     <div className="flex items-center flex-wrap mt-3 gap-2">
-                                                        <a href="javascript:void(0)" className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
-                                                        <a href="javascript:void(0)" className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
+                                                        <a className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
+                                                        <a className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -183,8 +184,8 @@ const Nft = () => {
                                                         <span className="text-sm font-semibold text-primary-600">$4,224.96</span>
                                                     </div>
                                                     <div className="flex items-center flex-wrap mt-3 gap-2">
-                                                        <a href="javascript:void(0)" className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
-                                                        <a href="javascript:void(0)" className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
+                                                        <a className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
+                                                        <a className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -206,8 +207,8 @@ const Nft = () => {
                                                         <span className="text-sm font-semibold text-primary-600">$4,224.96</span>
                                                     </div>
                                                     <div className="flex items-center flex-wrap mt-3 gap-2">
-                                                        <a href="javascript:void(0)" className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
-                                                        <a href="javascript:void(0)" className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
+                                                        <a className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
+                                                        <a className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -229,8 +230,8 @@ const Nft = () => {
                                                         <span className="text-sm font-semibold text-primary-600">$4,224.96</span>
                                                     </div>
                                                     <div className="flex items-center flex-wrap mt-3 gap-2">
-                                                        <a href="javascript:void(0)" className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
-                                                        <a href="javascript:void(0)" className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
+                                                        <a className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
+                                                        <a className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -256,8 +257,8 @@ const Nft = () => {
                                                         <span className="text-sm font-semibold text-primary-600">$4,224.96</span>
                                                     </div>
                                                     <div className="flex items-center flex-wrap mt-3 gap-2">
-                                                        <a href="javascript:void(0)" className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
-                                                        <a href="javascript:void(0)" className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
+                                                        <a className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
+                                                        <a className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -279,8 +280,8 @@ const Nft = () => {
                                                         <span className="text-sm font-semibold text-primary-600">$4,224.96</span>
                                                     </div>
                                                     <div className="flex items-center flex-wrap mt-3 gap-2">
-                                                        <a href="javascript:void(0)" className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
-                                                        <a href="javascript:void(0)" className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
+                                                        <a className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
+                                                        <a className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -302,8 +303,8 @@ const Nft = () => {
                                                         <span className="text-sm font-semibold text-primary-600">$4,224.96</span>
                                                     </div>
                                                     <div className="flex items-center flex-wrap mt-3 gap-2">
-                                                        <a href="javascript:void(0)" className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
-                                                        <a href="javascript:void(0)" className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
+                                                        <a className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
+                                                        <a className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -325,8 +326,8 @@ const Nft = () => {
                                                         <span className="text-sm font-semibold text-primary-600">$4,224.96</span>
                                                     </div>
                                                     <div className="flex items-center flex-wrap mt-3 gap-2">
-                                                        <a href="javascript:void(0)" className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
-                                                        <a href="javascript:void(0)" className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
+                                                        <a className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
+                                                        <a className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -352,8 +353,8 @@ const Nft = () => {
                                                         <span className="text-sm font-semibold text-primary-600">$4,224.96</span>
                                                     </div>
                                                     <div className="flex items-center flex-wrap mt-3 gap-2">
-                                                        <a href="javascript:void(0)" className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
-                                                        <a href="javascript:void(0)" className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
+                                                        <a className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
+                                                        <a className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -375,8 +376,8 @@ const Nft = () => {
                                                         <span className="text-sm font-semibold text-primary-600">$4,224.96</span>
                                                     </div>
                                                     <div className="flex items-center flex-wrap mt-3 gap-2">
-                                                        <a href="javascript:void(0)" className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
-                                                        <a href="javascript:void(0)" className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
+                                                        <a className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
+                                                        <a className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -398,8 +399,8 @@ const Nft = () => {
                                                         <span className="text-sm font-semibold text-primary-600">$4,224.96</span>
                                                     </div>
                                                     <div className="flex items-center flex-wrap mt-3 gap-2">
-                                                        <a href="javascript:void(0)" className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
-                                                        <a href="javascript:void(0)" className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
+                                                        <a className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
+                                                        <a className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -421,8 +422,8 @@ const Nft = () => {
                                                         <span className="text-sm font-semibold text-primary-600">$4,224.96</span>
                                                     </div>
                                                     <div className="flex items-center flex-wrap mt-3 gap-2">
-                                                        <a href="javascript:void(0)" className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
-                                                        <a href="javascript:void(0)" className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
+                                                        <a className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
+                                                        <a className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -448,8 +449,8 @@ const Nft = () => {
                                                         <span className="text-sm font-semibold text-primary-600">$4,224.96</span>
                                                     </div>
                                                     <div className="flex items-center flex-wrap mt-3 gap-2">
-                                                        <a href="javascript:void(0)" className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
-                                                        <a href="javascript:void(0)" className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
+                                                        <a className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
+                                                        <a className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -471,8 +472,8 @@ const Nft = () => {
                                                         <span className="text-sm font-semibold text-primary-600">$4,224.96</span>
                                                     </div>
                                                     <div className="flex items-center flex-wrap mt-3 gap-2">
-                                                        <a href="javascript:void(0)" className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
-                                                        <a href="javascript:void(0)" className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
+                                                        <a className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
+                                                        <a className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -494,8 +495,8 @@ const Nft = () => {
                                                         <span className="text-sm font-semibold text-primary-600">$4,224.96</span>
                                                     </div>
                                                     <div className="flex items-center flex-wrap mt-3 gap-2">
-                                                        <a href="javascript:void(0)" className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
-                                                        <a href="javascript:void(0)" className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
+                                                        <a className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
+                                                        <a className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -517,8 +518,8 @@ const Nft = () => {
                                                         <span className="text-sm font-semibold text-primary-600">$4,224.96</span>
                                                     </div>
                                                     <div className="flex items-center flex-wrap mt-3 gap-2">
-                                                        <a href="javascript:void(0)" className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
-                                                        <a href="javascript:void(0)" className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
+                                                        <a className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
+                                                        <a className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -544,8 +545,8 @@ const Nft = () => {
                                                         <span className="text-sm font-semibold text-primary-600">$4,224.96</span>
                                                     </div>
                                                     <div className="flex items-center flex-wrap mt-3 gap-2">
-                                                        <a href="javascript:void(0)" className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
-                                                        <a href="javascript:void(0)" className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
+                                                        <a className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
+                                                        <a className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -567,8 +568,8 @@ const Nft = () => {
                                                         <span className="text-sm font-semibold text-primary-600">$4,224.96</span>
                                                     </div>
                                                     <div className="flex items-center flex-wrap mt-3 gap-2">
-                                                        <a href="javascript:void(0)" className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
-                                                        <a href="javascript:void(0)" className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
+                                                        <a className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
+                                                        <a className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -590,8 +591,8 @@ const Nft = () => {
                                                         <span className="text-sm font-semibold text-primary-600">$4,224.96</span>
                                                     </div>
                                                     <div className="flex items-center flex-wrap mt-3 gap-2">
-                                                        <a href="javascript:void(0)" className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
-                                                        <a href="javascript:void(0)" className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
+                                                        <a className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
+                                                        <a className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -613,8 +614,8 @@ const Nft = () => {
                                                         <span className="text-sm font-semibold text-primary-600">$4,224.96</span>
                                                     </div>
                                                     <div className="flex items-center flex-wrap mt-3 gap-2">
-                                                        <a href="javascript:void(0)" className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
-                                                        <a href="javascript:void(0)" className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
+                                                        <a className="btn rounded-full border text-neutral-500 border-neutral-500 px-3 py-1.5 hover:bg-neutral-500 hover:text-white flex-grow-1">History</a>
+                                                        <a className="btn rounded-full btn-primary-600 px-3 py-1.5 flex-grow-1">Buy Now</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -882,7 +883,7 @@ const Nft = () => {
                                 <div className="card border-0 h-full">
                                     <div className="card-header border-bottom flex items-center flex-wrap gap-2 justify-between">
                                         <h6 className="font-bold text-lg mb-0">Statistics</h6>
-                                        <a href="javascript:void(0)" className="text-primary-600 hover:text-primary-700 flex items-center gap-1">
+                                        <a className="text-primary-600 hover:text-primary-700 flex items-center gap-1">
                                             View All
                                             <iconify-icon icon="solar:alt-arrow-right-linear" className="icon" />
                                         </a>
@@ -909,7 +910,7 @@ const Nft = () => {
                                 <div className="card border-0 h-full">
                                     <div className="card-header border-bottom flex items-center flex-wrap gap-2 justify-between">
                                         <h6 className="font-bold text-lg mb-0">Featured Creators</h6>
-                                        <a href="javascript:void(0)" className="text-primary-600 hover:text-primary-700 flex items-center gap-1">
+                                        <a className="text-primary-600 hover:text-primary-700 flex items-center gap-1">
                                             View All
                                             <iconify-icon icon="solar:alt-arrow-right-linear" className="icon" />
                                         </a>
@@ -960,7 +961,7 @@ const Nft = () => {
                                 <div className="card border-0 h-full">
                                     <div className="card-header border-bottom flex items-center flex-wrap gap-2 justify-between">
                                         <h6 className="font-bold text-lg mb-0">Featured Creators</h6>
-                                        <a href="javascript:void(0)" className="text-primary-600 hover:text-primary-700 flex items-center gap-1">
+                                        <a className="text-primary-600 hover:text-primary-700 flex items-center gap-1">
                                             View All
                                             <iconify-icon icon="solar:alt-arrow-right-linear" className="icon" />
                                         </a>

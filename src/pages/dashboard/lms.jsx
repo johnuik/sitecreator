@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Lms = () => {
     return (
@@ -8,10 +9,10 @@ const Lms = () => {
                     <h6 className="font-semibold mb-0 dark:text-white">Dashboard</h6>
                     <ul className="flex items-center gap-[6px]">
                         <li className="font-medium">
-                            <a href="index.html" className="flex items-center gap-2 hover:text-primary-600 dark:text-white">
+                            <Link to="/" className="flex items-center gap-2 hover:text-primary-600 dark:text-white">
                                 <iconify-icon icon="solar:home-smile-angle-outline" className="icon text-lg" />
                                 Dashboard
-                            </a>
+                            </Link>
                         </li>
                         <li className="dark:text-white">-</li>
                         <li className="font-medium dark:text-white">LMS / Learning System</li>
@@ -181,7 +182,7 @@ const Lms = () => {
                             <div className="card-header">
                                 <div className="flex items-center flex-wrap gap-2 justify-between">
                                     <h6 className="font-bold text-lg mb-0">Top Categories</h6>
-                                    <a href="javascript:void(0)" className="text-primary-600 dark:text-primary-600 hover:text-primary-600 flex items-center gap-1">
+                                    <a className="text-primary-600 dark:text-primary-600 hover:text-primary-600 flex items-center gap-1">
                                         View All
                                         <iconify-icon icon="solar:alt-arrow-right-linear" className="icon" />
                                     </a>
@@ -198,7 +199,7 @@ const Lms = () => {
                                             <span className="text-sm text-neutral-600 font-normal">40+ Courses</span>
                                         </div>
                                     </div>
-                                    <a href="javascript:void(0)" className="w-6 h-6 bg-primary-600/10 text-primary-600 dark:text-primary-600 flex justify-center items-center text-lg hover:bg-primary-600/20 rounded">
+                                    <a className="w-6 h-6 bg-primary-600/10 text-primary-600 dark:text-primary-600 flex justify-center items-center text-lg hover:bg-primary-600/20 rounded">
                                         <i className="ri-arrow-right-s-line" />
                                     </a>
                                 </div>
@@ -212,7 +213,7 @@ const Lms = () => {
                                             <span className="text-sm text-neutral-600 font-normal">40+ Courses</span>
                                         </div>
                                     </div>
-                                    <a href="javascript:void(0)" className="w-6 h-6 bg-primary-600/10 text-primary-600 dark:text-primary-600 flex justify-center items-center text-lg hover:bg-primary-600/20 rounded">
+                                    <a className="w-6 h-6 bg-primary-600/10 text-primary-600 dark:text-primary-600 flex justify-center items-center text-lg hover:bg-primary-600/20 rounded">
                                         <i className="ri-arrow-right-s-line" />
                                     </a>
                                 </div>
@@ -226,7 +227,7 @@ const Lms = () => {
                                             <span className="text-sm text-neutral-600 font-normal">40+ Courses</span>
                                         </div>
                                     </div>
-                                    <a href="javascript:void(0)" className="w-6 h-6 bg-primary-600/10 text-primary-600 dark:text-primary-600 flex justify-center items-center text-lg hover:bg-primary-600/20 rounded">
+                                    <a className="w-6 h-6 bg-primary-600/10 text-primary-600 dark:text-primary-600 flex justify-center items-center text-lg hover:bg-primary-600/20 rounded">
                                         <i className="ri-arrow-right-s-line" />
                                     </a>
                                 </div>
@@ -240,7 +241,7 @@ const Lms = () => {
                                             <span className="text-sm text-neutral-600 font-normal">40+ Courses</span>
                                         </div>
                                     </div>
-                                    <a href="javascript:void(0)" className="w-6 h-6 bg-primary-600/10 text-primary-600 dark:text-primary-600 flex justify-center items-center text-lg hover:bg-primary-600/20 rounded">
+                                    <a className="w-6 h-6 bg-primary-600/10 text-primary-600 dark:text-primary-600 flex justify-center items-center text-lg hover:bg-primary-600/20 rounded">
                                         <i className="ri-arrow-right-s-line" />
                                     </a>
                                 </div>
@@ -254,7 +255,7 @@ const Lms = () => {
                                             <span className="text-sm text-neutral-600 font-normal">40+ Courses</span>
                                         </div>
                                     </div>
-                                    <a href="javascript:void(0)" className="w-6 h-6 bg-primary-600/10 text-primary-600 dark:text-primary-600 flex justify-center items-center text-lg hover:bg-primary-600/20 rounded">
+                                    <a className="w-6 h-6 bg-primary-600/10 text-primary-600 dark:text-primary-600 flex justify-center items-center text-lg hover:bg-primary-600/20 rounded">
                                         <i className="ri-arrow-right-s-line" />
                                     </a>
                                 </div>
@@ -268,7 +269,7 @@ const Lms = () => {
                                             <span className="text-sm text-neutral-600 font-normal">40+ Courses</span>
                                         </div>
                                     </div>
-                                    <a href="javascript:void(0)" className="w-6 h-6 bg-primary-600/10 text-primary-600 dark:text-primary-600 flex justify-center items-center text-lg hover:bg-primary-600/20 rounded">
+                                    <a className="w-6 h-6 bg-primary-600/10 text-primary-600 dark:text-primary-600 flex justify-center items-center text-lg hover:bg-primary-600/20 rounded">
                                         <i className="ri-arrow-right-s-line" />
                                     </a>
                                 </div>
@@ -282,7 +283,7 @@ const Lms = () => {
                             <div className="card-header">
                                 <div className="flex items-center flex-wrap gap-2 justify-between">
                                     <h6 className="font-bold text-lg mb-0">Top Instructors</h6>
-                                    <a href="javascript:void(0)" className="text-primary-600 dark:text-primary-600 hover:text-primary-600 flex items-center gap-1">
+                                    <a className="text-primary-600 dark:text-primary-600 hover:text-primary-600 flex items-center gap-1">
                                         View All
                                         <iconify-icon icon="solar:alt-arrow-right-linear" className="icon" />
                                     </a>
@@ -419,7 +420,7 @@ const Lms = () => {
                             <div className="card-header">
                                 <div className="flex items-center flex-wrap gap-2 justify-between">
                                     <h6 className="font-bold text-lg mb-0">Student's Progress</h6>
-                                    <a href="javascript:void(0)" className="text-primary-600 dark:text-primary-600 hover:text-primary-600 flex items-center gap-1">
+                                    <a className="text-primary-600 dark:text-primary-600 hover:text-primary-600 flex items-center gap-1">
                                         View All
                                         <iconify-icon icon="solar:alt-arrow-right-linear" className="icon" />
                                     </a>
@@ -545,7 +546,7 @@ const Lms = () => {
                             <div className="card-header">
                                 <div className="flex items-center flex-wrap gap-2 justify-between">
                                     <h6 className="font-bold text-lg mb-0">Courses</h6>
-                                    <a href="javascript:void(0)" className="text-primary-600 dark:text-primary-600 hover:text-primary-600 flex items-center gap-1">
+                                    <a className="text-primary-600 dark:text-primary-600 hover:text-primary-600 flex items-center gap-1">
                                         View All
                                         <iconify-icon icon="solar:alt-arrow-right-linear" className="icon" />
                                     </a>
@@ -675,7 +676,7 @@ const Lms = () => {
                             <div className="card-header">
                                 <div className="flex items-center flex-wrap gap-2 justify-between">
                                     <h6 className="font-bold text-lg mb-0">Course Activity</h6>
-                                    <a href="javascript:void(0)" className="text-primary-600 dark:text-primary-600 hover:text-primary-600 flex items-center gap-1">
+                                    <a className="text-primary-600 dark:text-primary-600 hover:text-primary-600 flex items-center gap-1">
                                         View All
                                         <iconify-icon icon="solar:alt-arrow-right-linear" className="icon" />
                                     </a>

@@ -436,7 +436,7 @@ const Crm = () => {
         <div className="card-body">
           <div className="flex items-center flex-wrap gap-2 justify-between">
             <h6 className="mb-2 font-bold text-lg">Top Performer</h6>
-            <a href="javascript:void(0)" className="text-primary-600 dark:text-primary-600 hover-text-primary flex items-center gap-1">
+            <a className="text-primary-600 dark:text-primary-600 hover-text-primary flex items-center gap-1">
               View All
               <iconify-icon icon="solar:alt-arrow-right-linear" className="icon" />
             </a>
@@ -521,7 +521,7 @@ const Crm = () => {
               </li>
             </ul>
           </div>
-          <a href="javascript:void(0)" className="text-primary-600 dark:text-primary-600 hover-text-primary flex items-center gap-1">
+          <a className="text-primary-600 dark:text-primary-600 hover-text-primary flex items-center gap-1">
             View All
             <iconify-icon icon="solar:alt-arrow-right-linear" className="icon" />
           </a>
@@ -559,13 +559,13 @@ const Crm = () => {
                         <div id="dropdown1" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg border border-neutral-200 dark:border-neutral-600 shadow-lg w-44 dark:bg-gray-700">
                           <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
                             <li>
-                              <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Actions</a>
+                              <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Actions</a>
                             </li>
                             <li>
-                              <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Another Actions</a>
+                              <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Another Actions</a>
                             </li>
                             <li>
-                              <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something else</a>
+                              <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something else</a>
                             </li>
                           </ul>
                         </div>
@@ -589,13 +589,13 @@ const Crm = () => {
                         <div id="dropdown2" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg border border-neutral-200 dark:border-neutral-600 shadow-lg w-44 dark:bg-gray-700">
                           <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
                             <li>
-                              <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Actions</a>
+                              <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Actions</a>
                             </li>
                             <li>
-                              <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Another Actions</a>
+                              <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Another Actions</a>
                             </li>
                             <li>
-                              <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something else</a>
+                              <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something else</a>
                             </li>
                           </ul>
                         </div>
@@ -619,13 +619,13 @@ const Crm = () => {
                         <div id="dropdown3" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg border border-neutral-200 dark:border-neutral-600 shadow-lg w-44 dark:bg-gray-700">
                           <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
                             <li>
-                              <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Actions</a>
+                              <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Actions</a>
                             </li>
                             <li>
-                              <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Another Actions</a>
+                              <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Another Actions</a>
                             </li>
                             <li>
-                              <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something else</a>
+                              <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something else</a>
                             </li>
                           </ul>
                         </div>
@@ -649,13 +649,13 @@ const Crm = () => {
                         <div id="dropdown4" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg border border-neutral-200 dark:border-neutral-600 shadow-lg w-44 dark:bg-gray-700">
                           <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
                             <li>
-                              <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Actions</a>
+                              <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Actions</a>
                             </li>
                             <li>
-                              <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Another Actions</a>
+                              <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Another Actions</a>
                             </li>
                             <li>
-                              <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something else</a>
+                              <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something else</a>
                             </li>
                           </ul>
                         </div>
@@ -679,13 +679,13 @@ const Crm = () => {
                         <div id="dropdown5" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg border border-neutral-200 dark:border-neutral-600 shadow-lg w-44 dark:bg-gray-700">
                           <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
                             <li>
-                              <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Actions</a>
+                              <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Actions</a>
                             </li>
                             <li>
-                              <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Another Actions</a>
+                              <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Another Actions</a>
                             </li>
                             <li>
-                              <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something else</a>
+                              <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something else</a>
                             </li>
                           </ul>
                         </div>
@@ -726,13 +726,13 @@ const Crm = () => {
                         <div id="dropdown6" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg border border-neutral-200 dark:border-neutral-600 shadow-lg w-44 dark:bg-gray-700">
                           <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
                             <li>
-                              <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Actions</a>
+                              <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Actions</a>
                             </li>
                             <li>
-                              <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Another Actions</a>
+                              <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Another Actions</a>
                             </li>
                             <li>
-                              <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something else</a>
+                              <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something else</a>
                             </li>
                           </ul>
                         </div>
@@ -756,13 +756,13 @@ const Crm = () => {
                         <div id="dropdown7" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg border border-neutral-200 dark:border-neutral-600 shadow-lg w-44 dark:bg-gray-700">
                           <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
                             <li>
-                              <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Actions</a>
+                              <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Actions</a>
                             </li>
                             <li>
-                              <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Another Actions</a>
+                              <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Another Actions</a>
                             </li>
                             <li>
-                              <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something else</a>
+                              <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something else</a>
                             </li>
                           </ul>
                         </div>
@@ -786,13 +786,13 @@ const Crm = () => {
                         <div id="dropdown8" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg border border-neutral-200 dark:border-neutral-600 shadow-lg w-44 dark:bg-gray-700">
                           <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
                             <li>
-                              <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Actions</a>
+                              <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Actions</a>
                             </li>
                             <li>
-                              <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Another Actions</a>
+                              <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Another Actions</a>
                             </li>
                             <li>
-                              <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something else</a>
+                              <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something else</a>
                             </li>
                           </ul>
                         </div>
@@ -816,13 +816,13 @@ const Crm = () => {
                         <div id="dropdown9" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg border border-neutral-200 dark:border-neutral-600 shadow-lg w-44 dark:bg-gray-700">
                           <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
                             <li>
-                              <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Actions</a>
+                              <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Actions</a>
                             </li>
                             <li>
-                              <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Another Actions</a>
+                              <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Another Actions</a>
                             </li>
                             <li>
-                              <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something else</a>
+                              <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something else</a>
                             </li>
                           </ul>
                         </div>
@@ -846,13 +846,13 @@ const Crm = () => {
                         <div id="dropdown10" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg border border-neutral-200 dark:border-neutral-600 shadow-lg w-44 dark:bg-gray-700">
                           <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
                             <li>
-                              <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Actions</a>
+                              <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Actions</a>
                             </li>
                             <li>
-                              <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Another Actions</a>
+                              <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Another Actions</a>
                             </li>
                             <li>
-                              <a href="javascript:void(0)" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something else</a>
+                              <a className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Something else</a>
                             </li>
                           </ul>
                         </div>
@@ -870,7 +870,7 @@ const Crm = () => {
       <div className="card h-full border-0 overflow-hidden">
         <div className="card-header border-b border-neutral-200 dark:border-neutral-600 bg-white dark:bg-neutral-700 py-4 px-6 flex items-center justify-between">
           <h6 className="text-lg font-semibold mb-0">Last Transaction</h6>
-          <a href="javascript:void(0)" className="text-primary-600 dark:text-primary-600 hover-text-primary flex items-center gap-1">
+          <a className="text-primary-600 dark:text-primary-600 hover-text-primary flex items-center gap-1">
             View All
             <iconify-icon icon="solar:alt-arrow-right-linear" className="icon" />
           </a>

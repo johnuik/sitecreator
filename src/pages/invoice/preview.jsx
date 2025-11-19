@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Preview = () => {
     return (
@@ -8,10 +9,10 @@ const Preview = () => {
                     <h6 className="font-semibold mb-0 dark:text-white">Invoice List</h6>
                     <ul className="flex items-center gap-[6px]">
                         <li className="font-medium">
-                            <a href="index.html" className="flex items-center gap-2 hover:text-primary-600 dark:text-white">
+                            <Link to="/" className="flex items-center gap-2 hover:text-primary-600 dark:text-white">
                                 <iconify-icon icon="solar:home-smile-angle-outline" className="icon text-lg" />
                                 Dashboard
-                            </a>
+                            </Link>
                         </li>
                         <li className="dark:text-white">-</li>
                         <li className="font-medium dark:text-white">Invoice List</li>
@@ -20,15 +21,15 @@ const Preview = () => {
                 <div className="card border-0">
                     <div className="card-header">
                         <div className="flex flex-wrap items-center justify-end gap-2">
-                            <a href="javascript:void(0)" className="btn btn-sm bg-primary-600 hover:bg-primary-700 text-white rounded-lg inline-flex items-center gap-1">
+                            <a className="btn btn-sm bg-primary-600 hover:bg-primary-700 text-white rounded-lg inline-flex items-center gap-1">
                                 <iconify-icon icon="pepicons-pencil:paper-plane" className="text-xl" />
                                 Send Invoice
                             </a>
-                            <a href="javascript:void(0)" className="btn btn-sm bg-warning-600 hover:bg-warning-700 text-white rounded-lg inline-flex items-center gap-1">
+                            <a className="btn btn-sm bg-warning-600 hover:bg-warning-700 text-white rounded-lg inline-flex items-center gap-1">
                                 <iconify-icon icon="solar:download-linear" className="text-xl" />
                                 Download
                             </a>
-                            <a href="javascript:void(0)" className="btn btn-sm bg-success-600 hover:bg-success-700 text-white rounded-lg inline-flex items-center gap-1">
+                            <a className="btn btn-sm bg-success-600 hover:bg-success-700 text-white rounded-lg inline-flex items-center gap-1">
                                 <iconify-icon icon="uil:edit" className="text-xl" />
                                 Edit
                             </a>

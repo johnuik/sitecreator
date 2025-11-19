@@ -195,7 +195,7 @@ const Analytics = () => {
                             <div className="card-body p-6">
                                 <div className="flex items-center flex-wrap gap-2 justify-between">
                                     <h6 className="mb-2 font-bold text-lg">Transactions</h6>
-                                    <a href="javascript:void(0)" className="text-primary-600 dark:text-primary-600 hover-text-primary flex items-center gap-1">
+                                    <a className="text-primary-600 dark:text-primary-600 hover-text-primary flex items-center gap-1">
                                         View All
                                         <iconify-icon icon="solar:alt-arrow-right-linear" className="icon" />
                                     </a>
@@ -538,7 +538,7 @@ const Analytics = () => {
                         <div className="card h-full border-0">
                             <div className="card-header border-bottom bg-base py-4 px-6 flex items-center justify-between">
                                 <h6 className="text-lg font-semibold mb-0">Recent Activity</h6>
-                                <a href="javascript:void(0)" className="text-primary-600 dark:text-primary-600 hover-text-primary flex items-center gap-1">
+                                <a className="text-primary-600 dark:text-primary-600 hover-text-primary flex items-center gap-1">
                                     View All
                                     <iconify-icon icon="solar:alt-arrow-right-linear" className="icon" />
                                 </a>

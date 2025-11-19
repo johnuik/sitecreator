@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const UsersGrid = () => {
     return (
@@ -8,10 +9,10 @@ const UsersGrid = () => {
                     <h6 className="font-semibold mb-0 dark:text-white">Users Grid</h6>
                     <ul className="flex items-center gap-[6px]">
                         <li className="font-medium">
-                            <a href="index.html" className="flex items-center gap-2 hover:text-primary-600 dark:text-white">
+                            <Link to="/" className="flex items-center gap-2 hover:text-primary-600 dark:text-white">
                                 <iconify-icon icon="solar:home-smile-angle-outline" className="icon text-lg" />
                                 Dashboard
-                            </a>
+                            </Link>
                         </li>
                         <li className="dark:text-white">-</li>
                         <li className="font-medium dark:text-white">Users Grid</li>
@@ -38,10 +39,10 @@ const UsersGrid = () => {
                                 <iconify-icon icon="ion:search-outline" className="icon" />
                             </form>
                         </div>
-                        <a href="view-profile.html" className="btn btn-primary text-sm btn-sm px-3 py-3 rounded-lg flex items-center gap-2">
+                        <Link to="/view-profile" className="btn btn-primary text-sm btn-sm px-3 py-3 rounded-lg flex items-center gap-2">
                             <iconify-icon icon="ic:baseline-plus" className="icon text-xl line-height-1" />
                             Add New User
-                        </a>
+                        </Link>
                     </div>
                     <div className="card-body p-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 3xl:grid-cols-4 gap-6">
@@ -81,10 +82,10 @@ const UsersGrid = () => {
                                                 <span className="text-secondary-light text-sm mb-0">Designation</span>
                                             </div>
                                         </div>
-                                        <a href="view-profile.html" className="bg-primary-50 hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:bg-primary-600/25 text-primary-600 dark:text-primary-400 bg-hover-primary-600 hover-text-white p-2.5 text-sm btn-sm px-3 py-3 rounded-lg flex items-center justify-center mt-4 font-medium gap-2 w-full">
+                                        <Link to="/view-profile" className="bg-primary-50 hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:bg-primary-600/25 text-primary-600 dark:text-primary-400 bg-hover-primary-600 hover-text-white p-2.5 text-sm btn-sm px-3 py-3 rounded-lg flex items-center justify-center mt-4 font-medium gap-2 w-full">
                                             View Profile
                                             <iconify-icon icon="solar:alt-arrow-right-linear" className="icon text-xl line-height-1" />
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -124,10 +125,10 @@ const UsersGrid = () => {
                                                 <span className="text-secondary-light text-sm mb-0">Designation</span>
                                             </div>
                                         </div>
-                                        <a href="view-profile.html" className="bg-primary-50 hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:bg-primary-600/25 text-primary-600 dark:text-primary-400 bg-hover-primary-600 hover-text-white p-2.5 text-sm btn-sm px-3 py-3 rounded-lg flex items-center justify-center mt-4 font-medium gap-2 w-full">
+                                        <Link to="/view-profile" className="bg-primary-50 hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:bg-primary-600/25 text-primary-600 dark:text-primary-400 bg-hover-primary-600 hover-text-white p-2.5 text-sm btn-sm px-3 py-3 rounded-lg flex items-center justify-center mt-4 font-medium gap-2 w-full">
                                             View Profile
                                             <iconify-icon icon="solar:alt-arrow-right-linear" className="icon text-xl line-height-1" />
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -167,10 +168,10 @@ const UsersGrid = () => {
                                                 <span className="text-secondary-light text-sm mb-0">Designation</span>
                                             </div>
                                         </div>
-                                        <a href="view-profile.html" className="bg-primary-50 hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:bg-primary-600/25 text-primary-600 dark:text-primary-400 bg-hover-primary-600 hover-text-white p-2.5 text-sm btn-sm px-3 py-3 rounded-lg flex items-center justify-center mt-4 font-medium gap-2 w-full">
+                                        <Link to="/view-profile" className="bg-primary-50 hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:bg-primary-600/25 text-primary-600 dark:text-primary-400 bg-hover-primary-600 hover-text-white p-2.5 text-sm btn-sm px-3 py-3 rounded-lg flex items-center justify-center mt-4 font-medium gap-2 w-full">
                                             View Profile
                                             <iconify-icon icon="solar:alt-arrow-right-linear" className="icon text-xl line-height-1" />
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -210,10 +211,10 @@ const UsersGrid = () => {
                                                 <span className="text-secondary-light text-sm mb-0">Designation</span>
                                             </div>
                                         </div>
-                                        <a href="view-profile.html" className="bg-primary-50 hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:bg-primary-600/25 text-primary-600 dark:text-primary-400 bg-hover-primary-600 hover-text-white p-2.5 text-sm btn-sm px-3 py-3 rounded-lg flex items-center justify-center mt-4 font-medium gap-2 w-full">
+                                        <Link to="/view-profile" className="bg-primary-50 hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:bg-primary-600/25 text-primary-600 dark:text-primary-400 bg-hover-primary-600 hover-text-white p-2.5 text-sm btn-sm px-3 py-3 rounded-lg flex items-center justify-center mt-4 font-medium gap-2 w-full">
                                             View Profile
                                             <iconify-icon icon="solar:alt-arrow-right-linear" className="icon text-xl line-height-1" />
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -253,10 +254,10 @@ const UsersGrid = () => {
                                                 <span className="text-secondary-light text-sm mb-0">Designation</span>
                                             </div>
                                         </div>
-                                        <a href="view-profile.html" className="bg-primary-50 hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:bg-primary-600/25 text-primary-600 dark:text-primary-400 bg-hover-primary-600 hover-text-white p-2.5 text-sm btn-sm px-3 py-3 rounded-lg flex items-center justify-center mt-4 font-medium gap-2 w-full">
+                                        <Link to="/view-profile" className="bg-primary-50 hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:bg-primary-600/25 text-primary-600 dark:text-primary-400 bg-hover-primary-600 hover-text-white p-2.5 text-sm btn-sm px-3 py-3 rounded-lg flex items-center justify-center mt-4 font-medium gap-2 w-full">
                                             View Profile
                                             <iconify-icon icon="solar:alt-arrow-right-linear" className="icon text-xl line-height-1" />
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -296,10 +297,10 @@ const UsersGrid = () => {
                                                 <span className="text-secondary-light text-sm mb-0">Designation</span>
                                             </div>
                                         </div>
-                                        <a href="view-profile.html" className="bg-primary-50 hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:bg-primary-600/25 text-primary-600 dark:text-primary-400 bg-hover-primary-600 hover-text-white p-2.5 text-sm btn-sm px-3 py-3 rounded-lg flex items-center justify-center mt-4 font-medium gap-2 w-full">
+                                        <Link to="/view-profile" className="bg-primary-50 hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:bg-primary-600/25 text-primary-600 dark:text-primary-400 bg-hover-primary-600 hover-text-white p-2.5 text-sm btn-sm px-3 py-3 rounded-lg flex items-center justify-center mt-4 font-medium gap-2 w-full">
                                             View Profile
                                             <iconify-icon icon="solar:alt-arrow-right-linear" className="icon text-xl line-height-1" />
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -339,10 +340,10 @@ const UsersGrid = () => {
                                                 <span className="text-secondary-light text-sm mb-0">Designation</span>
                                             </div>
                                         </div>
-                                        <a href="view-profile.html" className="bg-primary-50 hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:bg-primary-600/25 text-primary-600 dark:text-primary-400 bg-hover-primary-600 hover-text-white p-2.5 text-sm btn-sm px-3 py-3 rounded-lg flex items-center justify-center mt-4 font-medium gap-2 w-full">
+                                        <Link to="/view-profile" className="bg-primary-50 hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:bg-primary-600/25 text-primary-600 dark:text-primary-400 bg-hover-primary-600 hover-text-white p-2.5 text-sm btn-sm px-3 py-3 rounded-lg flex items-center justify-center mt-4 font-medium gap-2 w-full">
                                             View Profile
                                             <iconify-icon icon="solar:alt-arrow-right-linear" className="icon text-xl line-height-1" />
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -382,10 +383,10 @@ const UsersGrid = () => {
                                                 <span className="text-secondary-light text-sm mb-0">Designation</span>
                                             </div>
                                         </div>
-                                        <a href="view-profile.html" className="bg-primary-50 hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:bg-primary-600/25 text-primary-600 dark:text-primary-400 bg-hover-primary-600 hover-text-white p-2.5 text-sm btn-sm px-3 py-3 rounded-lg flex items-center justify-center mt-4 font-medium gap-2 w-full">
+                                        <Link to="/view-profile" className="bg-primary-50 hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:bg-primary-600/25 text-primary-600 dark:text-primary-400 bg-hover-primary-600 hover-text-white p-2.5 text-sm btn-sm px-3 py-3 rounded-lg flex items-center justify-center mt-4 font-medium gap-2 w-full">
                                             View Profile
                                             <iconify-icon icon="solar:alt-arrow-right-linear" className="icon text-xl line-height-1" />
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -425,10 +426,10 @@ const UsersGrid = () => {
                                                 <span className="text-secondary-light text-sm mb-0">Designation</span>
                                             </div>
                                         </div>
-                                        <a href="view-profile.html" className="bg-primary-50 hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:bg-primary-600/25 text-primary-600 dark:text-primary-400 bg-hover-primary-600 hover-text-white p-2.5 text-sm btn-sm px-3 py-3 rounded-lg flex items-center justify-center mt-4 font-medium gap-2 w-full">
+                                        <Link to="/view-profile" className="bg-primary-50 hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:bg-primary-600/25 text-primary-600 dark:text-primary-400 bg-hover-primary-600 hover-text-white p-2.5 text-sm btn-sm px-3 py-3 rounded-lg flex items-center justify-center mt-4 font-medium gap-2 w-full">
                                             View Profile
                                             <iconify-icon icon="solar:alt-arrow-right-linear" className="icon text-xl line-height-1" />
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -468,10 +469,10 @@ const UsersGrid = () => {
                                                 <span className="text-secondary-light text-sm mb-0">Designation</span>
                                             </div>
                                         </div>
-                                        <a href="view-profile.html" className="bg-primary-50 hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:bg-primary-600/25 text-primary-600 dark:text-primary-400 bg-hover-primary-600 hover-text-white p-2.5 text-sm btn-sm px-3 py-3 rounded-lg flex items-center justify-center mt-4 font-medium gap-2 w-full">
+                                        <Link to="/view-profile" className="bg-primary-50 hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:bg-primary-600/25 text-primary-600 dark:text-primary-400 bg-hover-primary-600 hover-text-white p-2.5 text-sm btn-sm px-3 py-3 rounded-lg flex items-center justify-center mt-4 font-medium gap-2 w-full">
                                             View Profile
                                             <iconify-icon icon="solar:alt-arrow-right-linear" className="icon text-xl line-height-1" />
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -511,10 +512,10 @@ const UsersGrid = () => {
                                                 <span className="text-secondary-light text-sm mb-0">Designation</span>
                                             </div>
                                         </div>
-                                        <a href="view-profile.html" className="bg-primary-50 hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:bg-primary-600/25 text-primary-600 dark:text-primary-400 bg-hover-primary-600 hover-text-white p-2.5 text-sm btn-sm px-3 py-3 rounded-lg flex items-center justify-center mt-4 font-medium gap-2 w-full">
+                                        <Link to="/view-profile" className="bg-primary-50 hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:bg-primary-600/25 text-primary-600 dark:text-primary-400 bg-hover-primary-600 hover-text-white p-2.5 text-sm btn-sm px-3 py-3 rounded-lg flex items-center justify-center mt-4 font-medium gap-2 w-full">
                                             View Profile
                                             <iconify-icon icon="solar:alt-arrow-right-linear" className="icon text-xl line-height-1" />
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -554,10 +555,10 @@ const UsersGrid = () => {
                                                 <span className="text-secondary-light text-sm mb-0">Designation</span>
                                             </div>
                                         </div>
-                                        <a href="view-profile.html" className="bg-primary-50 hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:bg-primary-600/25 text-primary-600 dark:text-primary-400 bg-hover-primary-600 hover-text-white p-2.5 text-sm btn-sm px-3 py-3 rounded-lg flex items-center justify-center mt-4 font-medium gap-2 w-full">
+                                        <Link to="/view-profile" className="bg-primary-50 hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:bg-primary-600/25 text-primary-600 dark:text-primary-400 bg-hover-primary-600 hover-text-white p-2.5 text-sm btn-sm px-3 py-3 rounded-lg flex items-center justify-center mt-4 font-medium gap-2 w-full">
                                             View Profile
                                             <iconify-icon icon="solar:alt-arrow-right-linear" className="icon text-xl line-height-1" />
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>

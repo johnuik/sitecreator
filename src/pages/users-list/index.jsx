@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const UsersList = () => {
     return (
@@ -8,10 +9,10 @@ const UsersList = () => {
                     <h6 className="font-semibold mb-0 dark:text-white">Users List</h6>
                     <ul className="flex items-center gap-[6px]">
                         <li className="font-medium">
-                            <a href="index.html" className="flex items-center gap-2 hover:text-primary-600 dark:text-white">
+                            <Link to="/" className="flex items-center gap-2 hover:text-primary-600 dark:text-white">
                                 <iconify-icon icon="solar:home-smile-angle-outline" className="icon text-lg" />
                                 Dashboard
-                            </a>
+                            </Link>
                         </li>
                         <li className="dark:text-white">-</li>
                         <li className="font-medium dark:text-white">Users List</li>
@@ -45,10 +46,10 @@ const UsersList = () => {
                                         <option>Inactive</option>
                                     </select>
                                 </div>
-                                <a href="add-user.html" className="btn btn-primary text-sm btn-sm px-3 py-3 rounded-lg flex items-center gap-2">
+                                <Link to="/add-user" className="btn btn-primary text-sm btn-sm px-3 py-3 rounded-lg flex items-center gap-2">
                                     <iconify-icon icon="ic:baseline-plus" className="icon text-xl line-height-1" />
                                     Add New User
-                                </a>
+                                </Link>
                             </div>
                             <div className="card-body p-6">
                                 <div className="table-responsive scroll-sm">

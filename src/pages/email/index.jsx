@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Email = () => {
     return (
@@ -8,10 +9,10 @@ const Email = () => {
                     <h6 className="font-semibold mb-0 dark:text-white">Email</h6>
                     <ul className="flex items-center gap-[6px]">
                         <li className="font-medium">
-                            <a href="index.html" className="flex items-center gap-2 hover:text-primary-600 dark:text-white">
+                            <Link to="/" className="flex items-center gap-2 hover:text-primary-600 dark:text-white">
                                 <iconify-icon icon="solar:home-smile-angle-outline" className="icon text-lg" />
                                 Dashboard
-                            </a>
+                            </Link>
                         </li>
                         <li className="dark:text-white">-</li>
                         <li className="font-medium dark:text-white">Components / Email</li>
@@ -28,7 +29,7 @@ const Email = () => {
                                 <div className="mt-4">
                                     <ul>
                                         <li className="item-active mb-1.5">
-                                            <a href="email.html" className="hover:bg-primary-50 dark:hover:bg-primary-800/25 group hover:text-neutral-900 px-2.5 py-2.5 w-full rounded-lg text-neutral-600 flex items-center">
+                                            <Link to="/email" className="hover:bg-primary-50 dark:hover:bg-primary-800/25 group hover:text-neutral-900 px-2.5 py-2.5 w-full rounded-lg text-neutral-600 flex items-center">
                                                 <span className="flex items-center gap-2.5 justify-between w-full">
                                                     <span className="flex items-center gap-2.5">
                                                         <span className="icon text-2xl line-height-1 flex group-hover:text-primary-600"><iconify-icon icon="uil:envelope" className="icon line-height-1" /></span>
@@ -36,10 +37,10 @@ const Email = () => {
                                                     </span>
                                                     <span className="font-medium">800</span>
                                                 </span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="mb-1.5">
-                                            <a href="starred.html" className="hover:bg-primary-50 dark:hover:bg-primary-800/25 group hover:text-neutral-900 px-2.5 py-2.5 w-full rounded-lg text-neutral-600 flex items-center">
+                                            <Link to="/starred" className="hover:bg-primary-50 dark:hover:bg-primary-800/25 group hover:text-neutral-900 px-2.5 py-2.5 w-full rounded-lg text-neutral-600 flex items-center">
                                                 <span className="flex items-center gap-2.5 justify-between w-full">
                                                     <span className="flex items-center gap-2.5">
                                                         <span className="icon text-2xl line-height-1 flex group-hover:text-primary-600"><iconify-icon icon="ph:star-bold" className="icon line-height-1" /></span>
@@ -47,10 +48,10 @@ const Email = () => {
                                                     </span>
                                                     <span className="font-medium">250</span>
                                                 </span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="mb-1.5">
-                                            <a href="email.html" className="hover:bg-primary-50 dark:hover:bg-primary-800/25 group hover:text-neutral-900 px-2.5 py-2.5 w-full rounded-lg text-neutral-600 flex items-center">
+                                            <Link href="/email" className="hover:bg-primary-50 dark:hover:bg-primary-800/25 group hover:text-neutral-900 px-2.5 py-2.5 w-full rounded-lg text-neutral-600 flex items-center">
                                                 <span className="flex items-center gap-2.5 justify-between w-full">
                                                     <span className="flex items-center gap-2.5">
                                                         <span className="icon text-2xl line-height-1 flex group-hover:text-primary-600"><iconify-icon icon="ion:paper-plane-outline" className="icon line-height-1" /></span>
@@ -58,10 +59,10 @@ const Email = () => {
                                                     </span>
                                                     <span className="font-medium">80</span>
                                                 </span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="mb-1.5">
-                                            <a href="email.html" className="hover:bg-primary-50 dark:hover:bg-primary-800/25 group hover:text-neutral-900 px-2.5 py-2.5 w-full rounded-lg text-neutral-600 flex items-center">
+                                            <Link to="/email" className="hover:bg-primary-50 dark:hover:bg-primary-800/25 group hover:text-neutral-900 px-2.5 py-2.5 w-full rounded-lg text-neutral-600 flex items-center">
                                                 <span className="flex items-center gap-2.5 justify-between w-full">
                                                     <span className="flex items-center gap-2.5">
                                                         <span className="icon text-2xl line-height-1 flex group-hover:text-primary-600"><iconify-icon icon="lucide:pencil" className="icon line-height-1" /></span>
@@ -69,10 +70,10 @@ const Email = () => {
                                                     </span>
                                                     <span className="font-medium">50</span>
                                                 </span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="mb-1.5">
-                                            <a href="email.html" className="hover:bg-primary-50 dark:hover:bg-primary-800/25 group hover:text-neutral-900 px-2.5 py-2.5 w-full rounded-lg text-neutral-600 flex items-center">
+                                            <Link to="/email" className="hover:bg-primary-50 dark:hover:bg-primary-800/25 group hover:text-neutral-900 px-2.5 py-2.5 w-full rounded-lg text-neutral-600 flex items-center">
                                                 <span className="flex items-center gap-2.5 justify-between w-full">
                                                     <span className="flex items-center gap-2.5">
                                                         <span className="icon text-2xl line-height-1 flex group-hover:text-primary-600"><iconify-icon icon="ph:warning-bold" className="icon line-height-1" /></span>
@@ -80,10 +81,10 @@ const Email = () => {
                                                     </span>
                                                     <span className="font-medium">30</span>
                                                 </span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li>
-                                            <a href="email.html" className="hover:bg-primary-50 dark:hover:bg-primary-800/25 group hover:text-neutral-900 px-2.5 py-2.5 w-full rounded-lg text-neutral-600 flex items-center">
+                                            <Link to="/email" className="hover:bg-primary-50 dark:hover:bg-primary-800/25 group hover:text-neutral-900 px-2.5 py-2.5 w-full rounded-lg text-neutral-600 flex items-center">
                                                 <span className="flex items-center gap-2.5 justify-between w-full">
                                                     <span className="flex items-center gap-2.5">
                                                         <span className="icon text-2xl line-height-1 flex group-hover:text-primary-600"><iconify-icon icon="material-symbols:delete-outline" className="icon line-height-1" /></span>
@@ -91,7 +92,7 @@ const Email = () => {
                                                     </span>
                                                     <span className="font-medium">20</span>
                                                 </span>
-                                            </a>
+                                            </Link>
                                         </li>
                                     </ul>
                                     <div className="mt-6">
@@ -231,8 +232,8 @@ const Email = () => {
                                         <button type="button" className="starred-button icon text-xl text-secondary-light line-height-1 flex">
                                             <i className="ri-star-line" />
                                         </button>
-                                        <a href="veiw-details.html" className="text-neutral-600 dark:text-neutral-200 font-medium text-base text-line-1 w-[190px]">Jerome Bell</a>
-                                        <a href="veiw-details.html" className="text-neutral-600 dark:text-neutral-200 font-medium mb-0 line-clamp-1 max-w-[740px]">Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus. Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus</a>
+                                        <Link to="/veiw-details" className="text-neutral-600 dark:text-neutral-200 font-medium text-base text-line-1 w-[190px]">Jerome Bell</Link>
+                                        <Link to="/veiw-details" className="text-neutral-600 dark:text-neutral-200 font-medium mb-0 line-clamp-1 max-w-[740px]">Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus. Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus</Link>
                                         <span className="text-neutral-600 dark:text-neutral-200 font-medium min-w-max-content ms-auto">6:07 AM</span>
                                     </li>
                                     <li className="email-item px-6 py-4 flex gap-4 items-center border-b last:border-0 border-neutral-200 dark:border-neutral-600 cursor-pointer hover:bg-neutral-200 dark:hover:bg-neutral-600 min-w-max">
@@ -242,8 +243,8 @@ const Email = () => {
                                         <button type="button" className="starred-button icon text-xl text-secondary-light line-height-1 flex">
                                             <i className="ri-star-line" />
                                         </button>
-                                        <a href="veiw-details.html" className="text-neutral-600 dark:text-neutral-200 font-medium text-base text-line-1 w-[190px]">Kristin Watson</a>
-                                        <a href="veiw-details.html" className="text-neutral-600 dark:text-neutral-200 font-medium mb-0 line-clamp-1 max-w-[740px]">Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus. Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus</a>
+                                        <Link to="/veiw-details" className="text-neutral-600 dark:text-neutral-200 font-medium text-base text-line-1 w-[190px]">Kristin Watson</Link>
+                                        <Link to="/veiw-details" className="text-neutral-600 dark:text-neutral-200 font-medium mb-0 line-clamp-1 max-w-[740px]">Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus. Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus</Link>
                                         <span className="text-neutral-600 dark:text-neutral-200 font-medium min-w-max-content ms-auto">6:07 AM</span>
                                     </li>
                                     <li className="email-item px-6 py-4 flex gap-4 items-center border-b last:border-0 border-neutral-200 dark:border-neutral-600 cursor-pointer hover:bg-neutral-200 dark:hover:bg-neutral-600 min-w-max">
@@ -253,8 +254,8 @@ const Email = () => {
                                         <button type="button" className="starred-button icon text-xl text-secondary-light line-height-1 flex">
                                             <i className="ri-star-line" />
                                         </button>
-                                        <a href="veiw-details.html" className="text-neutral-600 dark:text-neutral-200 font-medium text-base text-line-1 w-[190px]">Cody Fisher</a>
-                                        <a href="veiw-details.html" className="text-neutral-600 dark:text-neutral-200 font-medium mb-0 line-clamp-1 max-w-[740px]">Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus. Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus</a>
+                                        <Link to="/veiw-details" className="text-neutral-600 dark:text-neutral-200 font-medium text-base text-line-1 w-[190px]">Cody Fisher</Link>
+                                        <Link to="/veiw-details" className="text-neutral-600 dark:text-neutral-200 font-medium mb-0 line-clamp-1 max-w-[740px]">Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus. Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus</Link>
                                         <span className="text-neutral-600 dark:text-neutral-200 font-medium min-w-max-content ms-auto">6:07 AM</span>
                                     </li>
                                     <li className="email-item px-6 py-4 flex gap-4 items-center border-b last:border-0 border-neutral-200 dark:border-neutral-600 cursor-pointer hover:bg-neutral-200 dark:hover:bg-neutral-600 min-w-max">
@@ -264,8 +265,8 @@ const Email = () => {
                                         <button type="button" className="starred-button icon text-xl text-secondary-light line-height-1 flex">
                                             <i className="ri-star-line" />
                                         </button>
-                                        <a href="veiw-details.html" className="text-neutral-600 dark:text-neutral-200 font-medium text-base text-line-1 w-[190px]">Dianne Russell</a>
-                                        <a href="veiw-details.html" className="text-neutral-600 dark:text-neutral-200 font-medium mb-0 line-clamp-1 max-w-[740px]">Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus. Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus</a>
+                                        <Link to="/veiw-details" className="text-neutral-600 dark:text-neutral-200 font-medium text-base text-line-1 w-[190px]">Dianne Russell</Link>
+                                        <Link to="/veiw-details" className="text-neutral-600 dark:text-neutral-200 font-medium mb-0 line-clamp-1 max-w-[740px]">Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus. Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus</Link>
                                         <span className="text-neutral-600 dark:text-neutral-200 font-medium min-w-max-content ms-auto">6:07 AM</span>
                                     </li>
                                     <li className="email-item px-6 py-4 flex gap-4 items-center border-b last:border-0 border-neutral-200 dark:border-neutral-600 cursor-pointer hover:bg-neutral-200 dark:hover:bg-neutral-600 min-w-max">
@@ -275,8 +276,8 @@ const Email = () => {
                                         <button type="button" className="starred-button icon text-xl text-secondary-light line-height-1 flex">
                                             <i className="ri-star-line" />
                                         </button>
-                                        <a href="veiw-details.html" className="text-neutral-600 dark:text-neutral-200 font-medium text-base text-line-1 w-[190px]">Floyd Miles</a>
-                                        <a href="veiw-details.html" className="text-neutral-600 dark:text-neutral-200 font-medium mb-0 line-clamp-1 max-w-[740px]">Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus. Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus</a>
+                                        <Link to="/veiw-details" className="text-neutral-600 dark:text-neutral-200 font-medium text-base text-line-1 w-[190px]">Floyd Miles</Link>
+                                        <Link to="/veiw-details" className="text-neutral-600 dark:text-neutral-200 font-medium mb-0 line-clamp-1 max-w-[740px]">Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus. Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus</Link>
                                         <span className="text-neutral-600 dark:text-neutral-200 font-medium min-w-max-content ms-auto">6:07 AM</span>
                                     </li>
                                     <li className="email-item px-6 py-4 flex gap-4 items-center border-b last:border-0 border-neutral-200 dark:border-neutral-600 cursor-pointer hover:bg-neutral-200 dark:hover:bg-neutral-600 min-w-max">
@@ -286,8 +287,8 @@ const Email = () => {
                                         <button type="button" className="starred-button icon text-xl text-secondary-light line-height-1 flex">
                                             <i className="ri-star-line" />
                                         </button>
-                                        <a href="veiw-details.html" className="text-neutral-600 dark:text-neutral-200 font-medium text-base text-line-1 w-[190px]">Devon Lane</a>
-                                        <a href="veiw-details.html" className="text-neutral-600 dark:text-neutral-200 font-medium mb-0 line-clamp-1 max-w-[740px]">Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus. Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus</a>
+                                        <Link to="/veiw-details" className="text-neutral-600 dark:text-neutral-200 font-medium text-base text-line-1 w-[190px]">Devon Lane</Link>
+                                        <Link to="/veiw-details" className="text-neutral-600 dark:text-neutral-200 font-medium mb-0 line-clamp-1 max-w-[740px]">Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus. Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus</Link>
                                         <span className="text-neutral-600 dark:text-neutral-200 font-medium min-w-max-content ms-auto">6:07 AM</span>
                                     </li>
                                     <li className="email-item px-6 py-4 flex gap-4 items-center border-b last:border-0 border-neutral-200 dark:border-neutral-600 cursor-pointer hover:bg-neutral-200 dark:hover:bg-neutral-600 min-w-max">
@@ -297,8 +298,8 @@ const Email = () => {
                                         <button type="button" className="starred-button icon text-xl text-secondary-light line-height-1 flex">
                                             <i className="ri-star-line" />
                                         </button>
-                                        <a href="veiw-details.html" className="text-neutral-600 dark:text-neutral-200 font-medium text-base text-line-1 w-[190px]">Dianne Russell</a>
-                                        <a href="veiw-details.html" className="text-neutral-600 dark:text-neutral-200 font-medium mb-0 line-clamp-1 max-w-[740px]">Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus. Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus</a>
+                                        <Link to="/veiw-details" className="text-neutral-600 dark:text-neutral-200 font-medium text-base text-line-1 w-[190px]">Dianne Russell</Link>
+                                        <Link to="/veiw-details" className="text-neutral-600 dark:text-neutral-200 font-medium mb-0 line-clamp-1 max-w-[740px]">Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus. Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus</Link>
                                         <span className="text-neutral-600 dark:text-neutral-200 font-medium min-w-max-content ms-auto">6:07 AM</span>
                                     </li>
                                     <li className="email-item px-6 py-4 flex gap-4 items-center border-b last:border-0 border-neutral-200 dark:border-neutral-600 cursor-pointer hover:bg-neutral-200 dark:hover:bg-neutral-600 min-w-max">
@@ -308,8 +309,8 @@ const Email = () => {
                                         <button type="button" className="starred-button icon text-xl text-secondary-light line-height-1 flex">
                                             <i className="ri-star-line" />
                                         </button>
-                                        <a href="veiw-details.html" className="text-neutral-600 dark:text-neutral-200 font-medium text-base text-line-1 w-[190px]">Annette Black</a>
-                                        <a href="veiw-details.html" className="text-neutral-600 dark:text-neutral-200 font-medium mb-0 line-clamp-1 max-w-[740px]">Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus. Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus</a>
+                                        <Link to="/veiw-details" className="text-neutral-600 dark:text-neutral-200 font-medium text-base text-line-1 w-[190px]">Annette Black</Link>
+                                        <Link to="/veiw-details" className="text-neutral-600 dark:text-neutral-200 font-medium mb-0 line-clamp-1 max-w-[740px]">Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus. Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus</Link>
                                         <span className="text-neutral-600 dark:text-neutral-200 font-medium min-w-max-content ms-auto">6:07 AM</span>
                                     </li>
                                     <li className="email-item px-6 py-4 flex gap-4 items-center border-b last:border-0 border-neutral-200 dark:border-neutral-600 cursor-pointer hover:bg-neutral-200 dark:hover:bg-neutral-600 min-w-max">
@@ -319,8 +320,8 @@ const Email = () => {
                                         <button type="button" className="starred-button icon text-xl text-secondary-light line-height-1 flex">
                                             <i className="ri-star-line" />
                                         </button>
-                                        <a href="veiw-details.html" className="text-neutral-600 dark:text-neutral-200 font-medium text-base text-line-1 w-[190px]">Bessie Cooper</a>
-                                        <a href="veiw-details.html" className="text-neutral-600 dark:text-neutral-200 font-medium mb-0 line-clamp-1 max-w-[740px]">Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus. Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus</a>
+                                        <Link to="/veiw-details" className="text-neutral-600 dark:text-neutral-200 font-medium text-base text-line-1 w-[190px]">Bessie Cooper</Link>
+                                        <Link to="/veiw-details" className="text-neutral-600 dark:text-neutral-200 font-medium mb-0 line-clamp-1 max-w-[740px]">Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus. Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus</Link>
                                         <span className="text-neutral-600 dark:text-neutral-200 font-medium min-w-max-content ms-auto">6:07 AM</span>
                                     </li>
                                     <li className="email-item px-6 py-4 flex gap-4 items-center border-b last:border-0 border-neutral-200 dark:border-neutral-600 cursor-pointer hover:bg-neutral-200 dark:hover:bg-neutral-600 min-w-max">
@@ -330,8 +331,8 @@ const Email = () => {
                                         <button type="button" className="starred-button icon text-xl text-secondary-light line-height-1 flex">
                                             <i className="ri-star-line" />
                                         </button>
-                                        <a href="veiw-details.html" className="text-neutral-600 dark:text-neutral-200 font-medium text-base text-line-1 w-[190px]">Courtney Henry</a>
-                                        <a href="veiw-details.html" className="text-neutral-600 dark:text-neutral-200 font-medium mb-0 line-clamp-1 max-w-[740px]">Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus. Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus</a>
+                                        <Link to="/veiw-details" className="text-neutral-600 dark:text-neutral-200 font-medium text-base text-line-1 w-[190px]">Courtney Henry</Link>
+                                        <Link to="/veiw-details" className="text-neutral-600 dark:text-neutral-200 font-medium mb-0 line-clamp-1 max-w-[740px]">Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus. Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus</Link>
                                         <span className="text-neutral-600 dark:text-neutral-200 font-medium min-w-max-content ms-auto">6:07 AM</span>
                                     </li>
                                     <li className="email-item px-6 py-4 flex gap-4 items-center border-b last:border-0 border-neutral-200 dark:border-neutral-600 cursor-pointer hover:bg-neutral-200 dark:hover:bg-neutral-600 min-w-max">
@@ -341,8 +342,8 @@ const Email = () => {
                                         <button type="button" className="starred-button icon text-xl text-secondary-light line-height-1 flex">
                                             <i className="ri-star-line" />
                                         </button>
-                                        <a href="veiw-details.html" className="text-neutral-600 dark:text-neutral-200 font-medium text-base text-line-1 w-[190px]">Wade Warren</a>
-                                        <a href="veiw-details.html" className="text-neutral-600 dark:text-neutral-200 font-medium mb-0 line-clamp-1 max-w-[740px]">Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus. Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus</a>
+                                        <Link to="/veiw-details" className="text-neutral-600 dark:text-neutral-200 font-medium text-base text-line-1 w-[190px]">Wade Warren</Link>
+                                        <Link to="/veiw-details" className="text-neutral-600 dark:text-neutral-200 font-medium mb-0 line-clamp-1 max-w-[740px]">Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus. Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus</Link>
                                         <span className="text-neutral-600 dark:text-neutral-200 font-medium min-w-max-content ms-auto">6:07 AM</span>
                                     </li>
                                 </ul>

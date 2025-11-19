@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const DataTable = () => {
     return (
@@ -8,10 +9,10 @@ const DataTable = () => {
                     <h6 className="font-semibold mb-0 dark:text-white">Basic Table</h6>
                     <ul className="flex items-center gap-[6px]">
                         <li className="font-medium">
-                            <a href="index.html" className="flex items-center gap-2 hover:text-primary-600 dark:text-white">
+                            <Link to="/" className="flex items-center gap-2 hover:text-primary-600 dark:text-white">
                                 <iconify-icon icon="solar:home-smile-angle-outline" className="icon text-lg" />
                                 Dashboard
-                            </a>
+                            </Link>
                         </li>
                         <li className="dark:text-white">-</li>
                         <li className="font-medium dark:text-white">Basic Table</li>
@@ -92,7 +93,7 @@ const DataTable = () => {
                                                     </label>
                                                 </div>
                                             </td>
-                                            <td><a href="javascript:void(0)" className="text-primary-600">#526534</a></td>
+                                            <td><a className="text-primary-600">#526534</a></td>
                                             <td>
                                                 <div className="flex items-center">
                                                     <img src="../assets/images/user-list/user-list1.png" alt className="shrink-0 me-3 rounded-lg" />
@@ -103,13 +104,13 @@ const DataTable = () => {
                                             <td>$200.00</td>
                                             <td> <span className="bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 px-6 py-1.5 rounded-full font-medium text-sm">Paid</span> </td>
                                             <td>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="iconamoon:eye-light" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="lucide:edit" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="mingcute:delete-2-line" />
                                                 </a>
                                             </td>
@@ -123,7 +124,7 @@ const DataTable = () => {
                                                     </label>
                                                 </div>
                                             </td>
-                                            <td><a href="javascript:void(0)" className="text-primary-600">#696589</a></td>
+                                            <td><a className="text-primary-600">#696589</a></td>
                                             <td>
                                                 <div className="flex items-center">
                                                     <img src="../assets/images/user-list/user-list2.png" alt className="shrink-0 me-3 rounded-lg" />
@@ -134,13 +135,13 @@ const DataTable = () => {
                                             <td>$200.00</td>
                                             <td> <span className="bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 px-6 py-1.5 rounded-full font-medium text-sm">Paid</span> </td>
                                             <td>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="iconamoon:eye-light" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="lucide:edit" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="mingcute:delete-2-line" />
                                                 </a>
                                             </td>
@@ -154,7 +155,7 @@ const DataTable = () => {
                                                     </label>
                                                 </div>
                                             </td>
-                                            <td><a href="javascript:void(0)" className="text-primary-600">#256584</a></td>
+                                            <td><a className="text-primary-600">#256584</a></td>
                                             <td>
                                                 <div className="flex items-center">
                                                     <img src="../assets/images/user-list/user-list3.png" alt className="shrink-0 me-3 rounded-lg" />
@@ -165,13 +166,13 @@ const DataTable = () => {
                                             <td>$200.00</td>
                                             <td> <span className="bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 px-6 py-1.5 rounded-full font-medium text-sm">Paid</span> </td>
                                             <td>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="iconamoon:eye-light" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="lucide:edit" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="mingcute:delete-2-line" />
                                                 </a>
                                             </td>
@@ -185,7 +186,7 @@ const DataTable = () => {
                                                     </label>
                                                 </div>
                                             </td>
-                                            <td><a href="javascript:void(0)" className="text-primary-600">#526587</a></td>
+                                            <td><a className="text-primary-600">#526587</a></td>
                                             <td>
                                                 <div className="flex items-center">
                                                     <img src="../assets/images/user-list/user-list4.png" alt className="shrink-0 me-3 rounded-lg" />
@@ -196,13 +197,13 @@ const DataTable = () => {
                                             <td>$150.00</td>
                                             <td> <span className="bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 px-6 py-1.5 rounded-full font-medium text-sm">Paid</span> </td>
                                             <td>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="iconamoon:eye-light" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="lucide:edit" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="mingcute:delete-2-line" />
                                                 </a>
                                             </td>
@@ -216,7 +217,7 @@ const DataTable = () => {
                                                     </label>
                                                 </div>
                                             </td>
-                                            <td><a href="javascript:void(0)" className="text-primary-600">#105986</a></td>
+                                            <td><a className="text-primary-600">#105986</a></td>
                                             <td>
                                                 <div className="flex items-center">
                                                     <img src="../assets/images/user-list/user-list5.png" alt className="shrink-0 me-3 rounded-lg" />
@@ -227,13 +228,13 @@ const DataTable = () => {
                                             <td>$150.00</td>
                                             <td> <span className="bg-warning-100 dark:bg-warning-600/25 text-warning-600 dark:text-warning-400 px-6 py-1.5 rounded-full font-medium text-sm">Pending</span> </td>
                                             <td>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="iconamoon:eye-light" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="lucide:edit" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="mingcute:delete-2-line" />
                                                 </a>
                                             </td>
@@ -247,7 +248,7 @@ const DataTable = () => {
                                                     </label>
                                                 </div>
                                             </td>
-                                            <td><a href="javascript:void(0)" className="text-primary-600">#526589</a></td>
+                                            <td><a className="text-primary-600">#526589</a></td>
                                             <td>
                                                 <div className="flex items-center">
                                                     <img src="../assets/images/user-list/user-list6.png" alt className="shrink-0 me-3 rounded-lg" />
@@ -258,13 +259,13 @@ const DataTable = () => {
                                             <td>$150.00</td>
                                             <td> <span className="bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 px-6 py-1.5 rounded-full font-medium text-sm">Paid</span> </td>
                                             <td>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="iconamoon:eye-light" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="lucide:edit" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="mingcute:delete-2-line" />
                                                 </a>
                                             </td>
@@ -278,7 +279,7 @@ const DataTable = () => {
                                                     </label>
                                                 </div>
                                             </td>
-                                            <td><a href="javascript:void(0)" className="text-primary-600">#526520</a></td>
+                                            <td><a className="text-primary-600">#526520</a></td>
                                             <td>
                                                 <div className="flex items-center">
                                                     <img src="../assets/images/user-list/user-list7.png" alt className="shrink-0 me-3 rounded-lg" />
@@ -289,13 +290,13 @@ const DataTable = () => {
                                             <td>$250.00</td>
                                             <td> <span className="bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 px-6 py-1.5 rounded-full font-medium text-sm">Paid</span> </td>
                                             <td>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="iconamoon:eye-light" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="lucide:edit" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="mingcute:delete-2-line" />
                                                 </a>
                                             </td>
@@ -309,7 +310,7 @@ const DataTable = () => {
                                                     </label>
                                                 </div>
                                             </td>
-                                            <td><a href="javascript:void(0)" className="text-primary-600">#256584</a></td>
+                                            <td><a className="text-primary-600">#256584</a></td>
                                             <td>
                                                 <div className="flex items-center">
                                                     <img src="../assets/images/user-list/user-list8.png" alt className="shrink-0 me-3 rounded-lg" />
@@ -320,13 +321,13 @@ const DataTable = () => {
                                             <td>$250.00</td>
                                             <td> <span className="bg-warning-100 dark:bg-warning-600/25 text-warning-600 dark:text-warning-400 px-6 py-1.5 rounded-full font-medium text-sm">Pending</span> </td>
                                             <td>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="iconamoon:eye-light" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="lucide:edit" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="mingcute:delete-2-line" />
                                                 </a>
                                             </td>
@@ -340,7 +341,7 @@ const DataTable = () => {
                                                     </label>
                                                 </div>
                                             </td>
-                                            <td><a href="javascript:void(0)" className="text-primary-600">#200257</a></td>
+                                            <td><a className="text-primary-600">#200257</a></td>
                                             <td>
                                                 <div className="flex items-center">
                                                     <img src="../assets/images/user-list/user-list9.png" alt className="shrink-0 me-3 rounded-lg" />
@@ -351,13 +352,13 @@ const DataTable = () => {
                                             <td>$250.00</td>
                                             <td> <span className="bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 px-6 py-1.5 rounded-full font-medium text-sm">Paid</span> </td>
                                             <td>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="iconamoon:eye-light" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="lucide:edit" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="mingcute:delete-2-line" />
                                                 </a>
                                             </td>
@@ -371,7 +372,7 @@ const DataTable = () => {
                                                     </label>
                                                 </div>
                                             </td>
-                                            <td><a href="javascript:void(0)" className="text-primary-600">#526525</a></td>
+                                            <td><a className="text-primary-600">#526525</a></td>
                                             <td>
                                                 <div className="flex items-center">
                                                     <img src="../assets/images/user-list/user-list10.png" alt className="shrink-0 me-3 rounded-lg" />
@@ -382,13 +383,13 @@ const DataTable = () => {
                                             <td>$250.00</td>
                                             <td> <span className="bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 px-6 py-1.5 rounded-full font-medium text-sm">Paid</span> </td>
                                             <td>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="iconamoon:eye-light" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="lucide:edit" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="mingcute:delete-2-line" />
                                                 </a>
                                             </td>
@@ -402,7 +403,7 @@ const DataTable = () => {
                                                     </label>
                                                 </div>
                                             </td>
-                                            <td><a href="javascript:void(0)" className="text-primary-600">#526534</a></td>
+                                            <td><a className="text-primary-600">#526534</a></td>
                                             <td>
                                                 <div className="flex items-center">
                                                     <img src="../assets/images/user-list/user-list1.png" alt className="shrink-0 me-3 rounded-lg" />
@@ -413,13 +414,13 @@ const DataTable = () => {
                                             <td>$200.00</td>
                                             <td> <span className="bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 px-6 py-1.5 rounded-full font-medium text-sm">Paid</span> </td>
                                             <td>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="iconamoon:eye-light" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="lucide:edit" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="mingcute:delete-2-line" />
                                                 </a>
                                             </td>
@@ -433,7 +434,7 @@ const DataTable = () => {
                                                     </label>
                                                 </div>
                                             </td>
-                                            <td><a href="javascript:void(0)" className="text-primary-600">#696589</a></td>
+                                            <td><a className="text-primary-600">#696589</a></td>
                                             <td>
                                                 <div className="flex items-center">
                                                     <img src="../assets/images/user-list/user-list2.png" alt className="shrink-0 me-3 rounded-lg" />
@@ -444,13 +445,13 @@ const DataTable = () => {
                                             <td>$200.00</td>
                                             <td> <span className="bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 px-6 py-1.5 rounded-full font-medium text-sm">Paid</span> </td>
                                             <td>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="iconamoon:eye-light" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="lucide:edit" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="mingcute:delete-2-line" />
                                                 </a>
                                             </td>
@@ -464,7 +465,7 @@ const DataTable = () => {
                                                     </label>
                                                 </div>
                                             </td>
-                                            <td><a href="javascript:void(0)" className="text-primary-600">#256584</a></td>
+                                            <td><a className="text-primary-600">#256584</a></td>
                                             <td>
                                                 <div className="flex items-center">
                                                     <img src="../assets/images/user-list/user-list3.png" alt className="shrink-0 me-3 rounded-lg" />
@@ -475,13 +476,13 @@ const DataTable = () => {
                                             <td>$200.00</td>
                                             <td> <span className="bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 px-6 py-1.5 rounded-full font-medium text-sm">Paid</span> </td>
                                             <td>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="iconamoon:eye-light" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="lucide:edit" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="mingcute:delete-2-line" />
                                                 </a>
                                             </td>
@@ -495,7 +496,7 @@ const DataTable = () => {
                                                     </label>
                                                 </div>
                                             </td>
-                                            <td><a href="javascript:void(0)" className="text-primary-600">#526587</a></td>
+                                            <td><a className="text-primary-600">#526587</a></td>
                                             <td>
                                                 <div className="flex items-center">
                                                     <img src="../assets/images/user-list/user-list4.png" alt className="shrink-0 me-3 rounded-lg" />
@@ -506,13 +507,13 @@ const DataTable = () => {
                                             <td>$150.00</td>
                                             <td> <span className="bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 px-6 py-1.5 rounded-full font-medium text-sm">Paid</span> </td>
                                             <td>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="iconamoon:eye-light" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="lucide:edit" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="mingcute:delete-2-line" />
                                                 </a>
                                             </td>
@@ -526,7 +527,7 @@ const DataTable = () => {
                                                     </label>
                                                 </div>
                                             </td>
-                                            <td><a href="javascript:void(0)" className="text-primary-600">#105986</a></td>
+                                            <td><a className="text-primary-600">#105986</a></td>
                                             <td>
                                                 <div className="flex items-center">
                                                     <img src="../assets/images/user-list/user-list5.png" alt className="shrink-0 me-3 rounded-lg" />
@@ -537,13 +538,13 @@ const DataTable = () => {
                                             <td>$150.00</td>
                                             <td> <span className="bg-warning-100 dark:bg-warning-600/25 text-warning-600 dark:text-warning-400 px-6 py-1.5 rounded-full font-medium text-sm">Pending</span> </td>
                                             <td>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="iconamoon:eye-light" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="lucide:edit" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="mingcute:delete-2-line" />
                                                 </a>
                                             </td>
@@ -557,7 +558,7 @@ const DataTable = () => {
                                                     </label>
                                                 </div>
                                             </td>
-                                            <td><a href="javascript:void(0)" className="text-primary-600">#526589</a></td>
+                                            <td><a className="text-primary-600">#526589</a></td>
                                             <td>
                                                 <div className="flex items-center">
                                                     <img src="../assets/images/user-list/user-list6.png" alt className="shrink-0 me-3 rounded-lg" />
@@ -568,13 +569,13 @@ const DataTable = () => {
                                             <td>$150.00</td>
                                             <td> <span className="bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 px-6 py-1.5 rounded-full font-medium text-sm">Paid</span> </td>
                                             <td>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="iconamoon:eye-light" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="lucide:edit" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="mingcute:delete-2-line" />
                                                 </a>
                                             </td>
@@ -588,7 +589,7 @@ const DataTable = () => {
                                                     </label>
                                                 </div>
                                             </td>
-                                            <td><a href="javascript:void(0)" className="text-primary-600">#526520</a></td>
+                                            <td><a className="text-primary-600">#526520</a></td>
                                             <td>
                                                 <div className="flex items-center">
                                                     <img src="../assets/images/user-list/user-list7.png" alt className="shrink-0 me-3 rounded-lg" />
@@ -599,13 +600,13 @@ const DataTable = () => {
                                             <td>$250.00</td>
                                             <td> <span className="bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 px-6 py-1.5 rounded-full font-medium text-sm">Paid</span> </td>
                                             <td>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="iconamoon:eye-light" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="lucide:edit" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="mingcute:delete-2-line" />
                                                 </a>
                                             </td>
@@ -619,7 +620,7 @@ const DataTable = () => {
                                                     </label>
                                                 </div>
                                             </td>
-                                            <td><a href="javascript:void(0)" className="text-primary-600">#256584</a></td>
+                                            <td><a className="text-primary-600">#256584</a></td>
                                             <td>
                                                 <div className="flex items-center">
                                                     <img src="../assets/images/user-list/user-list8.png" alt className="shrink-0 me-3 rounded-lg" />
@@ -630,13 +631,13 @@ const DataTable = () => {
                                             <td>$250.00</td>
                                             <td> <span className="bg-warning-100 dark:bg-warning-600/25 text-warning-600 dark:text-warning-400 px-6 py-1.5 rounded-full font-medium text-sm">Pending</span> </td>
                                             <td>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="iconamoon:eye-light" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="lucide:edit" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="mingcute:delete-2-line" />
                                                 </a>
                                             </td>
@@ -650,7 +651,7 @@ const DataTable = () => {
                                                     </label>
                                                 </div>
                                             </td>
-                                            <td><a href="javascript:void(0)" className="text-primary-600">#200257</a></td>
+                                            <td><a className="text-primary-600">#200257</a></td>
                                             <td>
                                                 <div className="flex items-center">
                                                     <img src="../assets/images/user-list/user-list9.png" alt className="shrink-0 me-3 rounded-lg" />
@@ -661,13 +662,13 @@ const DataTable = () => {
                                             <td>$250.00</td>
                                             <td> <span className="bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 px-6 py-1.5 rounded-full font-medium text-sm">Paid</span> </td>
                                             <td>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="iconamoon:eye-light" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="lucide:edit" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="mingcute:delete-2-line" />
                                                 </a>
                                             </td>
@@ -681,7 +682,7 @@ const DataTable = () => {
                                                     </label>
                                                 </div>
                                             </td>
-                                            <td><a href="javascript:void(0)" className="text-primary-600">#526525</a></td>
+                                            <td><a className="text-primary-600">#526525</a></td>
                                             <td>
                                                 <div className="flex items-center">
                                                     <img src="../assets/images/user-list/user-list10.png" alt className="shrink-0 me-3 rounded-lg" />
@@ -692,13 +693,13 @@ const DataTable = () => {
                                             <td>$250.00</td>
                                             <td> <span className="bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 px-6 py-1.5 rounded-full font-medium text-sm">Paid</span> </td>
                                             <td>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="iconamoon:eye-light" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="lucide:edit" />
                                                 </a>
-                                                <a href="javascript:void(0)" className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
+                                                <a className="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center">
                                                     <iconify-icon icon="mingcute:delete-2-line" />
                                                 </a>
                                             </td>

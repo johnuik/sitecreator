@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Medical = () => {
     return (
@@ -8,10 +9,10 @@ const Medical = () => {
                     <h6 className="font-semibold mb-0 dark:text-white">Dashboard</h6>
                     <ul className="flex items-center gap-[6px]">
                         <li className="font-medium">
-                            <a href="index.html" className="flex items-center gap-2 hover:text-primary-600 dark:text-white">
+                            <Link to="/" className="flex items-center gap-2 hover:text-primary-600 dark:text-white">
                                 <iconify-icon icon="solar:home-smile-angle-outline" className="icon text-lg" />
                                 Dashboard
-                            </a>
+                            </Link>
                         </li>
                         <li className="dark:text-white">-</li>
                         <li className="font-medium dark:text-white">Medical</li>
@@ -193,7 +194,7 @@ const Medical = () => {
                                     <div className="card-header border-bottom">
                                         <div className="flex items-center gap-2 justify-between">
                                             <h6 className="mb-0 font-bold text-lg">Doctors List</h6>
-                                            <a href="javascript:void(0)" className="flex-shrink-0 text-primary-600 dark:text-primary-600 hover-text-primary flex items-center gap-1">
+                                            <a className="flex-shrink-0 text-primary-600 dark:text-primary-600 hover-text-primary flex items-center gap-1">
                                                 View All
                                                 <iconify-icon icon="solar:alt-arrow-right-linear" className="icon" />
                                             </a>
@@ -270,7 +271,7 @@ const Medical = () => {
                                 <div className="card border-0 h-full">
                                     <div className="card-header border-bottom bg-base py-4 px-6 flex items-center justify-between">
                                         <h6 className="text-lg font-semibold mb-0">Latest Appointments</h6>
-                                        <a href="javascript:void(0)" className="flex-shrink-0 text-primary-600 dark:text-primary-600 hover-text-primary flex items-center gap-1">
+                                        <a className="flex-shrink-0 text-primary-600 dark:text-primary-600 hover-text-primary flex items-center gap-1">
                                             View All
                                             <iconify-icon icon="solar:alt-arrow-right-linear" className="icon" />
                                         </a>
@@ -384,7 +385,7 @@ const Medical = () => {
                                     <div className="card-header">
                                         <div className="flex items-center gap-2 justify-between">
                                             <h6 className="mb-0 font-bold text-lg">Available Treatments</h6>
-                                            <a href="javascript:void(0)" className="flex-shrink-0 text-primary-600 dark:text-primary-600 hover-text-primary flex items-center gap-1">
+                                            <a className="flex-shrink-0 text-primary-600 dark:text-primary-600 hover-text-primary flex items-center gap-1">
                                                 View All
                                                 <iconify-icon icon="solar:alt-arrow-right-linear" className="icon" />
                                             </a>
@@ -471,7 +472,7 @@ const Medical = () => {
                                     <div className="card-header">
                                         <div className="flex items-center gap-2 justify-between">
                                             <h6 className="mb-0 font-bold text-lg line-clamp-1">Health Reports Document</h6>
-                                            <a href="javascript:void(0)" className="flex-shrink-0 text-primary-600 dark:text-primary-600 hover-text-primary flex items-center gap-1">
+                                            <a className="flex-shrink-0 text-primary-600 dark:text-primary-600 hover-text-primary flex items-center gap-1">
                                                 View All
                                                 <iconify-icon icon="solar:alt-arrow-right-linear" className="icon" />
                                             </a>

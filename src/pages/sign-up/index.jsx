@@ -13,9 +13,9 @@ const SignUp = () => {
                 <div className="lg:w-1/2 py-8 px-6 flex flex-col justify-center">
                     <div className="lg:max-w-[464px] mx-auto w-full">
                         <div>
-                            <a href="index.html" className="mb-2.5 max-w-[290px]">
+                            <Link to="/" className="mb-2.5 max-w-[290px]">
                                 <img src="../assets/images/logo.png" alt />
-                            </a>
+                            </Link>
                             <h4 className="mb-3">Sign Up to your Account</h4>
                             <p className="mb-8 text-secondary-light text-lg">Welcome back! please enter your detail</p>
                         </div>
@@ -50,8 +50,8 @@ const SignUp = () => {
                                         <input className="form-check-input border border-neutral-300 mt-1.5" type="checkbox" defaultValue id="condition" />
                                         <label className="text-sm" htmlFor="condition">
                                             By creating an account means you agree to the
-                                            <a href="javascript:void(0)" className="text-primary-600 font-semibold">Terms &amp; Conditions</a> and our
-                                            <a href="javascript:void(0)" className="text-primary-600 font-semibold">Privacy Policy</a>
+                                            <a className="text-primary-600 font-semibold">Terms &amp; Conditions</a> and our
+                                            <a className="text-primary-600 font-semibold">Privacy Policy</a>
                                         </label>
                                     </div>
                                 </div>

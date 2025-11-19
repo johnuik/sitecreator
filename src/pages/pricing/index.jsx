@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Pricing = () => {
     return (
@@ -8,10 +9,10 @@ const Pricing = () => {
                     <h6 className="font-semibold mb-0 dark:text-white">Pricing</h6>
                     <ul className="flex items-center gap-[6px]">
                         <li className="font-medium">
-                            <a href="index.html" className="flex items-center gap-2 hover:text-primary-600 dark:text-white">
+                            <Link to="/" className="flex items-center gap-2 hover:text-primary-600 dark:text-white">
                                 <iconify-icon icon="solar:home-smile-angle-outline" className="icon text-lg" />
                                 Dashboard
-                            </a>
+                            </Link>
                         </li>
                         <li className="dark:text-white">-</li>
                         <li className="font-medium dark:text-white">Pricing</li>
@@ -73,7 +74,7 @@ const Pricing = () => {
                                                             <span className="text-secondary-light text-lg">Up to 3 team members</span>
                                                         </li>
                                                     </ul>
-                                                    <a href="javascript:void(0)" type="button" className="bg-purple-600 bg-hover-purple-700 text-white text-center border border-purple-600 text-sm btn-sm px-3 py-2.5 w-full rounded-lg mt-7" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</a>
+                                                    <a type="button" className="bg-purple-600 bg-hover-purple-700 text-white text-center border border-purple-600 text-sm btn-sm px-3 py-2.5 w-full rounded-lg mt-7" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</a>
                                                 </div>
                                             </div>
                                             <div className="pricing-plan-wrapper">
@@ -109,7 +110,7 @@ const Pricing = () => {
                                                             <span className="text-white text-lg">Up to 3 team members</span>
                                                         </li>
                                                     </ul>
-                                                    <a href="javascript:void(0)" type="button" className="bg-white text-primary-600 text-center border border-white text-sm btn-sm px-3 py-2.5 w-full rounded-lg mt-7" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</a>
+                                                    <a type="button" className="bg-white text-primary-600 text-center border border-white text-sm btn-sm px-3 py-2.5 w-full rounded-lg mt-7" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</a>
                                                 </div>
                                             </div>
                                             <div className="pricing-plan-wrapper">
@@ -144,7 +145,7 @@ const Pricing = () => {
                                                             <span className="text-secondary-light text-lg">Up to 3 team members</span>
                                                         </li>
                                                     </ul>
-                                                    <a href="javascript:void(0)" type="button" className="bg-success-600 bg-hover-success-700 text-white text-center border border-success-600 text-sm btn-sm px-3 py-2.5 w-full rounded-lg mt-7" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</a>
+                                                    <a type="button" className="bg-success-600 bg-hover-success-700 text-white text-center border border-success-600 text-sm btn-sm px-3 py-2.5 w-full rounded-lg mt-7" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -183,7 +184,7 @@ const Pricing = () => {
                                                             <span className="text-secondary-light text-lg">Up to 3 team members</span>
                                                         </li>
                                                     </ul>
-                                                    <a href="javascript:void(0)" type="button" className="bg-purple-600 bg-hover-purple-700 text-white text-center border border-purple-600 text-sm btn-sm px-3 py-2.5 w-full rounded-lg mt-7" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</a>
+                                                    <a type="button" className="bg-purple-600 bg-hover-purple-700 text-white text-center border border-purple-600 text-sm btn-sm px-3 py-2.5 w-full rounded-lg mt-7" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</a>
                                                 </div>
                                             </div>
                                             <div className="pricing-plan-wrapper">
@@ -219,7 +220,7 @@ const Pricing = () => {
                                                             <span className="text-white text-lg">Up to 3 team members</span>
                                                         </li>
                                                     </ul>
-                                                    <a href="javascript:void(0)" type="button" className="bg-white text-primary-600 text-center border border-white text-sm btn-sm px-3 py-2.5 w-full rounded-lg mt-7" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</a>
+                                                    <a type="button" className="bg-white text-primary-600 text-center border border-white text-sm btn-sm px-3 py-2.5 w-full rounded-lg mt-7" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</a>
                                                 </div>
                                             </div>
                                             <div className="pricing-plan-wrapper">
@@ -254,7 +255,7 @@ const Pricing = () => {
                                                             <span className="text-secondary-light text-lg">Up to 3 team members</span>
                                                         </li>
                                                     </ul>
-                                                    <a href="javascript:void(0)" type="button" className="bg-success-600 bg-hover-success-700 text-white text-center border border-success-600 text-sm btn-sm px-3 py-2.5 w-full rounded-lg mt-7" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</a>
+                                                    <a type="button" className="bg-success-600 bg-hover-success-700 text-white text-center border border-success-600 text-sm btn-sm px-3 py-2.5 w-full rounded-lg mt-7" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -318,7 +319,7 @@ const Pricing = () => {
                                                     <span className="text-secondary-light text-lg">Up to 3 team members</span>
                                                 </li>
                                             </ul>
-                                            <a href="javascript:void(0)" type="button" className="bg-purple-600 bg-hover-purple-700 text-white text-center border border-purple-600 text-sm btn-sm px-3 py-2.5 w-full rounded-lg mt-7" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</a>
+                                            <a type="button" className="bg-purple-600 bg-hover-purple-700 text-white text-center border border-purple-600 text-sm btn-sm px-3 py-2.5 w-full rounded-lg mt-7" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</a>
                                         </div>
                                     </div>
                                     <div className="pricing-plan-wrapper">
@@ -354,7 +355,7 @@ const Pricing = () => {
                                                     <span className="text-white text-lg">Up to 3 team members</span>
                                                 </li>
                                             </ul>
-                                            <a href="javascript:void(0)" type="button" className="bg-white text-primary-600 text-center border border-white text-sm btn-sm px-3 py-2.5 w-full rounded-lg mt-7" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</a>
+                                            <a type="button" className="bg-white text-primary-600 text-center border border-white text-sm btn-sm px-3 py-2.5 w-full rounded-lg mt-7" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</a>
                                         </div>
                                     </div>
                                     <div className="pricing-plan-wrapper">
@@ -389,7 +390,7 @@ const Pricing = () => {
                                                     <span className="text-secondary-light text-lg">Up to 3 team members</span>
                                                 </li>
                                             </ul>
-                                            <a href="javascript:void(0)" type="button" className="bg-success-600 bg-hover-success-700 text-white text-center border border-success-600 text-sm btn-sm px-3 py-2.5 w-full rounded-lg mt-7" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</a>
+                                            <a type="button" className="bg-success-600 bg-hover-success-700 text-white text-center border border-success-600 text-sm btn-sm px-3 py-2.5 w-full rounded-lg mt-7" data-bs-toggle="modal" data-bs-target="#exampleModal">Get started</a>
                                         </div>
                                     </div>
                                 </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Investment = () => {
     return (
@@ -8,10 +9,10 @@ const Investment = () => {
                     <h6 className="font-semibold mb-0 dark:text-white">Dashboard</h6>
                     <ul className="flex items-center gap-[6px]">
                         <li className="font-medium">
-                            <a href="index.html" className="flex items-center gap-2 hover:text-primary-600 dark:text-white">
+                            <Link to="/" className="flex items-center gap-2 hover:text-primary-600 dark:text-white">
                                 <iconify-icon icon="solar:home-smile-angle-outline" className="icon text-lg" />
                                 Dashboard
-                            </a>
+                            </Link>
                         </li>
                         <li className="dark:text-white">-</li>
                         <li className="font-medium dark:text-white">Investment</li>
@@ -306,7 +307,7 @@ const Investment = () => {
                             <div className="card-body p-6">
                                 <div className="flex items-center flex-wrap gap-2 justify-between mb-5">
                                     <h6 className="font-bold text-lg mb-0">Latest Investments</h6>
-                                    <a href="javascript:void(0)" className="text-primary-600 dark:text-primary-600 hover-text-primary flex items-center gap-1">
+                                    <a className="text-primary-600 dark:text-primary-600 hover-text-primary flex items-center gap-1">
                                         View All
                                         <iconify-icon icon="solar:alt-arrow-right-linear" className="icon" />
                                     </a>
@@ -436,7 +437,7 @@ const Investment = () => {
                             <div className="card-body p-6">
                                 <div className="flex items-center flex-wrap gap-2 justify-between mb-5">
                                     <h6 className="font-bold text-lg mb-0">Notice board</h6>
-                                    <a href="javascript:void(0)" className="text-primary-600 dark:text-primary-600 hover-text-primary flex items-center gap-1">
+                                    <a className="text-primary-600 dark:text-primary-600 hover-text-primary flex items-center gap-1">
                                         View All
                                         <iconify-icon icon="solar:alt-arrow-right-linear" className="icon" />
                                     </a>

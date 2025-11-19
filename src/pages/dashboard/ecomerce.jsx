@@ -154,7 +154,7 @@ const Ecomerce = () => {
                             <div className="card-body p-6">
                                 <div className="flex items-center flex-wrap gap-2 justify-between mb-5">
                                     <h6 className="mb-2 font-bold text-lg">Recent Orders</h6>
-                                    <a href="javascript:void(0)" className="text-primary-600 dark:text-primary-600 hover-text-primary flex items-center gap-1">
+                                    <a className="text-primary-600 dark:text-primary-600 hover-text-primary flex items-center gap-1">
                                         View All
                                         <iconify-icon icon="solar:alt-arrow-right-linear" className="icon" />
                                     </a>
@@ -433,7 +433,7 @@ const Ecomerce = () => {
                             <div className="card-body">
                                 <div className="flex items-center flex-wrap gap-2 justify-between mb-5">
                                     <h6 className="mb-2 font-bold text-lg mb-0">Top Customers</h6>
-                                    <a href="javascript:void(0)" className="text-primary-600 dark:text-primary-600 hover-text-primary flex items-center gap-1">
+                                    <a className="text-primary-600 dark:text-primary-600 hover-text-primary flex items-center gap-1">
                                         View All
                                         <iconify-icon icon="solar:alt-arrow-right-linear" className="icon" />
                                     </a>
@@ -508,7 +508,7 @@ const Ecomerce = () => {
                             <div className="card-body p-6">
                                 <div className="flex items-center flex-wrap gap-2 justify-between mb-5">
                                     <h6 className="mb-2 font-bold text-lg mb-0">Top Selling Product</h6>
-                                    <a href="javascript:void(0)" className="text-primary-600 dark:text-primary-600 hover-text-primary flex items-center gap-1">
+                                    <a className="text-primary-600 dark:text-primary-600 hover-text-primary flex items-center gap-1">
                                         View All
                                         <iconify-icon icon="solar:alt-arrow-right-linear" className="icon" />
                                     </a>
@@ -621,7 +621,7 @@ const Ecomerce = () => {
                             <div className="card-body p-6">
                                 <div className="flex items-center flex-wrap gap-2 justify-between mb-5">
                                     <h6 className="mb-2 font-bold text-lg">Stock Report</h6>
-                                    <a href="javascript:void(0)" className="text-primary-600 dark:text-primary-600 hover-text-primary flex items-center gap-1">
+                                    <a className="text-primary-600 dark:text-primary-600 hover-text-primary flex items-center gap-1">
                                         View All
                                         <iconify-icon icon="solar:alt-arrow-right-linear" className="icon" />
                                     </a>
