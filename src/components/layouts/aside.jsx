@@ -1,8 +1,20 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 
 const Aside = () => {
+  const MenuLink = ({ to, children }) => (
+    <NavLink
+      to={to}
+      className={({ isActive }) =>
+        `flex items-center gap-3 p-2 rounded-md transition-colors ${
+          isActive ? 'bg-blue-200 text-blue-600 dark:bg-blue-500' : 'text-gray-700 hover:bg-gray-50 dark:hover:text-white dark:hover:bg-slate-400'
+        }`
+      }
+    >
+      {children}
+    </NavLink>
+  )
   return (
     <aside className="sidebar">
       <button type="button" className="sidebar-close-btn !mt-4">
@@ -10,49 +22,78 @@ const Aside = () => {
       </button>
       <div>
         <Link to="/" className="sidebar-logo">
-          <img src="../assets/images/logo.png" alt="site logo" className="light-logo" />
-          <img src="../assets/images/logo-light.png" alt="site logo" className="dark-logo" />
-          <img src="../assets/images/logo-icon.png" alt="site logo" className="logo-icon" />
+          <div className="flex items-center logo-head gap-2">
+            <img src="/assets/jamoa.png" alt="site logo" style={{ width: 50, height: 60 }} />
+            <p className="logo-text dark:text-white font-bold text-lg text-[#1f3864]">
+              Kiberxavfsizlik markazi
+            </p>
+          </div>
+          <img src="/assets/images/jamoa.jpg" alt="site logo" className="logo-icon" style={{ width: 50, height: 60 }} />
         </Link>
       </div>
       <div className="sidebar-menu-area">
         <ul className="sidebar-menu" id="sidebar-menu">
-          <li className="dropdown">
-            <a>
+          <li>
+            <MenuLink to="/">
               <iconify-icon icon="solar:home-smile-angle-outline" className="menu-icon" />
               <span>Dashboard</span>
-            </a>
-            <ul className="sidebar-submenu">
-              <li>
-                <Link to="/"><i className="ri-circle-fill circle-icon text-primary-600 w-auto" /> AI</Link>
-              </li>
-              <li>
-                <Link to="/crm"><i className="ri-circle-fill circle-icon text-warning-600 w-auto" /> CRM</Link>
-              </li>
-              <li>
-                <Link to="/ecomerce"><i className="ri-circle-fill circle-icon text-info-600 w-auto" /> eCommerce</Link>
-              </li>
-              <li>
-                <Link to="/cryptocracy"><i className="ri-circle-fill circle-icon text-danger-600 w-auto" /> Cryptocurrency</Link>
-              </li>
-              <li>
-                <Link to="/investment"><i className="ri-circle-fill circle-icon text-success-600 w-auto" /> Investment</Link>
-              </li>
-              <li>
-                <Link to="/lms"><i className="ri-circle-fill circle-icon text-purple-600 w-auto" /> LMS / Learning System</Link>
-              </li>
-              <li>
-                <Link to="/nft"><i className="ri-circle-fill circle-icon text-info-600 w-auto" /> NFT &amp; Gaming</Link>
-              </li>
-              <li>
-                <Link to="/medical"><i className="ri-circle-fill circle-icon text-danger-600 w-auto" /> Medical</Link>
-              </li>
-              <li>
-                <Link to="/analytics"><i className="ri-circle-fill circle-icon text-purple-600 w-auto" /> Analytics</Link>
-              </li>
-            </ul>
+            </MenuLink>
           </li>
-          <li className="sidebar-menu-group-title">Application</li>
+          <li>
+            <MenuLink to="/page/dashboard">
+              <iconify-icon icon="ci:house-03" className="menu-icon" />
+              <span>Bosh sahifa</span>
+            </MenuLink>
+          </li>
+          <li>
+            <MenuLink to="/page/expertise">
+              <iconify-icon icon="ci:calendar-days" className="menu-icon" />
+              <span>Tizim ekspertizalar</span>
+            </MenuLink>
+          </li>
+          <li>
+            <MenuLink to="/page/mobile">
+              <iconify-icon icon="material-symbols:mobile-3-outline" className="menu-icon" />
+              <span>Mobil ekspertizalar</span>
+            </MenuLink>
+          </li>
+          <li>
+            <MenuLink to="/page/daily">
+              <iconify-icon icon="material-symbols:calendar-check-rounded" className="menu-icon" />
+              <span>Kunlik topshiriqlar</span>
+            </MenuLink>
+          </li>
+          <li>
+            <MenuLink to="/page/report">
+              <iconify-icon icon="material-symbols:lab-profile-outline" className="menu-icon" />
+              <span>Hisobot</span>
+            </MenuLink>
+          </li>
+          <li>
+            <MenuLink to="/page/usefull">
+              <iconify-icon icon="ri:information-line" className="menu-icon" />
+              <span>Foydali manbalar</span>
+            </MenuLink>
+          </li>
+          <li>
+            <MenuLink to="/page/development">
+              <iconify-icon icon="ri:table-view" className="menu-icon" />
+              <span>Shaxsiy reja</span>
+            </MenuLink>
+          </li>
+          <li>
+            <MenuLink to="/page/furniture">
+              <iconify-icon icon="ri:inbox-2-line" className="menu-icon" />
+              <span>Iventar va jihozlar</span>
+            </MenuLink>
+          </li>
+          <li>
+            <MenuLink to="/page/chat">
+              <iconify-icon icon="material-symbols:chat" className="menu-icon" />
+              <span>Chat</span>
+            </MenuLink>
+          </li>
+          {/* <li className="sidebar-menu-group-title">Tizim ekspertizalar</li>
           <li>
             <Link to="/email">
               <iconify-icon icon="mage:email" className="menu-icon" />
@@ -354,9 +395,9 @@ const Aside = () => {
               </li>
               <li>
                 <Link to="/payment-gateway"><i className="ri-circle-fill circle-icon text-danger-600 w-auto" /> Payment Gateway</Link>
-              </li>
-            </ul>
-          </li>
+              </li> */}
+            {/* </ul> */}
+          {/* </li> */}
         </ul>
       </div>
     </aside>

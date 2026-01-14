@@ -4,8 +4,8 @@ const Footer = () => {
     return (
         <footer className="d-footer">
             <div className="flex items-center justify-between gap-3">
-                <p className="mb-0">©  WowDash. All Rights Reserved.</p>
-                <p className="mb-0">Made by <span className="text-primary-600">Pixcels Themes</span></p>
+                <p className="mb-0">©  Kiberxavfsizlik markazi.</p>
+                <p className="mb-0"><span className="text-primary-600"></span></p>
             </div>
         </footer>
 

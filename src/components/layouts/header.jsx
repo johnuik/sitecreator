@@ -4,7 +4,6 @@ import { Link, useLocation } from 'react-router-dom'
 const Header = () => {
       const location = useLocation();
 
-
   return (
     <div className="navbar-header border-b border-neutral-200 dark:border-neutral-600">
       <div className="flex items-center justify-between">
@@ -24,15 +23,7 @@ const Header = () => {
           </div>
         </div>
         <div className="col-auto">
-          <div className="flex flex-wrap items-center gap-3">
-            {
-              location.pathname !== '/create' ? ( 
-                 <Link to="/create" type="button" className="btn bg-success-600 hover:bg-success-700 text-white rounded-lg px-5 py-2">Create New</Link>
-              ) : (
-                 <button  type="button" className="btn bg-info-600 hover:bg-info-700 text-white rounded-lg px-5 py-2">Publish</button>
-              )
-            }
-           
+          <div className="flex flex-wrap items-center gap-3">           
             <button type="button" id="theme-toggle" className="w-10 h-10 bg-neutral-200 dark:bg-neutral-700 dark:text-white rounded-full flex justify-center items-center">
               <span id="theme-toggle-dark-icon" className="hidden">
                 <i className="ri-sun-line" />
@@ -41,97 +32,6 @@ const Header = () => {
                 <i className="ri-moon-line" />
               </span>
             </button>
-            {/* Language Dropdown Start  */}
-            <div className="hidden sm:inline-block">
-              <button data-dropdown-toggle="dropdownInformation" className="has-indicator w-10 h-10 bg-neutral-200 dark:bg-neutral-700 dark:text-white rounded-full flex justify-center items-center" type="button">
-                <img src="../assets/images/lang-flag.png" alt="image" className="w-6 h-6 object-cover rounded-full" />
-              </button>
-              <div id="dropdownInformation" className="z-10 hidden bg-white dark:bg-neutral-700 rounded-lg shadow-lg dropdown-menu-sm p-3">
-                <div className="py-3 px-4 rounded-lg bg-primary-50 dark:bg-primary-600/25 mb-4 flex items-center justify-between gap-2">
-                  <div>
-                    <h6 className="text-lg text-neutral-900 font-semibold mb-0">Choose Your Language</h6>
-                  </div>
-                </div>
-                <div className="max-h-[400px] overflow-y-auto scroll-sm pe-2">
-                  <div className="mt-4 flex flex-col gap-4">
-                    <div className="form-check style-check flex items-center justify-between">
-                      <label className="form-check-label line-height-1 font-medium text-secondary-light" htmlFor="english">
-                        <span className="text-black hover-bXg-transparent hover-text-primary flex items-center gap-3">
-                          <img src="../assets/images/flags/flag1.png" alt='image' className="w-9 h-9 bg-success-subtle text-success-600 rounded-full shrink-0" />
-                          <span className="text-base font-semibold mb-0">English</span>
-                        </span>
-                      </label>
-                      <input className="form-check-input rounded-full" name="language" type="radio" id="english" />
-                    </div>
-                    <div className="form-check style-check flex items-center justify-between">
-                      <label className="form-check-label line-height-1 font-medium text-secondary-light" htmlFor="Japan">
-                        <span className="text-black hover-bXg-transparent hover-text-primary flex items-center gap-3">
-                          <img src="../assets/images/flags/flag2.png" alt='image'  className="w-9 h-9 bg-success-subtle text-success-600 rounded-full shrink-0" />
-                          <span className="text-base font-semibold mb-0">Japan</span>
-                        </span>
-                      </label>
-                      <input className="form-check-input rounded-full" name="language" type="radio" id="Japan" />
-                    </div>
-                    <div className="form-check style-check flex items-center justify-between">
-                      <label className="form-check-label line-height-1 font-medium text-secondary-light" htmlFor="Franch">
-                        <span className="text-black hover-bXg-transparent hover-text-primary flex items-center gap-3">
-                          <img src="../assets/images/flags/flag3.png" alt='image'  className="w-9 h-9 bg-success-subtle text-success-600 rounded-full shrink-0" />
-                          <span className="text-base font-semibold mb-0">Franch</span>
-                        </span>
-                      </label>
-                      <input className="form-check-input rounded-full" name="language" type="radio" id="Franch" />
-                    </div>
-                    <div className="form-check style-check flex items-center justify-between">
-                      <label className="form-check-label line-height-1 font-medium text-secondary-light" htmlFor="Germany">
-                        <span className="text-black hover-bXg-transparent hover-text-primary flex items-center gap-3">
-                          <img src="../assets/images/flags/flag4.png" alt='image'  className="w-9 h-9 bg-success-subtle text-success-600 rounded-full shrink-0" />
-                          <span className="text-base font-semibold mb-0">Germany</span>
-                        </span>
-                      </label>
-                      <input className="form-check-input rounded-full" name="language" type="radio" id="Germany" />
-                    </div>
-                    <div className="form-check style-check flex items-center justify-between">
-                      <label className="form-check-label line-height-1 font-medium text-secondary-light" htmlFor="SouthKoria">
-                        <span className="text-black hover-bXg-transparent hover-text-primary flex items-center gap-3">
-                          <img src="../assets/images/flags/flag5.png" alt='image'  className="w-9 h-9 bg-success-subtle text-success-600 rounded-full shrink-0" />
-                          <span className="text-base font-semibold mb-0">South Koria</span>
-                        </span>
-                      </label>
-                      <input className="form-check-input rounded-full" name="language" type="radio" id="SouthKoria" />
-                    </div>
-                    <div className="form-check style-check flex items-center justify-between">
-                      <label className="form-check-label line-height-1 font-medium text-secondary-light" htmlFor="Bangladesh">
-                        <span className="text-black hover-bXg-transparent hover-text-primary flex items-center gap-3">
-                          <img src="../assets/images/flags/flag6.png" alt='image'  className="w-9 h-9 bg-success-subtle text-success-600 rounded-full shrink-0" />
-                          <span className="text-base font-semibold mb-0">Bangladesh</span>
-                        </span>
-                      </label>
-                      <input className="form-check-input rounded-full" name="language" type="radio" id="Bangladesh" />
-                    </div>
-                    <div className="form-check style-check flex items-center justify-between">
-                      <label className="form-check-label line-height-1 font-medium text-secondary-light" htmlFor="India">
-                        <span className="text-black hover-bXg-transparent hover-text-primary flex items-center gap-3">
-                          <img src="../assets/images/flags/flag7.png" alt='image'  className="w-9 h-9 bg-success-subtle text-success-600 rounded-full shrink-0" />
-                          <span className="text-base font-semibold mb-0">India</span>
-                        </span>
-                      </label>
-                      <input className="form-check-input rounded-full" name="language" type="radio" id="India" />
-                    </div>
-                    <div className="form-check style-check flex items-center justify-between">
-                      <label className="form-check-label line-height-1 font-medium text-secondary-light" htmlFor="Koria">
-                        <span className="text-black hover-bXg-transparent hover-text-primary flex items-center gap-3">
-                          <img src="../assets/images/flags/flag8.png" alt='image'  className="w-9 h-9 bg-success-subtle text-success-600 rounded-full shrink-0" />
-                          <span className="text-base font-semibold mb-0">Koria</span>
-                        </span>
-                      </label>
-                      <input className="form-check-input rounded-full" name="language" type="radio" id="Koria" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* Language Dropdown End  */}
-            {/* Message Dropdown Start  */}
             <button data-dropdown-toggle="dropdownMessage" className="has-indicator w-10 h-10 bg-neutral-200 dark:bg-neutral-700 rounded-full flex justify-center items-center" type="button">
               <iconify-icon icon="mage:email" className="text-neutral-900 dark:text-white text-xl" />
             </button>
@@ -230,8 +130,9 @@ const Header = () => {
             </div>
             {/* Message Dropdown End  */}
             {/* Notification Start  */}
-            <button data-dropdown-toggle="dropdownNotification" className="has-indicator w-10 h-10 bg-neutral-200 dark:bg-neutral-700 rounded-full flex justify-center items-center" type="button">
+            <button data-dropdown-toggle="dropdownNotification" className="has-indicator w-10 h-10 bg-neutral-200 dark:bg-neutral-700 rounded-full flex justify-center items-center relative"  type="button">
               <iconify-icon icon="iconoir:bell" className="text-neutral-900 dark:text-white text-xl" />
+              <span className='w-2 h-2 min-h-2 min-w-2 rounded-full bg-red-400 absolute bottom-[3px] right-[3px]'></span>
             </button>
             <div id="dropdownNotification" className="z-10 hidden bg-white dark:bg-neutral-700 rounded-2xl overflow-hidden shadow-lg max-w-[394px] w-full">
               <div className="py-3 px-4 rounded-lg bg-primary-50 dark:bg-primary-600/25 m-4 flex items-center justify-between gap-2">
@@ -344,13 +245,13 @@ const Header = () => {
                   </li>
                   <li>
                     <Link className="text-black px-0 py-2 hover:text-primary-600 flex items-center gap-4" to="/company">
-                      <iconify-icon icon="icon-park-outline:setting-two" className="icon text-xl" />  Setting
+                      <iconify-icon icon="icon-park-outline:setting-two" className="icon text-xl" />  Sozlamalar
                     </Link>
                   </li>
                   <li>
-                    <a className="text-black px-0 py-2 hover:text-danger-600 flex items-center gap-4" >
-                      <iconify-icon icon="lucide:power" className="icon text-xl" />  Log Out
-                    </a>
+                    <Link to={"/login"} className="text-black px-0 py-2 hover:text-danger-600 flex items-center gap-4" >
+                      <iconify-icon icon="lucide:power" className="icon text-xl" />  Tizimdan chiqish
+                    </Link>
                   </li>
                 </ul>
               </div>

@@ -2,12 +2,14 @@ import React from "react";
 import ReactDOM from 'react-dom/client';
 import { Toaster } from 'react-hot-toast';
 import AppRouter from "./router";
+import { ZirhProvider } from "./context/ZirhContext";
 import './styles/app.css'
 
 function RootApp() {
   return (
-    <>
+    <ZirhProvider>
       <AppRouter />
+
       <Toaster
         position="top-right"
         toastOptions={{
@@ -32,7 +34,7 @@ function RootApp() {
           },
         }}
       />
-    </>
+    </ZirhProvider>
   );
 }
 
