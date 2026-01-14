@@ -6,6 +6,8 @@ import { ZirhProvider } from "./context/ZirhContext";
 import './styles/app.css'
 
 function RootApp() {
+
+  
   return (
     <ZirhProvider>
       <AppRouter />

@@ -28,9 +28,9 @@ export const ZirhProvider = ({ children }) => {
         stRef.current.clientId = cid;
         await initWebSocket(stRef);
 
-        console.log("✅ Zirh initialized", stRef.current);
+        console.log("Zirh initialized", stRef.current);
       } catch (e) {
-        console.error("❌ Zirh init error", e);
+        console.error("Zirh init error", e);
       }
     };
 
