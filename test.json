@@ -1,0 +1,250 @@
+{
+    "system": [
+        {
+            "status": 56,
+            "result": {
+                "1": {
+                    "1": [
+                        "Xalqbank",
+                        "c2d5daf2-8c76-4082-aaf8-77cecdb29967",
+                        "c2d5daf2-8c76-4082-aaf8-77cecdb29966",
+                        "Xazna",
+                        300000000,
+                        "Tester",
+                        "ATB",
+                        null,
+                        null,
+                        null,
+                        "Test user",
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ],
+                    "2": {
+                        "0": "2026-01-08T19:00:00.000Z",
+                        "1": "2026-01-07T19:00:00.000Z",
+                        "2": "2026-01-13T19:00:00.000Z",
+                        "3": "2026-01-30T19:00:00.000Z",
+                        "4": null,
+                        "5": null,
+                        "6": null,
+                        "7": null,
+                        "8": null,
+                        "9": null,
+                        "10": null,
+                        "11": null,
+                        "12": null
+                    },
+                    "3": 1,
+                    "4": [],
+                    "5": 1,
+                    "6": [
+                        {
+                            "1": "9865ed44679ad43d4e7ef564c066ba35",
+                            "2": "test.docx"
+                        },
+                        null,
+                        {
+                            "1": "0f0add0258718e283450974248c74370",
+                            "2": "test.docx"
+                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ],
+                    "7": [
+                        {
+                            "a1": "6969c30cb9b36e53e5b1fd0c",
+                            "a2": "Aliyev Ali",
+                            "a3": 1
+                        },
+                        {
+                            "a1": "6969c30cb9b36e53e5b1fd0c",
+                            "a2": "Yuldoshov Umrzoq",
+                            "a3": 2
+                        }
+                    ],
+                    "8": [
+                        [
+                            "<h2 class=\"application-name\">“Xazna”</h2>",
+                            "<h2 class=\"mundarija first-m\">Mundarija</h2>",
+                            "<div class=\"mundarija-content first\"><div class=\"content-title\"><span>3</span></div><div class=\"mundarija-section\">birinchi bo‘lim.</div><div class=\"mundarija-head\">UMUMIY MA’LUMOTLAR</div><div class=\"mundarija-body\"><div class=\"mundarija-row\"><div class=\"row-title\">Atamalar va ta’riflar</div><div class=\"row-num\">3</div></div><div class=\"mundarija-row\"><div class=\"row-title\">Ekspertiza o‘tkazish uchun asos</div><div class=\"row-num\">7</div></div><div class=\"mundarija-row\"><div class=\"row-title\">Ekspertiza obyekti</div><div class=\"row-num\">7</div></div><div class=\"mundarija-row\"><div class=\"row-title\">Ekspertiza o‘tkazish tartibi</div><div class=\"row-num\">9</div></div><div class=\"mundarija-row\"><div class=\"row-title\">Ekspertiza yuzasidan qo‘shimcha ma’lumotlar</div><div class=\"row-num\">12</div></div></div></div>"
+                        ],
+                        [
+                            "<div class=\"mundarija-content\"><div class=\"content-title\"><span>14</span></div><div class=\"mundarija-section\">IKKINCHI BO‘LIM.</div><div class=\"mundarija-head\">EKSPERTIZA NATIJALARI</div><div class=\"mundarija-body\"><div class=\"mundarija-row\"><div class=\"row-title large\">Ekspertiza natijalari to‘g‘risida umumlashtirilgan <br>ma’lumot</div><div class=\"row-num\">14</div></div><div class=\"mundarija-row\"><div class=\"row-title large\">Android mobil ilovasi ekspertizasi natijalari bo‘yicha batafsil izoh</div><div class=\"row-num\">16</div></div><div class=\"mundarija-row\"><div class=\"row-title large\">“Cross origin resource sharing: arbitrary origin trusted (CORS)” zaifligi</div><div class=\"row-num\">16</div></div></div></div>",
+                            "<div class=\"mundarija second-m\">Mundarija</div>"
+                        ],
+                        [
+                            "<div class=\"mundarija-content\"><div class=\"mundarija-body\"><div class=\"mundarija-row\"><div class=\"row-title large\">Avtorizatsiyaning yo‘qligi</div><div class=\"row-num\">18</div></div><div class=\"mundarija-row\"><div class=\"row-title large\">Xavfsiz bo‘lmagan to‘g‘ridan-to‘g‘ri obyekt manbalari (Insecure Direct Object References, iDOR)</div><div class=\"row-num\">18</div></div><div class=\"mundarija-row\"><div class=\"row-title large\">Ma’lumotlarni oshkor qiluvchi xatolik xabari</div><div class=\"row-num\">18</div></div><div class=\"mundarija-row\"><div class=\"row-title large\">Xeshlash jarayoni noto‘g‘ri bajarilishi</div><div class=\"row-num\">18</div></div></div><div class=\"content-title\"><span>33</span></div><div class=\"mundarija-section\">UCHINCHI BO‘LIM.</div><div class=\"mundarija-head\" style=\"margin-bottom: 40px;\">UMUMIY XULOSA</div></div>",
+                            "<h1 class=\"depart-title mundarija-section\">Birinchi bo'lim</h1>",
+                            "<h2 class=\"depart-subtitle\">UMUMIY MA’LUMOTLAR</h2>"
+                        ],
+                        [
+                            "<table class=\"depart-table\"><tr><td class=\"depart-table-first\">Mobil ilova</td><td class=\"depart-table-last\">Maʼlum bir platforma (iOS, Android, Windows Phone va boshqalar) uchun ishlab chiqilgan smartfonlar, planshetlar va boshqa mobil qurilmalarda ishlashga moʻljallangan dastur. </td></tr><tr><td class=\"depart-table-first\">iOS</td><td class=\"depart-table-last\">“Apple”ning iPhone, iPod, iPad, Apple TV uskunalarida oʻrnatilgan mobil aloqa operatsion sistemasi. </td></tr><tr><td class=\"depart-table-first\">Android OS</td><td class=\"depart-table-last\">Smartfonlar, planshetlar, elektron kitoblar, raqamli pleyerlar, qoʻl soatlari, fitnes bilakuzuklar, oʻyin pristavkalari, noutbuklar, netbuklar, smartbuklar, Google Glass koʻzoynaklari, televizorlar, proyektorlar hamda boshqa qurilmalar (2015-yildan avtomobillar tizimlari va maishiy robotlarga ham oʻrnatiladi) uchun operatsion tizim hisoblanadi.</td></tr></table>"
+                        ],
+                        [
+                            "<table class=\"depart-table\"><tr><td class=\"depart-table-first\">App Store</td><td class=\"depart-table-last\">iOS va iPadOS operatsion tizimlaridagi mobil ilovalar uchun Apple kompaniyasi tomonidan ishlab chiqilgan va qoʻllabquvvatlanadigan ilovalarning onlayn do‘koni.</td></tr><tr><td class=\"depart-table-first\">Google Play Store</td><td class=\"depart-table-last\">Android operatsion tizimlaridagi mobil ilovalar uchun Google kompaniyasi tomonidan ishlab chiqilgan va qoʻllabquvvatlanadigan ilovalarning onlayn do‘koni. </td></tr><tr><td class=\"depart-table-first\">Firebase</td><td class=\"depart-table-last\">Google tomonidan Android, iOS tizimlari, JavaScript, Node.js, Java, Unity, PHP va C++ ilovalariga “backend” va maʼlumotlar bazasi bulutli xizmatlarini taqdim qiladigan servis bo‘lib, real vaqtdagi maʼlumotlar bazasi, autentifikatsiya, ilovalarni integrallash va analitika xizmatlarini taklif qiladi.</td></tr><tr><td class=\"depart-table-first\">“Man in the middle” hujumi</td><td class=\"depart-table-last\">Tajovuzkor ikki mashina yoki ikkita foydalanuvchi o‘rtasidagi aloqani tinglashi, manipulyatsiya qilish yoki boshqarish imkoniyatining mavjudligi. Ushbu hujum ikki tomon o‘rtasidagi aloqada paydo “Uzenergo” mobil ilovasi bo‘lgan</td></tr></table>"
+                        ],
+                        [
+                            "<table class=\"depart-table\"><tr><td class=\"depart-table-first\"></td><td class=\"depart-table-last\">tajovuzkor tomonidan o‘zini proksi yoki router sifatida ko‘rsatish orqali amalga oshiriladi.</td></tr><tr><td class=\"depart-table-first\">Statik tahlil </td><td class=\"depart-table-last\">Mobil ilovani (dastur) amalda ishga tushirmasdan, uning xavfsizligini tekshirish usuli. Ushbu turdagi sinov ilova kodini tiklash, kodni tahlil qilish hamda yakunda koddagi zaiflik va kamchiliklarni aniqlashni o‘z ichiga oladi.</td></tr><tr><td class=\"depart-table-first\">Dinamik tahlil</td><td class=\"depart-table-last\">Mobil ilovada (dastur) ishlayotgan vaqtda ekspertiza sinovlarini o‘tkazishni o‘z ichiga oladi. Sinovning bu turi ilova xattiharakatlarini tahlil qilish, zaiflik va kamchiliklarni aniqlashni o‘z ichiga oladi. Dinamik tahlilning afzalliklaridan biri shundaki, u statik tahlil yordamida aniqlash qiyin bo‘lgan zaifliklarni aniqlay oladi. Misol uchun, dinamik tahlil orqali foydalanuvchining tizimga kirishi va autentifikatsiyasi bilan bog‘liq zaifliklarni aniqlashi mumkin.</td></tr><tr><td class=\"depart-table-first\"> </td><td class=\"depart-table-last\">Ochiq standart bo‘lib, hisoblash tizimlaridagi xavfsizlik zaifliklarining</td></tr></table>"
+                        ],
+                        [
+                            "<table class=\"depart-table\"><tr><td class=\"depart-table-first\">Umumiy zaifliklarni baholash tizimi (CVSS)</td><td class=\"depart-table-last\">miqdoriy ballarini “Uzenergo” mobil ilovasi hisoblash uchun ishlatiladi. Ballar bir nechta ko‘rsatkichlarga asoslangan maxsus formulalar yordamida hisoblanadi va ekspluatatsiyani amalga oshirish qulayligini va uning hisoblash tizimiga ta’sirini taxminiy baholaydi.</td></tr><tr><td class=\"depart-table-first\">Ma’lumotlar bazasi</td><td class=\"depart-table-last\">Amaliy dasturlarga bog‘liq bo‘lmagan holda, maʼlumotlarni tavsiflash, saqlash va boshqarishning umumiy prinsiplarini ko‘zda tutadigan muayyan qoidalar bo‘yicha tashkil qilingan maʼlumotlar jamlanmasi.</td></tr><tr><td class=\"depart-table-first\">SQL-inyeksiya</td><td class=\"depart-table-last\">So‘rovlar tanasiga maxsus SQLkodlarni kiritishga asoslangan, maʼlumotlar bazasi bilan ishlovchi veb-sayt va dasturlarga amalga oshiriladigan hujumlardan biri.</td></tr><tr><td class=\"depart-table-first\">Sintaksis va mantiqiy nuqsonlar </td><td class=\"depart-table-last\">Buferning to‘lib ketishi yoki boshqa turdagi nosozliklarga olib keladi. Ularni aniqlash uzoq vaqt va mashina kodi qismlarida nuqsonlarni bartaraf etish bo‘yicha ishlarni olib borishni talab etadi.</td></tr></table>"
+                        ],
+                        [
+                            "<div class=\"title\">1.2. Ekspertiza o‘tkazish uchun asos</div>",
+                            "<div class=\"text\">\"Kiberxavfsizlik markazi\" davlat unitar korxonasi va \"Xalqbank\" ATB oʻrtasida tuzilgan  2026-yil 8 yanvardagi <b class=\"text-b\">\"Xazna\"</b> mobil ilovasini kiberxavfsizlik talablariga muvofiqligi yuzasidan ekspertizadan oʻtkazish to'g'risidagi <b class=\"text-b\">\"23-B\"</b> shartnoma.</div>",
+                            "<div class=\"title\">1.3. Ekspertiza obyekti</div>",
+                            "<div class=\"text\"><b>“Xazna” android/iOS </b> mobil ilovasining <b>“Xazna.apk”</b> va <b>“Xazna.ipa”</b> fayllari.</div>",
+                            "<div class=\"text-i\">1-jadval. Mobil ilovaning <br>“Android” OT uchun versiyasi</div>"
+                        ],
+                        [
+                            "<table class=\"expert-table\"><thead><tr><th style=\"width: 60px; min-width: 60px;\">T/r.</th><th style=\"width: 200px; min-width: 200px;\">Texnik ma’lumot nomlanishi</th><th style=\"width: 240px; min-width: 240px;\">Izoh</th></tr></thead><tbody><tr><td>1.</td><td>Dasturchi</td><td>-</td></tr><tr><td>2.</td><td>Rasmiy veb sayt</td><td>-</td></tr><tr><td>3.</td><td>Fayl nomi</td><td>-</td></tr><tr><td>4.</td><td>Paket nomi</td><td>-</td></tr><tr><td>5.</td><td>Asosiy oyna</td><td>-</td></tr><tr><td>6.</td><td>Talqin</td><td>-</td></tr><tr><td>7.</td><td>Minimal API talqini</td><td>-</td></tr><tr><td>8.</td><td>Joriy API talqini</td><td>-</td></tr><tr><td>9.</td><td>Ilova kategoriyasi</td><td>-</td></tr></tbody></table>",
+                            "<table class=\"expert-table mt-6\"><tbody><tr><td>10.</td><td>Ilova logotipi</td><td>-</td></tr><tr><td>11.</td><td>-</td><td>-</td></tr><tr><td>12.</td><td>-</td><td>-</td></tr><tr><td>13.</td><td>O‘rnatilishlar soni </td><td>-</td></tr><tr><td>14.</td><td>MD5</td><td>- </td></tr><tr><td>15.</td><td>SHA1</td><td>-</td></tr><tr><td>16.</td><td>SHA256</td><td>-</td></tr></tbody></table>"
+                        ],
+                        [
+                            "<div class=\"text-i my-3\">1-jadval. Mobil ilovaning <br>“iOS” OT uchun versiyasi</div>",
+                            "<table class=\"expert-table\"><thead><tr><th style=\"width: 60px; min-width: 60px;\">T/r.</th><th style=\"width: 200px; min-width: 200px;\">Texnik ma’lumot nomlanishi</th><th style=\"width: 240px; min-width: 240px;\">Izoh</th></tr></thead><tbody><tr><td>1.</td><td>Dasturchi</td><td>-</td></tr><tr><td>2.</td><td>Rasmiy veb sayt</td><td>-</td></tr><tr><td>3.</td><td>Fayl nomi</td><td>-</td></tr><tr><td>4.</td><td>Paket nomi</td><td>-</td></tr><tr><td>5.</td><td>Asosiy oyna</td><td>-</td></tr><tr><td>6.</td><td>Talqin</td><td>-</td></tr><tr><td>7.</td><td>Minimal API talqini</td><td>-</td></tr></tbody></table>",
+                            "<div class=\"page-number flex justify-center mt-auto\"><span>8</span></div>"
+                        ],
+                        [
+                            "<table class=\"expert-table mt-6\"><tbody><tr><td>8.</td><td>Joriy API talqini</td><td>-</td></tr><tr><td>9.</td><td>Ilova kategoriyasi</td><td>-</td></tr><tr><td>10.</td><td>Ilova logotipi </td><td>-</td></tr><tr><td>11.</td><td>Play Market havolasi</td><td>-</td></tr><tr><td>12.</td><td>Play Market reytingi</td><td>-</td></tr><tr><td>13.</td><td>O‘rnatilishlar soni </td><td>-</td></tr><tr><td>14.</td><td>MD5</td><td>- </td></tr><tr><td>15.</td><td>SHA1</td><td>-</td></tr><tr><td>16.</td><td>SHA256</td><td>-</td></tr></tbody></table>",
+                            "<div class=\"title mt-4\">1.4. Ekspertiza o‘tkazish tartibi</div>"
+                        ],
+                        [
+                            "<table class=\"depart-table\"><tr><td class=\"depart-table-first etp\"><img alt=\"Tayyorgarlik\" src=\"/assets/etp/1.png\"><div>Tayyorgarlik</div><img alt=\"/assets/etp/dv.png\" src=\"/assets/etp/dv.png\"></td><td class=\"depart-table-last\">Ekspertiza obyekti to‘g‘risida texnik ma’lumotlar yig‘ish.</td></tr></table>",
+                            "<div class=\"page-number flex justify-center mt-auto\"><span>9</span></div>"
+                        ],
+                        [
+                            "<table class=\"depart-table\"><tr><td class=\"depart-table-first etp\"><img alt=\"Umumiy ma’lumotlar tahlili\" src=\"/assets/etp/2.png\"><div>Umumiy ma’lumotlar tahlili</div><img alt=\"/assets/etp/dv.png\" src=\"/assets/etp/dv.png\"></td><td class=\"depart-table-last\">Mobil ilovani ishlash mexanizmini o‘rganish, yig‘ilgan ma’lumotlar tahlili.</td></tr><tr><td class=\"depart-table-first etp\"><img alt=\"Dasturiy kodlar tahlili\" src=\"/assets/etp/3.png\"><div>Dasturiy kodlar tahlili</div><img alt=\"/assets/etp/dv.png\" src=\"/assets/etp/dv.png\"></td><td class=\"depart-table-last\">Mobil ilova dasturiy kodlarini maxsus dasturiy ta’minotlar yordamida tahlili.</td></tr><tr><td class=\"depart-table-first etp\"><img alt=\"Virtual muhitlarda o‘rganish\" src=\"/assets/etp/4.png\"><div>Virtual muhitlarda o‘rganish</div><img alt=\"/assets/etp/dv.png\" src=\"/assets/etp/dv.png\"></td><td class=\"depart-table-last\">Mobil ilovani maxsus muhitlarda o‘rnatish orqali funksional imkoniyatlarida zaifliklar mavjudligini o‘rganish.</td></tr></table>"
+                        ],
+                        [
+                            "<div class=\"page-number flex justify-center mt-auto\"><span>10</span></div>"
+                        ],
+                        [
+                            "<table class=\"depart-table\"><tr><td class=\"depart-table-first etp\"><img alt=\"Kiberhujumlarga tekshirish\" src=\"/assets/etp/5.png\"><div>Kiberhujumlarga tekshirish</div><img alt=\"/assets/etp/dv.png\" src=\"/assets/etp/dv.png\"></td><td class=\"depart-table-last\">Mobil ilova va u bilan bog‘liq resurslarga kiberxavfsizlik hujumlarini amalga oshirish imkoniyatini o'rganish.</td></tr><tr><td class=\"depart-table-first etp\"><img alt=\"Zaifliklarni tekshirib ko‘rish\" src=\"/assets/etp/6.png\"><div>Zaifliklarni tekshirib ko‘rish</div><img alt=\"/assets/etp/dv.png\" src=\"/assets/etp/dv.png\"></td><td class=\"depart-table-last\">Zaifliklarni sinov tariqasida ekspluatatsiya qilib ko‘rish vazaiflikning xavflilik darajasini aniqlash.</td></tr><tr><td class=\"depart-table-first etp\"><img alt=\"Hisobot tayyorlash\" src=\"/assets/etp/7.png\"><div>Hisobot tayyorlash</div></td><td class=\"depart-table-last\">Ekspertiza natijalari asosida yakuniy hisobotni tayyorlash.</td></tr></table>"
+                        ],
+                        [
+                            "<div class=\"text\">Ekspertiza o‘tkazish tartibi asosida amalga oshiriladigan ishlar jarayoni quyidagi tadbirlarni ham o‘z ichiga oladi:</div>"
+                        ],
+                        [
+                            "<table class=\"depart-table\"><tr><td class=\"depart-table-first exp\"><div>1. Autentifikatsiya va avtorizatsiya sinov</div></td><td class=\"depart-table-last exp\">Ruxsatsiz kirishni oldini olish uchun ilovani kirish mexanizmlari va kirishni boshqarish vositalarining xavfsizligini baholash.</td></tr><tr><td class=\"depart-table-first exp\"><div>2. Ma’lumotlarni saqlash xavfsizligi</div></td><td class=\"depart-table-last exp\">Foydalanuvchi ma'lumotlari xavfsiz saqlanishi va ma'lumotlar sizib chiqishi yoki ruxsatsiz kirishdan himoyalanganligiga ishonch hosil qilish.</td></tr><tr><td class=\"depart-table-first exp\"><div>3. Xavfsiz aloqa</div></td><td class=\"depart-table-last exp\">Ilova va serverlar o'rtasida uzatiladigan ma'lumotlarning qo‘lga kiritilishi xavfini minimallashtirish uchun shifrlanganligini tekshirish.</td></tr><tr><td class=\"depart-table-first exp\"><div>4. Sessiya boshqaruvi</div></td><td class=\"depart-table-last exp\">O‘g‘irlashni oldini olish va umumiy foydalanuvchi xavfsizligini yaxshilash uchun ilova foydalanuvchi seanslarini qanday boshqarishini baholash.</td></tr><tr><td class=\"depart-table-first exp\"><div>5. Kodni ko'rib chiqish va statik tahlil </div></td><td class=\"depart-table-last exp\">Ruxsatsiz kirishni oldini olish uchun ilovani kirish mexanizmlari va kirishni boshqarish vositalarining kuchini baholash.</td></tr></table>",
+                            "<div class=\"page-number flex justify-center mt-auto\"><span>12</span></div>"
+                        ],
+                        [
+                            "<table class=\"depart-table\"><tr><td class=\"depart-table-first exp\"><div>7. Inyeksiyaga zaiflik</div></td><td class=\"depart-table-last exp\">Ilovani RCE, LFI, SQL va boshqa turdagi inyeksiyalarni bajarishga ruxsat beradigan zaifliklar uchun baholash.</td></tr><tr><td class=\"depart-table-first exp\"><div>8.  Uchinchi tomon aralashuvi </div></td><td class=\"depart-table-last exp\">Ilovalarda uchinchi tomon ilovalari yoki veb-saytlari uchun maxfiy ma'lumotlar mavjudligini tekshirish.</td></tr><tr><td class=\"depart-table-first exp\"><div>9. Qattiq kodlangan sirlar </div></td><td class=\"depart-table-last exp\">Har qanday qattiq kodlangan API kalitlari, sirlari, parollari va boshqalar uchun ilovani ko'rib chiqish.</td></tr></table>",
+                            "<div class=\"title\">1.5. Ekspertiza yuzasidan qo‘shimcha ma’lumotlar</div>",
+                            "<div class=\"text\">“Xazna” android/iOS mobil ilovalari ekspertizasi buyurtmachi tomonidan taqdim qilingan ma’lumotlar, jumladan: <br><b>- “Xazna.apk”;</b> <br><b>- “Xazna.ipa”</b> fayllari, shuningdek 4-jadvaldagi foydalanuvchi qayd yozuvlari asosida olib borildi.</div>",
+                            "<table class=\"expert-table mt-6\"><thead><tr><th>T/r</th><th>Rol</th><th>Kirish</th><th>Parol</th></tr></thead><tbody><tr><td>1.</td><td>Foydalanuvchi</td><td>+998938623880</td><td>sms</td></tr></tbody></table>",
+                            "<h1 class=\"depart-title mundarija-section\">IKKINCHI BO‘LIM.</h1>"
+                        ],
+                        [
+                            "<h2 class=\"depart-subtitle\">UMUMIY MA’LUMOTLAR</h2>",
+                            "<div class=\"title\">2.1. Ekspertiza natijalari to‘g‘risida umumlashtirilgan ma’lumot</div>",
+                            "<div class=\"text\">Ekspertiza natijalari asosida 3 xil xavflilik darajasiga ega, ya’ni <b>yuqori, o‘rta</b> va <b>past</b> xavflilik darajasidagi axborot xavfsizligi zaifliklari va tizimda ma’lumot uchun holatlar aniqlanishi mumkin.</div>",
+                            "<div class=\"text\">Axborot xavfsizligi zaifliklari xavflilik darjasidan kelib chiqqan holda mobil ilovaga quyidagi risklar xavf soladi.</div>",
+                            "<div class=\"text\"><b>Yuqori</b> - ushbu turdagi axborot xavfsizligi zaifliklari ilovaga eng yuqori xavf ko‘rsatadi. Ulardan foydalanish ilovaga ruxsatsiz kirish, uning ma’lumotlaridan foydalanish bilan bir qatorda muhim, konfidensial ma’lumotlarni sizib chiqish holatlarini yuzaga kelishiga sabab bo‘lishi mumkin.</div>",
+                            "<div class=\"text\"><b>O‘rta</b> - ushbu turdagi axborot xavfsizligi zaifliklari ko‘p holatlarda boshqa turdagi xavflilik darajasi yuqori bo‘lgan harakatlarni amalga oshirishga, ilova bilan bog‘liq ma’lumotlarni to‘plashga xizmat qiladi.</div>",
+                            "<div class=\"text\"><b>Past</b> - ushbu turdagi axborot xavfsizligi zaifliklari ilovada umumiy ma’lumotlarga ega bo‘lish imkoniyatini taqdim etadi.</div>"
+                        ],
+                        [
+                            "<div class=\"text\"><b>Ma’lumot uchun </b> – ilovaga xavf solmaydigan, ekspertiza davrida aniqlangan axborot xavfsizligiga zid holatlar.</div>",
+                            "<div class=\"text\">Olib borilgan ekspertiza natijalari asosida aniqlangan axborot xavfsizligi zaifliklari to‘g‘risida umumlashtirilgan ma’lumotlar 5-jadvalda taqdim qilingan.</div>",
+                            "<div class=\"text-i my-3 underline\">5-jadval. Android mobil ilovasida <br>aniqlangan zaifliklar.</div>",
+                            "<table class=\"expert-table\"><thead><tr><th style=\"width: 100px; min-width: 100px;\">Xavflilik darajasi </th><th colspan=\"2\" style=\"width: 300px; min-width: 300px;\">Aniqlangan zaifliklar nomi va soni</th></tr></thead><tbody><tr><td rowspan=\"3\"><b>Yuqori</b></td><td style=\"font-weight: normal;\">“Cross origin resource sharing: arbitrary origin trusted (CORS)” zaifligi</td><td style=\"font-weight: normal;\">1</td></tr><tr><td style=\"font-weight: normal;\">Avtorizatsiyaning yo‘qligi</td><td style=\"font-weight: normal;\">1</td></tr><tr><td style=\"font-weight: normal;\">Xavfsiz bo‘lmagan to‘g‘ridan-to‘g‘ri obyekt manbalari (Insecure Direct Object References, iDOR)</td><td style=\"font-weight: normal;\">1</td></tr><tr><td rowspan=\"1\"><b>O'rta</b></td><td style=\"font-weight: normal;\">Ma’lumotlarni oshkor qiluvchi xatolik xabari</td><td>1</td></tr><tr><td rowspan=\"1\"><b>Past</b></td><td style=\"font-weight: normal;\">Xeshlash jarayoni noto‘g‘ri bajarilishi</td><td>1</td></tr></tbody></table>",
+                            "<div><div class=\"title\">2.2. “Xazna” android mobil ilovasi ekspertizasi natijalari bo‘yicha batafsil izoh&gt;</div></div>",
+                            "<div><div class=\"exp-title\">2.2.1 “Cross origin resource sharing: arbitrary origin trusted (CORS)” zaifligi</div></div>",
+                            "<div><div class=\"exp-d\"><b>Xavflilik darajasi:</b> Yuqori</div></div>"
+                        ],
+                        [
+                            "<div><div class=\"text\">“Cross origin resource sharing” (CORS) – “Butunjahon o‘rgimchak to‘ri konsorsiumi” (World Wide Web Consortium, W3C) tomonidan belgilangan standart bo‘lib, “Domenlarni cheklash qoidalari” (Same-origin policy, SOP) qo‘shimcha hisoblanadi hamda serverga qaysi tashqi ilovalar undan resurslarni yuklab olishi va ularni ruxsat etilgan ro‘yxatga qo‘shishi mumkinligini aniqlash imkonini beradi.Mazkur zaiflik “CORS”dan foydalanish jarayonida uning sozlamalarini noto‘g‘ri shakllantirish oqibatida hosil bo‘ladi. Mazkur turdagi zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida “CWE-942” (inglizcha. Permissive Cross-domain Policy with Untrusted Domains - Ishonchsiz domenlar bilan ruxsat beruvchi oʻzaro faoliyat siyosati) identifikator raqamiga ega.</div></div>",
+                            "<div><div class=\"text\">Bundan tashqari, “Open Web Application Security Project”</div></div>",
+                            "<div><div class=\"text\">(Veb-ilovalarning xavfsizligini ta’minlashning ochiq loyihasi)ning OWASP Top 2021 reytingida:</div></div>",
+                            "<div><div class=\"text\">5-o‘rindagi (inglizcha. Security Misconfiguration – Noto‘g‘ri xavfsizlik konfiguratsiyalarida) zaiflik turiga kiritilgan.Quyida mazkur zaiflik mavjudligi holati</div></div>",
+                            "<div><div class=\"text\"><b>Ekspluatatsiya oqibatlari:</b> Ko‘p holatlarda “CORS” sozlamalarida xatoliklarga yo‘l quyilishi jinoyatkor tomonidan foydalanuvchi brauzerini vositachi sifatida ishlatilishi olib keladi.</div></div>",
+                            "<div><div class=\"text\"><b>Tavsiyalar:</b> “CORS”da belgilangan sozlamalarni qayta ko‘rib chiqish, xususan ruxsat etilgan ma’lumotlarni olib kelish manbalariga cheklovlar belgilash va shu kabilar.</div></div>"
+                        ],
+                        [
+                            "<div><div class=\"exp-title\">2.2.2 Ma’lumotlarni oshkor qiluvchi xatolik xabari</div></div>",
+                            "<div><div class=\"exp-d\"><b>Xavflilik darajasi:</b> O‘rta</div></div>",
+                            "<div><div class=\"text\">Axborot tizimida ma’lumotlarni oshkor qiluvchi xatolik xabari mavjudligi aniqlandi. Mazkur zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida “CWE-209” (inglizcha. Generation of Error Message Containing Sensitive Information - Konfidensial ma’lumotlarni o‘z ichiga oluvchi xatolik xabarlarini shakllantirish) identifikator raqamiga ega. Bundan tashqari, “Open Web Application Security Project” (Veb-ilovalarning xavfsizligini ta’minlashning ochiq loyihasi)ning OWASP Top 2021 reytingida: 4-o‘rindagi (inglizcha. Insecure Design – Ishonchsiz dizayn) zaiflik turiga kiritilgan.Misol uchun ma’lumotlarni oshkor qiluvchi xatolik xabari quyida taqdim etilgan:</div></div>",
+                            "<div><div class=\"text\"><b>Ekspluatatsiya oqibatlari:</b> Zaiflik quyidagilarga olib kelishi mumkin:1) To‘g‘ridan-to‘g‘ri ta’sir etuvchi risklar: - foydalanuvchilarning hisobga olish yozuvlari (login, parol va boshqalar);-foydalanuvchilarning shaxsiy ma’lumotlari.2) To‘g‘ridan-to‘g‘ri ta’sir etmaydigan risklar:- ma’lumotlar bazasi bilan bog‘liq ma’lumotlar (SQL inyeksiya hujumini amalga oshirish imkoniyatini yaratadi);- dasturiy kod qismlari;- dasturiy ta’minotlarnig versiyalari va boshqalar.</div></div>",
+                            "<div><div class=\"text\"><b>Tavsiyalar:</b> Dasturiy kodlarni qayta tekshirib chiqish va ma’lumotlarni oshkor qiluvchi nuqsonli dasturiy kod qismlarini takomillashtirish, ochiq ma’lumotlarni yopish.</div></div>",
+                            "<div><div class=\"exp-title\">2.2.3 Xeshlash jarayoni noto‘g‘ri bajarilishi</div></div>",
+                            "<div><div class=\"exp-d\"><b>Xavflilik darajasi:</b> Past</div></div>"
+                        ],
+                        [
+                            "<div><div class=\"text\">Mobil ilovada  SHA-1, MD5 kabi zaif xeshlash algoritmlaridan foydalanilgan. SHA-1 hozirda zaif hisoblanadi va bir xil xesh qiymatiga ega bo‘lgan har xil kirish ma’lumotlarini yaratishga imkon beruvchi xesh kolliziyalari mavjudligi sababli tavsiya etilmaydi.Mazkur turdagi zaiflik “MASWE-0021” (inglizcha. Improper Hashing – Xeshlash jarayoni noto‘g‘ri bajarilishi) identifikator raqamiga ega kategoriyaga mansub. Shuningdek, OWASP Mobile Top 10 2024 reytingida  5-o‘rinda (inglizcha. Insufficient Cryptography – Yetarlicha bo‘lmagan kriptografiya) zaiflik turiga kiritilgan.</div></div>",
+                            "<div><div class=\"text\"><b>Ekspluatatsiya oqibatlari:</b> Xesh algoritmlarida o‘zgartirilgan ma’lumotlarni asl qiymatiga ega bo‘lish holatiga, shuningdek xesh kolliziyasi, ya’ni ikki xil ma’lumot bir xil xesh qoymatini hosil qiladigan holatlarga olib kelishi mumkin.</div></div>",
+                            "<div><div class=\"text\"><b>Tavsiyalar:</b> Zaif bo‘lmagan SHA256, SHA512, SHA3 kabi algoritmlardan foydalanish.</div></div>"
+                        ]
+                    ],
+                    "9": 1,
+                    "10": "23-B",
+                    "11": [
+                        {
+                            "a1": 3,
+                            "a2": 1,
+                            "a3": "Xeshlash jarayoni noto‘g‘ri bajarilishi"
+                        }
+                    ],
+                    "12": [
+                        {
+                            "a1": 2,
+                            "a2": 1,
+                            "a3": "Ma’lumotlarni oshkor qiluvchi xatolik xabari"
+                        }
+                    ],
+                    "13": [
+                        {
+                            "a1": 1,
+                            "a2": 1,
+                            "a3": "“Cross origin resource sharing: arbitrary origin trusted (CORS)” zaifligi"
+                        },
+                        [
+                            {
+                                "a1": 1,
+                                "a2": 1,
+                                "a3": "Avtorizatsiyaning yo‘qligi"
+                            }
+                        ],
+                        [
+                            {
+                                "a1": 1,
+                                "a2": 1,
+                                "a3": "Xavfsiz bo‘lmagan to‘g‘ridan-to‘g‘ri obyekt manbalari (Insecure Direct Object References, iDOR)"
+                            }
+                        ]
+                    ],
+                    "14": [],
+                    "15": [],
+                    "16": [],
+                    "17": false,
+                    "18": true,
+                    "_id": {
+                        "buffer": {
+                            "0": 105,
+                            "1": 109,
+                            "2": 219,
+                            "3": 24,
+                            "4": 32,
+                            "5": 80,
+                            "6": 59,
+                            "7": 29,
+                            "8": 25,
+                            "9": 5,
+                            "10": 230,
+                            "11": 121
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

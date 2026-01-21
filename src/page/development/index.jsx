@@ -43,25 +43,24 @@ const Development = () => {
 
 
 
-  useZirhEvent(null, (data) => {
-    console.log("data:", data);
-  });
+  // useZirhEvent(null, (data) => {
+  //   console.log("data:", data);
+  // });
 
 
   const fetchProfile = async () => {
     const profile = await sendRpcRequest(
       stRef,
       METHOD.CAPTCHA_GET,
-      { 1: "wfwefwefwf" }
+      { }
     );
-    console.log(profile);
+    if(profile.status == METHOD.OK)
+      console.log(profile.result[1]);
   };
 
-  /* 🔹 Drawer ochish/yopish */
   const openDrawer = () => setDrawerOpen(true);
   const closeDrawer = () => setDrawerOpen(false);
 
-  /* 🔹 Input change */
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -85,7 +84,6 @@ const Development = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      console.log(stRef.current);
       await fetchProfile();
     };
 

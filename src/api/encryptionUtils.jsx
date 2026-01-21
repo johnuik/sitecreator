@@ -1,5 +1,5 @@
 // encryptionUtils.js
-import sodium from 'libsodium-wrappers';
+import sodium from 'libsodium-wrappers-sumo';
 
 export function u8Concat(...arrs){ let n=0; for (const a of arrs) n+=a.length; const out=new Uint8Array(n); let o=0; for (const a of arrs){out.set(a,o);o+=a.length;} return out; }
 export function pack(op, payload){

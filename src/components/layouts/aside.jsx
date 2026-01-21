@@ -28,7 +28,7 @@ const Aside = () => {
               Kiberxavfsizlik markazi
             </p>
           </div>
-          <img src="/assets/images/jamoa.jpg" alt="site logo" className="logo-icon" style={{ width: 50, height: 60 }} />
+          <img src="/assets/jamoa.png" alt="site logo" className="logo-icon" style={{ width: 50, height: 60 }} />
         </Link>
       </div>
       <div className="sidebar-menu-area">
@@ -70,9 +70,9 @@ const Aside = () => {
             </MenuLink>
           </li>
           <li>
-            <MenuLink to="/page/usefull">
-              <iconify-icon icon="ri:information-line" className="menu-icon" />
-              <span>Foydali manbalar</span>
+            <MenuLink to="/page/user-add">
+              <iconify-icon icon="material-symbols:person-add-outline" className="menu-icon" />
+              <span>Foydalanuvchi qo'shish</span>
             </MenuLink>
           </li>
           <li>
@@ -91,6 +91,12 @@ const Aside = () => {
             <MenuLink to="/page/chat">
               <iconify-icon icon="material-symbols:chat" className="menu-icon" />
               <span>Chat</span>
+            </MenuLink>
+          </li>
+            <li>
+            <MenuLink to="/page/vuln">
+              <iconify-icon icon="material-symbols:chat" className="menu-icon" />
+              <span>Zaifliklar</span>
             </MenuLink>
           </li>
           {/* <li className="sidebar-menu-group-title">Tizim ekspertizalar</li>

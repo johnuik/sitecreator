@@ -27,10 +27,8 @@ export const ZirhProvider = ({ children }) => {
 
         stRef.current.clientId = cid;
         await initWebSocket(stRef);
-
-        console.log("Zirh initialized", stRef.current);
       } catch (e) {
-        console.error("Zirh init error", e);
+        console.log("Zirh init error", e);
       }
     };
 
@@ -38,7 +36,6 @@ export const ZirhProvider = ({ children }) => {
 
     return () => {
       mounted = false;
-      // ws close bo‘lsa shu yerda
     };
   }, []);
 

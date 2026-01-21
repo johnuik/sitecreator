@@ -1,0 +1,2060 @@
+{
+    "vuln": [
+        [
+            {
+                "1": [
+                    1,
+                    "SQL Injection",
+                    "<p>Ekspertiza davrida kirish parametrlari, ya’ni foydalanuvchi tomonidan axborot tizimiga yuborilayotgan SQL so‘rovlarni yetarlicha <b>tekshirilmayotganligi<b> va ularni <b>filtrlash<b> jarayoni to‘g‘ri tashkil etilmaganligi sababli, ma’lumotlar bazasiga yo‘naltirilgan <b>SQL inyeksiya<b> hujumini amalga oshirish mumkinligi kuzatildi.<p><p>Mazkur turdagi zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-89”<b> (inglizcha. <b>Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')<b> – <i>SQL buyruqlarida foydalanilgan maxsus so‘rovlarni bartaraf etishda xatolik<i>) identifikator raqamiga ega kategoriyaga mansub.<p><p>Bundan tashqari, “Open Web Application Security Project” (Veb-ilovalar xavfsizligini ta’minlashning ochiq loyihasi)ning OWASP Top 2021 reytingida: 3-o‘rindagi (inglizcha. <b>Injection<b> – Inyeksiya) zaiflik turiga kiritilgan.<p><p>Bundan tashqari, zaiflik CWE 2023-yil talqiniga ko‘ra dasturiy ta’minotlarning 25 ta eng xavfli zaifliklari ro‘yxatidan o‘rin olgan.<p><p>Quyida SQL inyeksiya zaifligidan foydalanish holati taqdim etilgan.<p>",
+                    "<p>SQL inyeksiya hujumi ekspluatatsiyasi axborot tizimining ma’lumotlar bazasidan noqonuniy foydalanish holatlariga olib kelishi mumkin.<p>",
+                    "<p>Axborot resursining “backend” qismi kodini qayta ko‘rib chiqish hamda so‘rovlarni filtrlash funksiyalarini qo‘shish orqali takomillashtirish.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 215
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Sessiyaning saqlanib qolinishi",
+                    "<p>Ekspertiza davrida axborot tizimi foydalanuvchisining autentifikatsiya qiymatini saqlanib qolinish holatlari aniqlandi. Ya’ni foydalanuvchi uchun axborot tizimida shakllantirilgan autentifikatsiya qiymati foydalanuvchi tizimda “chiqish”ni amalga oshirgandan keyin ham foydalanuvchining avtorizatsiya tokeni uzoq muddatli aktiv holatda qolishi aniqlandi.<p><p>Mazkur turdagi zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-613”<b> (inglizcha. <b>Insufficient Session Expiration<b> – <i>Seans davomiyligi yetarli emas<i>) identifikator raqamiga ega.<p><p>Bundan tashqari, “Open Web Application Security Project” (Veb-ilovalarning xavfsizligini ta’minlashning ochiq loyihasi)ning OWASP Top 2021 reytingida: 7-o‘rindagi (inglizcha. <b>Identification and Authentication Failures<b> – <i>Identifikatsiya va autentifikatsiyada\nxatoliklar<i>) zaiflik turiga kiritilgan.<p>",
+                    "<p>Axborot tizimining ixtiyoriy foydalanuvchisiga tegishli avtorizatsiya qiymatini qo‘lga kiritish, shuningdek ushbu axborot tizimidan foydalanuvchi uchun ajratilgan huquq darajalari doirasida noqonuniy foydalanish holatiga olib kelishi mumkin.<p>",
+                    "<p>Axborot tizimi doirasida foydalanuvchilar sessiyasi bilan bog‘liq dasturiy kod qismlarini <b>qayta ko‘rib chiqish<b> va <b>takomillashtirish.<b><p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 218
+                    }
+                }
+            },
+            {
+                "1": [
+                    2,
+                    "O'rta zaiflik",
+                    "dfwefwefwef fewfwefwfw fwefefwefw cvewfwefw",
+                    "wefewfwfwf efwefwefwf ewfwfwf wefwf",
+                    "fefwefwfw fwefwfwefw ewfwefwfw"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 216
+                    }
+                }
+            },
+            {
+                "1": [
+                    3,
+                    "test3",
+                    "test3",
+                    "test3",
+                    "test3"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 220
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "“Cross origin resource sharing: arbitrary origin trusted (CORS)” zaifligi",
+                    "<p>“Cross origin resource sharing” (CORS) – “Butunjahon o‘rgimchak to‘ri konsorsiumi” (World Wide Web Consortium, W3C) tomonidan belgilangan standart bo‘lib, “Domenlarni cheklash qoidalari” (Same-origin policy, SOP) qo‘shimcha hisoblanadi hamda serverga qaysi tashqi ilovalar undan resurslarni yuklab olishi va ularni ruxsat etilgan ro‘yxatga qo‘shishi mumkinligini aniqlash imkonini beradi.<p><p>Mazkur zaiflik “CORS”dan foydalanish jarayonida uning sozlamalarini noto‘g‘ri shakllantirish oqibatida hosil bo‘ladi. Mazkur turdagi zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-942” (inglizcha. Permissive Cross-domain Policy with Untrusted Domains<b> - <i>Ishonchsiz domenlar bilan ruxsat beruvchi oʻzaro faoliyat siyosati<i>) identifikator raqamiga ega.\nBundan tashqari, “Open Web Application Security Project” \n(Veb-ilovalarning xavfsizligini ta’minlashning ochiq loyihasi)ning OWASP Top 2021 reytingida: \n5-o‘rindagi (inglizcha. <b>Security Misconfiguration <b>– Noto‘g‘ri xavfsizlik konfiguratsiyalarida) zaiflik turiga kiritilgan.<p><p>Quyida mazkur zaiflik mavjudligi holati<p>\n\n",
+                    "<p>Ko‘p holatlarda “CORS” sozlamalarida xatoliklarga yo‘l quyilishi jinoyatkor tomonidan foydalanuvchi brauzerini vositachi sifatida ishlatilishi olib keladi.<p>",
+                    "<p>“CORS”da belgilangan sozlamalarni qayta ko‘rib chiqish, xususan ruxsat etilgan ma’lumotlarni olib kelish manbalariga cheklovlar belgilash va shu kabilar.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 221
+                    }
+                }
+            },
+            {
+                "1": [
+                    2,
+                    "Ma’lumotlarni oshkor qiluvchi xatolik xabari",
+                    "<p>Axborot tizimida ma’lumotlarni oshkor qiluvchi xatolik xabari mavjudligi aniqlandi. Mazkur zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-209”<b> (inglizcha. <b>Generation of Error Message Containing Sensitive Information<b> - <i>Konfidensial ma’lumotlarni o‘z ichiga oluvchi xatolik xabarlarini shakllantirish<i>) identifikator raqamiga ega. <p><p>Bundan tashqari, “Open Web Application Security Project” (Veb-ilovalarning xavfsizligini ta’minlashning ochiq loyihasi)ning OWASP Top 2021 reytingida: 4-o‘rindagi (inglizcha. <b>Insecure Design<b> – <i>Ishonchsiz dizayn<i>) zaiflik turiga kiritilgan.<p><p>Misol uchun ma’lumotlarni oshkor qiluvchi xatolik xabari quyida taqdim etilgan:<p>\n\n",
+                    "<p>Zaiflik quyidagilarga olib kelishi mumkin:<p><p>1) To‘g‘ridan-to‘g‘ri ta’sir etuvchi risklar:<p><p> - foydalanuvchilarning hisobga olish yozuvlari (login, parol va boshqalar);<p><p>-foydalanuvchilarning shaxsiy ma’lumotlari.<p><p>2) To‘g‘ridan-to‘g‘ri ta’sir etmaydigan risklar:<p><p>- ma’lumotlar bazasi bilan bog‘liq ma’lumotlar (SQL inyeksiya hujumini amalga oshirish imkoniyatini yaratadi);<p><p>- dasturiy kod qismlari;<p><p>- dasturiy ta’minotlarnig versiyalari va boshqalar.<p>",
+                    "<p>Dasturiy kodlarni qayta tekshirib chiqish va ma’lumotlarni oshkor qiluvchi nuqsonli dasturiy kod qismlarini takomillashtirish, ochiq ma’lumotlarni yopish.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 222
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Xavfsiz bo‘lmagan to‘g‘ridan-to‘g‘ri obyekt manbalari (Insecure Direct Object References, iDOR)",
+                    "<p>Ilovani avtorizatsiya qilish xususiyatlari bir foydalanuvchini boshqa foydalanuvchining ma'lumotlari yoki resurslaridan foydalanishga to'sqinlik qilmaydi.\nYa’ni ushbu zaiflik veb-ilova fayl, katalog yoki ma'lumotlar bazasi yozuvi kabi obyektga to'g'ridan-to'g'ri havolani olish uchun kalit qiymatini o'zgartirish imkoniyatini ta'minlaganligi va tegishli kirish boshqaruvlarini amalga oshirmaganligi sababli yuzaga keladi.\n<p><p>Mazkur turdagi zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-639”<b> (inglizcha. <b>Authorization Bypass Through User-Controlled Key<b> – <i>Foydalanuvchi tomonidan boshqariladigan kalit orqali avtorizatsiyani chetlab o'tish<i>) identifikator raqamiga ega kategoriyaga mansub.<p> <p>Bundan tashqari, “Open Web Application Security Project” (Veb-ilovalarning xavfsizligini ta’minlashning ochiq loyihasi)ning OWASP Top 2021 reytingida: 1-o‘rindagi (inglizcha. <b>Broken Access Control<b> – <i>Ruxsatlar nazoratini buzilishi<i>) zaiflik turiga kiritilgan. <p><p>Quyidagi misollarda aniqlangan zaiflik ekspluatatsiyasi holati taqdim etilgan.<p>",
+                    "<p>Zaiflikdan foydalanish jarayonida jinoyatkor so'rov parametrlarini manipulyatsiya qilish orqali veb-ilova va foydalanuvchilarning maxfiy ma'lumotlariga ruxsatsiz kirish huquqiga ega bo'lishi mumkin.<p>",
+                    "<p>Zaiflikni bartaraf etish yuzasidan quyidagilar tavsiya etiladi:<p>\n<p>- veb-ilova resurslariga kirishni nazorat qilishni to'g'ri tekshirishni amalga oshirish;<p>\n<p>- resurslardan foydalanishni nazorat qilish va foydalanuvchi huquqlariga muvofiq ulardan foydalanishni cheklash mexanizmini joriy etish;<p>\n<p>- obyektlarda bilvosita havolalardan foydalanish.<p>\n"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 223
+                    }
+                }
+            },
+            {
+                "1": [
+                    3,
+                    "Quyi zaiflik",
+                    "fwfwef fwefewfwef fwefwefw fewfwef",
+                    "fwefwefw fwefwefw fwefwewf",
+                    "fwefwfwe ewfwefwf wefwef"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 217
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Avtorizatsiyaning yo‘qligi",
+                    "<p>Ekspertiza davrida axborot tizimida avtorizatsiya jarayoni talablarini belgilash va ishlashi bilan bog‘liq xatoliklar kuzatildi. Ya’ni axborot tizimi foydalanuvchilarini resurslarga, funksional imkoniyatlarga murojaatlarini nazorat qilmasligi aniqlandi. Shuningdek, mazkur holatni rollarda huquqlarni noto‘gri taqsimlanishi, misol uchun oddiy foydalanuvchining (<i>past darajadagi huquqlarga ega<i>) ma’murga (<i>yuqori darajadagi huquqlarga ega<i>) tegishli funksional imkoniyatlardan foydalanishi bilan ifodalash ham mumkin.<p><p>Mazkur turdagi zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-862”<b> (inglizcha. <b>Missing Authorization<b> – <i>Avtorizatsiyaning yo‘qligi<i>) identifikator raqamiga ega kategoriyaga mansub.<p><p>Bundan tashqari, “Open Web Application Security Project” (Veb-ilovalarning xavfsizligini ta’minlash ochiq loyihasi) OWASP Top 2021 reytingida: 1-o‘rindagi (inglizcha. <b>Broken Access Control<b> –  <i>Ruxsatlar nazoratini buzilishi<i>) zaiflik turiga kiritilgan.<p><p>Zaiflik CWE 2023 yil talqiniga ko‘ra dasturiy ta’minotlarning 25 ta eng xavfli zaifliklari ro‘yxatidan ham o‘rin olgan.<p><p>Quyida mazkur zaiflik ekspluatatsiyasi holatlari taqdim etilgan:<p>",
+                    "<p>Resurslardan va funksional imkoniyatlardan foydalanishni nazorat qilish tekshiruvlari qo'llanilmaganligi, foydalanuvchilarga ruxsat berilmagan ma'lumotlardan foydalanishlari yoki ularga ruxsat berilmagan harakatlarni bajarishlari yoki tizimdan to‘liq ixtiyoriy foydalanuvchi nomidan foydalanish uchun imkoniyat yaratib berishi mumkin.<p>",
+                    "<p>Axborot tizimi doirasida foydalanuvchilarga huquqlarni taqsimoti va nazorati tartibini qayta ko‘rib chiqish hamda takomillashtirish.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 225
+                    }
+                }
+            },
+            {
+                "1": [
+                    2,
+                    "Ma’lumotlarni ochiqlanishi",
+                    "<p>Ekspertiza davrida axborot tizimiga tegishli ichki ma’lumotlar, xususan muhim qismlarga kirish oynalari, turli xil kengaytmadagi fayllar Internet tarmog‘ining barcha foydalanuvchilari uchun ochiq holatdaligi, ya’ni ichki resurslarga bo‘ladigan murojaatlarni boshqarish hamda nazorat qilish mexanizmlari qo‘llanmaganlik holati aniqlandi.<p><p>Mazkur turdagi zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-200”<b> (inglizcha. <b>Exposure of Sensitive Information to an Unauthorized Actor<b> –  <i>Ishonchsiz foydalanuvchiga ma’lumotlarni ochiqlanishi<i>) identifikator raqamiga ega kategoriyaga mansub.<p><p>Bundan tashqari, “Open Web Application Security Project” (Veb-ilovalarning xavfsizligini ta’minlash ochiq loyihasi) OWASP Top 2021 reytingida: 1-o‘rindagi (inglizcha. <b>Broken Access Control<b> –  <i>Ruxsatlar nazoratini buzilishi<i>) zaiflik turiga kiritilgan.<p><p>Quyidagi misolda aniqlangan zaiflik ekspluatatsiyasi holati taqdim etilgan.<p>\n\n",
+                    "<p>Mazkur holat, ixtiyoriy Internet tarmog‘i foydalanuvchisiga resurslarga murojaat qilish orqali ulardan foydalanish imkoniyatini taqdim etadi.<p>",
+                    "<p>Ushbu qism bilan bog‘liq dasturiy kodni qayta ko‘rib chiqish hamda takomillashtirish.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 226
+                    }
+                }
+            },
+            {
+                "1": [
+                    2,
+                    "test2",
+                    "test2",
+                    "test2",
+                    "test2"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 219
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Bajariladigan faylni yuklash",
+                    "<p>Ekspertiza davrida tizimning fayl biriktirish funksiyasi mavjud bo‘lgan foydalanuvchini ariza berish oynasida yuklanayotgan fayllarning kengaytmalariga cheklovlar belgilanmaganlik holati aniqlandi.<p><p>Mazkur zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-434”<b> (inglizcha. <b>Unrestricted Upload of File with Dangerous Type<b> – <i>Xavfli turdagi faylni yuklashda cheklovlar yo‘qligi<i>) identifikator raqamiga ega.<p><p>Bundan tashqari, “Open Web Application Security Project” (Veb-ilovalar xavfsizligini ta’minlash ochiq loyihasi)ning OWASP Top 2021 reytingida: 8-o‘rindagi (inglizcha. <b>Software and Data Integrity Failures<b> – <i>Ma’lumotlar va dasturiy ta’minot butunligini buzilishi<i>) zaiflik turiga kiritilgan.<p><p>Misol uchun quyida ixtiyoriy kengaytmadagi faylni yuklash imkoniyatidan foydalangan holda fayl yuklanishi va undan foydalanish holati taqdim etilgan.<p><p><i>Ma’lumot o‘rnida: mazkur turdagi fayllarni ba’zi holatlarda,  veb-interfeysni shakllantirib berish imkoniyatiga ega bo'lganligi sababli “web-shell” deb ham yuritiladi.<i><p>\n",
+                    "<p>Mazkur turdagi zaifliklar zararli yoki bajariladigan fayllarni serverga yuklash, ularni tarqatish holatlariga, server va uning ma’lumotlaridan noqonuniy foydalanishga olib kelishi mumkin.<p>",
+                    "<p>Axborot tizimining maqsadidan kelib chiqqan holda yuklanayotgan fayllarning kengaytmalariga cheklovlar belgilash, shuningdek ularning kengaytmalarini tekshirishni joriy etish.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 228
+                    }
+                }
+            },
+            {
+                "1": [
+                    2,
+                    "To‘liq ajratib bajariladigan hujum (brute-force attack)",
+                    "<p>Ekspertiza davrida tizimning kirish oynasi (https://dmi.mehnat.uz/login) to‘liq ajratib bajariladigan hujumdan (brute-force attack) himoyalanmaganlik holati aniqlandi. Zaiflik holati <b>10000 dan ortiq<b> turli xil kombinatsiyadan iborat parollar ro‘yxatidan foydalangan holda tekshirish natijasida aniqlandi.<p><p>To‘liq ajratib bajariladigan hujum turi CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-307”<b> (inglizcha. <b>Improper Restriction of Excessive Authentication Attempts<b> - <i>Haddan tashqari autentifikatsiya urinishlarini noto'g'ri cheklash<i>) identifikator raqamiga ega.<p><p>Bundan tashqari, “Open Web Application Security Project” (Veb-ilovalarning xavfsizligini ta’minlash ochiq loyihasi)ning OWASP Top 2021 reytingida: 7-o‘rinda (inglizcha. <b>Identification and Authentication Failures<b> – <i>Identifikatsiya va autentifikatsiyada xatoliklar<i>) zaiflik turiga kiritilgan.<p>",
+                    "<p>Tizimga noqonuniy kirish holatlariga olib kelishi mumkin.<p>",
+                    "<p>Kirish oynalarida himoya mexanizmlarini, xususan <b>“CAPTCHA” <b> texnologiyalarini, “login” va “parol”ni kiritish bo‘yicha urinishlarga <b>cheklovlar<b> joriy etish, shuningdek, <b>sodda<b> va <b>standart<b> parollardan foydalanmaslik.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 229
+                    }
+                }
+            },
+            {
+                "1": [
+                    2,
+                    "Foydalanuvchilarni aldash mexanizmi (Clickjacking)",
+                    "<p>“Clickjacking” hujumi asosan veb-ilovalarga qaratilgan zararli hujum turidir. Ushbu hujumda “iframe”dan foydalangan holda veb-sahifani boshqa maxsus yaratilgan veb-sahifa ustiga qo‘yish orqali foydalanuvchi tomonidan bo‘layotgan barcha so‘rovlarni qo‘lga kiritish ehtimoli mavjud.<p><p>Mazkur turdagi zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-1021”<b> (inglizcha. <b>Improper Restriction of Rendered UI Layers or Frames<b> – <i>Ko'rsatilgan UI qatlamlari yoki ramkalarini noto'g'ri cheklash<i>) identifikator raqamiga ega kategoriyaga mansub.<p><p>Bundan tashqari, “Open Web Application Security Project” (Veb-ilovalarning xavfsizligini ta’minlashning ochiq loyihasi) OWASP Top 2021 reytingida: 4-o‘rindagi (inglizcha. <b>Insecure Design<b> – <i>Ishonchsiz dizayn<i>) zaiflik turiga kiritilgan.<p>\n",
+                    "<p>Axborot tizimi foydalanuvchilarini zararli veb sayt orqali tizimga kirishga ishontirish va ma’lumotlarni og‘irlash.<p>",
+                    "<p>Kiruvchi turli xildagi zararli qiymatlarni bartaraf etishda kontent xavfsizlik siyosati (CSP) va boshqa chora tadbirlardan foydalanish.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 230
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Konfidensial ma’lumotlarni oshkor qilinishi",
+                    "<p>Ekspertiza jarayonida foydalanuvchi ma’lumotlariga murojaat asosida tizim tomonidan javob qaytarilish davrida ma’lumotlar orasida foydalanuvchi “api tokeni” qiymati ham qo‘shib yuborilishi aniqlandi.<p><p>Mazkur turdagi zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-201”<b> (inglizcha. <b>Insertion of Sensitive Information Into Sent Data<b> – <i>Konfidensial ma’lumotlarni yuborilayotgan ma’lumotlarga qo‘shib yuborish<i>) identifikator raqamiga ega kategoriyaga mansub.<p><p>Bundan tashqari, “Open Web Application Security Project” (Veb-ilovalarning xavfsizligini ta’minlashning ochiq loyihasi)ning OWASP Top 2021 reytingida: \n1-o‘rindagi (inglizcha. <b>Broken Access Control<b> – <i>Ruxsatlar nazoratini buzilishi<i>) zaiflik turiga kiritilgan.<p><p>Quyidagi misollarda aniqlangan zaiflik ekspluatatsiyasi holati taqdim etilgan.<p>",
+                    "<p>“Foydalanuvchi” rolida axborot tizimdan foydalangan holda “Admin” roliga tegishli resurslar, funksional imkoniyatlaridan noqonuniy foydalanish holatiga olib kelishi mumkin.<p>",
+                    "<p>Axborot tizimi doirasida foydalanuvchilarga huquqlarni taqsimoti va nazorati tartibini qayta ko‘rib chiqish hamda takomillashtirish.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 224
+                    }
+                }
+            },
+            {
+                "1": [
+                    2,
+                    "Sessiyaning aktivlik vaqtini uzoqligi",
+                    "<p>Ekspertiza davrida axborot tizimi foydalanuvchisining avtorizatsiya qiymatini saqlanib qolinish holatlari\naniqlandi. Ya’ni foydalanuvchi uchun axborot tizimida shakllantirilgan avtorizatsiyaning qiymatinin aktivlik vaqti uzoq davom etishi aniqlandi.<p><p>Mazkur turdagi zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-613”<b> (inglizcha. <b>Insufficient Session Expiration<b> – <i>Seans davomiyligi yetarli emas<i>) identifikator raqamiga ega.<p><p>Bundan tashqari, “Open Web Application Security Project” (Veb-ilovalarning xavfsizligini ta’minlashning ochiq loyihasi)ning OWASP Top 2021 reytingida: 7-o‘rindagi (inglizcha. <b>Identification and Authentication Failures<b> – <i>Identifikatsiya va autentifikatsiyada xatoliklar<i>) zaiflik turiga kiritilgan.<p>",
+                    "<p>Axborot tizimining ixtiyoriy foydalanuvchisiga tegishli avtorizatsiya qiymatini qo‘lga kiritish ehtimolligini ortishiga, shuningdek ushbu axborot tizimidan foydalanuvchi uchun ajratilgan huquq darajalari doirasida noqonuniy foydalanish holatiga olib kelishi mumkin. <p>",
+                    "<p>Axborot tizimi doirasida foydalanuvchilar sessiyasi bilan bog‘liq dasturiy kod qismlarini <b>qayta ko‘rib chiqish<b> va <b>takomillashtirish.<b><p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 232
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Autentifikatsiya jarayonini noto‘g‘ri ishlashi",
+                    "<p>Ekspertiza davrida axborot tizimida autentufikatsiya jarayonlarida yuborilayotgan foydalanuvchi bilan bog‘liq qiymatlarni tekshirish jarayoni to‘g‘ri joriy etilmaganlik holati kuzatildi. Ya’ni foydalanuvchiga tegishli ma’lumotlarni ba’zi bir qismlarini o‘zgartirilishiga qaramay to‘g‘rilikka tekshirilmaydi.<p><p>Mazkur turdagi zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-287”<b> (inglizcha. <b>Improper Authentication<b> – <i>Noto‘g‘ri autentifikatsiya<i>) identifikator raqamiga ega.<p><p>Bundan tashqari, “Open Web Application Security Project” \n(Veb-ilovalarning xavfsizligini ta’minlashning ochiq loyihasi)ning OWASP Top 2021 reytingida: 7-o‘rindagi (inglizcha. <b>Identification and Authentication Failures<b> – <i>Identifikatsiya va autentifikatsiya xatoliklar<i>) zaiflik turiga kiritilgan.<p><p>Shuningdek, 2024-yilda e’lon qilingan dasturiy ta’minotlardagi top 25 ta eng xavfli zaifliklar qatoriga ham kiritilgan.<p><p>Quyida mazkur zaiflikni ekspluatatsiya qilinish holati taqdim etilgan.<p>",
+                    "<p>Axborot tizimini “OneID” tizimi autentifikatsiyasi bilan bog‘liq jarayonlarini chetlab o‘tish va axborot tizimi va uning resurslaridan ixtiytoriy foydalanuvchi ma’lumotlari asosida foydlanish.<p>",
+                    "<p>Autentifikatsiya jarayonlarini qayta ko‘rib chiqish va ma’lumotlarni haqiqiyligini tekshirishni to‘g‘ri joriy etish.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 233
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "“Open redirect” zaifligi",
+                    "<p>Ekspertiza davrida axborot tizimida uning foydalanuvchisini xabardor qilmagan holda ixtiyoriy “URL”larga yo‘naltirish imkoniyatini taqdim etuvchi “Ochiq yo‘nalirish” (Open redirect) zaifligi aniqlandi.<p><p>Mazkur zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-601”<b> (inglizcha. <b>URL Redirection to Untrusted Site ('Open Redirect')<b> – <i>URL ishonchsiz bo‘lgan saytga yo‘naltirish (“Ochiq yo‘naltirish”)<i>) identifikator raqamiga ega.<p><p>Bundan tashqari, “Open Web Application Security Project” (Veb-ilovalar xavfsizligini ta’minlash ochiq loyihasi)ning OWASP Top 2021 reytingida: 1-o‘rindagi (inglizcha. <p>Broken Access Control<p> – <i>Ruxsatlar nazoratini buzilishi<i>) zaiflik turiga kiritilgan.<p>\n",
+                    "<p>Zaiflik axborot tizimi foydalanuvchilarini zararli “URL”larga, xususan fishing, zararli dasturlar joylashgan va boshqa shu xavfli veb-resurslarga yo‘nlatirilish holatiga olib kelishi mumkin.<p>",
+                    "<p>Kiruvchi parametrlarni tekshirish va filtrlash, himoya vositalaridan foydalanish, xavfsizlik siyosatlarini muqobillashtirish, oq ro‘yxatlarni joriy qilish va boshqalar.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 234
+                    }
+                }
+            },
+            {
+                "1": [
+                    2,
+                    "“SSH” protokoli zaifliklari",
+                    "<p>Ekspertiza davrida axborot tizimi joylashgan serverning 22 porti ochiq holatdaligi va unda  “SSH” (Secure Shell) protokolining 6.9 versiyasidan foydalanganlik holati aniqlandi.<p><p>Shu o‘rinda, mazkur veb-serverda xalqaro “MITRE” tashkilotining “Common Vulnerabilities and Exposures” (Axborot xavfsizligi zaifliklarining ma’lumotlar bazasi) loyihasida <b>CVE-2023-38408, CVE-2016-1908, CVE-2015-5600, CVE-2016-0778, CVE-2020-15778, CVE-2016-10012, CVE-2015-8325, CVE-2016-8858, CVE-2016-6515, CVE-2016-10708, CVE-2016-10009, CVE-2015-6564, CVE-2019-6110, CVE-2019-6109, CVE-2023-51385, CVE-2016-0777, CVE-2016-3115, CVE-2023-48795, CVE-2020-14145, CVE-2019-6111, CVE-2016-6210, CVE-2016-10011, CVE-2018-20685, CVE-2018-15919, CVE-2018-15473, CVE-2017-15906, CVE-2016-20012, CVE-2016-1907, CVE-2021-36368, CVE-2015-6563<b> identifikatsiya raqamiga ega zaifliklar mavjud deb e’lon qilinganligi aniqlandi.<p>",
+                    "<p>Zaiflik ekspluatatsiyasi dasturiy ta’minot ish faoliyatida xizmat ko‘rsatishda rad etish, masofadan kodni bajarish va boshqa holatlarga olib kelishi mumkin.<p>",
+                    "<p>Axborot tizimi doirasida ishlatilgan veb-serverni <b>dolzarb, xavfsiz versiyasigacha yangilash.<b><p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 235
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Muhim turdagi ma'lumotlarni ochiqlanishi",
+                    "<p>Ekspertiza davrida axborot tizimiga tegishli muhim turdagi ichki ma’lumotlar, xususan shaxsga doir, konfidensial ma’lumotlar, muhim resurslardan foydalanish imkoniyati Internet tarmog‘ining barcha foydalanuvchilari uchun ochiq holatdaligi, ya’ni ichki resurslarga bo‘ladigan murojaatlarni boshqarish hamda nazorat qilish mexanizmlari qo‘llanmaganlik holati aniqlandi.<p><p>Mazkur turdagi zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-200”<b> (inglizcha. <b>Exposure of Sensitive Information to an Unauthorized Actor<b> – <i>Ishonchsiz foydalanuvchiga ma’lumotlarni ochiqlanishi<i>) identifikator raqamiga ega kategoriyaga mansub.<p><p>Bundan tashqari, “Open Web Application Security Project” (Veb-ilovalarning xavfsizligini ta’minlash ochiq loyihasi) OWASP Top 2021 reytingida: 1-o‘rindagi (inglizcha. <b>Broken Access Control<b> – Ruxsatlar nazoratini buzilishi) zaiflik turiga kiritilgan.<p><p>Quyidagi misolda aniqlangan zaiflikdan foydalanish holatlari taqdim etilgan.<p>",
+                    "<p>Mazkur holat, ixtiyoriy Internet tarmog‘i foydalanuvchisiga resurslarga murojaat qilish orqali ulardan foydalanish imkoniyatini taqdim etadi va ushbu holatni avtomatlashtirish orqali katta hajmdagi ma’lumotlarni sizb chiqish holatiga olib kelishi mumkin.<p>",
+                    "<p>Ushbu qism bilan bog‘liq dasturiy kodni qayta ko‘rib chiqish hamda takomillashtirish.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 236
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "HTML inyeksiya",
+                    "<p>Ekspertiza davrida axborot tizimida “Hypertext Markup Language” (HTML) - gipermatnli belgilash tilida yaratilgan kontentlarga yo‘naltirilgan hujum turini ekspluatatsiya qilish imkoniyatini taqdim etuvchi zaiflik aniqlandi. Mazkur hujum turi veb-saytga foydalanuvchi tomonidan kiritiladigan so‘rovlarni qayta ishlash bo‘yicha funksiyalarning yo‘qligi evaziga shaxsiy HTML-kodlarni yuklashga yo‘naltirilgan.<p><p>Mazkur turdagi zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-79”<b> (inglizcha. <b>Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')<b> – <i>Veb-sahifalarni yaratishda kiruvchi ma’lumotlarni noto‘g‘ri neytrallashtirish<i>) identifikator raqamiga ega kategoriyaga mansub.<p><p><i>Ma’lumot o‘rnida: HTML inyeksiyaning ekspluatatsiyasi saqlanib qoluvchi saytlararo skriptning (stored XSS) qo‘llanilishi bilan bir xil bo‘lganligi sababli bitta kategoriya, ya’ni “CWE-79” kiritiladi.<i><p><p><i>HTML inyeksiyada saytlararo skriptdan farqli jihati, ekspluatatsiya jarayonida faqatgina HTML-kodlardan foydalaniladi.<i><p><p>Bundan tashqari, “Open Web Application Security Project” \n(Veb-ilovalar xavfsizligini ta’minlash ochiq loyihasi)ning OWASP Top 2021 reytingida: 3-o‘rindagi (inglizcha. <b>Injection<b> – Inyeksiya) zaiflik turiga kiritilgan.<p><p>Zaiflik CWE 2023-yil talqiniga ko‘ra dasturiy ta’minotlarning 25 ta eng xavfli zaifliklari ro‘yxatidan o‘rin olgan.<p>",
+                    "<p>HTML kodlar asosida veb-sahifani o‘zgartirish va foydalanuvchilarning konfidensial turdagi ma’lumotlariga ega bo‘lish holatiga olib kelishi mumkin.<p>",
+                    "<p>Axborot resursining “backend” qismi kodini qayta ko‘rib chiqish hamda so‘rovlarni filtrlash funksiyalarini qo‘shish orqali takomillashtirish.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 237
+                    }
+                }
+            },
+            {
+                "1": [
+                    2,
+                    "Dasturdagi zaiflik",
+                    "<p>Ekspertiza davrida axborot tizimi doirasida foydalanilgan “jQuery 3.0.0” versiyasidan foydalanilganlik holati aniqlandi.<p><p>Shu o‘rinda, “jQuery 3.0.0” versiyasida xalqaro “MITRE” tashkilotining “Common Vulnerabilities and Exposures” (Axborot xavfsizligi zaifliklarining ma’lumotlar bazasi) loyihasida <b>CVE-2015-9251<b> identifikatsiya raqamiga ega zaifliklar mavjud deb e’lon qilinganligi aniqlandi.<p>",
+                    "<p>Zaiflik ekspluatatsiyasi dasturiy ta’minot ish faoliyatida xizmat ko‘rsatishda rad etish, masofadan kodni bajarish va boshqa holatlarga olib kelishi mumkin.<p>",
+                    "<p>Axborot tizimi doirasida ishlatilgan veb-serverni <b>dolzarb, xavfsiz versiyasigacha yangilash.<b><p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 238
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Saytlararo skript (XSS)",
+                    "<p>Axborot tizimi ekspertizasi davrida veb-tizimlarga yo‘naltirilgan saytlararo skript hujumidan foydalanish imkoniyati aniqlandi. Mazkur hujum maxsus bajariluvchi kodni veb-tizimga yuklash orqali <b>foydalanuvchi<b> va <b>veb-tizim<b> bilan bog‘liq <b>ma’lumotlarni qo‘lga kiritish<b> imkoniyatini taqdim etadi.<p><p>Mazkur turdagi zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-79”<b> (inglizcha. <b>Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')<b> – <i>Veb-sahifalarni yaratishda kiruvchi ma’lumotlarni noto‘g‘ri neytrallashtirish<i>) identifikator raqamiga ega kategoriyaga mansub.<p><p>Bundan tashqari, “Open Web Application Security Project” (Veb-ilovalar xavfsizligini ta’minlashning ochiq loyihasi)ning OWASP Top 2021 reytingida: 3-o‘rindagi (inglizcha. <b>Injection<b> – Inyeksiya) zaiflik turiga kiritilgan.<p><p>Bundan tashqari, zaiflik CWE 2023-yil talqiniga ko‘ra dasturiy ta’minotlarning 25 ta eng xavfli zaifliklari ro‘yxatidan o‘rin olgan.<p><p>Quyidagi misolda aniqlangan zaiflik ekspluatatsiyasi holati taqdim etilgan.<p>",
+                    "<p>Saytlararo skriptni (JavaScript, VBScript, ActiveX, HTML) yuklanishi axborot resursi va uning foydalanuvchilari bilan bog‘liq quyidagi holatlarga olib keladi:<p>\n<p>- foydalanuvchilarning “cookie” qiymatlarini qo‘lga kiritish va undan foydalanish;<p>\n<p><i>Ma’lumot o‘rnida: o‘girlangan “cookie” qiymati ma’mur huquqidagi foydalanuvchiga tegishli holatlarda tizimdan cheklovlarsiz noqonuniy foydalanish holatiga olib keladi.<i><p>\n<p>- veb-sahifaga o‘zgartirishlar kiritish orqali konfidensial turdagi ma’lumotlarni qo‘lga kiritish va shu kabilar.<p>\n",
+                    "<p>Axborot resursining “backend” qismi kodini qayta ko‘rib chiqish hamda so‘rovlarni filtrlash funksiyalarini qo‘shish orqali takomillashtirish.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 239
+                    }
+                }
+            },
+            {
+                "1": [
+                    2,
+                    "Zaif “framework”lar va kutubxonalar",
+                    "<p>Ekspertiza davrida axborot tizimi doirasida foydalanilgan “jQuery”, “Bootstarp” “DataTables”, “ChartJS”, “AdminLTE” “framework”larining versiyalarida xalqaro “MITRE” tashkiloti “Common Vulnerabilities and Exposures” (Axborot xavfsizligi zaifliklarining ma’lumotlar bazasi) loyihasida qator zaifliklar e’lon qilingan.<p>",
+                    "<p>Zaiflik ekspluatatsiyasi dasturiy ta’minot ish faoliyatiga ta’sir ko‘rsatish, masofadan kodni bajarish va boshqa holatlarga olib kelishi mumkin.<p>",
+                    "<p>Axborot tizimi doirasida ishlatilgan barcha kutubxonalarni <b>dolzarb, xavfsiz versiyasigacha yangilash.<b><p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 240
+                    }
+                }
+            },
+            {
+                "1": [
+                    2,
+                    "Ixtiyoriy kengaytmadagi faylni yuklash",
+                    "<p>Ekspertiza davrida tizimning “<i><u>https://t-sertifikat.mehnat.uz/cabinet/#/users/create<u><i>” URL manzilda joylashgan “Yangiliklar” oynasida mavjud fayl biriktirish funksiyasi foydalanuvchi tomonidan yuklanayotgan fayllarning kengaytmalariga cheklovlar va tekshirish funksiyalari joriy etilmaganligi aniqlandi.<p><p>Mazkur zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-434”<b> (inglizcha. <b>Unrestricted Upload of File with Dangerous Type<b> – <i>Xavfli turdagi faylni yuklashda cheklovlar yo‘qligi) identifikator raqamiga ega.<i><p><p>Bundan tashqari, “Open Web Application Security Project” (Veb-ilovalar xavfsizligini ta’minlash ochiq loyihasi)ning OWASP Top 2021 reytingida: 4-o‘rindagi (inglizcha. <b>Insecure Design<b> – <i>Ishonchsiz dizayn<i>) zaiflik turiga kiritilgan.<p><p>Quyida zaiflikdan foydalangan holda ixtiyoriy kengaytmadagi faylni yuklash holati taqdim etilgan<p>",
+                    "<p>Joriy holat axborot tizimi resurslari nomidan axborot tizimi foydalanuvchilari, shuningdek internet tarmog‘i foydalanuvchilariga ham fishing xabarlar orqali zararli fayllarni tarqatish va ishga tushirishga undash imkoniyatini taqdim etadi.<p>",
+                    "<p>Axborot tizimi doirasida almashinishi nazarda tutilgan fayl kengaytmalari va turlari bo‘yicha foydalanuvchi (frontend) va server (backend) tomonida maxsus filtrlovchi funksiyalardan foydalanish. Axborot tizimi serverida zararli fayllarni aniqlash va bartaraf etish maqsadida antivirus vositalari joriy etish.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 241
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "“Xizmat ko‘rsatishni rad etish” (DoS) turidagi hujum",
+                    "<p>Ekspertiza davrida axborot tizimida o‘z resurslaridan foydalanib bo‘lgandan so‘ng tozalash mexanizmlari noto‘g‘ri shakllantirilganligi aniqlandi.<p><p>Mazkur turdagi zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-772”<b> (inglizcha. <b>Missing Release of Resource after Effective Lifetime<b> – <i>Samarali xizmat muddatidan keyin resursni tozalanmasligi<i>) identifikator raqamiga ega kategoriyaga mansub.<p><p>Xususan, yuqorida aytib o‘tilgan mexanizmni noto‘g‘ri shakllantirilganligan foydalangan holda “http” protokoliga asoslangan “Slowloris” va “Slow HTTP POST” “Xizmat ko‘rsatishni rad etish” (DoS-Denial of service attack) hujumini amalga oshirish imkoniyatini taqdim etadi.<p><p><i>Izoh: Xizmat ko‘rsatishni rad etish hujumi - qonuniy foydalanuvchilar tizim yoki uskuna yordamida taqdim etiladigan resurslardan foydalana olmasligi mumkin bo‘lgan yoki ulardan foydalanishda qiyinchilik shakllantirishda sharoitlarni yaratish maqsadida axborot tizimiga yoki uskunaga qasddan ta’sir etish.<i><p>",
+                    "<p>Axborot tizimining ishchi holatiga ta’sir ko‘rsatish, ya’ni ish jarayonini to‘xtatish holatiga olib kelishi mumkin.<p>",
+                    "<p>Foydalanuvchilar tomonidan kelayotgan so‘rovlarni qayta ishlash jarayonlarini va ularga resurslarni sarflanish mexanizmlarini qayta ko‘rib chiqish.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 242
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Yagona parametr asosida kritik ma’lumotlarni qayta ishlash",
+                    "<p>Ekspertiza davrida axborot tizimida avtorizatsiya jarayoni talablarini belgilash va ishlashi bilan bog‘liq xatoliklar kuzatildi. Ya’ni axborot tizimi foydalanuvchilarini resurslar, funksional imkoniyatlarga murojaatlarini nazorat qilmasligi aniqlandi. Xususan tizimdagi huquq darajasi yuqoriroq bo‘lgan foydalanuvchining resurslaridan noqonuniy foydalanish imkoniyati aniqlandi. Mazkur holatni rollarda huquqlarni noto‘g‘ri taqsimlanishi deb ham ifodalash mumkin.<p><p>Mazkur zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-862”<b> (inglizcha. <b>Missing Authorization<b> - <i>Avtorizatsiyaning yo‘qligi<i>) identifikator raqamiga ega.<p>Bundan tashqari, “Open Web Application Security Project” (Veb-ilovalar xavfsizligini ta’minlash ochiq loyihasi)ning OWASP Top 2021 reytingida: 1-o‘rindagi (inglizcha. <b>Broken Access Control<b> – <i>Ruxsatlar nazoratini buzilishi<i>) zaiflik turiga kiritilgan.<p><p>Zaiflik CWE 2023 yil talqiniga ko‘ra dasturiy ta’minotlarning 25 ta eng xavfli zaifliklari ro‘yxatidan ham o‘rin olgan.<p><p>Mazkur tizimda zaiflikdan foydalanish quyidagi misollarda taqdim etilgan.<p>",
+                    "<p>Eng past huquq va imkoniyatlarga ega bo‘lgan foydalanuvchi nomidan yuqori daraja va huquqlarga tegishli resurslar, funksional imkoniyatlaridan noqonuniy foydalanish holatiga olib kelishi mumkin.<p>",
+                    "<p>Axborot tizimi doirasida foydalanuvchilarga huquqlarni taqsimoti va nazorati tartibini qayta ko‘rib chiqish hamda takomillashtirish.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 227
+                    }
+                }
+            },
+            {
+                "1": [
+                    2,
+                    "“Terrapin” hujumi",
+                    "<p>“Terrapin” hujumini mavjudligi ma’lumot almashishda keng tarqalgan shifrlash algoritmlaridan foydalanilgan holatlarda SSH-kanali yaxlitliligini buzilishiga olib kelishi mumkin.<p><p>Shu o‘rinda, mazkur hujum zaiflik xalqaro “MITRE” tashkilotining “Common Vulnerabilities and Exposures” (Axborot xavfsizligi zaifliklarining ma’lumotlar bazasi) loyihasida <b>CVE-2023-48795<b> identifikatsiya raqamiga ega zaifliklar mavjud deb e’lon qilinganligi aniqlandi.<p><p>Mazkur zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-354”<b> (inglizcha. <b>Improper Validation of Integrity Check Value<b> – <i>Butunlikni tekshirish qiymatini noto‘g‘ri tekshirilishi<i>) identifikator raqamiga ega.<p>",
+                    "<p>Buzg‘unchilar kanal orqali kelayotgan xabarlarni o‘chirishi yoki o‘zgartirishi mumkin, natijada foydalanuvchi autentifikatsiyasida ishtirok etadigan ochiq kalit algoritmlarini yaratilish holatlari yuzaga keladi.<p>",
+                    "<p>Foydalanuvchi va server o‘rtasida ulanish uchun xizmat qiladigan <b>SSH servesi versiyasini yangilash.<b><p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 244
+                    }
+                }
+            },
+            {
+                "1": [
+                    4,
+                    "Ishchi holatda bo'lmagan funksiyalar",
+                    "<p>Axborot tizimi ekspertizasi davrida unda qator funksional imkoniyatlar ishchi holatda emasligi kuzatildi.<p>",
+                    "-",
+                    "-"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 245
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Mobil ilova elektron imzosi bilan bog‘liq zaiflik (\"Janus\")",
+                    "<p>Mobil ilova ekspertizasi davrida Android operatsion tizimida uchrab turadigan va mobil ilovalarning (APK) elektron imzo sxemasini o‘zgartirmagan holda uni modifikatsiya qilish imkoniyatini taqdim etuvchi <b>“Janus”<b> zaifligi aniqlandi.<p><p>Ya’ni “Janus” zaifligi raqamli imzoga ta'sir ko‘rsatmasdan modifikatsiya qilingan arxiv ko‘rinishidagi “DEX” bajariladigan faylini “APK” fayliga kiritish imkonini beradi. Boshqacha qilib aytganda, “Janus”dan foydalanib, tajovuzkorlar asl faylda mavjud bo‘lgan barcha tizim ruxsatnomalarini saqlab qolgan holda dasturning bajariladigan faylini zararli nusxa bilan almashtirilishi mumkin.<p><p>Ekspertiza o‘tayotgan mobil ilovada elektron imzo sxemasining  “v1” talqinidan foydalanganligi aniqlandi.<p><p><i>Ma’lumot o‘rnida: “v1” elektron imzo sxemasi bilan imzolangan mobil ilovalar Android 5.0-8.0 da “Janus”ga zaif deb e’lon qilingan. “v1” va “v2/v3” sxemasi bilan imzolangan Android 5.0-7.0 da ishlaydigan mobil ilovalar ham zaif.<i><p><p>“Janus” zaifligi CVE (inglizcha. Common Vulnerabilities and Exposures) — axborot xavfsizligi zaifliklarining ma’lumotlar bazasida <b>“CVE–2017-13156”<b> identifikatsiya raqamiga ega.<p><p>Zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-434”<b> (inglizcha. <b>Unrestricted Upload of File with Dangerous Type<b> - <i>Xavfli turdagi faylni yuklashga cheklovlar yo'qligi<i>) identifikator raqamiga ega. Shuningdek, “Open Web Application Security Project” (Veb-ilovalarning xavfsizligini ta’minlashning ochiq loyihasi)ning <b>OWASP Mobile Top 2024<b> reytingida 4-o‘rinda (inglizcha. <b>Insecure Design<b> – <i>Ishonchsiz dizayn<i>) zaiflik turiga kiritilgan.<p>",
+                    "<p>Mobil ilovaga o‘zgartirish kiritish holatiga olib kelishi mumkin.<p>",
+                    "<p>Android operatsion tizimlari uchun mobil ilovalarni yaratish jarayonida bir nechta raqamli imzolardan foydalanish zarur.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 246
+                    }
+                }
+            },
+            {
+                "1": [
+                    2,
+                    "Android oynasi xavfsiz bo’lmagan usulda foydalanilishi",
+                    "Mobil ilovada foydalanuvchi interfeysini shakllantirish maqsadida bir nechta ishchi oynalar (<b>Activity, Broadcast Receiver, Service<b>) qo‘llanilgan bo‘lib, ularning quyidagilariga to‘g‘ridan-to‘g‘ri murojaat qilish orqali boshqa ilovadan o‘tish imkoniyati mavjud. Zaiflik CWE dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-926”<b> (inglizcha. <b>Improper Export of Android Application Components<b> - <i>Android ilova komponentlarini noto'g'ri eksport qilish<i>) identifikator raqamiga va <b>“MASWE-0060”<b> (inglizcha. <b>Insecure Use of UIActivity<b> – <i>Android oynasi xavfsiz bo’lmagan usulda foydalanilishi<i>) identifikator raqamiga ega. Shuningdek, <b>OWASP Mobile Top 10 2024<b> reytingida 5-o‘rinda (inglizcha. <b>Insecure Communication<b> – <i>Ishonchsiz aloqa<i>) zaiflik turiga kiritilgan.",
+                    "<p>Boshqa ilovalardan “Activity, Broadcast Receiver, Service”larga murojaat etish va ulardan foydalanishga olib kelishi mumkin.<p>",
+                    "<p><b>[android:exported=true]<b> qiymatini <b>[android:exported=false]<b> ga o’zgartirish. Dasturiy kodni qayta ko‘rib chiqish va muqobillashtirish.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 247
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Ilovada saqlangan ma’lumotlarni boshqa ilovalarga ham ochiq qolishi",
+                    "<p>Mobil ilova ekspertizasi davrida “SharedPreferences” \"world-writable\" (ya'ni, boshqa barcha ilovalar yozish huquqiga ega) tarzda yaratilgan, bu jiddiy xavfsizlik muammolariga olib kelishi mumkin. Zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>\"CWE-276\"<b> (inglizcha. <b>Incorrect Default Permissions<b> - <i>Noto'g'ri standart ruxsatlar<i>) va  <b>\"CWE-732\"<b> (inglizcha. <b>Incorrect Permission Assignment for Critical Resource<b> - <i>Muhim manba uchun noto'g'ri ruxsat berish<i>) zaifliklariga kiradi.<p><p>Shuningdek, “Open Web Application Security Project” (Veb-ilovalarning xavfsizligini ta’minlashning ochiq loyihasi)ning <b>OWASP Mobile Top 2024<b> reytingida <b>1-o‘rinda<b> (inglizcha. <b>Broken Access Control<b> –  <i>Ruxsatlarni noto'g'ri nazorati<i>) zaiflik turiga kiritilgan.<p>",
+                    "<p>Natijada zararli ilovalar ushbu faylga kirib, undagi ma'lumotlarni o'zgartirishi yoki shikastlashi mumkin<p>",
+                    "<p>Fayl va \"SharedPreferences\"ni yaratayotganda, faqat o'z ilova uchun yozish va o'qish huquqlarini berish. Androidda \"MODE_PRIVATE \" rejimidan foydalanish tavsiya etiladi, bu fayl yoki \"SharedPreferences\"ni faqat o'z ilova tomonidan foydalaniladigan holatda saqlaydi.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 248
+                    }
+                }
+            },
+            {
+                "1": [
+                    2,
+                    "Zaif “TLS”",
+                    "<p>Ekspertiza davrida axborot tizimi doirasida ma’lumotlar uzatilishida xavfsizlikni ta’minlash maqsadida “TLS” protokolining 1.1 versiyasi joriy etilganligi kuzatildi.<p><p>Shu o‘rinda, mazkur “TLS” protokolining 1.1 versiyasi o‘rtadagi odam hujumidan (Man in the middle – MITM) himoyalanmagan deb e’lon qilingan.<p>",
+                    "<p>Ma’lumotlar almashinish jarayoniga ruxsatsiz qo‘shilish va ma’lumotlarni qo‘lga kiritish, o‘zgartirilish holatlariga olib kelishi  mumkin.<p>",
+                    "<p>Axborot tizimi doirasida ishlatilgan “TLS” protokolini <b>dolzarb, xavfsiz versiyasigacha yangilash.<b><p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 231
+                    }
+                }
+            },
+            {
+                "1": [
+                    2,
+                    "SQL buyruqlarini to‘g‘ridan-to‘g‘ri bajarilishi",
+                    "<p>Ilova <b>SQLite<b> bilan ishlaganda foydalanuvchi tomonidan kiritilayotgan so‘rovlar to‘g‘ridan-to‘g‘ri SQL so‘rovlarida ishlatish SQL injeksiyaga olib kelishi mumkin. SQL injeksiya hujumi ilovangizga zarar yetkazishi yoki maxfiy ma’lumotlarga <b>noqonuniy kirish imkonini<b> berishi mumkin.<p><p>Zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-89”<b> (inglizcha. <b>Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')<b> - <i>SQL buyrug'ida ishlatiladigan maxsus elementlarni noto'g'ri neytrallash ('SQL Injection')<i>) identifikator raqamiga ega. Shuningdek, “Open Web Application Security Project” (Veb-ilovalarning xavfsizligini ta’minlashning ochiq loyihasi)ning <b>OWASP Mobile Top 2024<b> reytingida 4-o‘rinda (inglizcha. <b>Insufficient Input/Output Validation<b> – <i>Kiruvchi va chiquvchilarni yetarlicha tekshirilmasligi<i>) zaiflik turiga kiritilgan.<p><p>Quyida ushbu aniqlangan zaiflikka misol(lar) taqdim etilgan.<p>",
+                    "<p>SQL inyeksiya hujumi ilovaning ma’lumotlar bazasi xavfsizligiga tahdid solgan holda, ma’lumotlarni sizib chiqish holatlariga olib kelishi mumkin.<p>",
+                    "<p>To‘g‘ridan-to‘g‘ri SQL so‘rovlarini yozish o‘rniga, parametrli so‘rovlar yoki “bind” funksiyalaridan foydalanish. Bu ilova kiritmalarini SQL buyruqlaridan ajratishga yordam beradi va SQL injeksiya xavfini kamaytiradi. <p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 250
+                    }
+                }
+            },
+            {
+                "1": [
+                    2,
+                    "Zaif shifrlash algoritmlari",
+                    "<p>Mobil ilova ma’lumotlarni shifrlashda quyidagi algoritmlardan foydalanish holati kuzatildi:<p><p><b>- DESede/CBC/noPadding;<b><p><p><b>- DES/ECB/noPadding;<b><p><p><b>- AES/ECB/NoPadding.<b><p><p>Zaiflik “Open Web Application Security Project” (Veb-ilovalarning xavfsizligini ta’minlashning ochiq loyihasi)ning <b>OWASP Mobile Top 2024<b> reytingida 10-o‘rinda (inglizcha. <b>Insufficient Cryptography<b> – <i>Yetarlicha bo‘lmagan kriptografiya<i>) zaiflik turiga kiritilgan.<p>",
+                    "<p>Bunday hujumlarda tajovuzkor shifrlangan ma'lumotlar bloklarini o‘zgartirish orqali ochiq matnni oshkor qilish imkoniyatiga ega bo‘ladi.<p>",
+                    "<p><b>AES-GCM (Galois/Counter Mode)<b> rejimidan foydalanish tavsiya etiladi. <b>AES-GCM<b> shifrlash bilan birga autentifikatsiyani ham ta’minlaydi. Bu esa ma’lumotning yaxlitligini tekshirishni o‘z ichiga oladi va “padding oracle” hujumlari xavfini kamaytiradi. <b>“OAEP padding RSA”<b> shifrlashni yanada xavfsiz qiladi va ma’lumotni tahlil qilishni qiyinlashtiradi. <b>“RSA/ECB/OAEPWithMD5AndMGF1Padding”<b> ishlatish tavsiya qilinadi.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 251
+                    }
+                }
+            },
+            {
+                "1": [
+                    2,
+                    "Xavfsiz bo‘lmagan “WebView”",
+                    "<p>Ilovada <b>“setJavaScriptEnabled(true)”<b> va <b>“setAllowFileAccessFromFileURLs(true)”<b> belgilangan.\nZaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-749”<b> (inglizcha. <b>Exposed Dangerous Method or Function<b> – <i>Ochiq xavfli metod yoki funksiya<i>) identifikator raqamiga ega.\n",
+                    "<p><b>“setJavaScriptEnabled(true)”<b> sozlamasi ishlatilsa va foydalanuvchi tomonidan boshqariladigan havolalar <b>“WebView”<b>da yuklansa, zararli JavaScript kodlarini bajarish ehtimoli mavjud.<p>",
+                    "<p>Agar <b>“JavaScript”<b>ga ehtiyoj bo‘lmasa, uni o‘chirib qo‘yish. <b>“setJavaScriptEnabled(false)”<b>. “WebView” orqali mahalliy fayllarni yuklashni cheklash <b>“setAllowFileAccess(false)”.<b><p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 252
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Maxfiy ma’lumotlar zaxira nusxasida saqlanishi",
+                    "Mobil ilova ekspertizasi davrida <b>android:allowBackup=\"true\"<b> parametri <b>“AndroidManifest.xml”<b>da mavjudligi aniqlandi. Bu android tizimiga foydalanuvchi ilova ma’lumotlarini zaxiralashga ruxsat beradi. Zaiflik <b>“MASWE-0004”<b> (inglizcha. <b>Sensitive Data Not Excluded From Backup<b> - <i>Maxfiy ma’lumotlar zaxira nusxasida saqlanishi<i>) identifikator raqamiga ega. Shuningdek, <b>OWASP Mobile Top 10 2024<b> reytingida 9-o‘rinda (inglizcha. <b>Insecure Data Storage<b> – <i>Ma’lumotlarni himoyasiz saqlanishi<i>) zaiflik turiga kiritilgan.",
+                    "<p>Foydalanuvchining ma'lumotlari saqlangan zaxira faylini olish, o'g'irlash yoki qayta ishlatish mumkin.<p>",
+                    "<p><b>android:allowBackup=\"false\"<b> qilish va API orqali foydalanuvchi ma'lumotlarini zaxiralash tizimini yaratish.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 253
+                    }
+                }
+            },
+            {
+                "1": [
+                    2,
+                    "\"Tapjacking\" zaifligi",
+                    "<p>Zaiflik foydalanuvchi interfeysi elementlarini noto‘g‘ri boshqarish orqali foydalanuvchilarning ruxsatsiz xatti-harakatlarini amalga oshirish imkoniyatini taqdim etadi. Zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>\"CWE-451\"<b> (<b>User Interface (UI) Misrepresentation of Critical Information<b> - <i>Foydalanuvchi interfeysi (UI) muhim ma'lumotlarni noto'g'ri taqdim etish<i>)  identifikator raqamiga ega. <p>",
+                    "<p>Foydalanuvchining shaxsiy ma'lumotlari va xavfsizlik parametrlarini o'g'irlanishiga olib keladi.<p>",
+                    "<p><b>“getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE)”<b> flag, <b>android:importantForAccessibility=\"yes”<b>, <b>android:focusable=\"true\" va android:clickable=\"true\"<b>, <b>filterTouchesWhenObscured=\"true\"<b>dan foydalanish<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 254
+                    }
+                }
+            },
+            {
+                "1": [
+                    3,
+                    "Xeshlash jarayoni noto‘g‘ri bajarilishi",
+                    "<p>Mobil ilovada  <b>SHA-1<b>, <b>MD5<b> kabi zaif xeshlash algoritmlaridan foydalanilgan. <b>SHA-1<b> hozirda zaif hisoblanadi va bir xil xesh qiymatiga ega bo‘lgan har xil kirish ma’lumotlarini yaratishga imkon beruvchi xesh kolliziyalari mavjudligi sababli tavsiya etilmaydi.<p><p>Mazkur turdagi zaiflik <b>“MASWE-0021”<b> (inglizcha. <b>Improper Hashing<b> – <i>Xeshlash jarayoni noto‘g‘ri bajarilishi<i>) identifikator raqamiga ega kategoriyaga mansub. Shuningdek, <b>OWASP Mobile Top 10 2024<b> reytingida  5-o‘rinda (inglizcha. <b>Insufficient Cryptography<b> – <i>Yetarlicha bo‘lmagan kriptografiya<i>) zaiflik turiga kiritilgan.",
+                    "<p>Xesh algoritmlarida o‘zgartirilgan ma’lumotlarni asl qiymatiga ega bo‘lish holatiga, shuningdek xesh kolliziyasi, ya’ni ikki xil ma’lumot bir xil xesh qoymatini hosil qiladigan holatlarga olib kelishi mumkin.<p>",
+                    "<p>Zaif bo‘lmagan <b>SHA256<b>, <b>SHA512<b>, <b>SHA3<b> kabi algoritmlardan foydalanish.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 255
+                    }
+                }
+            },
+            {
+                "1": [
+                    3,
+                    "Zaif tasodifiy sonlar generatori",
+                    "<p>Mobil ilovada xavfsiz bo‘lmagan tasodifiy sonlar generatori ishlatilgan. Xavfsizlikda ehtiyot choralarini talab qiladigan ilovalar uchun, ayniqsa kriptografiya, autentifikatsiya yoki parollarni yaratishda, <b>“java.util.Random”<b> kabi taqsimlangan tasodifiy generatorlarini ishlatish tavsiya etilmaydi.<p><p>Zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida “CWE-330” (inglizcha. <b>Use of Insufficiently Random Values<b> - <i>Yetarli darajada tasodifiy qiymatlardan foydalanish<i>) identifikator raqamiga ega. Shuningdek, “Open Web Application Security Project” (Veb-ilovalarning xavfsizligini ta’minlashning ochiq loyihasi)ning OWASP Mobile Top 2024 reytingida 5-o‘rinda (inglizcha. Insufficient Cryptography – Yetarlicha bo‘lmagan kriptografiya) zaiflik turiga kiritilgan.<p>",
+                    "<p>Zaif tasodifiy sonlarni aniqlash imkoniyati.<p>",
+                    "<p>Xavfsiz bo’lgan <b>java.security.SecureRandom<b> algoritmlaridan foydalanish tavsiya e’tiladi<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 0
+                    }
+                }
+            },
+            {
+                "1": [
+                    3,
+                    "Xavfsiz bo‘lmagan havolalar",
+                    "<p>Ilovadagi URL manzillar teskari muhandislik usulini ishlatgan holda oxirgi nuqtalar va/yoki kutubxonalar haqida maʼlumotlarni olish imkoniyatini beradi. Ushbu ma'lumotlardan uchinchi tomon ruxsatsiz ilovalar yoki skriptlar yozish uchun foydalanishi mumkin.<p><p>Bundan tashqari, agar shifrlash to‘g‘ri sozlanmagan bo‘lsa, tarmoqdagi tajovuzkor barcha aloqalarni ko‘rishi va tarkibni o‘zboshimchalik bilan o‘zgartirishi mumkin. Agar ma’lumotlar ilovaning nozik joylarida ishlatilsa yoki ma’lumotlar ijroga ta’sir qilsa, bu ilovada jiddiy oqibatlarga olib kelishi mumkin.<p><p>Mazkur turdagi zaiflik <b>“MASWE-0058”<b> (inglizcha. <b>Insecure Deep Links<b> – <i>Xavfsiz bo‘lmagan havolalar<i>) identifikator raqamiga ega kategoriyaga mansub. Shuningdek, <b>OWASP Mobile Top 10 2024<b> reytingida 8-o‘rinda (inglizcha. <b>Security Misconfiguration<b> – <i>Noto‘g‘ri xavfsizlik konfiguratsiyasi<i>) zaiflik turiga kiritilgan.<p>",
+                    "<p>Ochiq havolalar to‘g‘risida ma’lumotlarni qo‘lga kiritish holatiga olib kelishi mumkin.<p>",
+                    "<p>Ilovada foydalanilayotgan tashqi va ichki resurs havolalarini ochiq  matn shaklida saqlamaslik.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 1
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Shifrlanmagan tarmoq trafigi (iOS)",
+                    "<p><b>“App Transport Security” (ATS)<b> muhim iOS xavfsizlik xususiyati boʻlib, ilova va server oʻrtasidagi tarmoq ulanishlarini xavfsiz bo‘lishini va eng yaxshi amaliyotlarga amal qilinishini ta’minlaydi. iOS muhitida <b>“NSURLConnection”<b>, <b>“NSURLSession”<b> va <b>“WekKit”<b> tomonidan amalga oshirilgan barcha tarmoq ulanishlari ishonchli sertifikatlar va shifrlardan foydalangan holda <b>“Transport Layer Security” (TLS)<b> protokoli bilan himoyalanganligini talab qiladi. Agar “ATS” o‘chirilgan bo‘lsa, tarmoq ulanishlari sertifikatlarni tasdiqlay olmasligi, xavfsiz bo‘lmagan shifrlardan foydalanishi yoki traffikni umuman shifrlanmasligi mumkin. Bu uchinchi tomonga uzatilayotgan ma’lumotlarni o‘qish yoki hatto o‘zgartirish mumkin bo‘lgan o‘rtadagi odam hujumini (MITM) amalga oshirishga imkon beradi.<p><p>Zaiflik <b>“MASWE-0050”<b> (inglizcha. <b>Cleartext Traffic<b> – <i>Shifrlanmagan tarmoq trafiki<i>) identifikator raqamiga ega. Shuningdek, <b>OWASP Mobile Top 10 2024<b> reytingida 5-o‘rinda (inglizcha. <b>Insecure Communication<b> – <i>Ishonchsiz aloqa<i>) zaiflik turiga kiritilgan.<p>",
+                    "Yuqoridagi zaiflik mobil ilova va server o‘rtasida uchinchi tomonning aralashuvi bilan ma’lum muhitlarda tarmoqdagi trafikni qo‘lga olish va tasir o‘tkazish imkoniyatini yaratadi. Mazkur imkoniyat “Man-in-the middle” (MITM) hujumiga asoslangan bo‘lib mobil ilovada tarmoqdagi ma’lumotlarni ochiq holda almashish joriy etilgan holatlarda foydalaniladi.",
+                    "Mobil ilovalarda ma’lumot uzatish xavfsizligini o‘chirish maqsadga muvofiq emas. <b>“Info.plist”<b> faylida <b>“NSAppTransportSecurity”<b>ning barcha qiymatlari <b>“NO”<b> qiymatiga o‘zgartirish."
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 2
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Shifrlanmagan tarmoq trafigi",
+                    "Ilovada <b>[android:usesCleartextTraffic=true]<b> holatda belgilangan. Bu esa ilovada shifrlanmagan trafikni o‘tishiga ruxsat beradi. Zaiflik <b>“MASWE-0050”<b> (inglizcha. <b>Cleartext Traffic<b> - <i>Shifrlanmagan tarmoq trafiki<i>) identifikator raqamiga ega. Shuningdek, <b>OWASP Mobile Top 10 2024<b> reytingida 5-o‘rinda (inglizcha. <b>Insecure Communication<b> - <i>Ishonchsiz aloqa<i>) zaiflik turiga kiritilgan.",
+                    "<p>Ilovada shifrlanmagan ma’lumotlarni uzatish va qabul qilish holati muhim ma’lumotlarni ochiqlanishiga olib kelishi mumkin.<p>",
+                    "<p>Ilovada <b>[android:usesCleartextTraffic=false]<b> “false” holatda belgilash kerak va https va boshqa shunday himoyalangan trafikdan foydalanish kerak.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 3
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Xavfsiz bo‘lmagan sertifikat tekshiruvi",
+                    "<p>Ekpertiza davrida mobil ilova va server o‘rtasida uchinchi tomonning aralashuvi bilan tarmoqdagi trafikni qo‘lga olish va ta’sir o‘tkazish imkoniyati mavjud ekanligi aniqlandi va mazkur imkoniyat “Man-in-the middle” (MITM) hujumiga asoslangan.\nJoriy holat bo‘yicha mobil ilovani o‘rganish davrida uning tarmoqda ma’lumotlarini MITM hujumi orqali qo‘lga kiritish imkoniyati yuzaga keltirishi aniqlandi.<p>\n<p>Mazkur turdagi zaiflik <b>“MASWE-0052”<b>  (inglizcha. <b>Insecure Certificate Validation<b> - <i>Xavfsiz bo‘lmagan sertifikat tekshiruvi<i>) identifikator raqamiga ega kategoriyaga mansub. Shuningdek <b>OWASP Mobile Top 10 2024<b> reytingida 5-o‘rinda (inglizcha. <b>Insecure Communication<b> – <i>Ishonchsiz aloqa<i>) zaiflik turiga kiritilgan.<p>\n",
+                    "<p>Ma’lumotlarni uzatish jarayonida ularni sizib chiqish holatiga olib kelishi mumkin.<p>",
+                    "<p>Ma’lumotlarni uzatish jarayonini “SSL pinning” texnologiyasidan foydalanish.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 4
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Ilovada debug yoqilganligi",
+                    "<p>Mobil ilovalarda debuggable konfiguratsiyasining ishlab chiqarish (production) versiyasida yoqilganligi xavfsizlik nuqtai nazaridan zaiflikni keltirib chiqaradi.<p><p>Zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida \"CWE-919\" (inglizcha. <b>Weaknesses in Mobile Applications<b>-<i>Mobil ilovalardagi kamchiliklar<i>) identifikator raqamiga ega. Shuningdek, “Open Web Application Security Project” (Veb-ilovalarning xavfsizligini ta’minlashning ochiq loyihasi)ning OWASP Mobile Top 2024 reytingida 1-o‘rinda (inglizcha. <b>Insecure Communication<b> – <i>Platformadan noto'g'ri foydalanish<i>) zaiflik turiga kiritilgan. <p>",
+                    "<p>Bu zaiflik hujumchilarga ishlab chiqarish muhitida ilova kodini osonlik bilan tahlil qilish, ilovani dekompilyatsiya qilish va noto'g'ri foydalanishga imkon berishi mumkin.<p>",
+                    "<p>Ilovani ishlab chiqarishga chiqarishdan oldin debuggable flagni o'chirish.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 5
+                    }
+                }
+            },
+            {
+                "1": [
+                    2,
+                    "Maxfiy ma’lumotlar jurnalga yozilishi",
+                    "Mobil ilovada muhim turdagi ma’lumotlarni jurnallarga yozish xavfsizlik xavfini tug‘diradi. Mazkur turdagi zaiflik <b>“MASWE-0001”<b> (inglizcha. <b>Insertion of Sensitive Data into Logs<b> –  <i>Maxfiy ma’lumotlar jurnalga yozilishi<i>) identifikator raqamiga ega kategoriyaga mansub.  Shuningdek, “Open Web Application Security Project” (Veb-ilovalarning xavfsizligini ta’minlashning ochiq loyihasi)ning <b>OWASP Mobile Top 10 2024<b> reytingida  9-o‘rinda  (inglizcha.  <b>Insecure Data Storage<b> –  <i>Ma’lumotlarni xavfsiz saqlamaslik<i>) zaiflik turiga kiritilgan.",
+                    "<p>Loglar dasturchilar tomonidan ishlov berish jarayonida foydali bo‘lishi mumkin, ammo ushbu jurnallarda muhim ma’lumotlarni (masalan, foydalanuvchi ismlari, parollar, tokenlar, kredit karta ma’lumotlari va boshqalar) saqlash ilova xavfsizligini zaiflashtirishi mumkin.<p>",
+                    "<p>Jurnal faqat tizimni kuzatish va xatoliklarni diagnostika qilish uchun foydalanilishi kerak. Ilova foydalanuvchilarga foydalanishga chiqarilganda jurnalni olib tashlash talab etiladi.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 6
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Spufing hujumini amalga oshirish imkoniyati",
+                    "<p>Ekspertiza davrida autentifikatsiya jarayonidan o‘tmagan holda, ya’ni uni chetlab o‘tish orqali server va klient o‘rtasida almashinayotgan ma’lumotlarga spufing hujumini amalga oshirish orqali ruxsat olish imkoniyati aniqlandi. <p><p><i>Ma’lumot o‘rnida: Spufing - tarmoq hujumining bir turi bo‘lib, bunda jinoyatkor soxta tarmoq adresidan foydalanib, muhofazalangan tarmoqqa kirishga harakat qilish jarayoni.<i><p><p>Mazkur turdagi zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-290”<b> (inglizcha. <b>Authentication Bypass by Spoofing<b> – <i>Autentifikatsiyani spufing asosida chetlab o‘tish<i>) identifikator raqamiga ega kategoriyaga mansub.<p><p>Bundan tashqari, “Open Web Application Security Project” (Veb-ilovalar xavfsizligini ta’minlashning ochiq loyihasi)ning OWASP Top 2021 reytingida: 7-o‘rindagi (inglizcha. <b>Identification and Authentication Failures<b> – <i>Identifikatsiya va autentifikatsiya xatoliklar<i>) zaiflik turiga kiritilgan.<p><p>Quyidagi misolda aniqlangan zaiflik ekspluatatsiyasi holati taqdim etilgan.<p>",
+                    "<p>Servar va klient o‘rtasida almashinayot ma’lumotlarni qo‘lga kiritish holatiga olib kelishi mumkin.<p>",
+                    "<p>Tarmoq qurilmalari sozlamalarini muqobillashtirish va ma’lumotlarni almashinishda himoyalangan protokollardan foydalanish.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 7
+                    }
+                }
+            },
+            {
+                "1": [
+                    4,
+                    "Ochiq holatdagi portlar",
+                    "<p>Axborot tizimi ekspertizasi davrida u joylashgan serverning bir nechta standart portlaridan boshqa portlari Internet tarmog‘ining barcha foydalanuvchilari ochiq holatdaligi kuzatildi. Mazkur holat ushbu portlarda joylashgan servislarga xavf tug‘dirishi mumkin.<p><p>Quyida ochiq portlarga misollar taqdim etilgan:<p> ",
+                    "-",
+                    "-"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 243
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Ma'lumotlarni himoyasiz uzatish",
+                    "<p>Ekspertiza davrida axborot tizimi foydalanuvchi bilan server o‘rtasidagi aloqani HTTP (shifrlanmagan) protokol orqali amalga oshirayotgani aniqlandi. Bu holatda yuborilayotgan barcha ma’lumotlar — jumladan, login parollar, sessiya identifikatorlari, maxfiy ma’lumotlar — ochiq holda (plaintext) tarmoq orqali uzatiladi. Ushbu ma’lumotlar MITM (Man-in-the-Middle) hujumlari orqali ushlanishi mumkin.<p><p>Mazkur turdagi zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida  <b>“CWE-319”<b> (inglizcha. <b>Cleartext Transmission of Sensitive Information<b> – <i>Nozik ma'lumotlarni aniq matnli uzatish<i>) identifikator raqamiga ega kategoriyaga mansub.<p><p>Bundan tashqari, “Open Web Application Security Project” (Veb-ilovalar xavfsizligini ta’minlashning ochiq loyihasi)ning <b>OWASP Top 2021<b> reytingida: 2-o‘rindagi (inglizcha. <b>Cryptographic Failures<b> – Kriptografik xatolik) zaiflik turiga kiritilgan. <p> ",
+                    "Ma'lumotlarni sizib chiqishi va uchinchi tomonga oshkor bo'lishi holatlariga olib kelishi mumkin.",
+                    "Ma'lumotlarni uzatish jarayonlarida himoyalangan va shifrlangan aloqa usullaridan foydalanish."
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 9
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "O'ziga tegishli bo'lmagan ma'lumotlarni qo'lga kiritish imkoniyati",
+                    "<p>Ekspertiza davrida axborot tizimini ma'lumotlarni qayta ishlashi bilan bog‘liq xatoliklar kuzatildi. Ya’ni axborot tizimi foydalanuvchilarini resurslar, funksional imkoniyatlarga murojaatlarini nazorat qilmasligi aniqlandi. Xususan tizimda o'ziga tegishli bo'lmagan ma'lumotlarni qo'lga kiritish imkoniyati mavjudligi aniqlandi. Mazkur holatni foydalanuvchi o'ziga tegishli bo'lmagan kritik turdagi ma'lumotlarni qo'lga kiritish imkoniyati deb ham ifodalash mumkin.<p><p>Mazkur zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-284”<b> (inglizcha. <b>Improper Access Control<b> - <i>Ruxsatsiz resursga kirishini cheklamasligi <i>) identifikator raqamiga ega.<p>Bundan tashqari, “Open Web Application Security Project” (Veb-ilovalar xavfsizligini ta’minlash ochiq loyihasi)ning OWASP Top 2021 reytingida: 1-o‘rindagi (inglizcha. <b>Broken Access Control<b> – <i>Ruxsatlar nazoratini buzilishi<i>) zaiflik turiga kiritilgan.<p><p>Zaiflik CWE 2023 yil talqiniga ko‘ra dasturiy ta’minotlarning 25 ta eng xavfli zaifliklari ro‘yxatidan ham o‘rin olgan.<p><p>Mazkur tizimda zaiflikdan foydalanish quyidagi misollarda taqdim etilgan.<p>",
+                    "<p>Foydalanuvchi o'ziga tegishli bo'lmagan kritik turdagi ma'lumotlarni qo'lga kiritishi, funksional imkoniyatlaridan noqonuniy foydalanish holatiga olib kelishi mumkin.<p>",
+                    "<p>Axborot tizimi doirasida ma'lum parametr orqali emas balki tokenni uzida pinfl orqali malumot olishni joriy qilish hamda takomillashtirish.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 10
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "FTP protokoli zaifligi",
+                    "<p>Tizimda faol holatda bo‘lgan FTP (File Transfer Protocol) xizmati ustida tahlil o‘tkazilganda, u standart port (21) da ishlayotgani va foydalanuvchi hisobiga standart default (default) foydalanuvchi nomi va paroli yordamida kirish mumkinligi aniqlandi. Bu FTP server sozlamalari ishlab chiqaruvchi tomonidan belgilangan yoki ochiq manbalarda mavjud bo‘lgan parollarni o‘zgartirmasdan ishlatilayotganini bildiradi.<p><p>Mazkur turdagi zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-521”<b> (inglizcha. <b>Weak Password Requirements<b> – <i>Zaif parol talablari<i>) identifikator raqamiga ega kategoriyaga mansub.<p>",
+                    "<p>Ekspluatatsiya o'qibatlari:<p><p>Maxfiy fayllar va ma'lumotlarning o‘g‘irlanishi yoki o‘zgartirilishi<p><p>Tizimda orqa eshik (backdoor) yaratish orqali boshqa xizmatlarga kirish<p>",
+                    "\n<p>Standart parollarni o‘zgartirish va kuchli parol siyosatini joriy qilish (kamida 12 belgili, harflar, raqamlar va maxsus belgilar aralash bo‘lsin).<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 11
+                    }
+                }
+            },
+            {
+                "1": [
+                    2,
+                    "WebView masofadan nosozlikni tahlil qilish rejimi yoqilganligi",
+                    "<p>\"Remote Chrome DevTools bilan WebView\"ga ulanib, yuklangan kontentni ko‘rish, JavaScriptInterface orqali ilova funksiyalariga kira olish va  WebView orqali yuklangan sahifalarda saytlararo skript (XSS ) yoki \"JavaScript\" eksployt bajarilishi imkoniyatini taqdim etuvchi zaiflik aniqlandi.<p><p> Mazkur zaiflik ilovada \"WebView\" komponentlari uchun \"setWebContentsDebuggingEnabled(true)\" parametridan foydalanilganlik sababli yuzaga kelgan. Bu esa o'z navbatida ishlab chiqarish (production) ilovalarida  xavf hisoblanadi.<p><p>Zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-613”<b> (inglizcha. <b>Insufficient Session Expiration<b> – <i>Seans davomiyligi yetarli emas<i>) identifikator raqamiga ega.<p>",
+                    "Zaiflikdan foydalangan holda turli maxsus kodlarni yuklash orqali ilova yoki u bilan bog'liq resurslarga ta'sir ko'rsatish, ma'lumotlarga ega bo'lish va shu kabi boshqa holatlarga olib kelishi mumkin. ",
+                    "Ishlab chiqarish (release) versiyasida \"WebView.setWebContentsDebuggingEnabled(false)\" parametridan foydalangan holda \"WebView debugging\"ni o‘chirib qo'yish.  "
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 12
+                    }
+                }
+            },
+            {
+                "1": [
+                    2,
+                    "Parol tiklash jarayonini noto‘g‘ri ishlashi",
+                    "<p>Ekspertiza davrida axborot tizimida Parol tiklash noto'g'ri ishlash  holati kuzatildi. Ya’ni foydalanuvchiga tegishli CBID orqali foydalanuvchilar parollarini o'zgartirib yuborish imkoniyati mavjud.<p><p>Mazkur turdagi zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-287”<b> (inglizcha. <b>Improper Authentication<b> – <i>Noto‘g‘ri autentifikatsiya<i>) identifikator raqamiga ega.<p><p>Bundan tashqari, “Open Web Application Security Project” \n(Veb-ilovalarning xavfsizligini ta’minlashning ochiq loyihasi)ning OWASP Top 2021 reytingida: 7-o‘rindagi (inglizcha. <b>Identification and Authentication Failures<b> – <i>Identifikatsiya va autentifikatsiya xatoliklar<i>) zaiflik turiga kiritilgan.<p><p>Shuningdek, 2024-yilda e’lon qilingan dasturiy ta’minotlardagi top 25 ta eng xavfli zaifliklar qatoriga ham kiritilgan.<p><p>Quyida mazkur zaiflikni ekspluatatsiya qilinish holati taqdim etilgan.<p>",
+                    "<p>Axborot tizimini parol tiklash qismi orqali CBID sini bilgan holda axborot tizimi va uning resurslaridan ixtiytoriy foydalanuvchi ma’lumotlari asosida foydlanish.<p>",
+                    "Parol tiklash oynasi bilan bog'liq Dasturiy kodlarni qayta ko'rib chiqish hamda OTP va boshqa texnologiyalardan foydalanish."
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 13
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Ilova ishlab chiquvchi (debug) sertifikati bilan imzolangan",
+                    "Android ilova ishlab chiquvchilarga mo‘ljallangan (debug) sertifikat bilan imzolangan. Bu imzo ishlab chiqish va sinov maqsadida ishlatiladi.",
+                    "Ilovani kodini manipulatsiya (o'zgartirish) va qayta imzolash mumkin.",
+                    "Ilovani ishlab chiqarish (release) imzo bilan imzolash"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 14
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Path Traversal",
+                    "<p>Mahsulot cheklangan katalog ichida boʻlishi kerak boʻlgan yoʻl nomini yaratish uchun tashqi maʼlumotlardan foydalanadi, lekin u “.../...//” (ikki marta uch nuqta qiyshiq chiziq) ketma-ketliklarini toʻgʻri neytrallashtirmaydi, bu katalogdan tashqarida joylashgan joyni aniqlash imkoniyatini taqdim etadi.<p><p>Mazkur turdagi zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-35”<b> (inglizcha. <b>Path Traversal<b> – <i>Yo'lni kesib o'tish<i>) identifikator raqamiga ega kategoriyaga mansub.<p><p>Bundan tashqari, “Open Web Application Security Project” (Veb-ilovalar xavfsizligini ta’minlashning ochiq loyihasi)ning OWASP Top 2021 reytingida: 1-o‘rindagi (inglizcha. <b>Broken Access Control<b> – Kirishni noto'g'ri nazorat qilish) zaiflik turiga kiritilgan.<p>",
+                    "Zaiflikdan foydalanish operatsion tizim ma'lumotlarini qo'lga kiritish holatlariga olib kelishi mumkin.",
+                    "Kiruvchi parametrlarni tekshirish va filtrlash, fayllarga ruxsatlarni nazorat qilish va to'g'ri taqsimlash."
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 15
+                    }
+                }
+            },
+            {
+                "1": [
+                    2,
+                    "Standart hisobga olish yozuvlari",
+                    "<p>Tizimda \"******\" identifikatsiyalash serveri o‘rnatilgan va unga standart (default) login va parol yordamida kirish mumkinligi aniqlandi. Bu holat administrator interfeysiga autentifikatsiyasiz yoki minimal urinishlar orqali kirishga imkoniyatini taqdim etadi beradi.<p>\n<p>Mazkur turdagi zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida  <b>“CWE-862”<b> (inglizcha. <b>Missing Authorization<b>– <i>Avtorizatsiyaning yo‘qligi<i>) identifikator raqamiga ega kategoriyaga mansub. <p><p>Bundan tashqari, “Open Web Application Security Project” (Veb-ilovalarning xavfsizligini ta’minlash ochiq loyihasi) OWASP Top 2021 reytingida: 5-o‘rindagi (inglizcha. <b>Security Misconfiguration<b> – <i>Xavfsizlikni noto'g'ri sozlash<i>) zaiflik turiga kiritilgan.<p>\n",
+                    "Administrator interfeysiga kirish orqali hujumchi yangi foydalanuvchilarni yaratishi, mavjudlarini o‘zgartirishi yoki o‘chirishi, SSO orqali boshqa ilovalarga kirish imkonini qo‘lga kiritishi, identifikatsiya va avtorizatsiya jarayonlarini to‘liq nazorat qilishi hamda xavfsizlik siyosatlarini o‘zgartirishi yoki butunlay o‘chirib qo‘yishi mumkin.",
+                    "Administrator parolini almashtirish va administrator interfeysiga faqat ishonchli manzillardan kirishga ruxsat berish. "
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 16
+                    }
+                }
+            },
+            {
+                "1": [
+                    2,
+                    "Ilova so‘nggi platforma talqiniga moslashtirilmaganligi",
+                    "Mobil ilova android operatsion tizimining 5 versiyasi uchun xavfsizlik yangilanishlari to‘xtatilgan bo‘lib, mobil ilovani joriy muhitda ishga tushirilishi oqidatida, operatsion tizimda aniqlangan mavjud zaifliklar ta’siriga tushish ehtimoli mavjud. Maskur turdagi zaiflik <b>“MASWE-0078”<b> (inglizcha. <b>Latest Platform Version Not Targeted<b> –  <i>Ilova so‘nggi platforma talqiniga moslashtirilmaganligi<i>) identifikator raqamiga ega kategoriyaga mansub. Shuningdek, “Open Web Application Security Project” (Veb-ilovalarning xavfsizligini ta’minlashning ochiq loyihasi)ning <b>OWASP Mobile Top 10 2024<b> reytingida  8-o‘rinda  (inglizcha.  <b>Security Misconfiguration<b> –  <i>Noto‘g‘ri xavfsizlik konfiguratsiyasi<i>) zaiflik turiga kiritilgan.",
+                    "<p>Maxsus dasturiy vositalar yordamida ilova o‘rnatilgan muhitning xavfsizlik talablarini chetlab o‘tilishiga hamda ilovaning tashqi ta’sirlarga uchrashiga olib keladi.<p>",
+                    "<p>Mobil ilovani ishlab chiqish jarayonida minimal “SDK” talqinini axborot xavfsizligi yangilanishlari amal qiluvchisini o‘rnatish. Mobil ilova ish jarayonida, ilova o‘rnatilgan muhitning xavfsiz ekanligini tekshiruvchi metod va funksiyalardan foydalanish orqali ma’lumotlar xavfsizligni ta’minlashni joriy etish.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 234,
+                        "11": 249
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Kiruvchi parametrlarni tekshirmaslik ",
+                    "<p>Ekspertiza davrida axborot tizimiga yuborilayotgan so‘rovlardagi parametrlarni tekshirmaslik holati mavjudligi aniqlandi. Yani narxlar va boshqa ma’lumotlarni o’zgartish imkoniyati mavjud bo’lib, kiruvchi parametrlarni tekshirish mexanizmlari qo‘llanmaganlik holati aniqlandi.<p><p>Mazkur turdagi zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-20”<b> (inglizcha. <b>Improper Input Validation<b> – <i>Noto'g'ri kiritilgan ma'lumotlarni tekshirish<i>) identifikator raqamiga ega kategoriyaga mansub.<p><p>Bundan tashqari, “Open Web Application Security Project” (Veb-ilovalarning xavfsizligini ta’minlash ochiq loyihasi) OWASP Top 2021 reytingida: 1-o‘rindagi (inglizcha. <b>Broken Access Control<b> – Ruxsatlar nazoratini buzilishi) zaiflik turiga kiritilgan.<p><p>Quyidagi misolda aniqlangan zaiflikdan foydalanish holatlari taqdim etilgan.<p>",
+                    "<p>Mazkur holat, ixtiyoriy foydalanuvchi ixtiyoriy narxni belgilab resurslarga murojaat qilish orqali ulardan foydalanish imkoniyatini taqdim etadi va ushbu holatni avtomatlashtirish orqali katta hajmdagi moliyaviy zarar yetkazish holatiga olib kelishi mumkin.<p>",
+                    "<p>Ushbu qism bilan bog‘liq dasturiy kodni qayta ko‘rib chiqish hamda takomillashtirish. Hamda monitoring qilish orqali foydalanuvchilar harakatlarini kuzatib borish tavsiya etiladi<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 18
+                    }
+                }
+            },
+            {
+                "1": [
+                    2,
+                    "Xost sarlavhasi orqali hujum",
+                    "Host Header Attack (yoki Host Header Injection) — bu veb-ilovalarda mavjud bo'lishi mumkin bo'lgan veb xavfsizlik zaifligi bo‘lib, unda server kiruvchi HTTP so‘rovdagi zararli Host sarlavhasini qabul qiladi. Agar bu sarlavha noto‘g‘ri ishlatilsa, xujumchi soxta host qiymatlari orqali turli zararli hujumlar amalga oshirishi mumkin.\nCWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida “CWE-348” (inglizcha. Use of Less Trusted Source - Kamroq ishonchli manbadan foydalanish) identifikator raqamiga ega. \n",
+                    "Foydalanuvchi akkauntlarini o‘g‘irlash, Phishing va soxta sahifalarga yo‘naltirish, Kesh (cache) tizimlarining zaharlanishiga olib kelishi mumkin",
+                    "Kirishuvchi so‘rov sarlavhasini tekshirish mexanizmlarini joriy qilish."
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 19
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "JSON Web Token (JWT) maxfiylanmaganligi",
+                    "<p>Axborot tizimi ekspertizasi davrida foydalanuvchilarning “JSON Web Token” (JWT) ishlash jarayonida zaiflik mavjudligi aniqlandi. Ya’ni “JSON Web Token” maxfiyligi yetarlicha ta’minlanmaganligi sababli, unda mavjud parametrlarni o‘zgartirish orqali boshqa foydalanuvchilarning ma’lumotlarini qo‘lga kiritish va ularning nomlaridan tizimga noqonuniy kirish holatlariga olib kelishi mumkin <p><p>Mazkur turdagi zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“ CWE-345.”<b> (inglizcha. <b> Insufficient Verification of Data Authenticity<b> – <i> Ma'lumotlarning haqiqiyligini tekshirish etarli emas<i>) identifikator raqamiga ega.<p><p>Bundan tashqari, “Open Web Application Security Project” (Veb-ilovalarning xavfsizligini ta’minlashning ochiq loyihasi)ning OWASP Top 2021 reytingida: 8-o‘rindagi; (inglizcha. <b> Software and Data Integrity Failures <b> – <i> Dasturiy ta'minot va ma'lumotlar yaxlitligidagi nosozliklar <i>) zaiflik turiga kiritilgan.<p>\n<p>Aniqlangan zaiflikdan foydalanish holati quyida taqdim etilgan.<p>\n",
+                    "Axborot tizimida mavjud foydalanuvchilariga tegishli konfidensial ma’lumotlarni qo‘lga kiritish va boshqa holatlarga olib kelishi mumkin.",
+                    "“JSON Web Token” (JWT) parametrlarini maxfiyligini ta’minlash bo‘yicha choralarni va uning ishlash jarayonini qayta ko‘rib chiqish."
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 20
+                    }
+                }
+            },
+            {
+                "1": [
+                    3,
+                    "So'rov sozlamalari kamchiliklari",
+                    "<p>Strict-Transport-Security sarlavhasi brauzerga xostga barcha ulanishlar HTTPS dan foydalanishi kerakligini bildiradi. Bu javob sarlavhasi bo'lsa-da, u brauzerning joriy javobni qanday ishlashiga ta'sir qilmaydi, balki kelajakdagi so'rovlarni qanday qilishiga ta'sir qiladi.\n\nAgar HTTPS javobida Strict-Transport-Security sarlavhasi mavjud bo'lsa, brauzer hostning domen nomini HSTS xostlarining doimiy ro'yxatiga qo'shadi. Agar domen nomi allaqachon ro'yxatda bo'lsa, amal qilish muddati va includeSubDomains direktivasi yangilanadi. Xost faqat uning domen nomi bilan aniqlanadi. IP-manzil HSTS xosti bo'la olmaydi. HSTS so'rov uchun qaysi port ishlatilganidan qat'i nazar, xostning barcha portlari uchun amal qiladi.<p>",
+                    "<p>HTTP URL manzilini yuklashdan oldin brauzer domen nomini HSTS xostlar ro'yxati bilan taqqoslaydi. Agar domen nomi HSTS xosti uchun katta-kichik harflarga sezgir bo'lmagan moslik bo'lsa yoki includeSubDomains ko'rsatilgan subdomeni bo'lsa, brauzer URL sxemasini https bilan almashtiradi. Agar URL 80-portni ko'rsatsa, brauzer uni 443-ga o'zgartiradi. Boshqa har qanday aniq port raqami o'zgarishsiz qoladi va brauzer HTTPS yordamida ushbu portga ulanadi.<p>",
+                    "<p>Brauzer har safar Strict-Transport-Security sarlavhasini olganida, joriy vaqtga maksimal yoshni qo'shish orqali xostning HSTS amal qilish muddatini yangilaydi. Maksimal yosh uchun belgilangan qiymatdan foydalanish HSTS muddati tugashiga to'sqinlik qilishi mumkin, chunki har bir keyingi javob amal qilish muddatini kelajakda uzoqroqqa suradi.\n\nAgar avval yuborgan hostning javobida Strict-Transport-Security sarlavhasi yoʻq boʻlsa, avvalgi sarlavha uning amal qilish muddati tugaguncha amal qiladi.\n\nHSTSni o'chirish uchun max-age=0 ni o'rnating. Bu faqat brauzer xavfsiz so‘rov yuborib, javob sarlavhasini olgandan so‘ng kuchga kiradi. Dizaynga ko'ra, siz xavfsiz HTTP orqali HSTSni o'chira olmaysiz.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 21
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Mobil ilovada ma’lumotlarni ochiq holatda saqlash",
+                    "Android mobil ilovada kritik ma'lumotlarni  ochiq holatda  saqlash — bu xavfsizlik zaifligi hisoblanadi. Mazkur turdagi zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida  “CWE-992”  (inglizcha. <b>Insecure Data Storage<b>  –  <i>Himoyalanmagan holatda ma'lumotlarni saqlash<i>) identifikator raqamiga ega kategoriyaga mansub. ",
+                    "Kritik ma'lumotlarni qo'lga kiritiladi.",
+                    "Kritik ma'lumotlarni shifrlangan holatda saqlash"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 22
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Noto'g'ri shakllantirilgan avtorizatsiya",
+                    "<p>Ekspertiza davrida axborot tizimida avtorizatsiya jarayonlari noto'g'ri shakllantirilganlik holati kuzatildi.  Bu zaiflik foydalanuvchiga yoki tizimga ruxsat berilmagan harakatni bajarishga imkon beradigan holatni anglatadi. Soddaroq ta'riflaganda, dastur foydalanuvchining kimligini bilishi mumkin, lekin u ushbu foydalanuvchi aniq amalni bajarishga ruxsatli yoki yo‘qligini tekshirmaydi.<p><p>Mazkur turdagi zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida “CWE-285 (inglizcha. <b>Improper Authorization<b> – Noto‘g‘ri avtorizatsiya) identifikator raqamiga ega kategoriyaga mansub.<p>",
+                    "Avtorizatsiya talablarini chetlab o'tish va axborot tizimidan noqonuniy foydalanish.",
+                    "<p>1. Har bir amalni bajarishdan oldin backendda qat’iy avtorizatsiya tekshiruvini qo‘llash.<p><p>2. Rol va ruxsatlarni markaziy boshqaruv orqali tekshirish.<p><p>3. \"Defense in depth\" — bir nechta himoya qatlamlaridan foydalanish.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 23
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Repozitoriya ochiqlanishi",
+                    "<p>Repozitoriylar versiyalarni boshqarish, masalan CVS yoki git, metama’lumotlar va boshqa manbalarni ichki kataloglarda saqlaydi.<p>\n<p>Mazkur turdagi zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida  <b>“CWE-527”<b> (inglizcha.  <b>Exposure of Version-Control Repository to an Unauthorized Control Sphere<b>  –  <i>Versiya nazorati repozitoriyasining ruxsatsiz boshqaruv sohasi (yoki muhitiga) ta’sirchan bo‘lib qolishi<i>) identifikator raqamiga ega kategoriyaga mansub.<p><p>Ekspertiza jarayonida tizimda ro'yxatdan o'tmasdan turib tizimda \".git/\" dan keyin turgan manbalarni hujumchi o'zining qurilmasiga maxsus vositalardan foydalanib yuklab olish imkoniyatiga ega.<p>",
+                    "<p>Agar ushbu ichki kataloglar veb-serverda saqlansa yoki arxivga qo‘shilsa, ularni hujumchi ishlatishi mumkin. Bu ma’lumotlarga foydalanuvchi ismlari, fayl nomlari, axborot tizim joylashish tartibi, IP-manzillar hamda fayllarda qanday o‘zgarishlar bo‘lgani to'g'risida batafsil “differensial” ma’lumotlarni qo'lga kiritib oladi. Ushbu ma’lumotlar hech qachon oshkor etilishi mo‘ljallanmagan tizimning kod manbalarini ochiqlanish holatlariga olib keladi.<p>",
+                    "<p>Bartaraf etish uchun maslahat\nAxborot tizim serverida har qanday CVS kataloglar va repozitariylar olib tashlash, masofaviy CVS repozitariydan foydalanishni o'chirish va CVS so'nggi patch(versiya) va versiya yangilanishlari qo'llanilishini ta'minlash kiradi.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 24
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Kod obfuskatsiyasi yo'qligi ",
+                    "Ekspertiza davrida mobil ilovani teskari muhandislik (reverse-engineering) orqali inson tushunadigan darajada asl kod holiga qaytarish imkoniyati mavjud ekanligi aniqlandi. Mazkur turdagi zaiflik <b>“MASWE-0089”<b> (inglizcha. <b>Code Obfuscation Not Implemented <b>- <i>Kodni xiralashtirish amalga oshirilmaganligi<i>) identifikator raqamiga ega kategoriyaga mansub.",
+                    "Ilova kodining yetarlicha obfusifikatsiya qilinmaganligi sababli, ilovaning ichki tuzilmasi, ishlash prinsiplarini va turli himoya funksiyalarini tushunish, foydalanuvchining maxfiy ma'lumotlari, API kalitlari, algoritmlar va boshqa qismlar haqida ma'lumot olish imkonini beradi.",
+                    "Ilova kodini to'liq obfuskatsiya qilish."
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 25
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Debugga tegishli belgilar o'chirilmaganligi",
+                    "Ekspertiza davrida mobil ilovaning ommaga chiqarilgan (production) talqinida debug rejimi yoqilganligi yoki debug-ga tegishli belgilar (symbols) to‘liq olib tashlanmaganligi aniqlangan. Mazkur turdagi zaiflik <b>“MASWE-0093”<b> (inglizcha. <b>Debugging Symbols Not Removed<b> - <i>Debug-ga tegishli belgilar o’chirilmaganligi<i>) identifikator raqamiga ega kategoriyaga mansub. Shuningdek <b>OWASP Mobile Top 10 2024<b> reytingida 8-o‘rinda (inglizcha. <b>Security Misconfiguration<b> - <i>Noto‘g‘ri bo‘lgan xavfsizlik konfiguratsiyasi<i>) zaiflik turiga kiritilgan.",
+                    "Ilova kodidagi debug belgilarining saqlanishi, ilovaning ichki ishlash prinsiplari, API kalitlari, IP manzillar va boshqa shu kabi muhim ma’lumot toplash, shuningdek to’plangan ma’lumotlardan uchinchi tomon ruxsatsiz ilovalar yoki skriptlar yozish uchun foydalanishi mumkin",
+                    "Ilova kodini qayta ko'rib chiqish, \"debuggable flag\"ni o'chirish."
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 26
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Root/Jailbreak tekshiruvi joriy etilmaganligi",
+                    "Ekspertiza davrida mobil ilovada qurilma muhiti rootlangan ekanligini aniqlash uchun zarur xavfsizlik tekshiruvlari yetarli darajada amalga oshirilmaganligi aniqlandi. Mazkur turdagi zaiflik <b>“MASWE-0097”<b> (inglizcha. <b>Root/Jailbreak Detection Not Implemented<b> – <i>Root/Jailbreak tekshiruvi joriy etilmaganligi<i>) identifikator raqamiga ega kategoriyaga mansub. Shuningdek <b>OWASP Mobile Top 10 2024<b> reytingida 7-o‘rinda (inglizcha. <b>Insufficient Binary Protections<b> – <i>Ikkilik himoya tizimi yetarli darajada emasligi<i>) zaiflik turiga kiritilgan.",
+                    "Ilovani \"root\"langan maxsus tahlil uchun tayyorlangan muhitda ishga tushirgan holda oddiy foydalanuvchi sifatida ega bo'lish imkonsiz bo’lgan ilova to'g'rosida ma’lumotlarni qo'lga kiritish imkonini taqdim etadi.",
+                    "Ilovada o‘zi o‘rnagan muhitni \"root\"langanligiga quyi darajadagi (Native C++) dasturlash tillaridan foydalangan holda tekshiruv mexanizmini joriy etish."
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 27
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Ilovaning dinamik tahlil vositalaridan himoyalanmaganligi",
+                    "Ekspertiza davrida mobil ilova dinamik tahlil vositalaridan himoya qilinmaganligi aniqlandi. Mazkur turdagi zaiflik <b>“MASWE-0102”<b> (inglizcha. <b>Dynamic Analysis Tools Detection Not Prevented<b>–<i>Dinamik tahlil vositalarini aniqlash mexanizmi joriy etilmaganligi<i>) identifikator raqamiga ega kategoriyaga mansub.",
+                    "Hujumchi turli xil vositalardan foydalangan holda ilova funksiyalarini “hook” qilishi, parametrlarni o‘zgartirishi, sessiya tokenlari va maxfiy ma’lumotlarni qo’lga kiritishi, yoki autentifikatsiya va avtorizatsiya cheklovlarini aylanib o‘tishi mumkin.",
+                    "\"RASP\" (Runtime Application Self-Protection) konsepsiyasini joriy etish, ilova ichida ishga tushirish vaqtida monitoring o'tkazish, to’liqlik tekshiruvlari, “hooking” aniqlash, anomal faoliyatni aniqlash va siyosatga asoslangan reaksiyalarni amalga oshirish, shuningdek mazkur turdagi harakatlar aniqlanganida hujumchini bloklash, cheklash, xabar yuborish yoki sessiyasini bekor qilish. Ushbu xavfsizlik funksiyalarini quyi darajadagi(Native C++) dasturlash tillarida joriy etish."
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 28
+                    }
+                }
+            },
+            {
+                "1": [
+                    2,
+                    "Ilovaning ommaga chiqarilgan talqinida kerak bo'lmagan resurslar olib tashlanmaganligi",
+                    "Ilovaning ommaga chiqarilgan talqinida kerak bo‘lmagan test resurslari, test URLlar, sandbox endpointlar vas hu kabi muhim ma’lumot vositalari olib tashlanmagan. Mazkur turdagi zaiflik <b>“MASWE-0094”<b> (inglizcha. <b>Non-production Resources Not Removed<b> - <i>Ilovaning ommaga chiqarilgan talqinida kerak bo’lmagan resurslar o'chirib tashlanmaganligi<i>) identifikator raqamiga ega kategoriyaga mansub.",
+                    "Non-production endpointlar/URLlar orqali tizimni tahlil qilish imkoniyatini beradi.",
+                    "Ilova kodini qayta ko'rib chiqib, \"production build\" uchun kerakli bo‘lmagan resurslarni olib tashlash."
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 30
+                    }
+                }
+            },
+            {
+                "1": [
+                    2,
+                    "Emulyator tekshiruvi joriy etilmaganligi",
+                    "Ekspertiza davrida mobil ilovada qurilma muhiti emulyator ekanligini aniqlash uchun zarur xavfsizlik tekshiruvlari yetarli darajada amalga oshirilmaganligi aniqlandi. Mazkur turdagi zaiflik <b>“MASWE-0099”<b> (inglizcha. <b>Emulator Detection Not Implemented<b> - <i>Emulyator tekshiruvi joriy etilmaganligi<i>) identifikator raqamiga ega kategoriyaga mansub. Shuningdek <b>OWASP Mobile Top 10 2024<b> reytingida 7-o‘rinda (inglizcha. <b>Insufficient Binary Protections<b> – <i>Ikkilik himoya tizimi yetarli darajada emasligi<i>) zaiflik turiga kiritilgan.",
+                    "Ilovani emulyatsiya qilingan maxsus tahlil uchun tayyorlangan muhitda ishga tushirish imkonini beradi.",
+                    "Ilova o‘zi o‘rnatilgan muhitni emulyatorligiga tekshirish mexanizmini quyi darajadagi (Native C++) dasturlash tillaridan foydalangan holda joriy etish."
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 31
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Ilovada o'zining yaxlitligini tekshirish mexanizmi joriy etilmaganligi",
+                    "Ilova o‘z kodlari va imzo ma’lumotlarining yaxlitligini va haqiqiyligini tekshirmaydi. Bunday holatda ilova qayta yig’ilgan, statik modifikatsiyaga uchragan yoki noto‘g‘ri/soxta sertifikat bilan imzolangan bo‘lsa, server yoki ilova  buni aniqlay olmaydi. Mazkur turdagi zaiflik <b>“MASWE-0104”<b> (inglizcha. <b>App Integrity Not Verified<b> – <i>Ilova yaxlitligi tasdiqlanmasligi<i>) identifikator raqamiga ega kategoriyaga mansub.",
+                    "Ilovani kodiga o’zgartirish kiritish va uni qayta yig‘ish, zararli kod qo‘shish yoki imzoni almashtirib, foydalanuvchilarga zarar yetkazuvchi soxta talqinlarni tarqatish.",
+                    "Ilova ishga tushganida o‘zining imzosini, to’liqligini tekshirish mexanizmini quyi darajadagi (Native C++) dasturlash tillaridan foydalangan holda joriy etish."
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 29
+                    }
+                }
+            },
+            {
+                "1": [
+                    2,
+                    "Ilovaning statik tahlil vositalaridan himoyalanmaganligi",
+                    "Ekspertiza davrida mobil ilova statik tahlil vositalaridan himoya qilinmaganligi aniqlandi. Mazkur turdagi zaiflik <b>“MASWE-0092”<b> (inglizcha. <b>Static Analysis Tools Not Prevented<b> – <i>Ilova statik tahlil vositalaridan himoyalanmaganligi<i>) identifikator raqamiga ega kategoriyaga mansub.",
+                    "Ilovaga tegishli <b>.apk/.ipa<b> faylni avtomatik statik tahlil vositalari yordamida dekompilyatsiya qilish, ilova va unda mavjud zaifliklar haqida to’liq ma’lumotlarni qo’lga kiritish imkoniyatini beradi.",
+                    "Kod va resurs obfuskatsiyasi, muayyan modullarni yoki sinflarni shifrlagan holda ilova ishga tushganda dinamik tarzda deshifrlash, \"anti-decompilation\" mexanizmlarini joriy etish, shuningdek himoyani joriy etishda quyi darajadagi (Native C++) qatlamdan foydalanish."
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 32
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Maxfiy ma’lumotlarning shifrlanmagan holda ilova ichki xotirasida saqlash",
+                    "Android mobil ilova xotirasida kritik ma'lumotlarni  ochiq holatda  saqlash — bu xavfsizlik zaifligi hisoblanadi. Mazkur turdagi zaiflik <b>“MASWE-0006”<b> (inglizcha. <b>Sensitive Data Stored Unencrypted in Private Storage Locations<b> – <i>Maxfiy ma’lumotlarning shifrlanmagan holda ilova ichki xotirasiga saqlash<>i) identifikator raqamiga ega kategoriyaga mansub. Shuningdek, “Open Web Application Security Project” (Veb-ilovalarning xavfsizligini ta’minlashning ochiq loyihasi)ning <b>OWASP Mobile Top 10 2024<b> reytingida <b>9-o‘rinda<b>  (inglizcha. <b>Insecure Data Storage<b> –  <i>Ma’lumotlarni xavfsiz saqlamaslik<i>) zaiflik turiga kiritilgan.",
+                    "Kritik ma'lumotlarni qo'lga kiritiladi.",
+                    "Kritik ma'lumotlarni shifrlangan holatda saqlash."
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 33
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Server tomon xavfsizligi mijoz tomondan ta’minlanishi",
+                    "<p>Tizimda foydalanuvchi tomonidan yuborilayotgan so‘rovlar qiymati server tomonidan tegishli ravishda qayta tekshirilmaydi. Natijada so‘rovni tahrirlab yuborish yoki bir necha bor qayta jo‘natish orqali aslida ruxsat etilmagan amallarni bajarish va tizimga zarar yetkazishga imkoniyati mavjud. Ya’ni, server foydalanuvchi tomonidan yuborilayotgan so'rovdagi qiymatlarga to'liq ishonadi va ularni tasdiqlash mexanizmini bajarmaydi. Mazkur turdagi zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-602” (inglizcha. Client-Side Enforcement of Server-Side Security<b> - <i>Server tomon xavfsizligi mijoz tomondan ta’minlanishi<i>) identifikator raqamiga ega. Bundan tashqari, “Open Web Application Security Project”<p><p>(Veb-ilovalarning xavfsizligini ta’minlashning ochiq loyihasi)ning OWASP Top 2021 reytingida: 4-o‘rindagi (inglizcha. <b>Insecure design b> – <i>Ishonchsiz dizayn<i>) zaiflik turiga kiritilgan.<p><p>Quyida mazkur zaiflik mavjudligi holati taqdim etilgan.<p>",
+                    "<p>So‘rov qiymatlarini tahrirlash yoki qayta yuborish orqali ruxsat etilmagan amallarni bajarish va tizimdagi ma’lumotlarning soxtalashtirilishiga olib kelishi mumkin<p>",
+                    "<p>Barcha muhim parametrlar va amallarni server tomonda majburiy tekshirish mexanizmini joriy etish<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 34
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Saytlararo so'rovlarni soxtalashtirish (CSRF)",
+                    "<p>Ekspertiza davrida foydalanuvchi autentifikatsiyalangan sessiyasi bilan bog‘liq so‘rovlar yetarlicha <b>tekshirilmayotganligi<b> hamda uchinchi manbadan yuborilayotgan so‘rovlarning haqiqiy foydalanuvchi tashabbusi bilan yuborilganligini tasdiqlovchi <b>himoya mexanizmlari<b> (masalan, CSRF-tokenlar) to‘g‘ri joriy etilmaganligi sababli, axborot tizimiga nisbatan <b>Cross Site Request Forgery (CSRF)<b> turidagi hujumni amalga oshirish mumkinligi kuzatildi.<p><p>Mazkur turdagi zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-352”<b> (inglizcha. <b>Cross-Site Request Forgery (CSRF)<b> – <i>Saytlararo so'rovlarni soxtalashtirish<i>) identifikator raqamiga ega kategoriyaga mansub.<p><p>Bundan tashqari, “Open Web Application Security Project” (Veb-ilovalar xavfsizligini ta’minlashning ochiq loyihasi)ning OWASP Top 2021 reytingida 1-o‘rinda keltirilgan (inglizcha. <b>Broken Access Control<b> – <i>Ruxsatlar nazoratini buzilishi<i>) kategoriyasi tarkibida <b>CSRF<b> zaifligi ushbu turdagi hujumlar qatorida ko‘rib chiqiladi.<p><p>Bundan tashqari, mazkur zaiflik CWE 2023-yil talqiniga ko‘ra dasturiy ta’minotlarning 25 ta eng xavfli zaifliklari ro‘yxatidan o‘rin olgan.<p><p>Quyida Cross Site Request Forgery (CSRF) zaifligidan foydalanish holati taqdim etilgan.<p> ",
+                    "<p>CSRF hujumi ekspluatatsiyasi natijasida axborot tizimida foydalanuvchi nomidan ruxsatsiz amallarni bajarish, ma’lumotlarni o‘zgartirish, foydalanuvchi hisoblari bilan bog‘liq noqonuniy harakatlarni amalga oshirish hamda biznes jarayonlariga zarar yetkazish holatlari yuzaga kelishi mumkin.<p>",
+                    "<p>Axborot resursining “backend” qismi kodini qayta ko‘rib chiqish hamda har bir muhim (kritik) so‘rovni tasdiqlovchi <b>CSRF-tokenlar<b>dan foydalanish, “SameSite” atributli cookie mexanizmlarini qo‘llash va so‘rovlarning kelib chiqish manbasini (Origin/Referer) tekshirish funksiyalarini qo‘shish orqali takomillashtirish tavsiya etiladi.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 35
+                    }
+                }
+            },
+            {
+                "1": [
+                    2,
+                    "Sessiya tokeni URL da yuborilishi.",
+                    "<p>Axborot tizimida sessiya tokeni URL da yuborilish, zaifligi mavjudligi aniqlandi. Mazkur zaiflik CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-598”<b> (inglizcha. <b>Use of GET Request Method With Sensitive Query Strings<b> – <i>Konfidensial ma'lumotlarni oshkor bo'lishi<i>) identifikator raqamiga ega.<p><p>Bundan tashqari, “Open Web Application Security Project” (Veb-ilovalar xavfsizligini ta’minlash ochiq loyihasi)ning <b>OWASP Top 2021<b> reytingida: 4-o‘rindagi (inglizcha. <b>Insecure Design<b> – <i>Ishonchsiz dizayn<i>) zaiflik turiga kiritilgan.<p>",
+                    "<p>Ushbu zaiflik foydalanuvchining hisob ma’lumotlari orqali tizimga noqonuniy kirish, foydalanuvchi hisobidan o‘zgartirishlar kiritish hamda ushbu foydalanuvchi hisobini yaroqsiz holatga olib kelishi mumkin.<p>",
+                    "<p>Axborot tizimiga sessiya tokeni ma’lumotlarini yuborishda zamonaviy, xavfsiz usullardan foydalanish.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 8
+                    }
+                }
+            },
+            {
+                "1": [
+                    2,
+                    "“CAPTCHA” mexanizmini noto‘g‘ri ishlashi",
+                    "<p>Ekspertiza jarayonida axborot tizimida “CAPTCHA” mexanizmi bilan bo‘g‘liq xatoliklar, ya’ni (backend) qismida “CAPTCHA” bilan bog‘liq so‘rov ma’lumotlarining ishonchliligini tekshirish mexanizmi yetarli darajada amalga oshirilmagani aniqlandi. Ushbu  holat tizimga foydalanuvchi tomonidan yuborilgan “CAPTCHA” qiymati ishonchli deb qabul qilinib, ularning haqiqiyligi va to‘g‘riligi tekshirmaslik holatini yuzaga keltiradi. Bu esa o‘z navbatida hujumchiga “CAPTCHA” bilan bog‘liq maydonlarni soxtalashtirgan holda serverga to‘g‘ridan-to‘g‘ri so‘rov yuborish va himoya mexanizmini chetlab o‘tish imkoniyatini beradi.<p><p>Mazkur turdagi zaiflik CWE (Common Weakness Enumeration) dasturiy ta’minotdagi zaifliklarni kategoriyalash tizimida <b>“CWE-807”<b> (inglizcha. <b>Reliance on Untrusted Inputs in a Security Decision<b> – <i>Xavfsizlik qarorlarini qabul qilishda ishonchsiz kiritilgan ma’lumotlarga tayanish<i>) identifikator raqamiga ega.<p><p>Bundan tashqari, ushbu zaiflik “Open Web Application Security Project” (Veb-ilovalarning xavfsizligini ta’minlashning ochiq loyihasi) tomonidan e’lon qilingan OWASP Top 2021 reytingida <b>4-o‘rindagi<b> (inglizcha. <b>Insecure Design<b> – <i>Ishonchsiz dizayn<i>) zaiflik turi doirasiga kiritilgan.<p>",
+                    "<p>Axborot tizimida foydalanuvchi tomonidan avtomatlashtirilgan vositalar orqali soxta yoki o‘zgartirilgan “CAPTCHA” qiymatlari bilan so‘rovlar yuborish holatlariga olib kelishi mumkin.<p>",
+                    "<p>Axborot tizimi doirasida “CAPTCHA” bilan bog‘liq barcha kiritiladigan ma’lumotlarning ishonchliligini server (backend) tomonida majburiy tarzda tekshirishni ta’minlash.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 37
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "Ilovani qayta yig'ish hujumi",
+                    "<p>Bu mobil Android ilovaning .apk faylini tahlil qilib, ichidagi kodga o‘zgarishlar kiritish, so‘ngra ilovani qayta( build + sign) qilib tarqatish orqali amalga oshiriladigan hujum.<p><p>Mazkur holat \"Common Vulnerabilities and Exposures\" zaifliklar bazasida \"CVE-2018-9489\" identifikatsiya raqami bilan belgilangan hamda CWE (Common Weaknes Enumeration) dasturiy va apparat ta’minotlarning zaifliklarini kategoriyalash tizimida <b>“CWE-200”<b> (inglizcha. <b>Exposure of Sensitive Information to an Unauthorized Actor<b> – <i>Ishonchsiz foydalanuvchiga ma’lumotlarni ochiqlanishi<i>) identifikator raqamiga ega kategoriyaga kiritilgan.<p><p>Bundan tashqari, “Open Web Application Security Project” (Veb-ilovalarning xavfsizligini ta’minlash ochiq loyihasi) OWASP Top 2021 reytingida: 1-o‘rindagi (inglizcha. <b>Broken Access Control<b> – Ruxsatlar nazoratini buzilishi) zaiflik turiga kiritilgan.<p><p>Quyidagi misolda aniqlangan zaiflikdan foydalanish holatlari taqdim etilgan.<p>",
+                    "Ilovani ichki kod qismlariga o'zgartirish kiritish orqali himoya funksiyalarini olib tashlash va boshqa zararli kodlarni joylashtirish.",
+                    "Ilova ichida Google Play  imzosini tekshirish. Agar qayta imzolangan bo‘lsa, ishlashni to‘xtatish"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 17
+                    }
+                }
+            },
+            {
+                "1": [
+                    1,
+                    "\"Prototype Pollution\"",
+                    "<p>Ekspertiza davrida axborot tizimida foydalanuvchidan qabul qilinadigan ma’lumotlarni obyektlarga birlashtirish (merge/assign) jarayonida yetarli darajada tekshiruvlar amalga oshirilmasligi natijasida<b>Prototype Pollution<b> zaifligi mavjudligi aniqlandi. Mazkur holatda hujumchi maxsus shakllantirilgan so‘rovlar orqali JavaScript obyektlarining prototip zanjiriga (Object.prototype) zararli xususiyatlarni qo‘shishi va shu orqali butun ilova bo‘ylab obyektlarning xatti-harakatini o‘zgartirishi mumkin.<p> <p>Ya’ni, foydalanuvchi tomonidan yuborilgan <b>__proto__<b>, <b>constructor.prototype<b> yoki <b>prototype<b> kabi maxsus kalitlar filtrlanmasdan qayta ishlanganda, ushbu qiymatlar global prototipga yozilib, barcha obyektlar uchun amal qiluvchi holatga kelib qoladi.<p><p>Mazkur turdagi zaiflik CWE (Common Weakness Enumeration) dasturiy ta’minot zaifliklarini kategoriyalash tizimida <b>“CWE-1321”<b> (inglizcha. <b>Improperly Controlled Modification of Object Prototype Attributes<b> – <i>Obyekt prototip atributlarining noto‘g‘ri boshqarilishi<i>) identifikator raqamiga ega.<p> <p>Bundan tashqari, “Open Web Application Security Project” (OWASP)ning OWASP Top 2021 reytingida mazkur zaiflik <b>4-o‘rindagi<b> (inglizcha.<b>Insecure Design<b> – <i>Xavfsiz bo‘lmagan dizayn<i>) zaiflik turiga kiradi.<p>",
+                    "<p>Mazkur zaiflikdan muvaffaqiyatli foydalanish natijasida hujumchi axborot tizimining funskionalligini noqonuniy ta’sir ko‘rsatishi, foydalanuvchi huquqlarini oshirib yuborishi (Privilege Escalation), autentifikatsiya va avtorizatsiya mexanizmlarini chetlab o‘tishi mumkin.<p><p>Shuningdek, ushbu zaiflik ilovaning noto‘g‘ri ishlashiga, xizmat ko‘rsatishdan voz kechish (Denial of Service), foydalanuvchi interfeysida zararli skriptlarning bajarilishi (XSS) hamda ayrim holatlarda server muhitida masofaviy kod bajarilishiga (Remote Code Execution) olib kelishi ehtimoli mavjud.<p>",
+                    "<p>Axborot tizimida foydalanuvchidan qabul qilinadigan barcha kiruvchi ma’lumotlar bilan ishlovchi dasturiy kod qismlarini <b>qayta ko‘rib chiqish<b> va <b>takomillashtirish<b> tavsiya etiladi.<p> <p>Jumladan, obyektlarni birlashtirish jarayonida <b>__proto__<b>, <b>prototype<b> va <b>constructor<b> kabi xavfli kalitlarni qat’iy filtrdan o‘tkazish, xavfsiz merge funksiyalaridan foydalanish, shuningdek foydalanilayotgan kutubxonalarni so‘nggi xavfsiz versiyalarga yangilash lozim.<p><p>Bundan tashqari, ilovada xavfsiz dasturlash tamoyillarini (Secure Coding) joriy etish va muntazam ravishda xavfsizlik auditlarini o‘tkazish tavsiya etiladi.<p>"
+                ],
+                "2": 1,
+                "_id": {
+                    "buffer": {
+                        "0": 105,
+                        "1": 111,
+                        "2": 77,
+                        "3": 236,
+                        "4": 182,
+                        "5": 31,
+                        "6": 243,
+                        "7": 216,
+                        "8": 75,
+                        "9": 71,
+                        "10": 235,
+                        "11": 36
+                    }
+                }
+            }
+        ]
+    ]
+}

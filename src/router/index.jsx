@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import WordTwo from "../page/word2";
 
 const Main = lazy(() => import("../components/layouts/main"));
 
@@ -60,7 +60,6 @@ const Widgets = lazy(() => import("../pages/widgets"));
 const UsersList = lazy(() => import("../pages/users-list"));
 const UsersGrid = lazy(() => import("../pages/users-grid"));
 const AddUser = lazy(() => import("../pages/add-user"));
-const ViewProfile = lazy(() => import("../pages/view-profile"));
 const SignIn = lazy(() => import("../pages/sign-in"));
 const SignUp = lazy(() => import("../pages/sign-up"));
 const ForgotPassword = lazy(() => import("../pages/forgot-password"));
@@ -78,7 +77,6 @@ const Language = lazy(() => import("../pages/language"));
 const PaymentGateway = lazy(() => import("../pages/payment-gateway"));
 const New = lazy(() => import("../pages/new"));
 
-
 const DashboardPage = lazy(() => import("../page/dashboard"));
 const Report = lazy(() => import("../page/report"));
 const Expertise = lazy(() => import("../page/expertise"));
@@ -90,14 +88,20 @@ const Usefull = lazy(() => import("../page/usefull"));
 const Viewer = lazy(() => import("../page/viewer"));
 const ChatPage = lazy(() => import("../page/chat"));
 const Word = lazy(() => import("../page/word"));
-const WordTwo = lazy(() => import("../page/word2"));
+const UserAdd = lazy(() => import("../page/user-add"));
+const ViewProfile = lazy(() => import("../page/view-profile"));
+const Vuln = lazy(() => import("../page/vuln"));
 
 const AppRouter = () => {
   return (
     <Router>
-      <Suspense fallback={<div className="flex justify-center items-center w-full h-full min-h-[100vh]">
-        <img src="/assets/jamoa.png" alt="Loading..." />
-      </div>}>
+      <Suspense
+        fallback={
+          <div className="flex justify-center items-center w-full h-full min-h-[100vh]">
+            <img src="/assets/jamoa.png" alt="Loading..." />
+          </div>
+        }
+      >
         <Routes>
           <Route path="/login" element={<SignIn />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
@@ -112,8 +116,12 @@ const AppRouter = () => {
             <Route path="/page/usefull" element={<Usefull />} />
             <Route path="/page/viewer" element={<Viewer />} />
             <Route path="/page/chat" element={<ChatPage />} />
-            <Route path="/page/word" element={<Word />} />
+            <Route path="/page/word/:id" element={<Word />} />
             <Route path="/page/word2" element={<WordTwo />} />
+            <Route path="/page/user-add" element={<UserAdd />} />
+            <Route path="/page/view-profile" element={<ViewProfile />} />
+            <Route path="/page/vuln" element={<Vuln />} />
+
             <Route path="/" element={<Dashboard />} />
             <Route path="/crm" element={<Crm />} />
             <Route path="/ecomerce" element={<Ecomerce />} />
@@ -170,7 +178,6 @@ const AppRouter = () => {
             <Route path="/users-list" element={<UsersList />} />
             <Route path="/users-grid" element={<UsersGrid />} />
             <Route path="/add-user" element={<AddUser />} />
-            <Route path="/view-profile" element={<ViewProfile />} />
             <Route path="/sign-in" element={<SignIn />} />
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="/gallery" element={<Gallery />} />

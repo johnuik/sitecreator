@@ -1,7 +1,29 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { METHOD } from '../../api/zirhrpc';
+import { useZirhStref } from '../../context/ZirhContext';
+import { sendRpcRequest } from '../../api/webClient';
 
 const Dashboard = () => {
+
+
+  
+  const { stRef } = useZirhStref();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const getUser = async () => {
+      const resU = await sendRpcRequest(stRef, METHOD.USER_GET, {});
+      if(resU.status === METHOD.OK){
+      }else if(resU.status === METHOD.Not_Found){
+        localStorage.removeItem("checkUser")
+        navigate("/login");
+      }
+    };
+
+    getUser();
+  }, []);
+
   return (
     <>
      <div>
