@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import mammoth from "mammoth";
 import { FaPen, FaSave } from "react-icons/fa";
 import { useReactToPrint } from "react-to-print";
@@ -135,10 +135,6 @@ const Word = () => {
   const [allVuln, setAllVuln] = useState([]);
   const [newVuln, setNewVuln] = useState([]);
   const [pages1, setPages1] = useState([]);
-  const [tableData, setTableData] = useState({});
-  const [rows, setRows] = useState([]);
-  const [apkFileName, setApkFileName] = useState("");
-  const [ipaFileName, setIpaFileName] = useState("");
 
   const pdfRef = useRef();
   const { stRef } = useZirhStref();
@@ -157,465 +153,13 @@ const Word = () => {
     ),
   );
 
-  const createNewA4Page = () => {
-    // Get the container where pages are stored
-    const wordContainer = document.querySelector(".word-container");
-    if (!wordContainer) return;
-
-    // Get last page to copy styling
-    const lastPage = wordContainer.querySelector(".a4:last-child");
-    const pageNumber = wordContainer.querySelectorAll(".a4").length;
-
-    // Create new A4 page
-    const newPage = document.createElement("div");
-    newPage.className = "a4";
-    newPage.style.backgroundImage =
-      pageNumber % 2 === 0
-        ? `url("/assets/word/2.png")`
-        : `url("/assets/word/3.png")`;
-
-    // Add page title
-    const pageTitle = document.createElement("div");
-    pageTitle.className = "page-title";
-    pageTitle.innerHTML = `<div>"${appName}"</div><div>mobil ilovasi</div>`;
-    newPage.appendChild(pageTitle);
-
-    // Add page content
-    const pageContent = document.createElement("div");
-    pageContent.className = "page-content editable";
-    newPage.appendChild(pageContent);
-
-    // Add page number
-    const pageNumber_div = document.createElement("div");
-    pageNumber_div.className = "page-number flex justify-center mt-auto";
-    pageNumber_div.innerHTML = `<span>${pageNumber}</span>`;
-    newPage.appendChild(pageNumber_div);
-
-    // Add to container
-    wordContainer.appendChild(newPage);
-
-    // Re-attach event listeners to new page
-    const editables = document.querySelectorAll(".editable");
-    editables.forEach((el) => {
-      el.contentEditable = editing;
-      el.style.outline = editing ? "1px dashed #4f46e5" : "none";
-    });
-
-    return newPage;
-  };
-  const handlePageOverflow = () => {
-    const a4Pages = document.querySelectorAll(".a4");
-
-    // Multiple iterations to ensure all overflow is handled
-    for (let iteration = 0; iteration < 5; iteration++) {
-      for (let pageIndex = 0; pageIndex < a4Pages.length; pageIndex++) {
-        const pageEl = a4Pages[pageIndex];
-        const pageContent = pageEl.querySelector(".page-content");
-        if (!pageContent) continue;
-
-        // A4 content max height in pixels (excluding page number area) - optimized to reduce whitespace
-        // A4 page = 1120px, minus margins (40px), minus page number area (50px) = ~1030px usable
-        // We allow 90% of that to leave small gaps = 927px, but use 850px for better distribution
-        const MAX_HEIGHT = 850; // Optimized to minimize empty spaces
-        const actualHeight = pageContent.scrollHeight;
-
-        // Force hidden content to be removed
-        if (actualHeight > MAX_HEIGHT) {
-          const children = Array.from(pageContent.children);
-          let currentHeight = 0;
-          let splitAtIndex = -1;
-
-          // Smart height-based split with minimum content check
-          for (let i = 0; i < children.length; i++) {
-            const childHeight = children[i].offsetHeight || 0;
-            if (currentHeight + childHeight > MAX_HEIGHT) {
-              splitAtIndex = i;
-              break;
-            }
-            currentHeight += childHeight;
-          }
-
-          // If we found a split point, move content
-          if (splitAtIndex > 0 && splitAtIndex < children.length) {
-            const toMove = children.slice(splitAtIndex);
-
-            // Get or create next page
-            let nextPageEl = a4Pages[pageIndex + 1];
-            if (!nextPageEl) {
-              nextPageEl = createNewA4Page();
-            }
-
-            const nextPageContent = nextPageEl.querySelector(".page-content");
-            if (nextPageContent) {
-              // Move elements to next page
-              toMove.forEach((el) => {
-                nextPageContent.insertBefore(
-                  el.cloneNode(true),
-                  nextPageContent.firstChild,
-                );
-              });
-
-              // Remove from current page
-              toMove.forEach((el) => el.remove());
-            }
-          }
-        }
-      }
-    }
-  };
-
-  const handleImageResize = () => {
-    // Find all images and resize them to fit page width
-    const images = document.querySelectorAll(".page-content img");
-    images.forEach((img) => {
-      const pageContent = img.closest(".page-content");
-      if (pageContent) {
-        const maxWidth = 500; // Page content width - padding
-        if (img.width > maxWidth) {
-          const aspectRatio = img.height / img.width;
-          img.style.width = maxWidth + "px";
-          img.style.height = maxWidth * aspectRatio + "px";
-        }
-      }
-    });
-  };
-
   useEffect(() => {
     const editables = document.querySelectorAll(".editable");
 
-    const attachImageResizeHandler = () => {
-      const images = document.querySelectorAll(".page-content img");
-      images.forEach((img) => {
-        // Skip if already has handler
-        if (img.dataset.resizable === "true") {
-          // Update cursor style
-          img.style.cursor = editing ? "ew-resize" : "default";
-          img.style.border = editing ? "1px solid #ddd" : "none";
-          return;
-        }
-
-        // Mark as resizable
-        img.dataset.resizable = "true";
-        img.style.cursor = editing ? "ew-resize" : "default";
-        img.style.display = "inline-block";
-        img.style.userSelect = "none";
-        img.style.border = editing ? "1px solid #ddd" : "none";
-
-        // Use pointer events for better compatibility (same as makeImagesResizable)
-        let startX, startY, startWidth, startHeight;
-
-        const onPointerMove = (e) => {
-          if (!editing) return;
-          e.preventDefault();
-          e.stopPropagation();
-          
-          const deltaX = e.clientX - startX;
-          const newWidth = Math.max(100, Math.min(800, startWidth + deltaX));
-          const aspectRatio = startHeight / startWidth;
-          const newHeight = newWidth * aspectRatio;
-
-          img.style.width = `${newWidth}px`;
-          img.style.height = `${newHeight}px`;
-          img.style.display = "inline-block";
-          img.style.maxWidth = "100%";
-        };
-
-        const onPointerUp = (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          document.removeEventListener("pointermove", onPointerMove);
-          document.removeEventListener("pointerup", onPointerUp);
-
-          // Trigger reflow after resize
-          editables.forEach((el) => {
-            void el.offsetHeight;
-          });
-
-          // Handle page overflow IMMEDIATELY after image resize
-          handlePageOverflow();
-        };
-
-        img.addEventListener("pointerdown", (e) => {
-          if (!editing) return;
-          
-          e.preventDefault();
-          e.stopPropagation();
-          
-          startX = e.clientX;
-          startY = e.clientY;
-          startWidth = img.offsetWidth || parseInt(img.style.width) || img.width;
-          startHeight = img.offsetHeight || parseInt(img.style.height) || img.height;
-
-          document.addEventListener("pointermove", onPointerMove);
-          document.addEventListener("pointerup", onPointerUp);
-        }, { once: false, passive: false });
-      });
-    };
-
-    const handleInput = (e) => {
-      // Just handle images on input, don't trigger page overflow
-      handleImageResize();
-      attachImageResizeHandler();
-
-      // Immediately check if content overflows and trim it
-      const editables = document.querySelectorAll(".page-content");
-      editables.forEach((pageContent) => {
-        const MAX_HEIGHT = 900;
-        if (pageContent.scrollHeight > MAX_HEIGHT) {
-          // Find and remove excess content
-          const children = Array.from(pageContent.children);
-          let currentHeight = 0;
-
-          for (let i = 0; i < children.length; i++) {
-            const child = children[i];
-            currentHeight += child.offsetHeight;
-
-            if (currentHeight > MAX_HEIGHT) {
-              // Remove this and all subsequent elements
-              for (let j = children.length - 1; j >= i; j--) {
-                children[j].remove();
-              }
-              break;
-            }
-          }
-        }
-      });
-    };
-
-    const handlePaste = (e) => {
-      // Handle images in clipboard
-      const items = (e.clipboardData || e.originalEvent.clipboardData).items;
-      let hasImage = false;
-
-      for (let item of items) {
-        if (item.kind === "file" && item.type.indexOf("image") !== -1) {
-          hasImage = true;
-          // Prevent default paste behavior only for images to insert custom HTML
-          e.preventDefault();
-
-          const blob = item.getAsFile();
-          const reader = new FileReader();
-
-          reader.onload = (event) => {
-            const imgElement = document.createElement("img");
-            imgElement.src = event.target.result;
-
-            imgElement.onload = () => {
-              // Image loaded, resize it
-              const maxWidth = 500;
-              if (imgElement.width > maxWidth) {
-                const aspectRatio = imgElement.height / imgElement.width;
-                imgElement.style.width = maxWidth + "px";
-                imgElement.style.height = maxWidth * aspectRatio + "px";
-              } else {
-                imgElement.style.width = imgElement.width + "px";
-                imgElement.style.height = imgElement.height + "px";
-              }
-
-              // Set styles for resize
-              imgElement.style.cursor = "ew-resize";
-              imgElement.style.display = "inline-block";
-              imgElement.style.border = "1px solid #ddd";
-              imgElement.style.margin = "10px auto";
-              imgElement.style.userSelect = "none";
-              imgElement.className = "resizable-image";
-
-              // Insert image after a slight delay to allow paste to complete
-              setTimeout(() => {
-                // Get current selection and insert image
-                const selection = window.getSelection();
-                if (selection.rangeCount > 0) {
-                  const range = selection.getRangeAt(0);
-                  const wrapper = document.createElement("p");
-                  wrapper.style.textAlign = "center";
-                  wrapper.appendChild(imgElement);
-                  range.insertNode(wrapper);
-                  
-                  // Move cursor after image
-                  range.setStartAfter(wrapper);
-                  range.collapse(true);
-                  selection.removeAllRanges();
-                  selection.addRange(range);
-                }
-
-                // Trigger reflow and handle overflow
-                editables.forEach((el) => {
-                  void el.offsetHeight;
-                });
-
-                // Attach resize handler to the new image with a small delay
-                setTimeout(() => {
-                  // Ensure image is in DOM before attaching handler
-                  if (imgElement && imgElement.parentNode) {
-                    // Use the same approach as makeImagesResizable for consistency
-                    if (imgElement.dataset.resizable) {
-                      // Already has handler, just update styles
-                      imgElement.style.cursor = editing ? "ew-resize" : "default";
-                      imgElement.style.border = editing ? "1px solid #ddd" : "none";
-                    } else {
-                      // Mark as resizable
-                      imgElement.dataset.resizable = "true";
-                      imgElement.style.cursor = editing ? "ew-resize" : "default";
-                      imgElement.style.display = "inline-block";
-                      imgElement.style.userSelect = "none";
-                      imgElement.style.border = editing ? "1px solid #ddd" : "none";
-                      imgElement.style.margin = "10px auto";
-
-                      // Use pointer events for better compatibility (same as makeImagesResizable)
-                      let startX, startY, startWidth, startHeight;
-
-                      const onPointerMove = (e) => {
-                        if (!editing) return;
-                        e.preventDefault();
-                        e.stopPropagation();
-                        
-                        const deltaX = e.clientX - startX;
-                        const newWidth = Math.max(100, Math.min(800, startWidth + deltaX));
-                        const aspectRatio = startHeight / startWidth;
-                        const newHeight = newWidth * aspectRatio;
-
-                        imgElement.style.width = `${newWidth}px`;
-                        imgElement.style.height = `${newHeight}px`;
-                        imgElement.style.display = "inline-block";
-                        imgElement.style.maxWidth = "100%";
-                      };
-
-                      const onPointerUp = (e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        document.removeEventListener("pointermove", onPointerMove);
-                        document.removeEventListener("pointerup", onPointerUp);
-
-                        // Trigger reflow after resize
-                        editables.forEach((el) => {
-                          void el.offsetHeight;
-                        });
-
-                        // Handle page overflow after resize
-                        handlePageOverflow();
-                      };
-
-                      imgElement.addEventListener("pointerdown", (e) => {
-                        if (!editing) return;
-                        
-                        e.preventDefault();
-                        e.stopPropagation();
-                        
-                        startX = e.clientX;
-                        startY = e.clientY;
-                        startWidth = imgElement.offsetWidth || parseInt(imgElement.style.width) || imgElement.width;
-                        startHeight = imgElement.offsetHeight || parseInt(imgElement.style.height) || imgElement.height;
-
-                        document.addEventListener("pointermove", onPointerMove);
-                        document.addEventListener("pointerup", onPointerUp);
-                      }, { once: false, passive: false });
-                    }
-                  }
-                  
-                  // Also call attachImageResizeHandler to ensure all images have handlers
-                  attachImageResizeHandler();
-                  
-                  handlePageOverflow();
-                }, 300);
-              }, 50);
-            };
-          };
-
-          reader.readAsDataURL(blob);
-        }
-      }
-
-      // If it's not an image, allow default paste behavior for text
-      if (!hasImage) {
-        // Allow default paste for text content
-        setTimeout(() => {
-          handlePageOverflow();
-        }, 50);
-      }
-    };
-
     editables.forEach((el) => {
       el.contentEditable = editing;
       el.style.outline = editing ? "1px dashed #4f46e5" : "none";
-
-      if (editing) {
-        el.addEventListener("input", handleInput);
-        el.addEventListener("paste", handlePaste);
-        attachImageResizeHandler();
-      } else {
-        el.removeEventListener("input", handleInput);
-        el.removeEventListener("paste", handlePaste);
-      }
     });
-
-    // Table cell'larini ham contentEditable qilish
-    const tableCells = document.querySelectorAll(".editable-table td");
-    tableCells.forEach((cell) => {
-      cell.contentEditable = editing;
-      if (editing) {
-        cell.style.outline = "1px dashed #4f46e5";
-
-        // Table cells'ga paste handler qo'shish
-        const handleTableCellPaste = (e) => {
-          const items = (e.clipboardData || e.originalEvent.clipboardData)
-            .items;
-          let hasImage = false;
-
-          for (let item of items) {
-            if (item.kind === "file" && item.type.indexOf("image") !== -1) {
-              hasImage = true;
-              e.preventDefault();
-
-              const blob = item.getAsFile();
-              const reader = new FileReader();
-
-              reader.onload = (event) => {
-                const imgElement = document.createElement("img");
-                imgElement.src = event.target.result; // Base64 sifatida saqlangan
-                imgElement.style.maxWidth = "100%";
-                imgElement.style.height = "auto";
-                imgElement.style.display = "block";
-                imgElement.style.margin = "5px 0";
-
-                const selection = window.getSelection();
-                if (selection.rangeCount > 0) {
-                  const range = selection.getRangeAt(0);
-                  range.insertNode(imgElement);
-                  range.setStartAfter(imgElement);
-                  range.collapse(true);
-                  selection.removeAllRanges();
-                  selection.addRange(range);
-                }
-              };
-
-              reader.readAsDataURL(blob);
-            }
-          }
-
-          if (!hasImage) {
-            setTimeout(() => {
-              handlePageOverflow();
-            }, 50);
-          }
-        };
-
-        cell.addEventListener("paste", handleTableCellPaste);
-      } else {
-        cell.style.outline = "none";
-        // Paste listeners'ni olib tashlash
-        const allCells = document.querySelectorAll(".editable-table td");
-        allCells.forEach((c) => {
-          c.removeEventListener("paste", c._pasteHandler);
-        });
-      }
-    });
-
-    return () => {
-      editables.forEach((el) => {
-        el.removeEventListener("input", handleInput);
-        el.removeEventListener("paste", handlePaste);
-      });
-    };
   }, [editing]);
 
   useEffect(() => {
@@ -632,9 +176,7 @@ const Word = () => {
         text === "Xavflilik darajasi:" ||
         text.includes(".apk") ||
         text.includes(".ipa") ||
-        text.includes("[android:usesCleartextTraffic=false]") ||
-        text.includes("CWE") ||
-        text.includes("MASWE")
+        text.includes("[android:usesCleartextTraffic=false]")
       ) {
         const tdParent = el.closest("td");
         if (!tdParent) {
@@ -674,87 +216,9 @@ const Word = () => {
             document.execCommand("justifyRight");
             break;
           case "j":
-            // Apply justify alignment using both execCommand and CSS for better compatibility
             document.execCommand("justifyFull");
-            // Also apply CSS text-align for better cross-browser support
-            const selection = window.getSelection();
-            if (selection.rangeCount > 0) {
-              const range = selection.getRangeAt(0);
-              const container = range.commonAncestorContainer;
-              const block =
-                container.nodeType === Node.TEXT_NODE
-                  ? container.parentElement?.closest(
-                      "p, div, li, h1, h2, h3, h4, h5, h6",
-                    )
-                  : container.closest("p, div, li, h1, h2, h3, h4, h5, h6");
-
-              if (block) {
-                block.style.textAlign = "justify";
-              }
-            }
             break;
         }
-      }
-
-      // Handle Shift+Backspace key - move content back to previous page
-      if (e.shiftKey && e.key === "Backspace") {
-        e.preventDefault();
-
-        const selection = window.getSelection();
-        if (selection.rangeCount > 0) {
-          const range = selection.getRangeAt(0);
-          const currentPageContent =
-            range.commonAncestorContainer.nodeType === Node.TEXT_NODE
-              ? range.commonAncestorContainer.parentElement.closest(
-                  ".page-content",
-                )
-              : range.commonAncestorContainer.closest(".page-content");
-
-          if (currentPageContent) {
-            // Find current and previous page
-            const currentPage = currentPageContent.closest(".a4");
-            const allPages = Array.from(document.querySelectorAll(".a4"));
-            const currentPageIndex = allPages.indexOf(currentPage);
-
-            if (currentPageIndex > 0) {
-              const prevPage = allPages[currentPageIndex - 1];
-              const prevPageContent = prevPage.querySelector(".page-content");
-
-              if (prevPageContent && currentPageContent.children.length > 0) {
-                // Get first child from current page
-                const firstChild = currentPageContent.firstChild;
-                if (firstChild) {
-                  // Move it to previous page's end
-                  const clonedChild = firstChild.cloneNode(true);
-                  prevPageContent.appendChild(clonedChild);
-
-                  // Remove from current page
-                  firstChild.remove();
-                }
-              }
-            }
-          }
-        }
-      }
-
-      // Handle Enter key for page overflow
-      if (e.key === "Enter") {
-        e.preventDefault();
-        // Insert line break manually
-        const selection = window.getSelection();
-        if (selection.rangeCount > 0) {
-          const range = selection.getRangeAt(0);
-          const br = document.createElement("br");
-          range.insertNode(br);
-          range.setStartAfter(br);
-          range.collapse(true);
-          selection.removeAllRanges();
-          selection.addRange(range);
-        }
-        // Check for overflow after Enter
-        setTimeout(() => {
-          handlePageOverflow();
-        }, 10);
       }
 
       if (e.key === "Tab") {
@@ -825,6 +289,10 @@ const Word = () => {
     setEditing(false);
   };
 
+  const handleModal = (id) => {
+    console.log(id);
+  };
+
   const getExpertById = async () => {
     // console.log(id);
     try {
@@ -838,52 +306,7 @@ const Word = () => {
         setAppName(res.result[1]?.[1][3]);
         setExpertize(res.result[1]?.[1]);
         const raw = res.result[1]?.[13];
-
-        const apkName = res.result[1]?.[8][0];
-        const match = apkName.match(/[a-zA-Z0-9\.\-_]+\.apk/i);
-        const apkName1 = match ? match[0] : null;
-        setApkFileName(apkName1);
-
-        const ipaMatch = apkName.match(/[a-zA-Z0-9\.\-_]+\.ipa/i);
-        const ipaFile = ipaMatch ? ipaMatch[0] : null;
-        setIpaFileName(ipaFile);
-
-        // console.log("Topilgan fayl:", apkName1);
-
-        // Field 8 ning 0-indexidan table ma'lumotlarini va qolganini paged sifatida olish
-        const field8Data = res.result[1]?.[8] || [];
-        let vulnData = field8Data;
-
-        // Agar field 8 array bo'lsa va 0-index string bo'lsa, bu table ma'lumotlari
-        if (
-          Array.isArray(field8Data) &&
-          field8Data.length > 0 &&
-          typeof field8Data[0] === "string"
-        ) {
-          try {
-            const tablesFromField8 = JSON.parse(field8Data[0]);
-            setTableData(tablesFromField8);
-            vulnData = field8Data.slice(1); // Table ma'lumotlaridan keyingi qolganlarni ol
-          } catch (err) {
-            vulnData = field8Data; // Agar parse qilsa xatolik bo'lsa, dastlabkisini ishla
-          }
-        }
-
-        // Res'dan kelayotgan HTML stringlarini flatten qilish, raqamlarni tartiblab va page-number olib tashlash
-        let expTitleIndex = 1;
-        const flatVulnData = Array.isArray(vulnData)
-          ? vulnData
-              .flat()
-              .filter((item) => !item.includes("page-number"))
-              .map((item) => {
-                // exp-title ichidagi raqamni dinamik o'zgartirish
-                if (item.includes("exp-title")) {
-                  return item.replace(/2\.2\.\d+/g, `2.2.${expTitleIndex++}`);
-                }
-                return item;
-              })
-          : [];
-        setNewVuln(flatVulnData);
+        // console.log(res);
 
         const highVuln1 = Array.isArray(raw)
           ? raw.flat().map(({ a1, a2, a3 }) => ({ a1, a2, a3 }))
@@ -906,9 +329,11 @@ const Word = () => {
         setLowVuln(lV);
 
         // console.log(res.result[1]?.[13]);
-        setAllVuln([...highVuln1, ...mV, ...lV]);
-
-        // Table ma'lumotlari field 8 ning 0-indexidan olingan
+        setAllVuln([
+          ...highVuln1,
+          ...mV,
+          ...lV,
+        ]);
       } else if (res.status === METHOD.BAD_REQUEST) {
         toast.error("Ma'lumot topilmadi!");
       }
@@ -923,43 +348,6 @@ const Word = () => {
     getExpertById();
     // console.log(highVuln);
   }, []);
-
-  // Table ma'lumotlarini DOM'ga qayta yuklash (rasmlar bilan)
-  useEffect(() => {
-    if (Object.keys(tableData).length > 0) {
-      const tables = document.querySelectorAll("table.editable-table");
-
-      tables.forEach((table, idx) => {
-        const key = `table_${idx}`;
-        if (tableData[key] && tableData[key].length > 0) {
-          const tbody = table.querySelector("tbody");
-          if (tbody) {
-            // Faqat agar data bo'lsa barcha qatorlarni o'chirish va yangilash
-            tbody.innerHTML = "";
-
-            // Yangi rows'larni qo'shish
-            tableData[key].forEach((rowData) => {
-              const row = document.createElement("tr");
-              rowData.forEach((cellData) => {
-                const cell = document.createElement("td");
-
-                // Agar cellData HTML bo'lsa (rasmlar bilan), innerHTML sifatida qo'shamiz
-                if (cellData.includes("<img") || cellData.includes("<IMG")) {
-                  cell.innerHTML = cellData;
-                } else {
-                  cell.innerText = cellData;
-                }
-
-                cell.contentEditable = editing;
-                row.appendChild(cell);
-              });
-              tbody.appendChild(row);
-            });
-          }
-        }
-      });
-    }
-  }, [tableData, editing]);
 
   const renderPage = (html, index) => (
     <div
@@ -1043,7 +431,7 @@ const Word = () => {
 
   const handleSaveDocFromModal = (docVuln) => {
     // console.log("Childdan keldi:", docVuln);
-    generateVulnHtml(docVuln.vuln);
+    generateVulnHtml(docVuln);
     const html = vulnerabilityTemplates[docVuln.type];
     // console.log("HTML:", html);
 
@@ -1078,7 +466,7 @@ const Word = () => {
     let newInnerHtml = "";
     if (newVuln.length == 0) {
       newInnerHtml = `
-    <div class="title">2.2. “${appName}” android mobil ilovasi ekspertizasi natijalari bo‘yicha batafsil izoh</div>
+    <div class="title">2.2. “${appName}” android mobil ilovasi ekspertizasi natijalari bo‘yicha batafsil izoh></div>
     <div class="exp-title">2.2.${vulnCounter} ${title}</div>
     <div class="exp-d"><b>Xavflilik darajasi:</b> ${levelText}</div>
     <div class="text">${result}</div>
@@ -1108,7 +496,7 @@ const Word = () => {
           .split("\n")
           .map((line) => line.trim())
           .filter((line) => line);
-        lines.forEach((line) => blocks.push(`<pre class="text">${line}</pre>`));
+        lines.forEach((line) => blocks.push(`<div class="text">${line}</div>`));
       } else {
         blocks.push(div.outerHTML);
       }
@@ -1143,8 +531,7 @@ const Word = () => {
 
   const handleSubmit = async (docVuln) => {
     try {
-      console.log(docVuln);
-      const level = docVuln?.vuln?.[1]?.[0];
+      const level = docVuln?.[1]?.[0];
       if (!level) return;
 
       const fieldMap = {
@@ -1161,32 +548,23 @@ const Word = () => {
         [field]: [
           {
             a1: level,
-            a2: docVuln?.vulnCount,
-            a3: docVuln?.vuln?.[1]?.[1],
+            a2: docVuln?.[2],
+            a3: docVuln?.[1]?.[1],
           },
         ],
       };
 
-      // return;
+      return;
       const res = await sendRpcRequest(stRef, METHOD.ORDER_UPDATE, payload);
 
       // console.log("Yuborilgan payload:", payload);
-      console.log("Response:", res);
+      // console.log("Response:", res);
     } catch (error) {
       console.error(error);
     }
   };
 
   const paginateContent = (items) => {
-    // Agar items array bo'lmasa, string bo'lsa uni array ga o'gir
-    const itemsArray = Array.isArray(items)
-      ? items
-      : typeof items === "string"
-        ? [items]
-        : [];
-
-    if (!itemsArray.length) return [];
-
     const pages = [];
     let currentPage = [];
 
@@ -1196,15 +574,13 @@ const Word = () => {
     tempDiv.style.visibility = "hidden";
     document.body.appendChild(tempDiv);
 
-    itemsArray.forEach((item) => {
-      if (!item) return;
-
+    items.forEach((item) => {
       const wrapper = document.createElement("div");
       wrapper.innerHTML = item;
       tempDiv.appendChild(wrapper);
 
       if (tempDiv.scrollHeight > 580) {
-        if (currentPage.length) pages.push(currentPage);
+        pages.push(currentPage);
         currentPage = [item];
         tempDiv.innerHTML = item;
       } else {
@@ -1298,116 +674,29 @@ const Word = () => {
   }, [pages1, editing, newVuln, htmlContent]);
 
   const saveAllChanges = async () => {
-    const allPages = document.querySelectorAll(".new-content");
+    const allPages = document.querySelectorAll(".page-content");
 
     let allBlocks = [];
 
     allPages.forEach((page) => {
       Array.from(page.children).forEach((child) => {
-        // Agar child o'zi div bo'lsa va uning ichida yana div'lar bo'lsa,
-        // faqat ichki kontentni olish - bu div'lar takrorlanib qolmasligi uchun
-        if (child.tagName === "DIV") {
-          // Child'ning ichida yana div'lar borligini tekshirish
-          const hasNestedDivs = child.querySelector("div") !== null;
-          
-          // Muhim class'larni tekshirish (text, exp-title, exp-d, va hokazo)
-          const hasImportantClass = child.classList.contains("text") || 
-                                    child.classList.contains("exp-title") || 
-                                    child.classList.contains("exp-d") ||
-                                    child.classList.contains("title");
-          
-          if (hasNestedDivs && !hasImportantClass) {
-            // Agar ichida div'lar bo'lsa va muhim class bo'lmasa, faqat innerHTML olish
-            // Bu wrapper div'ni olib tashlaydi (React tomonidan qo'shilgan wrapper div)
-            allBlocks.push(child.innerHTML);
-          } else {
-            // Agar ichida div'lar bo'lmasa yoki muhim class bo'lsa, outerHTML ishlatish
-            allBlocks.push(child.outerHTML);
-          }
-        } else {
-          // Boshqa elementlar uchun outerHTML ishlatish
-          allBlocks.push(child.outerHTML);
-        }
+        allBlocks.push(child.outerHTML);
       });
     });
 
     // pagination qayta hisoblanadi
     const paged = paginateContent(allBlocks);
 
-    // Table ma'lumotlarini o'qish (rasmlar bilan base64 da)
-    const extractTableData = () => {
-      // Ikkala jadvalni ham topish uchun umumiy klassni ishlatamiz
-      const tables = document.querySelectorAll("table.expert-table");
-      const data = {};
-
-      console.log("Jami topilgan jadvallar:", tables.length);
-
-      tables.forEach((table, idx) => {
-        // Agar jadvalda tbody bo'lsa, uning qatorlarini olamiz
-        const rows = table.querySelectorAll("tbody tr");
-        const tableContent = [];
-
-        rows.forEach((row, rowIdx) => {
-          const cells = row.querySelectorAll("td");
-          // td ichidagi matnni va rasmlarni saqlaymiz
-          const rowData = Array.from(cells).map((cell) => {
-            const cellText = cell.innerText.trim();
-            const images = cell.querySelectorAll("img");
-
-            // Agar katakda rasm bo'lsa, HTML sifatida saqlaymiz (base64 bilan)
-            if (images.length > 0) {
-              return cell.innerHTML;
-            }
-
-            return cellText;
+      // console.log(paged);
+          const res = await sendRpcRequest(stRef, METHOD.ORDER_UPDATE, {
+            19: id,
+            8: paged,
           });
-          tableContent.push(rowData);
-        });
-
-        if (tableContent.length > 0) {
-          // Har bir jadvalni o'z indeksi bilan saqlaymiz
-          data[`table_${idx}`] = tableContent;
-        }
-      });
-
-      return data;
-    };
-
-    const tables = extractTableData();
-
-    const tablesJson = JSON.stringify(tables);
-
-    const apkName = tablesJson;
-    const match = apkName.match(/[a-zA-Z0-9\.\-_]+\.apk/i);
-    const apkName1 = match ? match[0] : null;
-    setApkFileName(apkName1);
-
-    const ipaMatch = apkName.match(/[a-zA-Z0-9\.\-_]+\.ipa/i);
-    const ipaFile = ipaMatch ? ipaMatch[0] : null;
-    setIpaFileName(ipaFile);
-
-    const field8Data = [tablesJson, ...paged];
-
-    console.log("Saving field8Data:", field8Data);
-
-    const res = await sendRpcRequest(stRef, METHOD.ORDER_UPDATE, {
-      19: id,
-      8: field8Data,
-    });
-    // console.log(res);
-
+          // console.log(res);
     setPages1(paged);
-    setTableData(tables);
     setEditing(false); // edit rejimdan chiqadi
 
     toast.success("Barcha o‘zgarishlar saqlandi");
-  };
-
-  const addNewTr = () => {
-    setRows((prev) => [
-      ...prev,
-      { id: Date.now(), role: "", login: "", password: "" },
-    ]);
   };
 
   return (
@@ -1419,13 +708,6 @@ const Word = () => {
         itemId={id}
         onSaveDoc={handleSaveDocFromModal}
       />
-
-      <button
-        onClick={saveAllChanges}
-        className="fixed bottom-10 z-50 right-10 shadow-lg flex justify-center items-center w-[60px] h-[60px] bg-blue-500 text-white text-3xl  rounded-full cursor-pointer hover:bg-blue-600"
-      >
-        <iconify-icon icon="material-symbols:save"></iconify-icon>
-      </button>
 
       <div className="word-container dark:text-[#333] relative " ref={printRef}>
         <div className="flex justify-end mb-4 gap-2 print-btns sticky right-9 top-[80px]">
@@ -1581,7 +863,7 @@ const Word = () => {
           <div
             className="page-title"
             style={{
-              textAlign: 0 % 2 === 0 ? `end` : `start`,
+              alignItems: 0 % 2 === 0 ? `end` : `start`,
               marginRight: 0 % 2 === 0 ? `50px` : `0px`,
             }}
           >
@@ -1593,12 +875,12 @@ const Word = () => {
             <h2 className="depart-subtitle">UMUMIY MA’LUMOTLAR</h2>
             <table className="depart-table">
               <tbody>
-                {firstSection.map((item, index) => (
-                  <tr key={index}>
-                    <td className="depart-table-first">{item.title}</td>
-                    <td className="depart-table-last">{item.desc}</td>
-                  </tr>
-                ))}
+              {firstSection.map((item, index) => (
+                <tr key={index}>
+                  <td className="depart-table-first">{item.title}</td>
+                  <td className="depart-table-last">{item.desc}</td>
+                </tr>
+              ))}
               </tbody>
             </table>
           </div>
@@ -1618,7 +900,7 @@ const Word = () => {
           <div
             className="page-title"
             style={{
-              textAlign: 1 % 2 === 0 ? `end` : `start`,
+              alignItems: 1 % 2 === 0 ? `end` : `start`,
               marginRight: 1 % 2 === 0 ? `50px` : `0px`,
             }}
           >
@@ -1628,12 +910,12 @@ const Word = () => {
           <div className="page-content top editable">
             <table className="depart-table">
               <tbody>
-                {secondSection.map((item, index) => (
-                  <tr key={index}>
-                    <td className="depart-table-first">{item.title}</td>
-                    <td className="depart-table-last">{item.desc}</td>
-                  </tr>
-                ))}
+              {secondSection.map((item, index) => (
+                <tr key={index}>
+                  <td className="depart-table-first">{item.title}</td>
+                  <td className="depart-table-last">{item.desc}</td>
+                </tr>
+              ))}
               </tbody>
             </table>
           </div>
@@ -1653,7 +935,7 @@ const Word = () => {
           <div
             className="page-title"
             style={{
-              textAlign: 2 % 2 === 0 ? `end` : `start`,
+              alignItems: 2 % 2 === 0 ? `end` : `start`,
               marginRight: 2 % 2 === 0 ? `50px` : `0px`,
             }}
           >
@@ -1661,14 +943,15 @@ const Word = () => {
             <div>mobil ilovasi</div>
           </div>
           <div className="page-content top editable">
+            
             <table className="depart-table">
               <tbody>
-                {thirdSection.map((item, index) => (
-                  <tr key={index}>
-                    <td className="depart-table-first">{item.title}</td>
-                    <td className="depart-table-last">{item.desc}</td>
-                  </tr>
-                ))}
+              {thirdSection.map((item, index) => (
+                <tr key={index}>
+                  <td className="depart-table-first">{item.title}</td>
+                  <td className="depart-table-last">{item.desc}</td>
+                </tr>
+              ))}
               </tbody>
             </table>
           </div>
@@ -1688,7 +971,7 @@ const Word = () => {
           <div
             className="page-title"
             style={{
-              textAlign: 3 % 2 === 0 ? `end` : `start`,
+              alignItems: 3 % 2 === 0 ? `end` : `start`,
               marginRight: 3 % 2 === 0 ? `50px` : `0px`,
             }}
           >
@@ -1698,12 +981,12 @@ const Word = () => {
           <div className="page-content top editable">
             <table className="depart-table">
               <tbody>
-                {fourthSection.map((item, index) => (
-                  <tr key={index}>
-                    <td className="depart-table-first">{item.title}</td>
-                    <td className="depart-table-last">{item.desc}</td>
-                  </tr>
-                ))}
+              {fourthSection.map((item, index) => (
+                <tr key={index}>
+                  <td className="depart-table-first">{item.title}</td>
+                  <td className="depart-table-last">{item.desc}</td>
+                </tr>
+              ))}
               </tbody>
             </table>
           </div>
@@ -1715,7 +998,7 @@ const Word = () => {
           <div
             className="page-title"
             style={{
-              textAlign: 4 % 2 === 0 ? `end` : `start`,
+              alignItems: 4 % 2 === 0 ? `end` : `start`,
               marginRight: 4 % 2 === 0 ? `50px` : `0px`,
             }}
           >
@@ -1736,14 +1019,14 @@ const Word = () => {
             <div className="title">1.3. Ekspertiza obyekti</div>
             <div className="text">
               <b>“{appName}” android/iOS </b> mobil ilovasining{" "}
-              <b>“{apkFileName}”</b> va <b>“{ipaFileName}”</b> fayllari.
+              <b>“{appName}.apk”</b> va <b>“{appName}.ipa”</b> fayllari.
             </div>
             <div className="text-i">
               1-jadval. Mobil ilovaning <br />
               “Android” OT uchun versiyasi
             </div>
 
-            <table className="expert-table editable-table">
+            <table className="expert-table">
               <thead>
                 <tr>
                   <th style={{ width: "60px", minWidth: "60px" }}>T/r.</th>
@@ -1819,7 +1102,7 @@ const Word = () => {
           <div
             className="page-title"
             style={{
-              textAlign: 5 % 2 === 0 ? `end` : `start`,
+              alignItems: 5 % 2 === 0 ? `end` : `start`,
               marginRight: 5 % 2 === 0 ? `50px` : `0px`,
             }}
           >
@@ -1827,7 +1110,7 @@ const Word = () => {
             <div>mobil ilovasi</div>
           </div>
           <div className="page-content editable">
-            <table className="expert-table editable-table mt-6">
+            <table className="expert-table mt-6">
               <tbody>
                 <tr>
                   <td>10.</td>
@@ -1871,7 +1154,7 @@ const Word = () => {
               “iOS” OT uchun versiyasi
             </div>
 
-            <table className="expert-table editable-table">
+            <table className="expert-table">
               <thead>
                 <tr>
                   <th style={{ width: "60px", minWidth: "60px" }}>T/r.</th>
@@ -1919,9 +1202,9 @@ const Word = () => {
                 </tr>
               </tbody>
             </table>
-          </div>
-          <div className="page-number flex justify-center mt-auto">
-            <span>8</span>
+            <div className="page-number flex justify-center mt-auto">
+              <span>8</span>
+            </div>
           </div>
         </div>
         <div
@@ -1936,7 +1219,7 @@ const Word = () => {
           <div
             className="page-title"
             style={{
-              textAlign: 6 % 2 === 0 ? `end` : `start`,
+              alignItems: 6 % 2 === 0 ? `end` : `start`,
               marginRight: 6 % 2 === 0 ? `50px` : `0px`,
             }}
           >
@@ -1944,7 +1227,7 @@ const Word = () => {
             <div>mobil ilovasi</div>
           </div>
           <div className="page-content editable">
-            <table className="expert-table editable-table mt-6">
+            <table className="expert-table mt-6">
               <tbody>
                 <tr>
                   <td>8.</td>
@@ -1997,21 +1280,21 @@ const Word = () => {
             <div className="title mt-4">1.4. Ekspertiza o‘tkazish tartibi</div>
             <table className="depart-table">
               <tbody>
-                {expertEtaps.slice(0, 1).map((item, index) => (
-                  <tr key={index}>
-                    <td className="depart-table-first etp">
-                      <img src={`${item.img}`} alt={`${item.title}`} />
-                      <div>{item.title}</div>
-                      <img src={`${item.dv}`} alt={`${item.dv}`} />
-                    </td>
-                    <td className="depart-table-last">{item.desc}</td>
-                  </tr>
-                ))}
+              {expertEtaps.slice(0, 1).map((item, index) => (
+                <tr key={index}>
+                  <td className="depart-table-first etp">
+                    <img src={`${item.img}`} alt={`${item.title}`} />
+                    <div>{item.title}</div>
+                    <img src={`${item.dv}`} alt={`${item.dv}`} />
+                  </td>
+                  <td className="depart-table-last">{item.desc}</td>
+                </tr>
+              ))}
               </tbody>
             </table>
-          </div>
-          <div className="page-number flex justify-center mt-auto">
-            <span>9</span>
+            <div className="page-number flex justify-center mt-auto">
+              <span>9</span>
+            </div>
           </div>
         </div>
         <div
@@ -2026,7 +1309,7 @@ const Word = () => {
           <div
             className="page-title"
             style={{
-              textAlign: 7 % 2 === 0 ? `end` : `start`,
+              alignItems: 7 % 2 === 0 ? `end` : `start`,
               marginRight: 7 % 2 === 0 ? `50px` : `0px`,
             }}
           >
@@ -2036,21 +1319,21 @@ const Word = () => {
           <div className="page-content editable">
             <table className="depart-table">
               <tbody>
-                {expertEtaps.slice(1, 4).map((item, index) => (
-                  <tr key={index}>
-                    <td className="depart-table-first etp">
-                      <img src={`${item.img}`} alt={`${item.title}`} />
-                      <div>{item.title}</div>
-                      <img src={`${item.dv}`} alt={`${item.dv}`} />
-                    </td>
-                    <td className="depart-table-last">{item.desc}</td>
-                  </tr>
-                ))}
+              {expertEtaps.slice(1, 4).map((item, index) => (
+                <tr key={index}>
+                  <td className="depart-table-first etp">
+                    <img src={`${item.img}`} alt={`${item.title}`} />
+                    <div>{item.title}</div>
+                    <img src={`${item.dv}`} alt={`${item.dv}`} />
+                  </td>
+                  <td className="depart-table-last">{item.desc}</td>
+                </tr>
+              ))}
               </tbody>
             </table>
-          </div>
-          <div className="page-number flex justify-center mt-auto">
-            <span>10</span>
+            <div className="page-number flex justify-center mt-auto">
+              <span>10</span>
+            </div>
           </div>
         </div>
         <div
@@ -2065,7 +1348,7 @@ const Word = () => {
           <div
             className="page-title"
             style={{
-              textAlign: 8 % 2 === 0 ? `end` : `start`,
+              alignItems: 8 % 2 === 0 ? `end` : `start`,
               marginRight: 8 % 2 === 0 ? `50px` : `0px`,
             }}
           >
@@ -2075,18 +1358,18 @@ const Word = () => {
           <div className="page-content editable">
             <table className="depart-table">
               <tbody>
-                {expertEtaps.slice(4, 7).map((item, index) => (
-                  <tr key={index}>
-                    <td className="depart-table-first etp">
-                      <img src={`${item.img}`} alt={`${item.title}`} />
-                      <div>{item.title}</div>
-                      {item.dv !== null && (
-                        <img src={`${item.dv}`} alt={`${item.dv}`} />
-                      )}
-                    </td>
-                    <td className="depart-table-last">{item.desc}</td>
-                  </tr>
-                ))}
+              {expertEtaps.slice(4, 7).map((item, index) => (
+                <tr key={index}>
+                  <td className="depart-table-first etp">
+                    <img src={`${item.img}`} alt={`${item.title}`} />
+                    <div>{item.title}</div>
+                    {item.dv !== null && (
+                      <img src={`${item.dv}`} alt={`${item.dv}`} />
+                    )}
+                  </td>
+                  <td className="depart-table-last">{item.desc}</td>
+                </tr>
+              ))}
               </tbody>
             </table>
             <div className="text">
@@ -2110,7 +1393,7 @@ const Word = () => {
           <div
             className="page-title"
             style={{
-              textAlign: 9 % 2 === 0 ? `end` : `start`,
+              alignItems: 9 % 2 === 0 ? `end` : `start`,
               marginRight: 9 % 2 === 0 ? `50px` : `0px`,
             }}
           >
@@ -2120,21 +1403,21 @@ const Word = () => {
           <div className="page-content editable">
             <table className="depart-table">
               <tbody>
-                {inExperts.slice(0, 5).map((item, index) => (
-                  <tr key={index}>
-                    <td className="depart-table-first exp">
-                      <div>
-                        {item.id}. {item.title}
-                      </div>
-                    </td>
-                    <td className="depart-table-last exp">{item.desc}</td>
-                  </tr>
-                ))}
+              {inExperts.slice(0, 5).map((item, index) => (
+                <tr key={index}>
+                  <td className="depart-table-first exp">
+                    <div>
+                      {item.id}. {item.title}
+                    </div>
+                  </td>
+                  <td className="depart-table-last exp">{item.desc}</td>
+                </tr>
+              ))}
               </tbody>
             </table>
-          </div>
-          <div className="page-number flex justify-center mt-auto">
-            <span>12</span>
+            <div className="page-number flex justify-center mt-auto">
+              <span>12</span>
+            </div>
           </div>
         </div>
         <div
@@ -2149,7 +1432,7 @@ const Word = () => {
           <div
             className="page-title"
             style={{
-              textAlign: 10 % 2 === 0 ? `end` : `start`,
+              alignItems: 10 % 2 === 0 ? `end` : `start`,
               marginRight: 10 % 2 === 0 ? `50px` : `0px`,
             }}
           >
@@ -2159,16 +1442,16 @@ const Word = () => {
           <div className="page-content editable">
             <table className="depart-table">
               <tbody>
-                {inExperts.slice(6, 9).map((item, index) => (
-                  <tr key={index}>
-                    <td className="depart-table-first exp">
-                      <div>
-                        {item.id}. {item.title}
-                      </div>
-                    </td>
-                    <td className="depart-table-last exp">{item.desc}</td>
-                  </tr>
-                ))}
+              {inExperts.slice(6, 9).map((item, index) => (
+                <tr key={index}>
+                  <td className="depart-table-first exp">
+                    <div>
+                      {item.id}. {item.title}
+                    </div>
+                  </td>
+                  <td className="depart-table-last exp">{item.desc}</td>
+                </tr>
+              ))}
               </tbody>
             </table>
             <div className="title">
@@ -2177,44 +1460,28 @@ const Word = () => {
             <div className="text">
               “{appName}” android/iOS mobil ilovalari ekspertizasi buyurtmachi
               tomonidan taqdim qilingan ma’lumotlar, jumladan: <br />
-              <b>- “{apkFileName}”;</b> <br />
-              <b>- “{ipaFileName}”</b> fayllari, shuningdek 4-jadvaldagi
+              <b>- “{appName}.apk”;</b> <br />
+              <b>- “{appName}.ipa”</b> fayllari, shuningdek 4-jadvaldagi
               foydalanuvchi qayd yozuvlari asosida olib borildi.
             </div>
-            <div className="relative">
-              <table className="expert-table editable-table mt-6">
-                <thead>
-                  <tr>
-                    <th>T/r</th>
-                    <th>Rol</th>
-                    <th>Kirish</th>
-                    <th>Parol</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1.</td>
-                    <td>Foydalanuvchi</td>
-                    <td>+998938623880</td>
-                    <td>sms</td>
-                  </tr>
-                  {rows.map((row, index) => (
-                    <tr key={row.id}>
-                      <td>{index + 2}</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-              <button
-                onClick={() => addNewTr()}
-                className="opacity-0 hover:opacity-100 text-bold w-[15px] h-[20px] rounded-full text-center text-green-500 bg-gray-700 flex justify-center items-center absolute right-[0px] bottom-[-5px]"
-              >
-                <span>+</span>
-              </button>
-            </div>
+            <table className="expert-table mt-6">
+              <thead>
+                <tr>
+                  <th>T/r</th>
+                  <th>Rol</th>
+                  <th>Kirish</th>
+                  <th>Parol</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1.</td>
+                  <td>Foydalanuvchi</td>
+                  <td>+998938623880</td>
+                  <td>sms</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
           <div className="page-number flex justify-center mt-auto">
             <span>13</span>
@@ -2232,7 +1499,7 @@ const Word = () => {
           <div
             className="page-title"
             style={{
-              textAlign: 11 % 2 === 0 ? `end` : `start`,
+              alignItems: 11 % 2 === 0 ? `end` : `start`,
               marginRight: 11 % 2 === 0 ? `50px` : `0px`,
             }}
           >
@@ -2294,7 +1561,7 @@ const Word = () => {
           <div
             className="page-title"
             style={{
-              textAlign: 12 % 2 === 0 ? `end` : `start`,
+              alignItems: 12 % 2 === 0 ? `end` : `start`,
               marginRight: 12 % 2 === 0 ? `50px` : `0px`,
             }}
           >
@@ -2308,7 +1575,7 @@ const Word = () => {
               5-jadvalda taqdim qilingan.
             </div>
             <div className="text-i my-3 underline">
-              5-jadval. “{appName}” android mobil ilovasida <br />
+              5-jadval. Android mobil ilovasida <br />
               aniqlangan zaifliklar.
             </div>
             <table class="expert-table">
@@ -2332,7 +1599,7 @@ const Word = () => {
                       </td>
                     )}
                     <td style={{ fontWeight: "normal" }}>{item.a3}</td>
-                    <td style={{ fontWeight: "normal" }}>{item.a2}</td>
+                    <td style={{fontWeight: "normal"}}>{item.a2}</td>
                   </tr>
                 ))}
 
@@ -2368,143 +1635,6 @@ const Word = () => {
             <span>15</span>
           </div>
         </div>
-        <div
-          className="a4"
-          style={{
-            backgroundImage:
-              12 % 2 === 0
-                ? `url("/assets/word/2.png")`
-                : `url("/assets/word/3.png")`,
-          }}
-        >
-          <div
-            className="page-title"
-            style={{
-              textAlign: 12 % 2 === 0 ? `end` : `start`,
-              marginRight: 12 % 2 === 0 ? `50px` : `0px`,
-            }}
-          >
-            <div>“{appName}”</div>
-            <div>mobil ilovasi</div>
-          </div>
-          <div className="page-content editable">
-            <div className="text-i my-3 underline">
-              6-jadval. “{appName}” iOS mobil ilovasida <br />
-              aniqlangan zaifliklar.
-            </div>
-            <table class="expert-table">
-              <thead>
-                <tr>
-                  <th style={{ width: "100px", minWidth: "100px" }}>
-                    Xavflilik darajasi{" "}
-                  </th>
-                  <th style={{ width: "300px", minWidth: "300px" }} colSpan={2}>
-                    Aniqlangan zaifliklar nomi va soni
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {/* Yuqori */}
-                {highVuln?.map((item, index) => (
-                  <tr key={`high-${index}`}>
-                    {index === 0 && (
-                      <td rowSpan={highVuln.length}>
-                        <b>Yuqori</b>
-                      </td>
-                    )}
-                    <td style={{ fontWeight: "normal" }}>{item.a3}</td>
-                    <td style={{ fontWeight: "normal" }}>{item.a2}</td>
-                  </tr>
-                ))}
-
-                {/* O'rta */}
-                {mediumVuln?.map((item, index) => (
-                  <tr key={`medium-${index}`}>
-                    {index === 0 && (
-                      <td rowSpan={mediumVuln.length}>
-                        <b>O'rta</b>
-                      </td>
-                    )}
-                    <td style={{ fontWeight: "normal" }}>{item.a3}</td>
-                    <td>{item.a2}</td>
-                  </tr>
-                ))}
-
-                {/* Past */}
-                {lowVuln?.map((item, index) => (
-                  <tr key={`low-${index}`}>
-                    {index === 0 && (
-                      <td rowSpan={lowVuln.length}>
-                        <b>Past</b>
-                      </td>
-                    )}
-                    <td style={{ fontWeight: "normal" }}>{item.a3}</td>
-                    <td>{item.a2}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-            <div className="text-i my-3 underline">
-              7-jadval. “{appName}” mobil ilova va server o‘rtasidagi
-              so‘rovlarni o‘rganish jarayonida aniqlangan zaifliklar
-            </div>
-            <table class="expert-table">
-              <thead>
-                <tr>
-                  <th style={{ width: "100px", minWidth: "100px" }}>
-                    Xavflilik darajasi{" "}
-                  </th>
-                  <th style={{ width: "300px", minWidth: "300px" }} colSpan={2}>
-                    Aniqlangan zaifliklar nomi va soni
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {/* Yuqori */}
-                {highVuln?.map((item, index) => (
-                  <tr key={`high-${index}`}>
-                    {index === 0 && (
-                      <td rowSpan={highVuln.length}>
-                        <b>Yuqori</b>
-                      </td>
-                    )}
-                    <td style={{ fontWeight: "normal" }}>{item.a3}</td>
-                    <td style={{ fontWeight: "normal" }}>{item.a2}</td>
-                  </tr>
-                ))}
-
-                {/* O'rta */}
-                {mediumVuln?.map((item, index) => (
-                  <tr key={`medium-${index}`}>
-                    {index === 0 && (
-                      <td rowSpan={mediumVuln.length}>
-                        <b>O'rta</b>
-                      </td>
-                    )}
-                    <td style={{ fontWeight: "normal" }}>{item.a3}</td>
-                    <td>{item.a2}</td>
-                  </tr>
-                ))}
-
-                {/* Past */}
-                {lowVuln?.map((item, index) => (
-                  <tr key={`low-${index}`}>
-                    {index === 0 && (
-                      <td rowSpan={lowVuln.length}>
-                        <b>Past</b>
-                      </td>
-                    )}
-                    <td style={{ fontWeight: "normal" }}>{item.a3}</td>
-                    <td>{item.a2}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <div className="page-number flex justify-center mt-auto">
-            <span>16</span>
-          </div>
-        </div>
 
         {pages1.map((pageItems, pageIndex) => (
           <div
@@ -2520,8 +1650,7 @@ const Word = () => {
             <div
               className="page-title"
               style={{
-                width: "85%",
-                textAlign: pageIndex % 2 === 0 ? "end" : "start",
+                alignItems: pageIndex % 2 === 0 ? "end" : "start",
                 marginRight: pageIndex % 2 === 0 ? "50px" : "0px",
               }}
             >
@@ -2529,17 +1658,30 @@ const Word = () => {
               <div>mobil ilovasi</div>
             </div>
 
-            <div className="page-content editable new-content">
+            <div className="page-content editable">
               {pageItems.map((item, i) => (
                 <div key={i} dangerouslySetInnerHTML={{ __html: item }} />
               ))}
             </div>
 
-            <div className="page-number flex justify-center mt-auto exp-page-num">
-              <span>{pageIndex + 17}</span>
+            <div className="page-number flex justify-center mt-auto">
+              <span>{pageIndex + 16}</span>
             </div>
           </div>
         ))}
+
+        {/* {htmlContent.slice(0, startIndex + 1).map(renderPage)} */}
+
+        {/* {vuln && <div key={1} dangerouslySetInnerHTML={{ __html: vuln }} />} */}
+        {/* 
+        {vulnerabilities.map((html, i) => (
+          <div key={`vuln-${i}`} dangerouslySetInnerHTML={{ __html: html }} />
+        ))} */}
+
+        {/* {htmlContent.slice(startIndex + 1).map(renderPage)} */}
+        {/* {htmlContent?.map((item, index) => (
+          <div key={index} dangerouslySetInnerHTML={{ __html: item }} />
+        ))} */}
       </div>
     </>
   );

@@ -76,9 +76,8 @@
   margin: 0 auto;
   padding: 20mm;
   position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  overflow: hidden !important;
+  display: block;
   background-image: url("/public/assets/word/2.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -97,9 +96,20 @@
 
 
 .page-content {
+  padding-top: 20px;
   font-size: 14px;
   line-height: 1.6;
-  white-space: pre-wrap;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  display: block !important;
+  width: 100% !important;
+  /* height: 900px !important; */
+  overflow: hidden !important;
+  position: relative;
+  flex-shrink: 0;
+  /* max-height: 900px !important; */
 
 }
 
@@ -123,11 +133,14 @@
 }
 
 .page-content img {
-  max-width: 400px;
+  max-width: 500px;
   height: auto;
   cursor: nwse-resize;
   user-select: none;
   vertical-align: middle;
+  display: block;
+  margin: 10px auto;
+  /* border: 1px solid #ddd; */
 }
 
 .page-content p {
@@ -181,13 +194,22 @@
 }
 
 .word-container .a4 .page-content p img {
-  margin: 0 auto;
+  margin: 10px auto;
   display: block;
+  max-width: 500px;
+  height: auto;
+  border: 1px solid #ddd;
 }
 
 .word-container .a4 .page-content p {
-  display: block;
+  display: block !important;
   text-align: justify;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+  margin: 0 !important;
+  padding: 0 0 6px 0 !important;
 }
 
 .word-container .a4 .page-content table tbody tr td p {
@@ -196,7 +218,7 @@
 }
 
 .page-content {
-  margin-top: 14px;
+  margin-top: 0px;
 }
 
 .page-content>p>strong:only-child {
@@ -204,15 +226,15 @@
   color: white;
   text-align: center;
   display: block;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
   margin-left: 40px;
   margin-right: 40px;
 }
 
 .word-container .a4 .page-content table tbody tr td {
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 p strong[data-title="Yuqori "] {
@@ -356,10 +378,11 @@ button {
   margin-top: 0px;
   font-weight: bold;
   margin-left: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  margin-bottom: 35px;
+  display: block;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+  height: auto;
+  max-height: 80px;
 }
 
 
@@ -371,9 +394,14 @@ button {
   text-align: center;
   margin-bottom: 40px;
   position: absolute;
-  top: 77px;
-  left: 53%;
+  top: 0px;
+  left: 56%;
   transform: translateX(-50%);
+}
+
+.mundarija2 .mundarija {
+  left: 28%;
+  /* top: -13px; */
 }
 
 .a4.mundarija1 .page-content .mundarija {
@@ -437,8 +465,8 @@ button {
 
 
 .page-content.top {
-  height: 940px;
-  max-height: 940px;
+  height: 950px;
+  max-height: 950px;
 }
 
 
@@ -498,12 +526,14 @@ table.depart-table {
 .page-number {
   position: absolute;
   bottom: 75px;
-  width: 69%;
+  width: 100%;
   text-align: center;
   font-size: 18px;
   color: #000;
+  left: 0%;
   z-index: 10;
   font-weight: bold;
+  pointer-events: none;
 }
 
 
@@ -534,6 +564,8 @@ table.depart-table {
   margin-bottom: 8px;
   text-align: justify;
   text-indent: 40px;
+  text-wrap: auto;
+  font-family: 'CenturyGothic';
 }
 
 .text .text-b {
@@ -764,4 +796,29 @@ table.depart-table {
   .page-content.editable.top {
     outline: none;
   }
+}
+
+.page-content {
+  height: 850px;
+  min-height: 850px;
+  max-height: 850px;
+}
+
+
+
+.expert-table.editable-table img {
+  width: 50px !important;
+  height: 50px !important;
+  max-width: 50px !important;
+  max-height: 50px !important;
+}
+
+
+.application-name {
+  margin-top: -18px;
+}
+
+.text p img{
+  max-width: 300px;
+  height: auto;
 }

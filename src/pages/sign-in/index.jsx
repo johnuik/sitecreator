@@ -38,6 +38,8 @@ const SignIn = () => {
   const { stRef } = useZirhStref();
   const [randomText, setRandomText] = useState("");
   const captchaRef = useRef(null);
+  const [seconds, setSeconds] = useState(0);
+  const [isRunning, setIsRunning] = useState(false);
 
   const refreshCaptchaFromParent = () => {
     console.log("test captcha");
@@ -58,7 +60,7 @@ const SignIn = () => {
     let result = "";
     for (let i = 0; i < 10; i++) {
       result += characters.charAt(
-        Math.floor(Math.random() * characters.length)
+        Math.floor(Math.random() * characters.length),
       );
     }
     return result;
@@ -98,6 +100,11 @@ const SignIn = () => {
         setOpen(false);
         return;
       }
+      if (res1.status == METHOD.OK) {
+        toast.success(email + " pochta manziliga tasdiqlash kodi yuborildi");
+        setSeconds(120);
+        setIsRunning(true);
+      }
 
       const uuidR = res1.result["1"].id;
 
@@ -127,6 +134,28 @@ const SignIn = () => {
     } catch (err) {
       toast.error("Xatolik yuz berdi!");
     }
+  };
+
+  useEffect(() => {
+    if (!isRunning) return;
+
+    if (seconds === 0) {
+      setIsRunning(false);
+      setStep(1);
+      return;
+    }
+
+    const timer = setInterval(() => {
+      setSeconds((prev) => prev - 1);
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [seconds, isRunning]);
+
+  const formatTime = (sec) => {
+    const m = String(Math.floor(sec / 60)).padStart(2, "0");
+    const s = String(sec % 60).padStart(2, "0");
+    return `${m}:${s}`;
   };
 
   const handleLogin2 = async (x, y, captchaId) => {
@@ -302,6 +331,17 @@ const SignIn = () => {
                       className="w-[90px] h-[100px]"
                       alt="Jamoa"
                     />
+                  </div>
+                  <div>
+                    <a
+                      href={`mailto:${email}`}
+                      className="text-blue-500 dark:text-blue-500 text-bold"
+                    >
+                      <b>{email}</b>
+                    </a>{" "}
+                    pochta manziliga tasdiqlash kodi yuborildi. Kod amal qilish
+                    muddati:{" "}
+                    <b className="text-green-400">{formatTime(seconds)} </b>
                   </div>
                 </div>
                 <form action="#">

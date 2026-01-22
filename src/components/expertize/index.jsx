@@ -24,6 +24,7 @@ const ExpertizeModal = ({ open, onClose, item, itemId, onSaveDoc }) => {
   const [middleVuln, setMiddleVuln] = useState([]);
   const [lowVuln, setLowVuln] = useState([]);
   const [vulnLevel, setVulnLevel] = useState("");
+  const [platform, setPlatform] = useState("");
   const [filteredVuln, setFilteredVuln] = useState([]);
   const [newDocVuln, setNewDocVuln] = useState({});
 
@@ -97,13 +98,11 @@ const ExpertizeModal = ({ open, onClose, item, itemId, onSaveDoc }) => {
         formData.contract = uploadRes.result["fileId"];
       }
 
-      const a4 = document.querySelectorAll(".a4");
-      const a4Array = Array.from(a4).map((el) => el.outerHTML);
+     
 
-      console.log(a4Array);
       const res = await sendRpcRequest(stRef, METHOD.ORDER_UPDATE, {
         19: itemId,
-        8: a4Array,
+        1.16: formData.userValues,
       });
       console.log(res);
       //   console.log(formData);
@@ -153,8 +152,12 @@ const ExpertizeModal = ({ open, onClose, item, itemId, onSaveDoc }) => {
 
   const handleSaveDoc = () => {
     if (!newDocVuln) return;
-
-    onSaveDoc(newDocVuln);
+    onSaveDoc({
+      vuln: newDocVuln,
+      platform: platform,
+      vulnLevel: vulnLevel,
+      vulnCount: formData.count || 1
+    });
   };
 
   const vulnOptions = filteredVuln.map((v) => ({
@@ -245,46 +248,6 @@ const ExpertizeModal = ({ open, onClose, item, itemId, onSaveDoc }) => {
                   placeholder="Ip va portlar"
                 ></textarea>
               </div>
-
-              {/* 6 Zaiflik haqida */}
-              {/* <div className="mb-3 fv-plugins-icon-container">
-                <label className="form-label">Zaiflik haqida</label>
-                <textarea
-                  rows="6"
-                  name="zaiflikText"
-                  className="form-control"
-                  value={zaiflikText}
-                  onChange={(e) => setZaiflikText(e.target.value)}
-                  placeholder="Hisobot"
-                ></textarea>
-              </div> */}
-
-              {/* 7 Ekspluatatsiya oqibatlari */}
-              {/* <div className="mb-3 fv-plugins-icon-container">
-                <label className="form-label">Ekspluatatsiya oqibatlari</label>
-                <textarea
-                  rows="3"
-                  name="oqibatlarText"
-                  className="form-control"
-                  value={oqibatlarText}
-                  onChange={(e) => setOqibatlarText(e.target.value)}
-                  placeholder="Oqibatlari"
-                ></textarea>
-              </div> */}
-
-              {/* 8 Tavsiya */}
-              {/* <div className="mb-3 fv-plugins-icon-container">
-                <label className="form-label">Tavsiya</label>
-                <textarea
-                  rows="3"
-                  className="form-control"
-                  name="tavsiyaText"
-                  value={tavsiyaText}
-                  onChange={(e) => setTavsiyaText(e.target.value)}
-                  placeholder="Tavsiya"
-                ></textarea>
-              </div> */}
-
               {/* 9 Soni */}
               <div className="mb-3 fv-plugins-icon-container">
                 <label className="form-label">Soni</label>
@@ -303,10 +266,15 @@ const ExpertizeModal = ({ open, onClose, item, itemId, onSaveDoc }) => {
             <div className="flex gap-4 justify-between mt-6">
               <div className="flex w-[400px] justify-between items-center">
                 <div className="w-[190px]">
-                  <select className="border rounded-md px-3 py-2 text-sm text-slate-500 w-full bg-transparent">
-                    <option>Android</option>
-                    <option>iOS</option>
-                    <option>Umumiy</option>
+                  <select
+                    className="border rounded-md px-3 py-2 text-sm text-slate-500 w-full bg-transparent"
+                    value={platform}
+                    onChange={(e) => setPlatform(e.target.value)}
+                  >
+                    <option value="">Platformani tanlang</option>
+                    <option value="android">Android</option>
+                    <option value="ios">iOS</option>
+                    <option value="umumiy">Umumiy</option>
                   </select>
                 </div>
                 <div className="w-[190px] ml-6">
