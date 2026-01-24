@@ -139,6 +139,9 @@ const Word = () => {
   const [rows, setRows] = useState([]);
   const [apkFileName, setApkFileName] = useState("");
   const [ipaFileName, setIpaFileName] = useState("");
+  const [vulnAndroid, setVulnAndroid] = useState([]);
+  const [vulnIOS, setVulnIOS] = useState([])
+  const [vulnUm, setVulnUm] = useState([])
 
   const pdfRef = useRef();
   const { stRef } = useZirhStref();
@@ -204,22 +207,22 @@ const Word = () => {
     return newPage;
   };
   const handlePageOverflow = () => {
-    const a4Pages = document.querySelectorAll(".a4");
+    let a4Pages = document.querySelectorAll(".a4");
+    const MAX_HEIGHT = 850;
 
-    // Multiple iterations to ensure all overflow is handled
-    for (let iteration = 0; iteration < 5; iteration++) {
+    // Multiple iterations to ensure all overflow is handled and empty spaces are filled
+    for (let iteration = 0; iteration < 10; iteration++) {
+      a4Pages = document.querySelectorAll(".a4"); // Refresh pages list
+      let hasChanges = false;
+
+      // Step 1: Handle overflow - move content to next page if too much
       for (let pageIndex = 0; pageIndex < a4Pages.length; pageIndex++) {
         const pageEl = a4Pages[pageIndex];
         const pageContent = pageEl.querySelector(".page-content");
         if (!pageContent) continue;
 
-        // A4 content max height in pixels (excluding page number area) - optimized to reduce whitespace
-        // A4 page = 1120px, minus margins (40px), minus page number area (50px) = ~1030px usable
-        // We allow 90% of that to leave small gaps = 927px, but use 850px for better distribution
-        const MAX_HEIGHT = 850; // Optimized to minimize empty spaces
         const actualHeight = pageContent.scrollHeight;
 
-        // Force hidden content to be removed
         if (actualHeight > MAX_HEIGHT) {
           const children = Array.from(pageContent.children);
           let currentHeight = 0;
@@ -237,29 +240,113 @@ const Word = () => {
 
           // If we found a split point, move content
           if (splitAtIndex > 0 && splitAtIndex < children.length) {
-            const toMove = children.slice(splitAtIndex);
+            hasChanges = true;
+            // Create a copy of elements to move (to avoid array mutation issues)
+            const toMove = Array.from(children).slice(splitAtIndex);
 
             // Get or create next page
             let nextPageEl = a4Pages[pageIndex + 1];
             if (!nextPageEl) {
               nextPageEl = createNewA4Page();
+              // Refresh pages list after creating new page
+              a4Pages = document.querySelectorAll(".a4");
             }
 
             const nextPageContent = nextPageEl.querySelector(".page-content");
             if (nextPageContent) {
-              // Move elements to next page
-              toMove.forEach((el) => {
-                nextPageContent.insertBefore(
-                  el.cloneNode(true),
-                  nextPageContent.firstChild,
-                );
-              });
-
-              // Remove from current page
-              toMove.forEach((el) => el.remove());
+              // Move elements to next page (in reverse order to avoid index issues)
+              for (let i = toMove.length - 1; i >= 0; i--) {
+                const el = toMove[i];
+                // Check if element is still in DOM before removing
+                if (el && el.parentNode === pageContent) {
+                  nextPageContent.insertBefore(
+                    el.cloneNode(true),
+                    nextPageContent.firstChild,
+                  );
+                  // Remove from current page only if it's still a child
+                  if (el.parentNode === pageContent) {
+                    el.remove();
+                  }
+                }
+              }
             }
           }
         }
+      }
+
+      // Step 2: Fill empty spaces - Word-like functionality
+      // Only do this if no overflow changes were made, or after overflow is handled
+      a4Pages = document.querySelectorAll(".a4");
+      for (let pageIndex = 0; pageIndex < a4Pages.length - 1; pageIndex++) {
+        const currentPageEl = a4Pages[pageIndex];
+        const currentPageContent = currentPageEl.querySelector(".page-content");
+        if (!currentPageContent) continue;
+
+        const currentHeight = currentPageContent.scrollHeight;
+        const availableSpace = MAX_HEIGHT - currentHeight;
+
+        // If there's empty space (more than 20px), try to fill it
+        if (availableSpace > 20) {
+          const nextPageEl = a4Pages[pageIndex + 1];
+          const nextPageContent = nextPageEl.querySelector(".page-content");
+          if (!nextPageContent) continue;
+
+          const nextPageChildren = Array.from(nextPageContent.children);
+          if (nextPageChildren.length === 0) continue;
+
+          // Try to move content from next page to fill empty space
+          let contentToMove = [];
+          let contentHeight = 0;
+
+          for (let i = 0; i < nextPageChildren.length; i++) {
+            const child = nextPageChildren[i];
+            if (!child || !child.parentNode) continue;
+
+            const childHeight = child.offsetHeight || 0;
+            if (childHeight === 0) continue; // Skip invisible elements
+
+            // Check if this content fits in available space (with small margin)
+            const spaceWithMargin = availableSpace - 10; // 10px margin
+            if (contentHeight + childHeight <= spaceWithMargin) {
+              contentToMove.push(child);
+              contentHeight += childHeight;
+            } else {
+              // If first element doesn't fit, don't try to move anything
+              if (i === 0) {
+                break;
+              }
+              // Otherwise, we've moved what we can
+              break;
+            }
+          }
+
+          // Move content to current page (in reverse order to avoid index issues)
+          if (contentToMove.length > 0) {
+            hasChanges = true;
+            for (let i = contentToMove.length - 1; i >= 0; i--) {
+              const el = contentToMove[i];
+              // Check if element is still in DOM before manipulating
+              if (el && el.parentNode === nextPageContent) {
+                // Clone element and append to current page
+                const cloned = el.cloneNode(true);
+                currentPageContent.appendChild(cloned);
+                // Remove original from next page only if it's still a child
+                if (el.parentNode === nextPageContent) {
+                  el.remove();
+                }
+              }
+            }
+
+            // Force reflow to update heights
+            void currentPageContent.offsetHeight;
+            void nextPageContent.offsetHeight;
+          }
+        }
+      }
+
+      // If no changes were made in this iteration, we're done
+      if (!hasChanges) {
+        break;
       }
     }
   };
@@ -308,7 +395,7 @@ const Word = () => {
           if (!editing) return;
           e.preventDefault();
           e.stopPropagation();
-          
+
           const deltaX = e.clientX - startX;
           const newWidth = Math.max(100, Math.min(800, startWidth + deltaX));
           const aspectRatio = startHeight / startWidth;
@@ -335,20 +422,26 @@ const Word = () => {
           handlePageOverflow();
         };
 
-        img.addEventListener("pointerdown", (e) => {
-          if (!editing) return;
-          
-          e.preventDefault();
-          e.stopPropagation();
-          
-          startX = e.clientX;
-          startY = e.clientY;
-          startWidth = img.offsetWidth || parseInt(img.style.width) || img.width;
-          startHeight = img.offsetHeight || parseInt(img.style.height) || img.height;
+        img.addEventListener(
+          "pointerdown",
+          (e) => {
+            if (!editing) return;
 
-          document.addEventListener("pointermove", onPointerMove);
-          document.addEventListener("pointerup", onPointerUp);
-        }, { once: false, passive: false });
+            e.preventDefault();
+            e.stopPropagation();
+
+            startX = e.clientX;
+            startY = e.clientY;
+            startWidth =
+              img.offsetWidth || parseInt(img.style.width) || img.width;
+            startHeight =
+              img.offsetHeight || parseInt(img.style.height) || img.height;
+
+            document.addEventListener("pointermove", onPointerMove);
+            document.addEventListener("pointerup", onPointerUp);
+          },
+          { once: false, passive: false },
+        );
       });
     };
 
@@ -430,7 +523,7 @@ const Word = () => {
                   wrapper.style.textAlign = "center";
                   wrapper.appendChild(imgElement);
                   range.insertNode(wrapper);
-                  
+
                   // Move cursor after image
                   range.setStartAfter(wrapper);
                   range.collapse(true);
@@ -450,15 +543,23 @@ const Word = () => {
                     // Use the same approach as makeImagesResizable for consistency
                     if (imgElement.dataset.resizable) {
                       // Already has handler, just update styles
-                      imgElement.style.cursor = editing ? "ew-resize" : "default";
-                      imgElement.style.border = editing ? "1px solid #ddd" : "none";
+                      imgElement.style.cursor = editing
+                        ? "ew-resize"
+                        : "default";
+                      imgElement.style.border = editing
+                        ? "1px solid #ddd"
+                        : "none";
                     } else {
                       // Mark as resizable
                       imgElement.dataset.resizable = "true";
-                      imgElement.style.cursor = editing ? "ew-resize" : "default";
+                      imgElement.style.cursor = editing
+                        ? "ew-resize"
+                        : "default";
                       imgElement.style.display = "inline-block";
                       imgElement.style.userSelect = "none";
-                      imgElement.style.border = editing ? "1px solid #ddd" : "none";
+                      imgElement.style.border = editing
+                        ? "1px solid #ddd"
+                        : "none";
                       imgElement.style.margin = "10px auto";
 
                       // Use pointer events for better compatibility (same as makeImagesResizable)
@@ -468,9 +569,12 @@ const Word = () => {
                         if (!editing) return;
                         e.preventDefault();
                         e.stopPropagation();
-                        
+
                         const deltaX = e.clientX - startX;
-                        const newWidth = Math.max(100, Math.min(800, startWidth + deltaX));
+                        const newWidth = Math.max(
+                          100,
+                          Math.min(800, startWidth + deltaX),
+                        );
                         const aspectRatio = startHeight / startWidth;
                         const newHeight = newWidth * aspectRatio;
 
@@ -483,7 +587,10 @@ const Word = () => {
                       const onPointerUp = (e) => {
                         e.preventDefault();
                         e.stopPropagation();
-                        document.removeEventListener("pointermove", onPointerMove);
+                        document.removeEventListener(
+                          "pointermove",
+                          onPointerMove,
+                        );
                         document.removeEventListener("pointerup", onPointerUp);
 
                         // Trigger reflow after resize
@@ -495,26 +602,39 @@ const Word = () => {
                         handlePageOverflow();
                       };
 
-                      imgElement.addEventListener("pointerdown", (e) => {
-                        if (!editing) return;
-                        
-                        e.preventDefault();
-                        e.stopPropagation();
-                        
-                        startX = e.clientX;
-                        startY = e.clientY;
-                        startWidth = imgElement.offsetWidth || parseInt(imgElement.style.width) || imgElement.width;
-                        startHeight = imgElement.offsetHeight || parseInt(imgElement.style.height) || imgElement.height;
+                      imgElement.addEventListener(
+                        "pointerdown",
+                        (e) => {
+                          if (!editing) return;
 
-                        document.addEventListener("pointermove", onPointerMove);
-                        document.addEventListener("pointerup", onPointerUp);
-                      }, { once: false, passive: false });
+                          e.preventDefault();
+                          e.stopPropagation();
+
+                          startX = e.clientX;
+                          startY = e.clientY;
+                          startWidth =
+                            imgElement.offsetWidth ||
+                            parseInt(imgElement.style.width) ||
+                            imgElement.width;
+                          startHeight =
+                            imgElement.offsetHeight ||
+                            parseInt(imgElement.style.height) ||
+                            imgElement.height;
+
+                          document.addEventListener(
+                            "pointermove",
+                            onPointerMove,
+                          );
+                          document.addEventListener("pointerup", onPointerUp);
+                        },
+                        { once: false, passive: false },
+                      );
                     }
                   }
-                  
+
                   // Also call attachImageResizeHandler to ensure all images have handlers
                   attachImageResizeHandler();
-                  
+
                   handlePageOverflow();
                 }, 300);
               }, 50);
@@ -1167,11 +1287,26 @@ const Word = () => {
         ],
       };
 
-      // return;
+      console.log(docVuln);
+
+      if (docVuln.platform == "android") {
+        setVulnAndroid((prev) => [...prev, payload]);
+      }else if(docVuln.platform == "ios"){
+        setVulnIOS((prev) => [...prev, payload])
+      }if(docVuln.platform == "umumiy"){
+        setVulnUm((prev) => [...prev, payload])
+      }
+
+      return;
       const res = await sendRpcRequest(stRef, METHOD.ORDER_UPDATE, payload);
 
+      if (res.status == METHOD.OK) {
+        if (field === 11) {
+        }
+      }
+
       // console.log("Yuborilgan payload:", payload);
-      console.log("Response:", res);
+      // console.log("Response:", res);
     } catch (error) {
       console.error(error);
     }
@@ -1309,13 +1444,14 @@ const Word = () => {
         if (child.tagName === "DIV") {
           // Child'ning ichida yana div'lar borligini tekshirish
           const hasNestedDivs = child.querySelector("div") !== null;
-          
+
           // Muhim class'larni tekshirish (text, exp-title, exp-d, va hokazo)
-          const hasImportantClass = child.classList.contains("text") || 
-                                    child.classList.contains("exp-title") || 
-                                    child.classList.contains("exp-d") ||
-                                    child.classList.contains("title");
-          
+          const hasImportantClass =
+            child.classList.contains("text") ||
+            child.classList.contains("exp-title") ||
+            child.classList.contains("exp-d") ||
+            child.classList.contains("title");
+
           if (hasNestedDivs && !hasImportantClass) {
             // Agar ichida div'lar bo'lsa va muhim class bo'lmasa, faqat innerHTML olish
             // Bu wrapper div'ni olib tashlaydi (React tomonidan qo'shilgan wrapper div)

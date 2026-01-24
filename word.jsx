@@ -135,6 +135,7 @@ const Word = () => {
   const [allVuln, setAllVuln] = useState([]);
   const [newVuln, setNewVuln] = useState([]);
   const [pages1, setPages1] = useState([]);
+  const [vulnAndroid, setVulnAndroid] = useState([])
 
   const pdfRef = useRef();
   const { stRef } = useZirhStref();

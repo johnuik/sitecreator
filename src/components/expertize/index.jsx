@@ -104,7 +104,7 @@ const ExpertizeModal = ({ open, onClose, item, itemId, onSaveDoc }) => {
         19: itemId,
         1.16: formData.userValues,
       });
-      console.log(res);
+      // console.log(res);
       //   console.log(formData);
     } catch (error) {
       console.log(error);
