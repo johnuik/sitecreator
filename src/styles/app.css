@@ -822,3 +822,9 @@ table.depart-table {
   max-width: 300px;
   height: auto;
 }
+
+
+
+object #save{
+  display: none;
+}

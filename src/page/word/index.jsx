@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useRef, useState } from "react";
+﻿import React, { useEffect, useMemo, useRef, useState } from "react";
 import mammoth from "mammoth";
 import { FaPen, FaSave } from "react-icons/fa";
 import { useReactToPrint } from "react-to-print";
@@ -112,6 +112,26 @@ const vulnerabilityTemplates = {
 };
 
 let vulnCounter = 1;
+
+const parseVulnByLevel = (payloads) => {
+  const high = [],
+    medium = [],
+    low = [];
+  (payloads || []).forEach((p) => {
+    const arr = p[13] || p[12] || p[11];
+    const list = Array.isArray(arr) ? arr : arr ? [arr] : [];
+    list.forEach((v) => {
+      if (!v || v.a1 == null) return;
+      const item = { a1: v.a1, a2: v.a2, a3: v.a3 };
+      const lev = Number(v.a1) || v.a1;
+      if (lev === 1) high.push(item);
+      else if (lev === 2) medium.push(item);
+      else if (lev === 3) low.push(item);
+    });
+  });
+  return { high, medium, low };
+};
+
 const Word = () => {
   const [pages, setPages] = useState([]);
   const [editing, setEditing] = useState(false);
@@ -140,14 +160,24 @@ const Word = () => {
   const [apkFileName, setApkFileName] = useState("");
   const [ipaFileName, setIpaFileName] = useState("");
   const [vulnAndroid, setVulnAndroid] = useState([]);
-  const [vulnIOS, setVulnIOS] = useState([])
-  const [vulnUm, setVulnUm] = useState([])
+  const [vulnIOS, setVulnIOS] = useState([]);
+  const [vulnUm, setVulnUm] = useState([]);
+  const [platform, setPlatform] = useState("");
+  const [pages2, setPages2] = useState([]);
+  const [pages3, setPages3] = useState([]);
 
   const pdfRef = useRef();
   const { stRef } = useZirhStref();
 
   const printRef = useRef(null);
   const { id } = useParams();
+
+  const androidVulns = useMemo(
+    () => parseVulnByLevel(vulnAndroid),
+    [vulnAndroid],
+  );
+  const iosVulns = useMemo(() => parseVulnByLevel(vulnIOS), [vulnIOS]);
+  const umVulns = useMemo(() => parseVulnByLevel(vulnUm), [vulnUm]);
 
   const handlePrint = useReactToPrint({
     contentRef: printRef,
@@ -371,24 +401,15 @@ const Word = () => {
     const editables = document.querySelectorAll(".editable");
 
     const attachImageResizeHandler = () => {
-      const images = document.querySelectorAll(".page-content img");
+      // Faqat hali handler biriktirilmagan rasmlarni olamiz
+      const images = document.querySelectorAll(
+        ".page-content img:not([data-resize-attached])",
+      );
+
       images.forEach((img) => {
-        // Skip if already has handler
-        if (img.dataset.resizable === "true") {
-          // Update cursor style
-          img.style.cursor = editing ? "ew-resize" : "default";
-          img.style.border = editing ? "1px solid #ddd" : "none";
-          return;
-        }
+        // Marker qo‘yamiz – bu rasmga handler biriktirilganligini bildiradi
+        img.dataset.resizeAttached = "true";
 
-        // Mark as resizable
-        img.dataset.resizable = "true";
-        img.style.cursor = editing ? "ew-resize" : "default";
-        img.style.display = "inline-block";
-        img.style.userSelect = "none";
-        img.style.border = editing ? "1px solid #ddd" : "none";
-
-        // Use pointer events for better compatibility (same as makeImagesResizable)
         let startX, startY, startWidth, startHeight;
 
         const onPointerMove = (e) => {
@@ -403,48 +424,63 @@ const Word = () => {
 
           img.style.width = `${newWidth}px`;
           img.style.height = `${newHeight}px`;
-          img.style.display = "inline-block";
-          img.style.maxWidth = "100%";
+          img.style.maxWidth = "none"; // muhim – % dan chiqarib yuboramiz
         };
 
         const onPointerUp = (e) => {
-          e.preventDefault();
-          e.stopPropagation();
           document.removeEventListener("pointermove", onPointerMove);
           document.removeEventListener("pointerup", onPointerUp);
-
-          // Trigger reflow after resize
-          editables.forEach((el) => {
-            void el.offsetHeight;
-          });
-
-          // Handle page overflow IMMEDIATELY after image resize
-          handlePageOverflow();
+          handlePageOverflow?.(); // agar funksiya mavjud bo‘lsa
         };
 
-        img.addEventListener(
-          "pointerdown",
-          (e) => {
-            if (!editing) return;
+        const onPointerDown = (e) => {
+          if (!editing || e.button !== 0) return;
+          e.preventDefault();
+          e.stopPropagation();
 
-            e.preventDefault();
-            e.stopPropagation();
+          // HAR DOIM HOZIRGI O‘LCHAMNI OLAMIZ
+          startX = e.clientX;
+          startY = e.clientY;
+          const rect = img.getBoundingClientRect();
+          startWidth = rect.width;
+          startHeight = rect.height;
 
-            startX = e.clientX;
-            startY = e.clientY;
-            startWidth =
-              img.offsetWidth || parseInt(img.style.width) || img.width;
-            startHeight =
-              img.offsetHeight || parseInt(img.style.height) || img.height;
+          document.addEventListener("pointermove", onPointerMove, {
+            passive: false,
+          });
+          document.addEventListener("pointerup", onPointerUp, {
+            passive: false,
+          });
+        };
 
-            document.addEventListener("pointermove", onPointerMove);
-            document.addEventListener("pointerup", onPointerUp);
-          },
-          { once: false, passive: false },
-        );
+        // Eski handler bo‘lsa – olib tashlaymiz (xavfsizlik)
+        img.removeEventListener("pointerdown", img._resizeHandler);
+        img._resizeHandler = onPointerDown;
+        img.addEventListener("pointerdown", onPointerDown, { passive: false });
+
+        // Vizual holatni yangilash
+        img.style.cursor = editing ? "ew-resize" : "default";
+        img.style.border = editing ? "1px dashed #aaa" : "none";
+        img.style.userSelect = "none";
       });
     };
 
+    const updateAllImagesVisual = () => {
+      document
+        .querySelectorAll(".page-content img[data-resize-handler]")
+        .forEach((img) => {
+          img._updateVisual?.();
+        });
+    };
+
+      attachImageResizeHandler();
+      updateAllImagesVisual();
+    if (editing) {
+      attachImageResizeHandler();
+      updateAllImagesVisual();
+    } else {
+      updateAllImagesVisual();
+    }
     const handleInput = (e) => {
       // Just handle images on input, don't trigger page overflow
       handleImageResize();
@@ -736,7 +772,7 @@ const Word = () => {
         el.removeEventListener("paste", handlePaste);
       });
     };
-  }, [editing]);
+  }, [editing, pages1]);
 
   useEffect(() => {
     const allPageContent = document.querySelectorAll(".page-content");
@@ -1287,14 +1323,15 @@ const Word = () => {
         ],
       };
 
-      console.log(docVuln);
+      // console.log(docVuln);
+      setPlatform(docVuln.platform);
 
-      if (docVuln.platform == "android") {
+      if (docVuln.platform === "android") {
         setVulnAndroid((prev) => [...prev, payload]);
-      }else if(docVuln.platform == "ios"){
-        setVulnIOS((prev) => [...prev, payload])
-      }if(docVuln.platform == "umumiy"){
-        setVulnUm((prev) => [...prev, payload])
+      } else if (docVuln.platform === "ios") {
+        setVulnIOS((prev) => [...prev, payload]);
+      } else if (docVuln.platform === "umumiy") {
+        setVulnUm((prev) => [...prev, payload]);
       }
 
       return;
@@ -1355,7 +1392,16 @@ const Word = () => {
   useEffect(() => {
     if (newVuln?.length) {
       const result = paginateContent(newVuln);
-      setPages1(result);
+      if (platform == "android") {
+        setPages1(result);
+      } else if (platform == "ios") {
+        setPages2(result);
+      } else if (platform == "umumiy") {
+        setPages3(result);
+      } else {
+        console.log(result);
+        setPages1(result);
+      }
     }
   }, [newVuln]);
 
@@ -1367,6 +1413,7 @@ const Word = () => {
     );
 
     const paged = paginateContent(blocks);
+    // console.log("hello")
     setPages1(paged);
   };
 
@@ -1467,6 +1514,8 @@ const Word = () => {
       });
     });
 
+    console.log(allBlocks);
+
     // pagination qayta hisoblanadi
     const paged = paginateContent(allBlocks);
 
@@ -1546,6 +1595,14 @@ const Word = () => {
     ]);
   };
 
+  const currentPages =
+    platform === "android"
+      ? pages1
+      : platform === "ios"
+        ? pages2
+        : platform === "umumiy"
+          ? pages3
+          : pages1;
   return (
     <>
       <ExpertizeModal
@@ -2447,7 +2504,7 @@ const Word = () => {
               5-jadval. “{appName}” android mobil ilovasida <br />
               aniqlangan zaifliklar.
             </div>
-            <table class="expert-table">
+            <table class="expert-table editable-table">
               <thead>
                 <tr>
                   <th style={{ width: "100px", minWidth: "100px" }}>
@@ -2459,11 +2516,10 @@ const Word = () => {
                 </tr>
               </thead>
               <tbody>
-                {/* Yuqori */}
-                {highVuln?.map((item, index) => (
-                  <tr key={`high-${index}`}>
+                {androidVulns.high?.map((item, index) => (
+                  <tr key={`android-high-${index}`}>
                     {index === 0 && (
-                      <td rowSpan={highVuln.length}>
+                      <td rowSpan={androidVulns.high.length}>
                         <b>Yuqori</b>
                       </td>
                     )}
@@ -2471,12 +2527,10 @@ const Word = () => {
                     <td style={{ fontWeight: "normal" }}>{item.a2}</td>
                   </tr>
                 ))}
-
-                {/* O'rta */}
-                {mediumVuln?.map((item, index) => (
-                  <tr key={`medium-${index}`}>
+                {androidVulns.medium?.map((item, index) => (
+                  <tr key={`android-medium-${index}`}>
                     {index === 0 && (
-                      <td rowSpan={mediumVuln.length}>
+                      <td rowSpan={androidVulns.medium.length}>
                         <b>O'rta</b>
                       </td>
                     )}
@@ -2484,12 +2538,10 @@ const Word = () => {
                     <td>{item.a2}</td>
                   </tr>
                 ))}
-
-                {/* Past */}
-                {lowVuln?.map((item, index) => (
-                  <tr key={`low-${index}`}>
+                {androidVulns.low?.map((item, index) => (
+                  <tr key={`android-low-${index}`}>
                     {index === 0 && (
-                      <td rowSpan={lowVuln.length}>
+                      <td rowSpan={androidVulns.low.length}>
                         <b>Past</b>
                       </td>
                     )}
@@ -2528,7 +2580,7 @@ const Word = () => {
               6-jadval. “{appName}” iOS mobil ilovasida <br />
               aniqlangan zaifliklar.
             </div>
-            <table class="expert-table">
+            <table class="expert-table editable-table">
               <thead>
                 <tr>
                   <th style={{ width: "100px", minWidth: "100px" }}>
@@ -2540,11 +2592,10 @@ const Word = () => {
                 </tr>
               </thead>
               <tbody>
-                {/* Yuqori */}
-                {highVuln?.map((item, index) => (
-                  <tr key={`high-${index}`}>
+                {iosVulns.high?.map((item, index) => (
+                  <tr key={`ios-high-${index}`}>
                     {index === 0 && (
-                      <td rowSpan={highVuln.length}>
+                      <td rowSpan={iosVulns.high.length}>
                         <b>Yuqori</b>
                       </td>
                     )}
@@ -2552,12 +2603,10 @@ const Word = () => {
                     <td style={{ fontWeight: "normal" }}>{item.a2}</td>
                   </tr>
                 ))}
-
-                {/* O'rta */}
-                {mediumVuln?.map((item, index) => (
-                  <tr key={`medium-${index}`}>
+                {iosVulns.medium?.map((item, index) => (
+                  <tr key={`ios-medium-${index}`}>
                     {index === 0 && (
-                      <td rowSpan={mediumVuln.length}>
+                      <td rowSpan={iosVulns.medium.length}>
                         <b>O'rta</b>
                       </td>
                     )}
@@ -2565,12 +2614,10 @@ const Word = () => {
                     <td>{item.a2}</td>
                   </tr>
                 ))}
-
-                {/* Past */}
-                {lowVuln?.map((item, index) => (
-                  <tr key={`low-${index}`}>
+                {iosVulns.low?.map((item, index) => (
+                  <tr key={`ios-low-${index}`}>
                     {index === 0 && (
-                      <td rowSpan={lowVuln.length}>
+                      <td rowSpan={iosVulns.low.length}>
                         <b>Past</b>
                       </td>
                     )}
@@ -2584,7 +2631,7 @@ const Word = () => {
               7-jadval. “{appName}” mobil ilova va server o‘rtasidagi
               so‘rovlarni o‘rganish jarayonida aniqlangan zaifliklar
             </div>
-            <table class="expert-table">
+            <table class="expert-table editable-table">
               <thead>
                 <tr>
                   <th style={{ width: "100px", minWidth: "100px" }}>
@@ -2596,11 +2643,10 @@ const Word = () => {
                 </tr>
               </thead>
               <tbody>
-                {/* Yuqori */}
-                {highVuln?.map((item, index) => (
-                  <tr key={`high-${index}`}>
+                {umVulns.high?.map((item, index) => (
+                  <tr key={`um-high-${index}`}>
                     {index === 0 && (
-                      <td rowSpan={highVuln.length}>
+                      <td rowSpan={umVulns.high.length}>
                         <b>Yuqori</b>
                       </td>
                     )}
@@ -2608,12 +2654,10 @@ const Word = () => {
                     <td style={{ fontWeight: "normal" }}>{item.a2}</td>
                   </tr>
                 ))}
-
-                {/* O'rta */}
-                {mediumVuln?.map((item, index) => (
-                  <tr key={`medium-${index}`}>
+                {umVulns.medium?.map((item, index) => (
+                  <tr key={`um-medium-${index}`}>
                     {index === 0 && (
-                      <td rowSpan={mediumVuln.length}>
+                      <td rowSpan={umVulns.medium.length}>
                         <b>O'rta</b>
                       </td>
                     )}
@@ -2621,12 +2665,10 @@ const Word = () => {
                     <td>{item.a2}</td>
                   </tr>
                 ))}
-
-                {/* Past */}
-                {lowVuln?.map((item, index) => (
-                  <tr key={`low-${index}`}>
+                {umVulns.low?.map((item, index) => (
+                  <tr key={`um-low-${index}`}>
                     {index === 0 && (
-                      <td rowSpan={lowVuln.length}>
+                      <td rowSpan={umVulns.low.length}>
                         <b>Past</b>
                       </td>
                     )}
@@ -2642,40 +2684,41 @@ const Word = () => {
           </div>
         </div>
 
-        {pages1.map((pageItems, pageIndex) => (
-          <div
-            key={pageIndex}
-            className="a4"
-            style={{
-              backgroundImage:
-                pageIndex % 2 === 0
-                  ? `url("/assets/word/2.png")`
-                  : `url("/assets/word/3.png")`,
-            }}
-          >
+        {currentPages &&
+          currentPages.map((pageItems, pageIndex) => (
             <div
-              className="page-title"
+              key={pageIndex}
+              className="a4"
               style={{
-                width: "85%",
-                textAlign: pageIndex % 2 === 0 ? "end" : "start",
-                marginRight: pageIndex % 2 === 0 ? "50px" : "0px",
+                backgroundImage:
+                  pageIndex % 2 === 0
+                    ? `url("/assets/word/2.png")`
+                    : `url("/assets/word/3.png")`,
               }}
             >
-              <div>“{appName}”</div>
-              <div>mobil ilovasi</div>
-            </div>
+              <div
+                className="page-title"
+                style={{
+                  width: "85%",
+                  textAlign: pageIndex % 2 === 0 ? "end" : "start",
+                  marginRight: pageIndex % 2 === 0 ? "50px" : "0px",
+                }}
+              >
+                <div>“{appName}”</div>
+                <div>mobil ilovasi</div>
+              </div>
 
-            <div className="page-content editable new-content">
-              {pageItems.map((item, i) => (
-                <div key={i} dangerouslySetInnerHTML={{ __html: item }} />
-              ))}
-            </div>
+              <div className="page-content editable new-content">
+                {pageItems.map((item, i) => (
+                  <div key={i} dangerouslySetInnerHTML={{ __html: item }} />
+                ))}
+              </div>
 
-            <div className="page-number flex justify-center mt-auto exp-page-num">
-              <span>{pageIndex + 17}</span>
+              <div className="page-number flex justify-center mt-auto exp-page-num">
+                <span>{pageIndex + 17}</span>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
       </div>
     </>
   );

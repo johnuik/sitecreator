@@ -435,3 +435,81 @@ export const downloadFileViaRpc = async (
   // a.download = fileName || "file.p";
   // a.click();
 };
+
+
+export const downloadFileViaRpcNew = async (
+  stRef,
+  fileId,
+  fileName,
+  onProgress
+) => {
+  const state = stRef.current;
+  const info = await sendRpcRequest(stRef, METHOD.FILE_INFO, { fileId });
+  console.log(info);
+  if (info.status != METHOD.OK) throw new Error("FILE_INFO failed");
+
+  const { size, name, mime, chunkSize = 128 * 1024 } = info.result;
+  let offset = 0,
+    allParts = [];
+
+  while (offset < size) {
+    const len = Math.min(chunkSize, size - offset);
+    const streamRes = await new Promise((resolve, reject) => {
+      state.rpcId = (state.rpcId + 1) & 0xffff;
+      const rpcId = state.rpcId;
+      state.rpcStreams.set(rpcId, {
+        resolve,
+        reject,
+        parts: [],
+        totalRead: 0,
+        timer: setTimeout(() => reject("Timeout"), 60000),
+        onPart: (_, u8, total) => {
+          if (onProgress)
+            onProgress(Math.round(((offset + total) / size) * 100));
+        },
+      });
+      sendAppMessage(
+        new Uint8Array(
+          buildRequestFrame(
+            rpcId,
+            METHOD.FILE_GET_CHUNK,
+            { fileId, offset, length: len },
+            state.clientId
+          )
+        ),
+        state
+      );
+    });
+    allParts.push(...streamRes.parts);
+    offset += streamRes.totalRead;
+  }
+
+  const mimeType = getMimeFromName(fileName);
+
+
+  const blob = new Blob(allParts, { type: mimeType || "application/octet-stream" });
+
+  // const base64 = await blobToBase64(blob);
+  // localStorage.setItem(fileId, base64);
+  // const a = document.createElement("a");
+  // a.href = URL.createObjectURL(blob);
+  // a.download = fileName || "file.p";
+  // a.click();
+
+  return blob;
+
+};
+
+const getMimeFromName = (name = "") => {
+  const ext = name.split(".").pop()?.toLowerCase();
+
+  return {
+    pdf: "application/pdf",
+    png: "image/png",
+    jpg: "image/jpeg",
+    jpeg: "image/jpeg",
+    webp: "image/webp",
+    mp4: "video/mp4",
+    txt: "text/plain",
+  }[ext] || "application/octet-stream";
+};

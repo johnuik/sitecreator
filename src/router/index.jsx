@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import WordTwo from "../page/word2";
+import { SystemWord } from "../page";
 
 const Main = lazy(() => import("../components/layouts/main"));
 
@@ -121,6 +122,8 @@ const AppRouter = () => {
             <Route path="/page/user-add" element={<UserAdd />} />
             <Route path="/page/view-profile" element={<ViewProfile />} />
             <Route path="/page/vuln" element={<Vuln />} />
+            <Route path="/page/system-doc/:id" element={<SystemWord />} />
+            
 
             <Route path="/" element={<Dashboard />} />
             <Route path="/crm" element={<Crm />} />

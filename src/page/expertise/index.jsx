@@ -8,6 +8,7 @@ import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
+import Select from "react-select";
 
 import ExpertizaTable from "../../components/table";
 import {
@@ -290,18 +291,7 @@ const Expertise = () => {
       1: formData.orgName,
       2: formData.orgId,
       3: formData.orgTypeId,
-      4: [
-        {
-          a1: formData.controllers,
-          a2: getUserFullNameById(formData.controllers),
-          a3: 1,
-        },
-        {
-          a1: formData.controllers,
-          a2: getUserFullNameById(formData.workers),
-          a3: 2,
-        },
-      ],
+      4: [...formData.controllers, ...formData.workers],
       6: formData.ordName,
       7: formData.ordPrice,
       8: formData.contractNumber,
@@ -473,8 +463,6 @@ const Expertise = () => {
     };
 
     getAllUser();
-
-  
 
     console.log(expertize);
   }, []);
@@ -873,6 +861,44 @@ Mazkur turdagi zaiflik “MASWE-0058” (inglizcha. Insecure Deep Links – Xavf
     }
   };
 
+  const getUser = (item) => {
+    if (!item || !Array.isArray(item)) return [];
+
+    return item.map((user) => ({
+      value: user.id,
+      label: `${user.surname} ${user.name}`,
+    }));
+  };
+
+  const handleControllerChange = (selectedOptions) => {
+    const formattedControllers = selectedOptions
+      ? selectedOptions.map((option) => ({
+          a1: option.value,
+          a2: option.label,
+          a3: 1,
+        }))
+      : [];
+    setFormData((prev) => ({
+      ...prev,
+      controllers: formattedControllers,
+    }));
+    console.log(formattedControllers);
+  };
+
+  const handleWorkersChange = (selectedOptions) => {
+    const formattedControllers = selectedOptions
+      ? selectedOptions.map((option) => ({
+          a1: option.value,
+          a2: option.label,
+          a3: 2,
+        }))
+      : [];
+    setFormData((prev) => ({
+      ...prev,
+      workers: formattedControllers,
+    }));
+  };
+
   return (
     <>
       {drawerOpen && (
@@ -1207,21 +1233,28 @@ Mazkur turdagi zaiflik “MASWE-0058” (inglizcha. Insecure Deep Links – Xavf
               <label className="text-sm text-gray-500 uppercase">
                 Nazoratchini tanlang
               </label>
-              <select
+
+              <Select
+                isMulti
                 name="controllers"
-                value={formData.controllers}
-                onChange={handleChange}
-                className="w-full mt-1 px-4 py-2 border rounded-md bg-transparent"
-              >
-                <option value="">Tanlang</option>
-                {items.map((item, index) => {
-                  return (
-                    <option key={item.id} value={item.id}>
-                      {item.surname} {item.name}
-                    </option>
-                  );
-                })}
-              </select>
+                options={getUser(items)}
+                className="basic-multi-select"
+                classNamePrefix="select"
+                placeholder="Nazoratchini tanlang..."
+                onChange={handleControllerChange}
+                styles={{
+                  control: (base) => ({
+                    ...base,
+                    backgroundColor: "transparent",
+                    borderColor: "#e2e8f0",
+                    borderRadius: "0.375rem",
+                  }),
+                  menu: (base) => ({
+                    ...base,
+                    zIndex: 9999,
+                  }),
+                }}
+              />
               {changedFields.includes(5.1) && (
                 <button
                   onClick={handleUpdate}
@@ -1240,21 +1273,27 @@ Mazkur turdagi zaiflik “MASWE-0058” (inglizcha. Insecure Deep Links – Xavf
               <label className="text-sm text-gray-500 uppercase">
                 Bajaruvchini tanlang
               </label>
-              <select
+              <Select
+                isMulti
                 name="workers"
-                value={formData.workers}
-                onChange={handleChange}
-                className="w-full mt-1 px-4 py-2 border rounded-md bg-transparent"
-              >
-                <option value="">Tanlang</option>
-                {items.map((item, index) => {
-                  return (
-                    <option key={item.id} value={item.id}>
-                      {item.surname} {item.name}
-                    </option>
-                  );
-                })}
-              </select>
+                options={getUser(items)}
+                className="basic-multi-select"
+                classNamePrefix="select"
+                placeholder="Bajaruvchini tanlang..."
+                onChange={handleWorkersChange}
+                styles={{
+                  control: (base) => ({
+                    ...base,
+                    backgroundColor: "transparent",
+                    borderColor: "#e2e8f0",
+                    borderRadius: "0.375rem",
+                  }),
+                  menu: (base) => ({
+                    ...base,
+                    zIndex: 9999,
+                  }),
+                }}
+              />
               {changedFields.includes(5.3) && (
                 <button
                   onClick={handleUpdate}
@@ -1697,170 +1736,7 @@ Mazkur turdagi zaiflik “MASWE-0058” (inglizcha. Insecure Deep Links – Xavf
             <h2 className="text-lg font-semibold mb-4 text-gray-500 dark:text-gray-200">
               Batafsil
             </h2>
-            <ExpertizaTable expData={signleExp} />
-            <div className="mt-4">
-              {/* 1-5 textarea'lar o'zgarmagan */}
-              <div className="mb-3 fv-plugins-icon-container">
-                <label className="form-label">
-                  Qayd yozuvi (role|login|parol)
-                </label>
-                <textarea
-                  rows="3"
-                  className="form-control"
-                  placeholder="Login , parollar"
-                ></textarea>
-              </div>
-              <div className="mb-3 fv-plugins-icon-container">
-                <label className="form-label">
-                  [Dasturchi]-[rasmiy_sayt]-[ilova_kategoriyasi]-[fayl_nomi]-[paket_nomi]-[talqin]-[min_iOS]-[joriy_iOS]-[app_store_havola]-[app_store_reyting]-[logo]-[md5]-[sha1]-[sha256]
-                </label>
-                <textarea
-                  rows="3"
-                  className="form-control"
-                  placeholder="Nazorat qiymatlari"
-                ></textarea>
-              </div>
-              <div className="mb-3 fv-plugins-icon-container">
-                <label className="form-label">
-                  [Dasturchi]-[rasmiy_sayt]-[ilova_kategoriyasi]-[fayl_nomi]-[paket_nomi]-[talqin]-[min_iOS]-[joriy_iOS]-[app_store_havola]-[app_store_reyting]-[logo]-[md5]-[sha1]-[sha256]
-                </label>
-                <textarea
-                  rows="3"
-                  className="form-control"
-                  placeholder="Nazorat qiymatlari"
-                ></textarea>
-              </div>
-              <div className="mb-3 fv-plugins-icon-container">
-                <label className="form-label">MOBIL IPLAR</label>
-                <textarea
-                  rows="3"
-                  className="form-control"
-                  placeholder="Domain va iplar"
-                ></textarea>
-              </div>
-              <div className="mb-3 fv-plugins-icon-container">
-                <label className="form-label">MOBIL PORTLAR</label>
-                <textarea
-                  rows="3"
-                  className="form-control"
-                  placeholder="Ip va portlar"
-                ></textarea>
-              </div>
-
-              {/* 6 Zaiflik haqida */}
-              <div className="mb-3 fv-plugins-icon-container">
-                <label className="form-label">Zaiflik haqida</label>
-                <textarea
-                  rows="6"
-                  className="form-control"
-                  value={zaiflikText}
-                  onChange={(e) => setZaiflikText(e.target.value)}
-                  placeholder="Hisobot"
-                ></textarea>
-              </div>
-
-              {/* 7 Ekspluatatsiya oqibatlari */}
-              <div className="mb-3 fv-plugins-icon-container">
-                <label className="form-label">Ekspluatatsiya oqibatlari</label>
-                <textarea
-                  rows="3"
-                  className="form-control"
-                  value={oqibatlarText}
-                  onChange={(e) => setOqibatlarText(e.target.value)}
-                  placeholder="Oqibatlari"
-                ></textarea>
-              </div>
-
-              {/* 8 Tavsiya */}
-              <div className="mb-3 fv-plugins-icon-container">
-                <label className="form-label">Tavsiya</label>
-                <textarea
-                  rows="3"
-                  className="form-control"
-                  value={tavsiyaText}
-                  onChange={(e) => setTavsiyaText(e.target.value)}
-                  placeholder="Tavsiya"
-                ></textarea>
-              </div>
-
-              {/* 9 Soni */}
-              <div className="mb-3 fv-plugins-icon-container">
-                <label className="form-label">Soni</label>
-                <input
-                  type="number"
-                  className="form-control"
-                  placeholder="Soni"
-                  defaultValue="1"
-                />
-              </div>
-            </div>
-
-            <div className="flex gap-4 justify-between mt-6">
-              <div className="flex w-[400px] justify-between items-center">
-                <div className="w-[190px]">
-                  <select className="border rounded-md px-3 py-2 text-sm text-slate-500 w-full bg-transparent">
-                    <option>Android</option>
-                    <option>iOS</option>
-                    <option>Umumiy</option>
-                  </select>
-                </div>
-                <div className="w-[190px] ml-6">
-                  <select className="border rounded-md px-3 py-2 text-sm text-slate-500 w-full bg-transparent">
-                    <option>Yuqori</option>
-                    <option>O'rta</option>
-                    <option>Past</option>
-                  </select>
-                </div>
-              </div>
-              <div className="w-[500px]">
-                <select
-                  className="border rounded-md px-3 py-2 text-sm text-slate-500 w-full bg-transparent"
-                  value={selectedVuln}
-                  onChange={handleVulnChange}
-                >
-                  <option value="">Zaiflik turini tanlang...</option>
-                  <option value="Ilova kodini yaxlitligi joriy etilmaganligi">
-                    Ilova kodini yaxlitligi joriy etilmaganligi
-                  </option>
-                  <option value="Malumotlarni oshkor etilishi">
-                    Malumotlarni oshkor etilishi
-                  </option>
-                  <option value="Himoyalanmagan havolalar">
-                    Himoyalanmagan havolalar
-                  </option>
-                </select>
-              </div>
-            </div>
-
-            <div className="w-full mx-auto my-4">
-              <label
-                htmlFor="file-upload"
-                className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-blue-300 rounded-xl bg-blue-50 cursor-pointer hover:bg-blue-100 transition-colors"
-              >
-                <i className="ri-upload-cloud-2-line text-4xl text-blue-600 mb-4"></i>
-                <span className="text-gray-600 text-base font-semibold dark:text-white">
-                  Maydonni bosing
-                </span>
-                <input id="file-upload" type="file" className="hidden" />
-              </label>
-            </div>
-
-            <div className="btn-group flex justify-end items-center gap-2">
-              <button
-                className="btn btn-primary py-2"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              >
-                Qo'shish
-              </button>
-              <button
-                className="btn btn-primary py-2"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              >
-                Saqlash
-              </button>
-            </div>
+            <ExpertizaTable expData={signleExp} link="/system-doc" />
           </div>
         </div>
       )}

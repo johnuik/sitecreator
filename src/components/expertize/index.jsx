@@ -10,7 +10,7 @@ const vulnLevelOptions = [
   { value: "3", label: "Past" },
 ];
 
-const ExpertizeModal = ({ open, onClose, item, itemId, onSaveDoc }) => {
+const ExpertizeModal = ({ link="word", open, onClose, item, itemId, onSaveDoc }) => {
   const [selectedVuln, setSelectedVuln] = useState("");
   const [zaiflikText, setZaiflikText] = useState("");
   const [oqibatlarText, setOqibatlarText] = useState("");
