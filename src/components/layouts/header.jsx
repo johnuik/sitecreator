@@ -37,12 +37,15 @@ const Header = () => {
   const handleLogout = async () => {
     try {
       const res = await sendRpcRequest(stRef, METHOD.LOGIN_LOG_OUT, {});
+      console.log(res);
       if (res.status == METHOD.OK) {
         localStorage.removeItem("AUTH_KEY_B64");
         localStorage.removeItem("data");
         localStorage.removeItem("checkUser");
         toast.success("Tizimdan muvaffaqiyatli chiqildi");
         window.location.href = "/login";
+      }else{
+        toast.error("Tizimdan chiqishda xatolik yuz berdi");
       }
     } catch (error) {
       console.error("Error:", error);

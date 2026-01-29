@@ -41,6 +41,7 @@
     "jszip": "^3.10.1",
     "libsodium-wrappers-sumo": "^0.8.0",
     "mammoth": "^1.11.0",
+    "mywasm": "file:pkg",
     "pdf-lib": "^1.17.1",
     "pdfjs-dist": "^2.16.105",
     "pdfmake": "^0.3.3",
@@ -93,6 +94,8 @@
     "@vitejs/plugin-react": "^5.1.2",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
-    "vite": "^7.3.1"
+    "vite": "^7.3.1",
+    "vite-plugin-top-level-await": "^1.6.0",
+    "vite-plugin-wasm": "^3.5.0"
   }
 }

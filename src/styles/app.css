@@ -755,12 +755,24 @@ table.depart-table {
 
 
 .chat-message-list {
-  background-image: url("/public/assets/etp/tb.jpg");
+  background-image: url("/public/assets/etp/tb.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  position: relative;
 }
 
+.chat-message-list-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("/public/assets/etp/tbs.svg");
+  opacity: 0.2;
+  width: 100%;
+  height: 100%;
+}
 
 .react-pdf__Page__canvas {
   width: 781px !important;
@@ -818,13 +830,90 @@ table.depart-table {
   margin-top: -18px;
 }
 
-.text p img{
+.text p img {
   max-width: 300px;
   height: auto;
 }
 
 
 
-object #save{
+object #save {
   display: none;
+}
+
+
+
+.a4.first-a4.system {
+  background-image: url("/public/assets/system/ax.png");
+}
+
+.system .page-content {
+  display: flex !important;
+  justify-content: start;
+  align-items: center;
+}
+
+.system-first {
+  padding-left: 60px;
+}
+
+.application-name.system {
+  text-align: left;
+  font-weight: normal;
+  font-size: 32px;
+  text-transform: unset;
+  width: 80%;
+}
+
+
+.system-m1.a4.mundarija1 {
+  background-image: url("/public/assets/system/ax-mundarija2.png");
+}
+
+.system-m2.a4.mundarija2 {
+  background-image: url("/public/assets/system/ax-mundarija.png");
+}
+
+.system-m1 .mundarija-content {
+  margin-left: 15px;
+  /* margin-right: 50px; */
+  width: 50%;
+  margin-top: 50px;
+}
+
+.system-m2 .mundarija-content {
+  margin-left: 145px;
+}
+
+.a4.system-c {
+  background-image: none !important;
+  position: relative;
+}
+
+
+.system-top-img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.system-bottom-img {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+
+.a4.system-b {
+  background-image: url("/public/assets/system/ax-back.png");
+}
+
+
+background-item.is-visible:not(.backwards) {
+  transition: opacity var(--transition-standard-in);
+  opacity: 1;
 }

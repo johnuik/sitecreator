@@ -218,7 +218,6 @@ const SignIn = () => {
     setOpen2(false);
   };
   const handleCaptchaSolve = async ({ x, y, captchaId }) => {
-    console.log({ x, y, captchaId });
     await handleLogin(x, y, captchaId);
   };
   const handleCaptchaSolve2 = async ({ x, y, captchaId }) => {

@@ -52,8 +52,7 @@ const UserAdd = () => {
   }
 
   const fetchProfile = async () => {
-    const profile = await sendRpcRequest(stRef, METHOD.CAPTCHA_GET, {});
-    if (profile.status == METHOD.OK) console.log(profile.result[1]);
+ 
   };
 
   const openDrawer = () => {

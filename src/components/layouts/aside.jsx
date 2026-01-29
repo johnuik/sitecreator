@@ -93,12 +93,6 @@ const Aside = () => {
               <span>Chat</span>
             </MenuLink>
           </li>
-            <li>
-            <MenuLink to="/page/vuln">
-              <iconify-icon icon="material-symbols:chat" className="menu-icon" />
-              <span>Zaifliklar</span>
-            </MenuLink>
-          </li>
           {/* <li className="sidebar-menu-group-title">Tizim ekspertizalar</li>
           <li>
             <Link to="/email">

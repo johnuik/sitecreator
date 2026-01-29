@@ -304,7 +304,6 @@ const SystemWord = () => {
         }
       }
 
-     
       a4Pages = document.querySelectorAll(".a4");
       for (let pageIndex = 0; pageIndex < a4Pages.length - 1; pageIndex++) {
         const currentPageEl = a4Pages[pageIndex];
@@ -330,8 +329,8 @@ const SystemWord = () => {
             if (!child || !child.parentNode) continue;
 
             const childHeight = child.offsetHeight || 0;
-            if (childHeight === 0) continue; 
-            const spaceWithMargin = availableSpace - 10; 
+            if (childHeight === 0) continue;
+            const spaceWithMargin = availableSpace - 10;
             if (contentHeight + childHeight <= spaceWithMargin) {
               contentToMove.push(child);
               contentHeight += childHeight;
@@ -408,7 +407,7 @@ const SystemWord = () => {
 
           img.style.width = `${newWidth}px`;
           img.style.height = `${newHeight}px`;
-          img.style.maxWidth = "none"; 
+          img.style.maxWidth = "none";
         };
 
         const onPointerUp = (e) => {
@@ -457,8 +456,8 @@ const SystemWord = () => {
         });
     };
 
-      attachImageResizeHandler();
-      updateAllImagesVisual();
+    attachImageResizeHandler();
+    updateAllImagesVisual();
     if (editing) {
       attachImageResizeHandler();
       updateAllImagesVisual();
@@ -1653,14 +1652,17 @@ const SystemWord = () => {
           </div>
         </div>
 
-        <div className="a4 first-a4">
+        <div className="a4 first-a4 system system-first">
           <div className="page-content">
-            <h2 className="application-name">“{appName}”</h2>
+            <h2
+              className={`application-name system ${appName.length > 20 ? "mb-[50px]" : "mt-[50px]"}`}
+            >
+              “{appName}” axborot tizimi{" "}
+            </h2>
           </div>
         </div>
-        <div className="a4 mundarija1">
+        <div className="a4 mundarija1 system-m1">
           <div className="page-content top editable">
-            <h2 className="mundarija first-m">Mundarija</h2>
             <div className="mundarija-content first">
               <div className="content-title">
                 <span>3</span>
@@ -1723,9 +1725,8 @@ const SystemWord = () => {
             </div>
           </div>
         </div>
-        <div className="a4 mundarija2">
+        <div className="a4 mundarija2 system-m2">
           <div className="page-content editable">
-            <div className="mundarija second-m">Mundarija</div>
             <div className="mundarija-content">
               <div className="mundarija-body">
                 {allVuln.slice(1).map((item, index) => (
@@ -1746,15 +1747,34 @@ const SystemWord = () => {
             </div>
           </div>
         </div>
-        <div
-          className="a4"
-          style={{
-            backgroundImage:
-              0 % 2 === 0
-                ? `url("/assets/word/2.png")`
-                : `url("/assets/word/3.png")`,
-          }}
-        >
+        <div className="a4 system-c">
+          {0 % 2 === 0 ? (
+            <>
+              <img
+                className="system-top-img w-full min-w-full"
+                src="/assets/system/ax-tops.png"
+                alt=""
+              />
+              <img
+                className="system-bottom-img w-full min-w-full"
+                src="/assets/system/ax-bottoms.jpg"
+                alt=""
+              />
+            </>
+          ) : (
+            <>
+              <img
+                className="system-top-img w-full min-w-full"
+                src="/assets/system/ax-top.png"
+                alt=""
+              />
+              <img
+                className="system-bottom-img w-full min-w-full"
+                src="/assets/system/ax-bottom.jpg"
+                alt=""
+              />
+            </>
+          )}
           <div
             className="page-title"
             style={{
@@ -1783,15 +1803,34 @@ const SystemWord = () => {
             <span>3</span>
           </div>
         </div>
-        <div
-          className="a4"
-          style={{
-            backgroundImage:
-              1 % 2 === 0
-                ? `url("/assets/word/2.png")`
-                : `url("/assets/word/3.png")`,
-          }}
-        >
+        <div className="a4 system-c">
+          {1 % 2 === 0 ? (
+            <>
+              <img
+                className="system-top-img w-full min-w-full"
+                src="/assets/system/ax-tops.png"
+                alt=""
+              />
+              <img
+                className="system-bottom-img w-full min-w-full"
+                src="/assets/system/ax-bottoms.jpg"
+                alt=""
+              />
+            </>
+          ) : (
+            <>
+              <img
+                className="system-top-img w-full min-w-full"
+                src="/assets/system/ax-top.png"
+                alt=""
+              />
+              <img
+                className="system-bottom-img w-full min-w-full"
+                src="/assets/system/ax-bottom.jpg"
+                alt=""
+              />
+            </>
+          )}
           <div
             className="page-title"
             style={{
@@ -1818,15 +1857,34 @@ const SystemWord = () => {
             <span>4</span>
           </div>
         </div>
-        <div
-          className="a4"
-          style={{
-            backgroundImage:
-              2 % 2 === 0
-                ? `url("/assets/word/2.png")`
-                : `url("/assets/word/3.png")`,
-          }}
-        >
+        <div className="a4 system-c">
+          {2 % 2 === 0 ? (
+            <>
+              <img
+                className="system-top-img w-full min-w-full"
+                src="/assets/system/ax-tops.png"
+                alt=""
+              />
+              <img
+                className="system-bottom-img w-full min-w-full"
+                src="/assets/system/ax-bottoms.jpg"
+                alt=""
+              />
+            </>
+          ) : (
+            <>
+              <img
+                className="system-top-img w-full min-w-full"
+                src="/assets/system/ax-top.png"
+                alt=""
+              />
+              <img
+                className="system-bottom-img w-full min-w-full"
+                src="/assets/system/ax-bottom.jpg"
+                alt=""
+              />
+            </>
+          )}
           <div
             className="page-title"
             style={{
@@ -1853,15 +1911,34 @@ const SystemWord = () => {
             <span>5</span>
           </div>
         </div>
-        <div
-          className="a4"
-          style={{
-            backgroundImage:
-              3 % 2 === 0
-                ? `url("/assets/word/2.png")`
-                : `url("/assets/word/3.png")`,
-          }}
-        >
+        <div className="a4 system-c">
+          {3 % 2 === 0 ? (
+            <>
+              <img
+                className="system-top-img w-full min-w-full"
+                src="/assets/system/ax-tops.png"
+                alt=""
+              />
+              <img
+                className="system-bottom-img w-full min-w-full"
+                src="/assets/system/ax-bottoms.jpg"
+                alt=""
+              />
+            </>
+          ) : (
+            <>
+              <img
+                className="system-top-img w-full min-w-full"
+                src="/assets/system/ax-top.png"
+                alt=""
+              />
+              <img
+                className="system-bottom-img w-full min-w-full"
+                src="/assets/system/ax-bottom.jpg"
+                alt=""
+              />
+            </>
+          )}
           <div
             className="page-title"
             style={{
@@ -1888,7 +1965,34 @@ const SystemWord = () => {
             <span>6</span>
           </div>
         </div>
-        <div className="a4">
+        <div className="a4 system-c">
+          {4 % 2 === 0 ? (
+            <>
+              <img
+                className="system-top-img w-full min-w-full"
+                src="/assets/system/ax-tops.png"
+                alt=""
+              />
+              <img
+                className="system-bottom-img w-full min-w-full"
+                src="/assets/system/ax-bottoms.jpg"
+                alt=""
+              />
+            </>
+          ) : (
+            <>
+              <img
+                className="system-top-img w-full min-w-full"
+                src="/assets/system/ax-top.png"
+                alt=""
+              />
+              <img
+                className="system-bottom-img w-full min-w-full"
+                src="/assets/system/ax-bottom.jpg"
+                alt=""
+              />
+            </>
+          )}
           <div
             className="page-title"
             style={{
@@ -1984,15 +2088,34 @@ const SystemWord = () => {
           </div>
         </div>
 
-        <div
-          className="a4"
-          style={{
-            backgroundImage:
-              5 % 2 === 0
-                ? `url("/assets/word/2.png")`
-                : `url("/assets/word/3.png")`,
-          }}
-        >
+        <div className="a4 system-c">
+          {5 % 2 === 0 ? (
+            <>
+              <img
+                className="system-top-img w-full min-w-full"
+                src="/assets/system/ax-tops.png"
+                alt=""
+              />
+              <img
+                className="system-bottom-img w-full min-w-full"
+                src="/assets/system/ax-bottoms.jpg"
+                alt=""
+              />
+            </>
+          ) : (
+            <>
+              <img
+                className="system-top-img w-full min-w-full"
+                src="/assets/system/ax-top.png"
+                alt=""
+              />
+              <img
+                className="system-bottom-img w-full min-w-full"
+                src="/assets/system/ax-bottom.jpg"
+                alt=""
+              />
+            </>
+          )}
           <div
             className="page-title"
             style={{
@@ -2101,15 +2224,34 @@ const SystemWord = () => {
             <span>8</span>
           </div>
         </div>
-        <div
-          className="a4"
-          style={{
-            backgroundImage:
-              6 % 2 === 0
-                ? `url("/assets/word/2.png")`
-                : `url("/assets/word/3.png")`,
-          }}
-        >
+        <div className="a4 system-c">
+          {6 % 2 === 0 ? (
+            <>
+              <img
+                className="system-top-img w-full min-w-full"
+                src="/assets/system/ax-tops.png"
+                alt=""
+              />
+              <img
+                className="system-bottom-img w-full min-w-full"
+                src="/assets/system/ax-bottoms.jpg"
+                alt=""
+              />
+            </>
+          ) : (
+            <>
+              <img
+                className="system-top-img w-full min-w-full"
+                src="/assets/system/ax-top.png"
+                alt=""
+              />
+              <img
+                className="system-bottom-img w-full min-w-full"
+                src="/assets/system/ax-bottom.jpg"
+                alt=""
+              />
+            </>
+          )}
           <div
             className="page-title"
             style={{
@@ -2191,15 +2333,34 @@ const SystemWord = () => {
             <span>9</span>
           </div>
         </div>
-        <div
-          className="a4"
-          style={{
-            backgroundImage:
-              7 % 2 === 0
-                ? `url("/assets/word/2.png")`
-                : `url("/assets/word/3.png")`,
-          }}
-        >
+        <div className="a4 system-c">
+          {7 % 2 === 0 ? (
+            <>
+              <img
+                className="system-top-img w-full min-w-full"
+                src="/assets/system/ax-tops.png"
+                alt=""
+              />
+              <img
+                className="system-bottom-img w-full min-w-full"
+                src="/assets/system/ax-bottoms.jpg"
+                alt=""
+              />
+            </>
+          ) : (
+            <>
+              <img
+                className="system-top-img w-full min-w-full"
+                src="/assets/system/ax-top.png"
+                alt=""
+              />
+              <img
+                className="system-bottom-img w-full min-w-full"
+                src="/assets/system/ax-bottom.jpg"
+                alt=""
+              />
+            </>
+          )}
           <div
             className="page-title"
             style={{
@@ -2230,15 +2391,34 @@ const SystemWord = () => {
             <span>10</span>
           </div>
         </div>
-        <div
-          className="a4"
-          style={{
-            backgroundImage:
-              8 % 2 === 0
-                ? `url("/assets/word/2.png")`
-                : `url("/assets/word/3.png")`,
-          }}
-        >
+        <div className="a4 system-c">
+          {8 % 2 === 0 ? (
+            <>
+              <img
+                className="system-top-img w-full min-w-full"
+                src="/assets/system/ax-tops.png"
+                alt=""
+              />
+              <img
+                className="system-bottom-img w-full min-w-full"
+                src="/assets/system/ax-bottoms.jpg"
+                alt=""
+              />
+            </>
+          ) : (
+            <>
+              <img
+                className="system-top-img w-full min-w-full"
+                src="/assets/system/ax-top.png"
+                alt=""
+              />
+              <img
+                className="system-bottom-img w-full min-w-full"
+                src="/assets/system/ax-bottom.jpg"
+                alt=""
+              />
+            </>
+          )}
           <div
             className="page-title"
             style={{
@@ -2275,15 +2455,34 @@ const SystemWord = () => {
             <span>11</span>
           </div>
         </div>
-        <div
-          className="a4"
-          style={{
-            backgroundImage:
-              9 % 2 === 0
-                ? `url("/assets/word/2.png")`
-                : `url("/assets/word/3.png")`,
-          }}
-        >
+        <div className="a4 system-c">
+          {9 % 2 === 0 ? (
+            <>
+              <img
+                className="system-top-img w-full min-w-full"
+                src="/assets/system/ax-tops.png"
+                alt=""
+              />
+              <img
+                className="system-bottom-img w-full min-w-full"
+                src="/assets/system/ax-bottoms.jpg"
+                alt=""
+              />
+            </>
+          ) : (
+            <>
+              <img
+                className="system-top-img w-full min-w-full"
+                src="/assets/system/ax-top.png"
+                alt=""
+              />
+              <img
+                className="system-bottom-img w-full min-w-full"
+                src="/assets/system/ax-bottom.jpg"
+                alt=""
+              />
+            </>
+          )}
           <div
             className="page-title"
             style={{
@@ -2314,15 +2513,34 @@ const SystemWord = () => {
             <span>12</span>
           </div>
         </div>
-        <div
-          className="a4"
-          style={{
-            backgroundImage:
-              10 % 2 === 0
-                ? `url("/assets/word/2.png")`
-                : `url("/assets/word/3.png")`,
-          }}
-        >
+        <div className="a4 system-c">
+          {10 % 2 === 0 ? (
+            <>
+              <img
+                className="system-top-img w-full min-w-full"
+                src="/assets/system/ax-tops.png"
+                alt=""
+              />
+              <img
+                className="system-bottom-img w-full min-w-full"
+                src="/assets/system/ax-bottoms.jpg"
+                alt=""
+              />
+            </>
+          ) : (
+            <>
+              <img
+                className="system-top-img w-full min-w-full"
+                src="/assets/system/ax-top.png"
+                alt=""
+              />
+              <img
+                className="system-bottom-img w-full min-w-full"
+                src="/assets/system/ax-bottom.jpg"
+                alt=""
+              />
+            </>
+          )}
           <div
             className="page-title"
             style={{
@@ -2397,15 +2615,34 @@ const SystemWord = () => {
             <span>13</span>
           </div>
         </div>
-        <div
-          className="a4"
-          style={{
-            backgroundImage:
-              11 % 2 === 0
-                ? `url("/assets/word/2.png")`
-                : `url("/assets/word/3.png")`,
-          }}
-        >
+        <div className="a4 system-c">
+          {11 % 2 === 0 ? (
+            <>
+              <img
+                className="system-top-img w-full min-w-full"
+                src="/assets/system/ax-tops.png"
+                alt=""
+              />
+              <img
+                className="system-bottom-img w-full min-w-full"
+                src="/assets/system/ax-bottoms.jpg"
+                alt=""
+              />
+            </>
+          ) : (
+            <>
+              <img
+                className="system-top-img w-full min-w-full"
+                src="/assets/system/ax-top.png"
+                alt=""
+              />
+              <img
+                className="system-bottom-img w-full min-w-full"
+                src="/assets/system/ax-bottom.jpg"
+                alt=""
+              />
+            </>
+          )}
           <div
             className="page-title"
             style={{
@@ -2459,15 +2696,34 @@ const SystemWord = () => {
             <span>14</span>
           </div>
         </div>
-        <div
-          className="a4"
-          style={{
-            backgroundImage:
-              12 % 2 === 0
-                ? `url("/assets/word/2.png")`
-                : `url("/assets/word/3.png")`,
-          }}
-        >
+        <div className="a4 system-c">
+          {12 % 2 === 0 ? (
+            <>
+              <img
+                className="system-top-img w-full min-w-full"
+                src="/assets/system/ax-tops.png"
+                alt=""
+              />
+              <img
+                className="system-bottom-img w-full min-w-full"
+                src="/assets/system/ax-bottoms.jpg"
+                alt=""
+              />
+            </>
+          ) : (
+            <>
+              <img
+                className="system-top-img w-full min-w-full"
+                src="/assets/system/ax-top.png"
+                alt=""
+              />
+              <img
+                className="system-bottom-img w-full min-w-full"
+                src="/assets/system/ax-bottom.jpg"
+                alt=""
+              />
+            </>
+          )}
           <div
             className="page-title"
             style={{
@@ -2540,15 +2796,34 @@ const SystemWord = () => {
             <span>15</span>
           </div>
         </div>
-        <div
-          className="a4"
-          style={{
-            backgroundImage:
-              12 % 2 === 0
-                ? `url("/assets/word/2.png")`
-                : `url("/assets/word/3.png")`,
-          }}
-        >
+        <div className="a4 system-c">
+          {12 % 2 === 0 ? (
+            <>
+              <img
+                className="system-top-img w-full min-w-full"
+                src="/assets/system/ax-tops.png"
+                alt=""
+              />
+              <img
+                className="system-bottom-img w-full min-w-full"
+                src="/assets/system/ax-bottoms.jpg"
+                alt=""
+              />
+            </>
+          ) : (
+            <>
+              <img
+                className="system-top-img w-full min-w-full"
+                src="/assets/system/ax-top.png"
+                alt=""
+              />
+              <img
+                className="system-bottom-img w-full min-w-full"
+                src="/assets/system/ax-bottom.jpg"
+                alt=""
+              />
+            </>
+          )}
           <div
             className="page-title"
             style={{
@@ -2670,16 +2945,34 @@ const SystemWord = () => {
 
         {currentPages &&
           currentPages.map((pageItems, pageIndex) => (
-            <div
-              key={pageIndex}
-              className="a4"
-              style={{
-                backgroundImage:
-                  pageIndex % 2 === 0
-                    ? `url("/assets/word/2.png")`
-                    : `url("/assets/word/3.png")`,
-              }}
-            >
+            <div key={pageIndex} className="a4 system-c">
+              {pageIndex % 2 === 0 ? (
+                <>
+                  <img
+                    className="system-top-img w-full min-w-full"
+                    src="/assets/system/ax-tops.png"
+                    alt=""
+                  />
+                  <img
+                    className="system-bottom-img w-full min-w-full"
+                    src="/assets/system/ax-bottoms.jpg"
+                    alt=""
+                  />
+                </>
+              ) : (
+                <>
+                  <img
+                    className="system-top-img w-full min-w-full"
+                    src="/assets/system/ax-top.png"
+                    alt=""
+                  />
+                  <img
+                    className="system-bottom-img w-full min-w-full"
+                    src="/assets/system/ax-bottom.jpg"
+                    alt=""
+                  />
+                </>
+              )}
               <div
                 className="page-title"
                 style={{
@@ -2703,6 +2996,8 @@ const SystemWord = () => {
               </div>
             </div>
           ))}
+
+        <div className="a4 system-b"></div>
       </div>
     </>
   );

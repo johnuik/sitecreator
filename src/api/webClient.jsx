@@ -1,3 +1,4 @@
+import { WsClient } from "mywasm";
 import sodium from "libsodium-wrappers-sumo";
 import {
   u8Concat,
@@ -16,11 +17,11 @@ import {
 } from "./encryptionUtils";
 import { buildRequestFrame, parseFrame, METHOD } from "./zirhrpc";
 
-const WS_URL = "ws://10.10.115.40:8080/wsock";
-const SERVER_ED25519_PUB_BASE64 =
-  "1AvsejuQBaZ2BcUbFe5teroRObkQgit3nk6grry7HMk=";
-const LABEL = "zirhwebproto";
-const MAX_RETRY_DELAY = 30000;
+// const WS_URL = "ws://10.10.115.40:8080/wsock";
+// const SERVER_ED25519_PUB_BASE64 =
+//   "1AvsejuQBaZ2BcUbFe5teroRObkQgit3nk6grry7HMk=";
+// const LABEL = "zirhwebproto";
+// const MAX_RETRY_DELAY = 30000;
 
 const OP = {
   REQ_PQ: 0x01,
@@ -64,7 +65,6 @@ const OP = {
 let ws = null;
 let retryCount = 0;
 
-
 // console.log("test")
 const emitGlobalEvent = (eventName, data) => {
   window.dispatchEvent(new CustomEvent(`zirh:${eventName}`, { detail: data }));
@@ -75,176 +75,245 @@ const LOGOUT_OPS = [
   0xf0, 0xee, 0xef, 0xf1, 0xf2, 0xf3, 0xf4, 0xf5, 0xf6, 0xf7, 0xf8, 0xf9, 0xfa,
   0xfb, 0xfc,
 ];
-export const initWebSocket = async (stRef) => {
+
+export const initWebSocket = async (stRef, cfg) => {
+  const { WS_URL, LABEL, MAX_RETRY_DELAY = 15000, emitGlobalEvent = () => { } } = cfg;
+
   if (!stRef.current.rpcPending) {
     stRef.current = {
       phase: 0,
-      auth_key: null,
-      auth_id: null,
       rpcId: 0,
-      rpcPending: new Map(), // Avtomatik yaratish
-      rpcStreams: new Map(), // Avtomatik yaratish
-      retryCount: 0,
-      aborted: false,
-      ...stRef.current, // Agar ichida clientId kabi narsalar bo'lsa, saqlab qoladi
+      rpcPending: new Map(),
+      rpcStreams: new Map(),
+      clientId: null,
+      ...stRef.current,
     };
   }
-  const state = stRef.current; // Refdan joriy holatni olamiz
-  await sodium.ready;
 
-  if (ws && ws.readyState <= 1) return;
+  const state = stRef.current;
 
-  ws = new WebSocket(WS_URL); // boshqa kutubxonaga o'tkazish kerak 
-  ws.binaryType = "arraybuffer";
+  if (!state.wc) {
+    state.wc = new WsClient(WS_URL, LABEL, MAX_RETRY_DELAY);
 
-  const SERVER_ED_PUB = fromB64(SERVER_ED25519_PUB_BASE64);
-  const fpPinned = (await sha256(SERVER_ED_PUB)).slice(-8);
+    if (state.clientId) state.wc.set_client_id(state.clientId);
 
-  ws.onopen = async () => {
-    retryCount = 0;
-    const authKeyB64 = localStorage.getItem("AUTH_KEY_B64");
-    if (authKeyB64) {
-      const key = fromB64(authKeyB64);
-      state.auth_key = key;
-      state.auth_id = (await sha256(state.auth_key)).slice(-8);
-      state.phase = 3;
-      emitGlobalEvent("ready", { fast: true });
-      return;
-    }
-    state.nonce = randBytes(16);
-    ws.send(pack(OP.REQ_PQ, state.nonce));
-  };
-
-  ws.onmessage = async (ev) => {
-    const { op, payload } = unpack(ev.data);
-    if (LOGOUT_OPS.includes(op)) {
-      handleSecurityLogout();
-      return;
-    }
-    if (op === OP.RES_PQ) {
-      state.server_nonce = payload.slice(0, 16);
-      if (!eqBytes(payload.slice(16, 24), fpPinned)) return ws.close();
-      state.kp = sodium.crypto_box_keypair();
-      state.new_nonce = randBytes(32);
-      ws.send(
-        pack(
-          OP.REQ_ECDH,
-          u8Concat(state.kp.publicKey, state.new_nonce, Uint8Array.of(1))
-        )
-      );
-      state.phase = 1;
-    } else if (op === OP.RES_ECDH_OK) {
-      const X_s = payload.slice(0, 32);
-      const sig = payload.slice(32, 96);
-      const H = await sha256(
-        u8Concat(
-          new TextEncoder().encode(LABEL),
-          Uint8Array.of(1),
-          X_s,
-          state.kp.publicKey,
-          state.nonce,
-          state.server_nonce
-        )
-      );
-      if (!sodium.crypto_sign_verify_detached(sig, H, SERVER_ED_PUB))
-        return ws.close();
-      const Z = sodium.crypto_scalarmult(state.kp.privateKey, X_s);
-      const salt = await sha256(u8Concat(state.nonce, state.server_nonce));
-      const info = u8Concat(
-        new TextEncoder().encode(LABEL),
-        Uint8Array.of(1),
-        state.kp.publicKey,
-        X_s,
-        state.nonce,
-        state.server_nonce
-      );
-      state.keyApp = await hkdf(
-        Z,
-        salt,
-        u8Concat(info, new TextEncoder().encode("/app")),
-        32
-      );
-      const keyEnc = await hkdf(
-        Z,
-        salt,
-        u8Concat(info, new TextEncoder().encode("/enc")),
-        32
-      );
-      const ivBase = await hkdf(
-        Z,
-        salt,
-        u8Concat(info, new TextEncoder().encode("/iv")),
-        12
-      );
-      const inner = new TextEncoder().encode(
-        JSON.stringify({ client_time: Math.floor(Date.now() / 1000) })
-      );
-      const ct = sodium.crypto_aead_chacha20poly1305_ietf_encrypt(
-        inner,
-        u8Concat(state.nonce, state.server_nonce, state.kp.publicKey, X_s),
-        null,
-        ivBase,
-        keyEnc
-      );
-      ws.send(pack(OP.SET_CLIENT_IN, ct));
-      state.phase = 2;
-    } else if (op === OP.DH_RESULT && payload[0] === 1) {
-      state.auth_key = state.keyApp;
-      state.auth_id = (await sha256(state.auth_key)).slice(-8);
-      state.phase = 3;
-      localStorage.setItem("AUTH_KEY_B64", toB64(state.auth_key));
-      emitGlobalEvent("ready", { fast: false });
-    }
-
-    if (op === OP.APP_MSG_S2C && state.phase === 3) {
+    state.wc.set_callbacks(
+        () => {
+    state.phase = 0;
+    state.sentOnline = false;      // ✅ har yangi socketda ONLINE qayta yuboriladi
+    // xohlasangiz:
+    // console.log("🔌 WS opened (new connection)");
+  },
+     async (info) => {
+        state.phase = 3;
+        emitGlobalEvent("ready", info);
+          if (!state.sentOnline) {
+      state.sentOnline = true;
       try {
-        const header = payload.slice(0, 24);
-        const { key, nonce } = deriveChaChaKeyNonce(
-          state.auth_key,
-          header.slice(8, 24)
-        );
-        const frame = sodium.crypto_aead_chacha20poly1305_ietf_decrypt(
-          null,
-          payload.slice(24),
-          header,
-          nonce,
-          key
-        );
-        const parsed = parseFrame(stripPadding(frame));
-
-        if (parsed.kind === "response" || parsed.kind === "error") {
-          handleIncomingRpc(parsed, stRef); // Refni uzatamiz
-        } else if (parsed.kind === "request") {
-          emitGlobalEvent(`push`, parsed);
-        }
+        await sendRpcRequest(stRef, METHOD.ONLINE, {});
       } catch (e) {
-        console.error("Decrypt fail", e);
+        console.error("❌ ONLINE send failed:", e);
+        // agar xohlasangiz qayta urinish uchun:
+        // state.sentOnline = false;
       }
     }
-  };
-
-  ws.onclose = () => {
-    // MUHIM: Funksiyani chaqirib emas, reference sifatida berish kerak
-    setTimeout(
-      () => initWebSocket(stRef),
-      Math.min(1000 * 2 ** retryCount++, MAX_RETRY_DELAY)
+      },
+      (evt) => {
+        if (evt.kind === "request") emitGlobalEvent("push", evt);
+        else handleIncomingRpc(evt, stRef);
+      },
+      (err) => console.error("WASM WS err:", err),
+      (op) => {
+        handleSecurityLogout()
+        console.log("op", op)
+      }
     );
-  };
-  ws.onerror = (err) => {
-    // MUHIM: Server o'chiq bo'lsa aynan shu handler birinchi ishlaydi
-    console.error("❌ WebSocket xatosi (Server o'chiq bo'lishi mumkin)");
-    ws.close(); // onclose'ni chaqirish uchun majburan yopamiz
-  };
+  }
+
+  state.wc.connect();
 };
+
+
+
+// export const initWebSocket = async (stRef) => {
+//   if (!stRef.current.rpcPending) {
+//     stRef.current = {
+//       phase: 0,
+//       auth_key: null,
+//       auth_id: null,
+//       rpcId: 0,
+//       rpcPending: new Map(), // Avtomatik yaratish
+//       rpcStreams: new Map(), // Avtomatik yaratish
+//       retryCount: 0,
+//       aborted: false,
+//       ...stRef.current, // Agar ichida clientId kabi narsalar bo'lsa, saqlab qoladi
+//     };
+//   }
+//   const state = stRef.current; // Refdan joriy holatni olamiz
+//   await sodium.ready;
+
+//   if (ws && ws.readyState <= 1) return;
+
+//   ws = new WebSocket(WS_URL); // boshqa kutubxonaga o'tkazish kerak
+//   ws.binaryType = "arraybuffer";
+
+//   const SERVER_ED_PUB = fromB64(SERVER_ED25519_PUB_BASE64);
+//   const fpPinned = (await sha256(SERVER_ED_PUB)).slice(-8);
+
+//   ws.onopen = async () => {
+//     retryCount = 0;
+//     const authKeyB64 = localStorage.getItem("AUTH_KEY_B64");
+//     if (authKeyB64) {
+//       const key = fromB64(authKeyB64);
+//       state.auth_key = key;
+//       state.auth_id = (await sha256(state.auth_key)).slice(-8);
+//       state.phase = 3;
+//       emitGlobalEvent("ready", { fast: true });
+//       return;
+//     }
+//     state.nonce = randBytes(16);
+//     ws.send(pack(OP.REQ_PQ, state.nonce));
+//   };
+
+//   ws.onmessage = async (ev) => {
+//     const { op, payload } = unpack(ev.data);
+//     if (LOGOUT_OPS.includes(op)) {
+//       handleSecurityLogout();
+//       return;
+//     }
+//     if (op === OP.RES_PQ) {
+//       state.server_nonce = payload.slice(0, 16);
+//       if (!eqBytes(payload.slice(16, 24), fpPinned)) return ws.close();
+//       state.kp = sodium.crypto_box_keypair();
+//       state.new_nonce = randBytes(32);
+//       ws.send(
+//         pack(
+//           OP.REQ_ECDH,
+//           u8Concat(state.kp.publicKey, state.new_nonce, Uint8Array.of(1)),
+//         ),
+//       );
+//       state.phase = 1;
+//     } else if (op === OP.RES_ECDH_OK) {
+//       const X_s = payload.slice(0, 32);
+//       const sig = payload.slice(32, 96);
+//       const H = await sha256(
+//         u8Concat(
+//           new TextEncoder().encode(LABEL),
+//           Uint8Array.of(1),
+//           X_s,
+//           state.kp.publicKey,
+//           state.nonce,
+//           state.server_nonce,
+//         ),
+//       );
+//       if (!sodium.crypto_sign_verify_detached(sig, H, SERVER_ED_PUB))
+//         return ws.close();
+//       const Z = sodium.crypto_scalarmult(state.kp.privateKey, X_s);
+//       const salt = await sha256(u8Concat(state.nonce, state.server_nonce));
+//       const info = u8Concat(
+//         new TextEncoder().encode(LABEL),
+//         Uint8Array.of(1),
+//         state.kp.publicKey,
+//         X_s,
+//         state.nonce,
+//         state.server_nonce,
+//       );
+//       state.keyApp = await hkdf(
+//         Z,
+//         salt,
+//         u8Concat(info, new TextEncoder().encode("/app")),
+//         32,
+//       );
+//       const keyEnc = await hkdf(
+//         Z,
+//         salt,
+//         u8Concat(info, new TextEncoder().encode("/enc")),
+//         32,
+//       );
+//       const ivBase = await hkdf(
+//         Z,
+//         salt,
+//         u8Concat(info, new TextEncoder().encode("/iv")),
+//         12,
+//       );
+//       const inner = new TextEncoder().encode(
+//         JSON.stringify({ client_time: Math.floor(Date.now() / 1000) }),
+//       );
+//       const ct = sodium.crypto_aead_chacha20poly1305_ietf_encrypt(
+//         inner,
+//         u8Concat(state.nonce, state.server_nonce, state.kp.publicKey, X_s),
+//         null,
+//         ivBase,
+//         keyEnc,
+//       );
+//       ws.send(pack(OP.SET_CLIENT_IN, ct));
+//       state.phase = 2;
+//     } else if (op === OP.DH_RESULT && payload[0] === 1) {
+//       state.auth_key = state.keyApp;
+//       state.auth_id = (await sha256(state.auth_key)).slice(-8);
+//       state.phase = 3;
+//       localStorage.setItem("AUTH_KEY_B64", toB64(state.auth_key));
+//       emitGlobalEvent("ready", { fast: false });
+//     }
+
+//     if (op === OP.APP_MSG_S2C && state.phase === 3) {
+//       try {
+//         const header = payload.slice(0, 24);
+//         const { key, nonce } = deriveChaChaKeyNonce(
+//           state.auth_key,
+//           header.slice(8, 24),
+//         );
+//         const frame = sodium.crypto_aead_chacha20poly1305_ietf_decrypt(
+//           null,
+//           payload.slice(24),
+//           header,
+//           nonce,
+//           key,
+//         );
+//         const parsed = parseFrame(stripPadding(frame));
+
+//         if (parsed.kind === "response" || parsed.kind === "error") {
+//           handleIncomingRpc(parsed, stRef); // Refni uzatamiz
+//         } else if (parsed.kind === "request") {
+//           console.log(parsed);
+//           emitGlobalEvent(`push`, parsed);
+//         }
+//       } catch (e) {
+//         console.error("Decrypt fail", e);
+//       }
+//     }
+//   };
+
+//   ws.onclose = () => {
+//     // MUHIM: Funksiyani chaqirib emas, reference sifatida berish kerak
+//     setTimeout(
+//       () => initWebSocket(stRef),
+//       Math.min(1000 * 2 ** retryCount++, MAX_RETRY_DELAY),
+//     );
+//   };
+//   ws.onerror = (err) => {
+//     try {
+//       // MUHIM: Server o'chiq bo'lsa aynan shu handler birinchi ishlaydi
+//       console.error("❌ WebSocket xatosi (Server o'chiq bo'lishi mumkin)");
+//       ws.close(); // onclose'ni chaqirish uchun majburan yopamiz
+//     } catch (error) {}
+//   };
+// };
+
+
+
 function handleSecurityLogout() {
   localStorage.clear(); // Hamma narsani tozalash xavfsizroq
   window.location.replace("/login"); // Orqaga qaytish imkonisiz yo'naltirish
 }
 function handleIncomingRpc(parsed, stRef) {
   const state = stRef.current;
+
   const stream = state.rpcStreams.get(parsed.id);
+
   if (stream) {
     const res = parsed.result || {};
+
     if (res.data) {
       const u8 =
         res.data instanceof Uint8Array ? res.data : new Uint8Array(res.data);
@@ -266,7 +335,9 @@ function handleIncomingRpc(parsed, stRef) {
   const pend = state.rpcPending.get(parsed.id);
   if (pend) {
     state.rpcPending.delete(parsed.id);
-    pend.resolve({ status: parsed.statusCode, result: parsed.result });
+    pend.resolve({ ok: true, status: parsed.statusCode, ...parsed.result });
+
+    // pend.resolve({ status: parsed.statusCode, result: parsed.result });
   }
 }
 
@@ -274,15 +345,35 @@ function handleIncomingRpc(parsed, stRef) {
 
 export const sendRpcRequest = (stRef, methodId, params = {}) => {
   const state = stRef.current;
+
   return new Promise((resolve, reject) => {
     if (!ws || state.phase !== 3) return reject("Offline");
+
     state.rpcId = (state.rpcId + 1) & 0xffff;
     const rpcId = state.rpcId;
+
     state.rpcPending.set(rpcId, { resolve, reject });
-    const rpcFrame = new Uint8Array(
-      buildRequestFrame(rpcId, methodId, params, state.clientId)
-    );
-    sendAppMessage(rpcFrame, state);
+
+
+    // new ---------------------------------------------------
+
+    const buf = buildRequestFrame(rpcId, methodId, params, state.clientId); // ArrayBuffer
+    const u8 = new Uint8Array(buf);
+
+    try {
+      // ✅ WASM: faqat bytes yuboradi (encrypt + ws.send WASM ichida)
+      state.wc.send_rpc_frame_bytes(rpcId, methodId, u8);
+    } catch (e) {
+      state.rpcPending.delete(rpcId);
+      reject(e);
+    }
+    // new end---------------------------------------------------
+
+
+    // const rpcFrame = new Uint8Array(
+    //   buildRequestFrame(rpcId, methodId, params, state.clientId)
+    // );
+    // sendAppMessage(rpcFrame, state);
   });
 };
 
@@ -296,7 +387,7 @@ const sendAppMessage = (bytes, state) => {
     header,
     null,
     nonce,
-    key
+    key,
   );
   ws.send(pack(OP.APP_MSG_C2S, u8Concat(header, ct)));
 };
@@ -311,7 +402,7 @@ export const uploadFileViaRpc = async (stRef, file, convId, onProgress) => {
   // 2. Tekshirish
   if (!allowedExtensions.includes(fileExtension)) {
     throw new Error(
-      `Xatolik: .${fileExtension} formatidagi fayllarni yuklash mumkin emas!`
+      `Xatolik: .${fileExtension} formatidagi fayllarni yuklash mumkin emas!`,
     );
   }
   //   const ALLOWED_TYPES = {
@@ -342,7 +433,6 @@ export const uploadFileViaRpc = async (stRef, file, convId, onProgress) => {
     mime: file.type || "application/octet-stream",
     convId,
   });
-  console.log(initRes);
   if (initRes.status != METHOD.OK) throw new Error("FILE_INIT failed");
 
   const { uploadId, chunkSize = 128 * 1024 } = initRes.result;
@@ -384,7 +474,7 @@ export const downloadFileViaRpc = async (
   stRef,
   fileId,
   fileName,
-  onProgress
+  onProgress,
 ) => {
   const state = stRef.current;
   const info = await sendRpcRequest(stRef, METHOD.FILE_INFO, { fileId });
@@ -417,10 +507,10 @@ export const downloadFileViaRpc = async (
             rpcId,
             METHOD.FILE_GET_CHUNK,
             { fileId, offset, length: len },
-            state.clientId
-          )
+            state.clientId,
+          ),
         ),
-        state
+        state,
       );
     });
     allParts.push(...streamRes.parts);
@@ -436,16 +526,14 @@ export const downloadFileViaRpc = async (
   // a.click();
 };
 
-
 export const downloadFileViaRpcNew = async (
   stRef,
   fileId,
   fileName,
-  onProgress
+  onProgress,
 ) => {
   const state = stRef.current;
   const info = await sendRpcRequest(stRef, METHOD.FILE_INFO, { fileId });
-  console.log(info);
   if (info.status != METHOD.OK) throw new Error("FILE_INFO failed");
 
   const { size, name, mime, chunkSize = 128 * 1024 } = info.result;
@@ -474,10 +562,10 @@ export const downloadFileViaRpcNew = async (
             rpcId,
             METHOD.FILE_GET_CHUNK,
             { fileId, offset, length: len },
-            state.clientId
-          )
+            state.clientId,
+          ),
         ),
-        state
+        state,
       );
     });
     allParts.push(...streamRes.parts);
@@ -486,9 +574,9 @@ export const downloadFileViaRpcNew = async (
 
   const mimeType = getMimeFromName(fileName);
 
-
-  const blob = new Blob(allParts, { type: mimeType || "application/octet-stream" });
-
+  const blob = new Blob(allParts, {
+    type: mimeType || "application/octet-stream",
+  });
   // const base64 = await blobToBase64(blob);
   // localStorage.setItem(fileId, base64);
   // const a = document.createElement("a");
@@ -497,19 +585,20 @@ export const downloadFileViaRpcNew = async (
   // a.click();
 
   return blob;
-
 };
 
 const getMimeFromName = (name = "") => {
   const ext = name.split(".").pop()?.toLowerCase();
 
-  return {
-    pdf: "application/pdf",
-    png: "image/png",
-    jpg: "image/jpeg",
-    jpeg: "image/jpeg",
-    webp: "image/webp",
-    mp4: "video/mp4",
-    txt: "text/plain",
-  }[ext] || "application/octet-stream";
+  return (
+    {
+      pdf: "application/pdf",
+      png: "image/png",
+      jpg: "image/jpeg",
+      jpeg: "image/jpeg",
+      webp: "image/webp",
+      mp4: "video/mp4",
+      txt: "text/plain",
+    }[ext] || "application/octet-stream"
+  );
 };

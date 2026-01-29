@@ -121,12 +121,12 @@ const AppRouter = () => {
             <Route path="/page/word2" element={<WordTwo />} />
             <Route path="/page/user-add" element={<UserAdd />} />
             <Route path="/page/view-profile" element={<ViewProfile />} />
-            <Route path="/page/vuln" element={<Vuln />} />
+            {/* <Route path="/page/vuln" element={<Vuln />} /> */}
             <Route path="/page/system-doc/:id" element={<SystemWord />} />
             
 
             <Route path="/" element={<Dashboard />} />
-            <Route path="/crm" element={<Crm />} />
+            {/* <Route path="/crm" element={<Crm />} />
             <Route path="/ecomerce" element={<Ecomerce />} />
             <Route path="/cryptocracy" element={<Cryptocracy />} />
             <Route path="/investment" element={<Investment />} />
@@ -195,7 +195,7 @@ const AppRouter = () => {
             <Route path="/currencies" element={<Currencies />} />
             <Route path="/language" element={<Language />} />
             <Route path="/payment-gateway" element={<PaymentGateway />} />
-            <Route path="/create" element={<New />} />
+            <Route path="/create" element={<New />} /> */}
           </Route>
         </Routes>
       </Suspense>

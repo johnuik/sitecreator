@@ -4,6 +4,13 @@ import { initWebSocket } from "../api/webClient";
 
 const ZirhContext = createContext(null);
 
+// new
+const WS_URL = "ws://10.10.115.40:8080/wsock";
+const LABEL = "zirhwebproto";
+const MAX_RETRY_DELAY = 30000;
+
+// new end
+
 export const ZirhProvider = ({ children }) => {
   const stRef = useRef({
     phase: 0,
@@ -17,32 +24,46 @@ export const ZirhProvider = ({ children }) => {
     clientId: null,
   });
 
-  useEffect(() => {
-    let mounted = true;
+ useEffect(() => {
+  let canceled = false;
 
-    const init = async () => {
-      try {
-        const cid = await getSuperFingerprint8();
-        if (!mounted) return;
+  const init = async () => {
+    try {
+      // clientId olish
+      const cid = await getSuperFingerprint8();
+      if (canceled) return;
 
-        stRef.current.clientId = cid;
-        await initWebSocket(stRef);
-      } catch (e) {
-        console.log("Zirh init error", e);
-      }
-    };
+      stRef.current.clientId = cid;
 
-    init();
+      // WS + WASM init
+      await initWebSocket(stRef, {
+        WS_URL,
+        LABEL,
+        MAX_RETRY_DELAY,
+        emitGlobalEvent: (name, data) =>
+          window.dispatchEvent(new CustomEvent(`zirh:${name}`, { detail: data })),
+      });
 
-    return () => {
-      mounted = false;
-    };
-  }, []);
+      if (!canceled) console.log("✅ WS + WASM init ok");
+    } catch (e) {
+      console.log("Zirh init error", e);
+    }
+  };
+
+  init();
+
+  return () => {
+    canceled = true;
+    // WS clientni tozalash
+    if (stRef.current.wsClient) {
+      stRef.current.wsClient.disconnect?.();
+    }
+  };
+}, []);
+
 
   return (
-    <ZirhContext.Provider value={{ stRef }}>
-      {children}
-    </ZirhContext.Provider>
+    <ZirhContext.Provider value={{ stRef }}>{children}</ZirhContext.Provider>
   );
 };
 
